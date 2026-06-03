@@ -15,6 +15,19 @@
     font-style: normal;
     font-display: swap;
 }
+
+
+/* Убедитесь, что заголовки используют доступный вес */
+h1, h2, h3 {
+    font-family: 'Golos Text', sans-serif;
+    font-weight: 500; /* Используем 500 (Medium), так как он у нас есть */
+}
+
+/* Если вы хотите, чтобы текст выглядел жирнее, 
+   используйте 500 для bold/strong элементов */
+strong, b {
+    font-weight: 500; 
+}
 :root {
     --bg: #090d16;
     --card: #131c2e;
