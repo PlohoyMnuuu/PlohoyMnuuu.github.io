@@ -443,13 +443,13 @@
         .screenshot-cover::before {
             content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
             z-index: 2; width: 76px; height: 76px; border-radius: 50%;
-            background: linear-gradient(135deg, rgba(56,189,248,0.25), rgba(56,189,248,0.35));
-            backdrop-filter: blur(8px); border: 1px solid rgba(56,189,248,0.35);
+            background: linear-gradient(135deg, rgba(56,189,248,0.85), rgba(56,189,248,0.95));
+            backdrop-filter: blur(8px); border: 1px solid rgba(56,189,248,0.8);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
             background-repeat: no-repeat; background-position: center; background-size: 28px 28px;
             transition: all 0.3s ease;
         }
-        .screenshot-cover:hover::before { background-color: rgba(56,189,248,0.5); border-color: rgba(56,189,248,0.6); transform: translate(-50%, -50%) scale(1.05); }
+        .screenshot-cover:hover::before { background: linear-gradient(135deg, rgba(56,189,248,1), rgba(56,189,248,1)); border-color: rgba(56,189,248,1); transform: translate(-50%, -50%) scale(1.05); }
 
         .custom-site-footer {
             position: relative; overflow: hidden;
@@ -471,22 +471,6 @@
             display: flex; align-items: center; gap: 8px;
         }
         #toast svg { width: 18px; height: 18px; }
-
-        #cookie-notice {
-            position: fixed !important; bottom: 20px !important; left: 50% !important;
-            transform: translateX(-50%) translateY(150px);
-            background: var(--card) !important;
-            border: 1px solid var(--border-main) !important;
-            padding: 14px 20px; border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7); z-index: 999999 !important;
-            width: calc(100% - 40px); max-width: 500px; box-sizing: border-box;
-            opacity: 0; visibility: hidden;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
-        }
-        #cookie-notice.show { opacity: 1 !important; visibility: visible !important; transform: translateX(-50%) translateY(0) !important; }
-        .cookie-content { display: flex; justify-content: space-between; align-items: center; gap: 15px; font-size: 13px; color: var(--text-dim); }
-        #cookie-accept-btn { background: var(--accent) !important; color: #000 !important; border: none !important; padding: 9px 22px; border-radius: 12px; font-size: 12px; font-weight: 900; cursor: pointer; text-transform: uppercase; flex-shrink: 0; display: flex; align-items: center; gap: 6px; }
-        #cookie-accept-btn:hover { opacity: 0.9; }
 
         @media (max-width: 768px) {
             html::before, body::before, body::after { display: none !important; }
@@ -521,10 +505,6 @@
             .video-info, .screenshot-info { flex: 1; border: none; border-image: none; margin: 0; padding: 18px 0 0 0; }
             .video-info::after, .screenshot-info::after { display: none; }
             .video-badge, .screenshot-badge { margin-left: 0; margin-right: 0; }
-        }
-        @media (max-width: 450px) {
-            .cookie-content { flex-direction: column; text-align: center; gap: 10px; }
-            #cookie-accept-btn { width: 100%; justify-content: center; }
         }
 
         html { scroll-behavior: smooth; }
@@ -768,17 +748,6 @@
     Код скопирован!
 </div>
 
-<div id="cookie-notice">
-    <div class="cookie-content">
-        <span>Мы используем cookie для корректной работы сайта.</span>
-        <button id="cookie-accept-btn" onclick="acceptCookies()"
-                style="display:flex;align-items:center;gap:6px;">
-            <i class="ti ti-check" style="font-size:16px;" aria-hidden="true"></i>
-            ОК
-        </button>
-    </div>
-</div>
-
 <div class="video-modal" id="screenshot-modal" onclick="closeScreenshot(event)">
     <div class="screenshot-modal-content">
         <button class="video-close" onclick="closeScreenshot(event)">✕</button>
@@ -816,11 +785,6 @@
         t.style.opacity = '1'; t.style.visibility = 'visible';
         setTimeout(function() { t.style.opacity = '0'; t.style.visibility = 'hidden'; }, 2000);
     }
-    // Принять использование cookie
-    function acceptCookies() {
-        document.getElementById('cookie-notice').classList.remove('show');
-        localStorage.setItem('cookie_accepted', 'true');
-    }
 
     // Обновить счетчик промокодов
     function updatePromoCount() {
@@ -857,10 +821,6 @@
         if (cached) { try { renderPromocodes(JSON.parse(cached)); } catch(e) {} }
         loadPromocodes();
         setInterval(loadPromocodes, 300000); // Обновление каждые 5 минут
-
-        if (!localStorage.getItem('cookie_accepted')) {
-            setTimeout(function() { document.getElementById('cookie-notice').classList.add('show'); }, 1500);
-        }
     });
 
     // Действия после полной загрузки страницы
