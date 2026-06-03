@@ -334,8 +334,20 @@
         .author-block::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(251,191,36,0.12), transparent 40%), radial-gradient(circle at bottom right, rgba(59,130,246,0.08), transparent 40%); pointer-events: none; z-index: 0; }
         .author-block:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,0.3); border-color: rgba(251,191,36,0.2); }
         .author-left { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
-        .author-photo { position: relative; z-index: 1; width: 80px; height: 80px; border-radius: 20px; object-fit: cover; border: 2px solid rgba(251,191,36,0.6); box-shadow: 0 10px 25px rgba(0,0,0,0.35); transform: rotate(-1deg); transition: transform 0.2s ease; flex-shrink: 0; }
-        .author-photo:hover { transform: rotate(0deg) scale(1.03); }
+        .author-photo {
+    position: relative;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    object-fit: cover; 
+    border: 2px solid rgba(251,191,36,0.6);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transform: rotate(-1deg);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    background: #1e293b; 
+}
         .author-status { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 11px; color: #94a3b8; }
         .author-status .dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px rgba(16,185,129,0.6); }
         .author-info { flex: 1; position: relative; z-index: 1; }
