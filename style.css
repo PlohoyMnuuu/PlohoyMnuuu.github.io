@@ -235,7 +235,7 @@
         .promo-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 6px 20px var(--accent-glow); }
         .promo-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
         .code-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        .code-text { font-family: 'Courier New', monospace; font-size: 19px; font-weight: 900; color: var(--accent); letter-spacing: 0.5px; }
+        .code-text { font-family: 'Golos Text', monospace; font-size: 19px; font-weight: 900; color: var(--accent); letter-spacing: 0.5px; }
         .new-badge {
             background: rgba(5, 150, 105, 0.15);
             color: #6ee7b7;
