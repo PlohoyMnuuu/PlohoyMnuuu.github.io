@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Golos Text';
+    src: url('fonts/GolosTextVF-Regular.woff2') format('woff2'),
+         url('fonts/GolosTextVF-Regular.woff') format('woff');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Golos Text', sans-serif;
+}
