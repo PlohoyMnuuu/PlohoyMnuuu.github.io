@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -109,7 +111,7 @@ jobs:
       
       - name: Download template.html
         run: |
-          curl -o template.html https://raw.githubusercontent.com/plohoymnuuu/plohoymnuuu.github.io/main/template.html
+          curl -o template.html https://raw.githubusercontent.com/PloHoyMnuuu/PloHoyMnuuu.github.io/main/template.html
       
       - name: Run generator
         run: node generate.js
@@ -119,5 +121,9 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add index.html
-          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Auto-update promocodes"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 Auto-update promocodes from Google Sheets"
+            git push
+          fi
