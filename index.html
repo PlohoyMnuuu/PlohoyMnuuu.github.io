@@ -440,16 +440,33 @@
         .screenshot-cover:hover { transform: scale(1.02); }
         .screenshot-cover img { width: 100%; height: 100%; object-fit: cover; }
         .screenshot-cover::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(to top, rgba(0,0,0,.8), transparent); pointer-events: none; }
+        
+        /* Обновленные стили для иконки лупы - похожие на play-button */
         .screenshot-cover::before {
-            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            z-index: 2; width: 76px; height: 76px; border-radius: 50%;
-            background: linear-gradient(135deg, rgba(56,189,248,0.85), rgba(56,189,248,0.95));
-            backdrop-filter: blur(8px); border: 1px solid rgba(56,189,248,0.8);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
-            background-repeat: no-repeat; background-position: center; background-size: 28px 28px;
-            transition: all 0.3s ease;
+            content: ''; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            z-index: 2; 
+            width: 76px; 
+            height: 76px; 
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(56,189,248,0.25), rgba(56,189,248,0.35));
+            backdrop-filter: blur(8px); 
+            border: 1px solid rgba(56,189,248,0.35);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: 28px 28px;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-        .screenshot-cover:hover::before { background: linear-gradient(135deg, rgba(56,189,248,1), rgba(56,189,248,1)); border-color: rgba(56,189,248,1); transform: translate(-50%, -50%) scale(1.05); }
+        
+        .screenshot-cover:hover::before { 
+            transform: translate(-50%, -50%) scale(1.05); 
+            background: linear-gradient(135deg, rgba(56,189,248,0.45), rgba(56,189,248,0.6));
+            border-color: rgba(56,189,248,0.6);
+        }
 
         .custom-site-footer {
             position: relative; overflow: hidden;
