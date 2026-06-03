@@ -451,14 +451,15 @@
             width: 76px;
             height: 76px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(56,189,248,0.25), rgba(56,189,248,0.35));
+            background: linear-gradient(135deg, rgba(56,189,248,0.35), rgba(56,189,248,0.45));
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(56,189,248,0.35);
+            border: 1px solid rgba(56,189,248,0.45);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             cursor: pointer;
+            box-shadow: 0 0 20px rgba(56,189,248,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
         }
         
         .screenshot-magnifier svg {
@@ -472,8 +473,9 @@
         
         .screenshot-cover:hover .screenshot-magnifier {
             transform: translate(-50%, -50%) scale(1.05);
-            background: linear-gradient(135deg, rgba(56,189,248,0.45), rgba(56,189,248,0.6));
-            border-color: rgba(56,189,248,0.6);
+            background: linear-gradient(135deg, rgba(56,189,248,0.55), rgba(56,189,248,0.75));
+            border-color: rgba(56,189,248,0.8);
+            box-shadow: 0 0 30px rgba(56,189,248,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
         }
 
         .custom-site-footer {
