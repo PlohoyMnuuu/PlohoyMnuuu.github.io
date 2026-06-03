@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Golos Text';
     src: url('/fonts/GolosTextVF-Regular.woff2') format('woff2');
@@ -14,15 +16,6 @@
     font-display: swap;
 }
 
-/* Добавляем поддержку жирных начертаний, если файлы их содержат, 
-   или позволяем браузеру корректно работать с Variable Font */
-@font-face {
-    font-family: 'Golos Text';
-    src: url('/fonts/GolosTextVF-Regular.woff2') format('woff2');
-    font-weight: 700 800;
-    font-style: normal;
-    font-display: swap;
-}
 
 /* Убедитесь, что заголовки используют доступный вес */
 h1, h2, h3 {
@@ -51,21 +44,17 @@ strong, b {
 }
 
 html, body {
+    margin: 0 !important;
+    padding: 0 !important;
     font-family: 'Golos Text', sans-serif;
-    font-weight: 400;
-}
-
-h1, h2, h3 {
-    font-family: 'Golos Text', sans-serif;
-    font-weight: 800; /* Теперь это соответствует доступному весу в @font-face */
-}
-
-strong, b {
-    font-weight: 700; /* Теперь это соответствует доступному весу в @font-face */
-}
-
-p {
-    font-weight: 400;
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(251,191,36,0.12), transparent 25%),
+        radial-gradient(circle at 85% 15%, rgba(59,130,246,0.12), transparent 30%),
+        linear-gradient(180deg, #03050a 0%, #090d16 50%, #050811 100%);
+    background-attachment: fixed;
 }
 
 body::before {
