@@ -1,12 +1,20 @@
+
+
 @font-face {
     font-family: 'Golos Text';
-    src: url('fonts/GolosTextVF-Regular.woff2') format('woff2'),
-         url('fonts/GolosTextVF-Regular.woff') format('woff');
-    font-weight: 400 900;
+    src: url('/fonts/GolosTextVF-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Golos Text';
+    src: url('/fonts/GolosText-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
 :root {
     --bg: #090d16;
     --card: #131c2e;
