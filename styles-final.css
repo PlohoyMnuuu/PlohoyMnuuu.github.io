@@ -1953,7 +1953,7 @@ li {
   .author-block {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 12px;
+    gap: 10px;
     padding: 14px;
   }
 
@@ -1975,11 +1975,14 @@ li {
     font-size: 9px;
   }
 
+  /* ИСПРАВЛЕНО: кнопка FB стоит справа от имени в одну строку */
   .author-name {
     font-size: 14px;
     margin-bottom: 6px;
     gap: 8px;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 
   .author-name .desktop-fb-btn {
@@ -1991,6 +1994,7 @@ li {
     font-size: 10px;
     padding: 4px 8px;
     min-height: 28px;
+    flex-shrink: 0;
   }
 
   .author-info p {
