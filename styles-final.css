@@ -1174,10 +1174,7 @@ li {
   z-index: 1;
 }
 
-.mobile-fb-btn {
-  display: none;
-  margin-top: 4px;
-}
+
 
 /* ================================================
    МОДАЛЬНЫЕ ОКНА
@@ -1982,10 +1979,7 @@ li {
     line-height: 1.5;
   }
 
-  .mobile-fb-btn {
-    display: inline-flex;
-    font-size: 10px;
-  }
+
 
   .author-name .desktop-fb-btn {
     display: none;
