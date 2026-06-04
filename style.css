@@ -1533,6 +1533,10 @@ li {
    ================================================ */
 
 @media (min-width: 769px) {
+  .rewards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
   .video-showcase, .screenshot-showcase { 
     display: flex; 
     align-items: center; 
