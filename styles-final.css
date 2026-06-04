@@ -87,8 +87,7 @@ html, body {
 }
 
 /* ================================================
-   ФОНОВЫЕ ЭФФЕКТЫ — только десктоп
-   (на мобилке убраны полностью через медиазапрос)
+   ФОНОВЫЕ ЭФФЕКТЫ (отключены на мобильных)
    ================================================ */
 
 body::before {
@@ -294,7 +293,7 @@ li {
 .hero-stats svg { width: 14px; height: 14px; stroke: #ffffff; opacity: 0.4; flex-shrink: 0; }
 #stats-update-date span { color: #94a3b8; }
 
-/* CTA кнопка */
+/* CTA кнопка - оптимизирована для touch */
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -316,8 +315,6 @@ li {
   cursor: pointer;
   border: none;
   white-space: nowrap;
-  /* GPU-слой для анимации */
-  will-change: box-shadow;
 }
 .hero-cta:hover {
   transform: translateY(-2px);
@@ -331,7 +328,6 @@ li {
 .hero-cta svg { width: 16px; height: 16px; transition: transform 0.2s; flex-shrink: 0; }
 .hero-cta:hover svg { transform: translateY(2px); }
 
-/* Анимация пульса — только box-shadow, не вызывает layout */
 @keyframes pulseGlow {
   0%   { box-shadow: 0 10px 30px rgba(255,193,7,0.35), inset 0 1px 0 rgba(255,255,255,0.35); }
   50%  { box-shadow: 0 10px 45px rgba(255,193,7,0.55), inset 0 1px 0 rgba(255,255,255,0.35); }
@@ -464,7 +460,7 @@ li {
   margin-bottom: 4px;
 }
 
-/* Код */
+/* Код — моноширный, крупный, чёткий, оптимизирован для переноса */
 .code-text {
   font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
   font-size: 16px;
@@ -505,7 +501,7 @@ li {
   word-break: break-word;
 }
 
-/* Кнопка копирования */
+/* Кнопка копирования - оптимизирована для touch */
 .copy-btn {
   background: var(--accent);
   color: #000;
@@ -940,7 +936,7 @@ li {
   transform: translate(-50%, -50%) scale(0.95);
 }
 
-/* Бейджи */
+/* Бейджи видео/скриншота */
 .video-badge, .screenshot-badge {
   display: inline-flex; 
   align-items: center; 
@@ -1184,121 +1180,55 @@ li {
 #toast svg { width: 16px; height: 16px; flex-shrink: 0; }
 
 /* ================================================
-   МОБИЛЬНЫЕ ОПТИМИЗАЦИИ (до 768px)
-   — убираем самые тяжёлые GPU-эффекты,
-     сохраняя весь визуал через упрощённые замены
+   МЕДИАЗАПРОСЫ — ПЛАНШЕТ И ВЫШЕ
    ================================================ */
 
 @media (max-width: 768px) {
-
-  /* ── 1. Отключаем все фиксированные фоновые слои ── */
-  html::before,
-  body::before,
-  body::after {
-    display: none !important;
-  }
-
-  /* ── 2. Фон без fixed-attachment (вызывал repaint на каждый скролл) ── */
-  html, body {
-    background-attachment: scroll !important;
-    /* Упрощённый фон: один градиент вместо трёх radial + linear */
-    background:
-      linear-gradient(160deg, #0a1020 0%, #090d16 60%, #050811 100%) !important;
-  }
-
-  /* ── 3. Шапка: убираем SVG-noise псевдоэлемент (feTurbulence = дорого) ── */
-  .hero-header::before {
-    display: none;
-  }
-
-  /* ── 4. Плавающие орбы: blur(60px) на мобиле — убийство FPS ── */
-  .floating-orb {
-    display: none;
-  }
-
-  /* ── 5. backdrop-filter: blur — один из главных виновников ── */
-  .section {
-    backdrop-filter: none;
-    /* Компенсируем: чуть более насыщенный непрозрачный фон */
-    background: #131c2e;
-  }
-  .unified-block {
-    backdrop-filter: none;
-    background: #131c2e;
-  }
-  /* unified-block вложенные секции уже transparent — ок */
-
-  /* ── 6. Блок автора: backdrop-filter убираем, фон компенсируем ── */
-  .author-block {
-    backdrop-filter: none;
-    background: rgba(10, 15, 26, 0.95);
-  }
-  /* Псевдоэлемент с двойным radial-gradient — оставляем (лёгкий, статичный) ── */
-
-  /* ── 7. Кнопка play / magnifier: backdrop-filter ── */
-  .play-button {
-    backdrop-filter: none;
-    background: rgba(56, 189, 248, 0.45);
-  }
-  .screenshot-magnifier {
-    backdrop-filter: none;
-    background: rgba(56, 189, 248, 0.7);
-  }
-
-  /* ── 8. Hero: убираем анимацию на кнопке (pulseGlow каждые 2.5с) ── */
-  .hero-cta {
-    animation: none;
-    will-change: auto;
-    box-shadow: 0 8px 24px rgba(255,193,7,0.4), inset 0 1px 0 rgba(255,255,255,0.35);
-  }
-
-  /* ── 9. Hover-эффекты: на тач-устройствах hover не работает,
-          но transition всё равно занимает ресурсы — укорачиваем ── */
-  .reward-item,
-  .promo-card,
-  .mini-tip-card,
-  .author-block,
-  .screenshot-cover {
-    transition: none;
-  }
-
-  /* ── 10. Скелетон: оставляем анимацию (она нужна для UX), но упрощаем ── */
-  /* loading — уже только background-position, не затрагивает layout ── */
-
-  /* ── 11. Паддинги / размеры (без изменений — были в оригинале) ── */
+  html::before, body::before, body::after { display: none !important; }
+  html, body { background-attachment: scroll !important; }
+  .section { backdrop-filter: none; }
+  
   .hero-header { 
     padding: 50px 16px 36px; 
   }
+  
   .hero-title { 
     font-size: 28px;
     margin-bottom: 16px;
   }
+  
   .hero-brand {
     font-size: 10px;
     margin-bottom: 12px;
   }
+  
   .hero-stats { 
     flex-direction: column; 
     gap: 6px; 
     font-size: 12px;
   }
   .hero-stats .stat-divider { display: none; }
+  
   .video-cover, .screenshot-cover { 
     max-width: none; 
     width: 100%; 
   }
+  
   .video-info, .screenshot-info { 
     width: 100%; 
     box-sizing: border-box; 
     padding-left: 0; 
     padding-right: 0; 
   }
+  
   .video-showcase, .screenshot-showcase { 
     padding: 18px; 
   }
+  
   .unified-block .video-showcase, .unified-block .screenshot-showcase { 
     padding: 0 18px 18px; 
   }
+  
   .video-badge, .screenshot-badge { 
     display: flex; 
     justify-content: center; 
@@ -1306,11 +1236,14 @@ li {
     margin-left: auto; 
     margin-right: auto; 
   }
+  
   .video-info { text-align: left; }
   .screenshot-info { text-align: left; }
+  
   .container { 
     padding: 16px; 
   }
+  
   .section {
     padding: 18px;
     margin-bottom: 16px;
@@ -1319,7 +1252,7 @@ li {
 }
 
 /* ================================================
-   МОБИЛЬНЫЙ (до 550px)
+   МЕДИАЗАПРОСЫ — МОБИЛЬНЫЙ (до 550px)
    ================================================ */
 
 @media (max-width: 550px) {
@@ -1327,53 +1260,65 @@ li {
     font-size: 24px;
     margin-bottom: 6px;
   }
+  
   h2 {
     font-size: 14px;
     margin-bottom: 14px;
     align-items: flex-start;
     gap: 8px;
   }
+  
   h2 .svg-icon { 
     width: 16px; 
     height: 16px; 
     margin-top: 2px;
   }
+  
   h3 {
     font-size: 15px;
     margin-bottom: 10px;
   }
+  
   p {
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 12px;
   }
+  
   ol, ul {
     font-size: 14px;
     padding-left: 18px;
   }
+  
   li {
     margin-bottom: 8px;
   }
+  
   .code-text { 
     font-size: 14px !important; 
     letter-spacing: 0.04em; 
   }
+  
   .rewards-grid {
     gap: 10px;
   }
+  
   .reward-item {
     padding: 12px 8px;
     min-height: 100px;
     border-radius: 12px;
   }
+  
   .reward-icon {
     font-size: 24px;
     height: 28px;
     margin-bottom: 6px;
   }
+  
   .reward-title {
     font-size: 9px;
   }
+  
   .promo-card {
     padding: 12px;
     margin-bottom: 8px;
@@ -1381,117 +1326,144 @@ li {
     gap: 10px;
     border-radius: 12px;
   }
+  
   .copy-btn {
     padding: 8px 10px;
     font-size: 9px;
     min-height: 36px;
     min-width: 36px;
   }
+  
   .new-badge {
     font-size: 8px;
     padding: 2px 6px;
   }
+  
   .reward-text {
     font-size: 12px;
   }
+  
   .mini-tips-grid { 
     grid-template-columns: 1fr; 
     gap: 10px;
     margin-top: 12px;
   }
+  
   .mini-tip-card {
     padding: 12px 14px;
     font-size: 12px;
     min-height: 70px;
     line-height: 1.5;
   }
+  
   .mini-tip-card strong {
     font-size: 13px;
     margin-bottom: 4px;
   }
+  
   .author-block { 
     display: grid; 
     grid-template-columns: auto 1fr; 
     gap: 12px; 
     padding: 14px; 
   }
+  
   .author-left { 
     width: auto; 
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
   }
+  
   .author-photo-wrapper, .author-photo { 
     width: 64px !important; 
     height: 64px !important; 
     border-radius: 14px;
   }
+  
   .author-status {
     font-size: 9px;
   }
+  
   .author-name {
     font-size: 14px;
     margin-bottom: 6px;
     gap: 8px;
   }
+  
   .author-info p {
     font-size: 12px;
     line-height: 1.5;
   }
+  
   .mobile-fb-btn { 
     display: inline-flex;
     font-size: 10px;
   }
+  
   .author-name .desktop-fb-btn { 
     display: none; 
   }
+  
   .hero-cta {
     padding: 12px 24px;
     font-size: 11px;
   }
+  
   .video-title {
     font-size: 14px;
   }
+  
   .video-text {
     font-size: 12px;
   }
+  
   .video-meta {
     font-size: 11px;
     margin-top: 8px;
   }
+  
   .fb-link {
     padding: 5px 10px;
     font-size: 9px;
     min-height: 32px;
   }
+  
   .hero-header {
     padding: 40px 12px 28px;
   }
+  
   .container {
     padding: 12px;
   }
+  
   .section {
     padding: 14px;
     margin-bottom: 12px;
     border-radius: 12px;
   }
+  
   .video-showcase, .screenshot-showcase {
     padding: 14px;
     margin-bottom: 16px;
     border-radius: 12px;
   }
+  
   .play-button {
     width: 56px;
     height: 56px;
   }
+  
   .play-button svg {
     width: 24px;
     height: 24px;
   }
+  
   .screenshot-magnifier {
     width: 56px;
     height: 56px;
   }
+  
   .screenshot-magnifier svg {
     width: 24px;
     height: 24px;
@@ -1499,53 +1471,64 @@ li {
 }
 
 /* ================================================
-   ОЧЕНЬ МАЛЕНЬКИЙ МОБИЛЬНЫЙ (до 375px)
+   МЕДИАЗАПРОСЫ — ОЧЕНЬ МАЛЕНЬКИЙ МОБИЛЬНЫЙ (до 375px)
    ================================================ */
 
 @media (max-width: 375px) {
   h1 {
     font-size: 20px;
   }
+  
   h2 {
     font-size: 13px;
   }
+  
   p {
     font-size: 13px;
   }
+  
   .code-text {
     font-size: 12px;
     letter-spacing: 0.02em;
   }
+  
   .hero-cta {
     width: auto;
     padding: 10px 20px;
   }
+  
   .hero-stats {
     font-size: 10px;
   }
+  
   .author-block {
     grid-template-columns: 1fr;
     text-align: center;
   }
+  
   .author-left {
     width: 100%;
   }
+  
   .rewards-grid {
     grid-template-columns: 1fr 1fr;
   }
+  
   .mini-tips-grid {
     grid-template-columns: 1fr;
   }
+  
   .container {
     padding: 10px;
   }
+  
   .section {
     padding: 12px;
   }
 }
 
 /* ================================================
-   ДЕСКТОП (769px и выше)
+   МЕДИАЗАПРОСЫ — ДЕСКТОП (769px и выше)
    ================================================ */
 
 @media (min-width: 769px) {
@@ -1556,9 +1539,11 @@ li {
     text-align: left; 
     padding: 28px; 
   }
+  
   .unified-block .video-showcase, .unified-block .screenshot-showcase { 
     padding: 0 25px 25px; 
   }
+  
   .video-cover, .screenshot-cover { 
     width: 190px; 
     flex-shrink: 0; 
@@ -1566,6 +1551,7 @@ li {
     border-radius: 24px; 
     max-width: none; 
   }
+  
   .video-info, .screenshot-info { 
     flex: 1; 
     border: none; 
@@ -1573,9 +1559,11 @@ li {
     margin: 0; 
     padding: 18px 0 0 0; 
   }
+  
   .video-info::after, .screenshot-info::after { 
     display: none; 
   }
+  
   .video-badge, .screenshot-badge { 
     margin-left: 0; 
     margin-right: 0; 
