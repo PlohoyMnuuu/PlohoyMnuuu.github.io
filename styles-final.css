@@ -1052,6 +1052,7 @@ li {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
               0 0 0 1px rgba(255, 255, 255, 0.5);
 }
+
 .author-status {
   display: flex;
   align-items: center;
@@ -1174,9 +1175,12 @@ li {
   z-index: 1;
 }
 
+.desktop-fb-btn {
+  display: inline-flex;
+}
+
 .mobile-fb-btn {
   display: none;
-  margin-top: 4px;
 }
 
 /* ================================================
@@ -1975,20 +1979,23 @@ li {
     font-size: 14px;
     margin-bottom: 6px;
     gap: 8px;
+    flex-direction: column;
+  }
+
+  .author-name .desktop-fb-btn {
+    display: none;
+  }
+
+  .author-name .mobile-fb-btn {
+    display: inline-flex;
+    font-size: 10px;
+    padding: 4px 8px;
+    min-height: 28px;
   }
 
   .author-info p {
     font-size: 12px;
     line-height: 1.5;
-  }
-
-  .mobile-fb-btn {
-    display: inline-flex;
-    font-size: 10px;
-  }
-
-  .author-name .desktop-fb-btn {
-    display: none;
   }
 
   .hero-cta {
@@ -2160,5 +2167,13 @@ li {
   .screenshot-badge {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .desktop-fb-btn {
+    display: inline-flex;
+  }
+
+  .mobile-fb-btn {
+    display: none;
   }
 }
