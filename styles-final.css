@@ -1330,51 +1330,49 @@ li {
 }
 
 /* ================================================
-   РАЗДЕЛИТЕЛЬ — НОВЫЙ СТИЛЬ (КАК НА ПК)
+   РАЗДЕЛИТЕЛЬ — стиль как у author-wrapper
    ================================================ */
 
 .section-divider {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 2px; /* Высота линии */
-  margin: 30px auto; /* Отступы сверху и снизу */
-  background: transparent;
-  border: none;
-  
-  /* Градиент: прозрачный -> синий -> прозрачный */
-  background: linear-gradient(
-    90deg, 
-    transparent 0%, 
-    rgba(56, 189, 248, 0.2) 20%, 
-    rgba(56, 189, 248, 0.6) 50%, 
-    rgba(56, 189, 248, 0.2) 80%, 
-    transparent 100%
-  );
-  
-  /* Сглаживание краев */
-  border-radius: 2px;
-}
-
-/* Синяя точка по центру */
-.section-divider::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Идеальное центрирование */
-  width: 8px;
-  height: 8px;
-  background: var(--accent-blue); /* #38bdf8 */
-  border-radius: 50%;
-  
-  /* Мягкое свечение */
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-}
-
-/* Вариант без точки (для других разделителей) */
-.section-divider.no-dot::after {
   display: none;
+}
+
+@media (min-width: 769px) {
+  .section-divider {
+    display: block;
+    position: relative;
+    height: 1px;
+    margin: 0 25px;
+    background: transparent;
+    border: none;
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(251,191,36,0.06) 15%,
+      rgba(251,191,36,0.2) 50%,
+      rgba(251,191,36,0.06) 85%,
+      transparent 100%
+    ) 1;
+  }
+
+  /* Центральная точка — как у author-wrapper */
+  .section-divider::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: rgba(251,191,36,0.5);
+    border-radius: 50%;
+  }
+
+  /* Вариант без точки (для нижних разделителей) */
+  .section-divider.no-dot::after {
+    display: none;
+  }
 }
 
 /* ================================================
@@ -1971,11 +1969,6 @@ li {
     height: 60px;
     border-radius: 14px;
   }
-
-  /* Разделитель на мобильном — уменьшенные отступы */
-  .section-divider {
-    margin: 18px auto;
-  }
 }
 
 /* ================================================
@@ -2193,17 +2186,6 @@ li {
   .unified-block .screenshot-showcase {
     padding: 0 14px 14px;
   }
-
-  /* Адаптация разделителя для маленьких экранов */
-  .section-divider {
-    margin: 12px auto;
-    height: 1.5px;
-  }
-  
-  .section-divider::after {
-    width: 6px;
-    height: 6px;
-  }
 }
 
 /* ================================================
@@ -2266,10 +2248,6 @@ li {
 
   .section {
     padding: 12px;
-  }
-  
-  .section-divider {
-    margin: 8px auto;
   }
 }
 
