@@ -1615,13 +1615,35 @@ li {
 }
 
 .video-info {
- 
   margin-top: 18px;
-  padding: 18px 0 0 0;
+  padding-top: 18px;
   position: relative;
   text-align: left;
 }
 
+/* Линия */
+.video-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px; /* длина линии */
+  border-top: 1px solid var(--border-main);
+}
+
+/* Точка по центру линии */
+.video-info::after {
+  content: "";
+  position: absolute;
+  top: -4px; /* подстрой под толщину линии */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--border-main);
+  border-radius: 50%;
+}
 .video-info::after {
   display: none;
 }
