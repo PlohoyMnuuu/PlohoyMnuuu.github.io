@@ -1358,6 +1358,116 @@ li {
   box-shadow: none;
 }
 
+
+/* ================================================
+   COVER STAGE — декоративная обёртка обложки
+   ================================================ */
+
+.cover-stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Боковые декоративные полосы (только мобильный) */
+.cover-stage::before,
+.cover-stage::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(56,189,248,0.15) 20%,
+    rgba(56,189,248,0.3) 50%,
+    rgba(56,189,248,0.15) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.cover-stage::before {
+  left: 12px;
+}
+
+.cover-stage::after {
+  right: 12px;
+}
+
+/* Тики на боковых полосах */
+.cover-stage .stage-left,
+.cover-stage .stage-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+  padding: 20px 0;
+}
+
+.cover-stage .stage-left {
+  left: 0;
+}
+
+.cover-stage .stage-right {
+  right: 0;
+}
+
+.cover-stage .stage-tick {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(56,189,248,0.25);
+  flex-shrink: 0;
+  transition: background var(--transition-base);
+}
+
+.cover-stage .stage-tick:nth-child(2) {
+  width: 6px;
+  height: 6px;
+  background: rgba(56,189,248,0.4);
+}
+
+/* Для скриншота — золотой акцент */
+.screenshot-showcase .cover-stage::before,
+.screenshot-showcase .cover-stage::after {
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(251,191,36,0.12) 20%,
+    rgba(251,191,36,0.25) 50%,
+    rgba(251,191,36,0.12) 80%,
+    transparent 100%
+  );
+}
+
+.screenshot-showcase .cover-stage .stage-tick {
+  background: rgba(251,191,36,0.2);
+}
+
+.screenshot-showcase .cover-stage .stage-tick:nth-child(2) {
+  background: rgba(251,191,36,0.4);
+}
+
+/* На десктопе боковые элементы убираем — там горизонтальная раскладка */
+@media (min-width: 769px) {
+  .cover-stage::before,
+  .cover-stage::after {
+    display: none;
+  }
+
+  .cover-stage .stage-left,
+  .cover-stage .stage-right {
+    display: none;
+  }
+}
+
 .video-cover {
   position: relative;
   width: 100%;
@@ -1775,7 +1885,9 @@ li {
 
   .video-cover,
   .screenshot-cover {
-    max-width: 200px;
+    max-width: 100%;
+    max-height: 360px;
+    aspect-ratio: 9/16;
     border-radius: 16px;
   }
 
@@ -1991,7 +2103,7 @@ li {
 
   .video-cover,
   .screenshot-cover {
-    max-width: 180px;
+    max-width: 100%;
   }
 
   .video-title {
