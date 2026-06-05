@@ -1330,42 +1330,49 @@ li {
 }
 
 /* ================================================
-   РАЗДЕЛИТЕЛЬ — синий стиль как у бейджей видео/скриншота
-   Показывается на всех устройствах
+   РАЗДЕЛИТЕЛЬ — НОВЫЙ СТИЛЬ (КАК НА ПК)
    ================================================ */
 
 .section-divider {
   display: block;
   position: relative;
-  height: 1px;
-  margin: 0 25px;
+  width: 100%;
+  height: 2px; /* Высота линии */
+  margin: 30px auto; /* Отступы сверху и снизу */
   background: transparent;
   border: none;
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(56,189,248,0.08) 15%,
-    rgba(56,189,248,0.35) 50%,
-    rgba(56,189,248,0.08) 85%,
+  
+  /* Градиент: прозрачный -> синий -> прозрачный */
+  background: linear-gradient(
+    90deg, 
+    transparent 0%, 
+    rgba(56, 189, 248, 0.2) 20%, 
+    rgba(56, 189, 248, 0.6) 50%, 
+    rgba(56, 189, 248, 0.2) 80%, 
     transparent 100%
-  ) 1;
+  );
+  
+  /* Сглаживание краев */
+  border-radius: 2px;
 }
 
-/* Центральная синяя точка */
+/* Синяя точка по центру */
 .section-divider::after {
   content: '';
   position: absolute;
-  top: -3px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
-  background: rgba(56,189,248,0.6);
+  transform: translate(-50%, -50%); /* Идеальное центрирование */
+  width: 8px;
+  height: 8px;
+  background: var(--accent-blue); /* #38bdf8 */
   border-radius: 50%;
+  
+  /* Мягкое свечение */
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
 }
 
-/* Вариант без точки (для нижних разделителей) */
+/* Вариант без точки (для других разделителей) */
 .section-divider.no-dot::after {
   display: none;
 }
@@ -1967,7 +1974,7 @@ li {
 
   /* Разделитель на мобильном — уменьшенные отступы */
   .section-divider {
-    margin: 0 18px;
+    margin: 18px auto;
   }
 }
 
@@ -2187,8 +2194,15 @@ li {
     padding: 0 14px 14px;
   }
 
+  /* Адаптация разделителя для маленьких экранов */
   .section-divider {
-    margin: 0 14px;
+    margin: 12px auto;
+    height: 1.5px;
+  }
+  
+  .section-divider::after {
+    width: 6px;
+    height: 6px;
   }
 }
 
@@ -2253,9 +2267,9 @@ li {
   .section {
     padding: 12px;
   }
-
+  
   .section-divider {
-    margin: 0 12px;
+    margin: 8px auto;
   }
 }
 
