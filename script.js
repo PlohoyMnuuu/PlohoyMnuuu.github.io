@@ -1,11 +1,9 @@
-// Функция копирования текста в буфер обмена
 function copy(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(showToast).catch(function() { fallbackCopy(text); });
     } else { fallbackCopy(text); }
 }
 
-// Резервный метод копирования для старых браузеров
 function fallbackCopy(text) {
     var t = document.createElement('textarea');
     t.value = text; document.body.appendChild(t); t.select();
@@ -13,26 +11,46 @@ function fallbackCopy(text) {
     document.body.removeChild(t);
 }
 
-// Показать уведомление о копировании
 function showToast() {
     var t = document.getElementById('toast');
     t.style.opacity = '1'; t.style.visibility = 'visible';
     setTimeout(function() { t.style.opacity = '0'; t.style.visibility = 'hidden'; }, 2000);
 }
 
-// Обновить счетчик промокодов
 function updatePromoCount() {
     var el = document.getElementById('promo-count');
     if (el) el.textContent = document.querySelectorAll('.promo-card').length;
 }
 
-// Инициализация после загрузки DOM
+function renderPromocodes(codes) {
+    var c = document.getElementById('promo-list');
+    if (!c) return;
+    var total = codes.length;
+    c.innerHTML = codes.map(function(item, i) {
+        var badge = (i >= total - 2) ? '<span class="new-badge">Новое</span>' : '';
+        return '<div class="promo-card" onclick="copy(\'' + item.code.replace(/'/g,"\\'") + '\')" role="button" tabindex="0">' +
+            '<div class="promo-info"><div class="code-header"><span class="code-text">' + item.code + '</span>' + badge + '</div>' +
+            '<span class="reward-text">' + item.reward + '</span></div>' +
+            '<div class="copy-btn"><svg fill="none" viewBox="0 0 24 24"><rect height="16" rx="2" stroke="#000" stroke-width="2" width="12" x="8" y="2"/><path d="M4 6V20H16" stroke="#000" stroke-linecap="round" stroke-width="2"/></svg>Копировать</div></div>';
+    }).join('');
+    updatePromoCount();
+}
+
+function loadFreshCodes() {
+    fetch('https://script.google.com/macros/s/AKfycbxu_zefZP7nxFfGR1aLN5QtiFTGk4qFhMR6EGh3Of330wlkszzRkjAd_dig7Ww22bdb/exec')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            renderPromocodes(data);
+        }).catch(function() {
+            console.log('Не удалось загрузить свежие коды, используются из HTML');
+        });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     updatePromoCount();
-    // Коды уже вшиты в HTML через Google Apps Script — ничего не подгружаем
+    loadFreshCodes();
 });
 
-// Действия после полной загрузки страницы
 window.addEventListener('load', function() {
     var el = document.getElementById('stats-update-date');
     if (el) {
@@ -42,7 +60,6 @@ window.addEventListener('load', function() {
     var yr = document.getElementById('footer-year');
     if (yr) yr.textContent = new Date().getFullYear();
 
-    // Симуляция статуса автора
     var states = [
         { text: "Онлайн", color: "#10b981", shadow: "rgba(16,185,129,0.6)" },
         { text: "Был недавно", color: "#fbbf24", shadow: "rgba(251,191,36,0.6)" },
@@ -54,7 +71,6 @@ window.addEventListener('load', function() {
     if (txt) txt.textContent = state.text;
 });
 
-// Открыть модальное окно с видео
 function loadVideo() {
     var modal = document.getElementById('video-modal');
     document.getElementById('video-frame').src = "https://www.youtube.com/embed/_2Lyzaz9eOw?autoplay=1&mute=1&rel=0&playsinline=1";
@@ -62,7 +78,6 @@ function loadVideo() {
     document.body.style.overflow = 'hidden';
 }
 
-// Закрыть модальное окно с видео
 function closeVideo(e) {
     if (e.target.id === 'video-modal' || e.target.classList.contains('video-close')) {
         document.getElementById('video-modal').classList.remove('show');
@@ -71,7 +86,6 @@ function closeVideo(e) {
     }
 }
 
-// Открыть скриншот в модальном окне
 function openScreenshot() {
     var modal = document.getElementById('screenshot-modal');
     var img = document.getElementById('screenshot-full');
@@ -81,7 +95,6 @@ function openScreenshot() {
     document.body.style.overflow = 'hidden';
 }
 
-// Закрыть модальное окно со скриншотом
 function closeScreenshot(e) {
     if (e.target.id === 'screenshot-modal' || e.target.classList.contains('video-close')) {
         document.getElementById('screenshot-modal').classList.remove('show');
