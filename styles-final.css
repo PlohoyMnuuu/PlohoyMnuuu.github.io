@@ -1371,7 +1371,7 @@ li {
 
   /* Вариант без точки (для нижних разделителей) */
   .section-divider.no-dot::after {
-    display: none;
+    
   }
 }
 
