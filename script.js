@@ -1,28 +1,4 @@
-async function checkPromo() {
-  const code = document.getElementById('promoCode').value.trim();
-  
-  if (!code) {
-    alert('Введите промокод!');
-    return;
-  }
-
-  try {
-    const response = await fetch(`/.netlify/functions/promo?code=${code}`);
-    const data = await response.json();
-
-    if (data.valid) {
-      alert(`✅ Промокод "${code}" действителен!\nСкидка: ${data.discount}${data.type === 'percent' ? '%' : '₽'}`);
-    } else {
-      alert(`❌ Промокод "${code}" не найден!`);
-    }
-  } catch (error) {
-    alert('Ошибка при проверке промокода: ' + error.message);
-  }
-}
-
-
-
-// Функция копирования текста в буфер обмена
+ // Функция копирования текста в буфер обмена
     function copy(text) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(showToast).catch(function() { fallbackCopy(text); });
@@ -131,3 +107,4 @@ async function checkPromo() {
             document.getElementById('screenshot-modal').classList.remove('show');
             document.body.style.overflow = '';
         }
+    }
