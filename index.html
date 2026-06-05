@@ -36,14 +36,6 @@
     "name": "Промокоды для игры Монеточка на сегодня",
     "description": "Новые промокоды для Монеточки - энергия, монеты, сундуки, карты",
     "url": "https://monetochka.today",
-    "author": {
-      "@type": "Person",
-      "name": "Николай Дудник",
-      "url": "https://monetochka.today/autor",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=100064073311598"
-      ]
-    },
     "mainEntity": {
       "@type": "CollectionPage",
       "name": "Коды для Монеточки на сегодня"
@@ -157,7 +149,7 @@
 <div class="container">
 
     <section class="section">
-        <p>Разработчики выпускают промокоды для <b>Монеточки</b> чуть ли не каждый день. Это позволяет активным игрокам получить бесплатные ресурсы, энергию, деньги, сундуки и дополнительные награды.</p>
+        <p><b>Промокоды для Монеточки</b> — комбинации букв и цифр, которые разработчики выпускают чуть ли не каждый день. Это позволяет активным игрокам получить бесплатные ресурсы, энергию, деньги, сундуки и дополнительные награды.</p>
         <p style="margin-bottom:0;">Каждый бонус действует ограниченное время и активируется только один раз на аккаунт. Поэтому используйте его пока работает.</p>
     </section>
 
@@ -197,23 +189,16 @@
     <section class="section" id="promo-codes">
         <h2>
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 12.5L13.5 19.5C13.1 19.9 12.6 20.1 12 20.1C11.4 20.1 10.9 19.9 10.5 19.5L3 12V3H12L20.5 11.5C20.9 11.9 20.9 12.1 20.5 12.5Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.75"/><circle cx="7.5" cy="7.5" fill="currentColor" r="1.25"/></svg>
-           Сегодня действуют следующие коды
+            Актуальные коды на июнь 2026
         </h2>
         <div id="promo-list">
             <!--PROMO_PLACEHOLDER-->
-
-       <div class="promo-check-section">
-    <input type="text" id="promoCode" placeholder="Введите промокод" />
-    <button onclick="checkPromo()">Проверить</button>
-</div>  
         </div>
 
         <div class="author-wrapper">
             <a class="author-block" href="https://monetochka.today/autor">
                 <div class="author-left">
-                    <div class="author-photo-wrapper">
-                        <img alt="Николай Дудник" class="author-photo" src="image/au.webp"/>
-                    </div>
+                    <img alt="Николай Дудник" class="author-photo" src="image/au.webp"/>
                     <div class="author-status">
                         <span class="dot" id="status-dot"></span>
                         <span id="status-text">Онлайн</span>
@@ -272,7 +257,7 @@
     <section class="section">
         <h2>
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><path d="M18 9C18 6.79 16.21 5 14 5H10C7.79 5 6 6.79 6 9V15L4 19H20L18 15V9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.75"/><path d="M10 5V4C10 3.45 10.45 3 11 3H13C13.55 3 14 3.45 14 4V5" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><path d="M10 21C10.35 21.6 11 22 12 22C13 22 13.65 21.6 14 21" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg>
-            Где взять код
+            Как получить новый код
         </h2>
         <p style="font-size:14px;">Бонусы можно получить несколькими способами:</p>
         <div class="mini-tips-grid">
@@ -383,32 +368,7 @@
         <iframe allow="autoplay; fullscreen" allowfullscreen id="video-frame" src=""></iframe>
     </div>
 </div>
-<script>
- // Проверить промокод через Netlify Function
-async function checkPromo() {
-    var code = document.getElementById('promoCode');
-    if (!code) return;
-    
-    var promoValue = code.value.trim();
-    if (!promoValue) {
-        alert('Введите промокод!');
-        return;
-    }
 
-    try {
-        var response = await fetch('/.netlify/functions/promo?code=' + encodeURIComponent(promoValue));
-        var data = await response.json();
-
-        if (data.valid) {
-            alert('✅ Промокод "' + promoValue + '" действителен!\nСкидка: ' + data.discount + (data.type === 'percent' ? '%' : '₽'));
-        } else {
-            alert('❌ Промокод "' + promoValue + '" не найден!');
-        }
-    } catch (error) {
-        alert('Ошибка при проверке промокода: ' + error.message);
-    }
-}
-</script>
 <script src="script.js" defer></script>
 </body>
 </html>
