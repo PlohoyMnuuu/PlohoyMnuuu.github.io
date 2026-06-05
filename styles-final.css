@@ -2279,7 +2279,7 @@ li {
 
   .video-cover,
   .screenshot-cover {
-    width: 160px;
+    width: 190px;
     flex-shrink: 0;
     margin: 0;
     border-radius: 16px;
