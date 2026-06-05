@@ -65,7 +65,7 @@
         var yr = document.getElementById('footer-year');
         if (yr) yr.textContent = new Date().getFullYear();
 
-        // Статус автора
+        // Симуляция статуса автора
         var states = [
             { text: "Онлайн", color: "#10b981", shadow: "rgba(16,185,129,0.6)" },
             { text: "Был недавно", color: "#fbbf24", shadow: "rgba(251,191,36,0.6)" },
