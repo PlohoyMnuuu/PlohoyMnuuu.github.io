@@ -1615,34 +1615,42 @@ li {
 }
 
 .video-info {
+  border-top: 1px solid var(--border-main);
   margin-top: 18px;
   padding-top: 18px;
   position: relative;
-  text-align: left;
 }
 
-/* Линия */
-.video-info::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px; /* длина линии */
-  border-top: 1px solid var(--border-main);
-}
+/* Только мобильные */
+@media (max-width: 768px) {
+  .video-info {
+    border-top: none;
+    padding-top: 24px;
+  }
 
-/* Точка по центру линии */
-.video-info::after {
-  content: "";
-  position: absolute;
-  top: -4px; /* подстрой под толщину линии */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: var(--border-main);
-  border-radius: 50%;
+  .video-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 1px;
+    background: var(--border-main);
+  }
+
+  .video-info::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #c89b3c;
+    box-shadow: 0 0 8px rgba(200, 155, 60, 0.5);
+  }
 }
 .video-info::after {
   display: none;
