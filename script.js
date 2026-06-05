@@ -1,4 +1,4 @@
-// Функция копирования текста в буфер обмена
+ // Функция копирования текста в буфер обмена
     function copy(text) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(showToast).catch(function() { fallbackCopy(text); });
@@ -107,3 +107,4 @@
             document.getElementById('screenshot-modal').classList.remove('show');
             document.body.style.overflow = '';
         }
+    }
