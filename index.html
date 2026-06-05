@@ -201,6 +201,11 @@
         </h2>
         <div id="promo-list">
             <!--PROMO_PLACEHOLDER-->
+
+       <div class="promo-check-section">
+    <input type="text" id="promoCode" placeholder="Введите промокод" />
+    <button onclick="checkPromo()">Проверить</button>
+</div>  
         </div>
 
         <div class="author-wrapper">
@@ -378,7 +383,32 @@
         <iframe allow="autoplay; fullscreen" allowfullscreen id="video-frame" src=""></iframe>
     </div>
 </div>
+<script>
+ // Проверить промокод через Netlify Function
+async function checkPromo() {
+    var code = document.getElementById('promoCode');
+    if (!code) return;
+    
+    var promoValue = code.value.trim();
+    if (!promoValue) {
+        alert('Введите промокод!');
+        return;
+    }
 
+    try {
+        var response = await fetch('/.netlify/functions/promo?code=' + encodeURIComponent(promoValue));
+        var data = await response.json();
+
+        if (data.valid) {
+            alert('✅ Промокод "' + promoValue + '" действителен!\nСкидка: ' + data.discount + (data.type === 'percent' ? '%' : '₽'));
+        } else {
+            alert('❌ Промокод "' + promoValue + '" не найден!');
+        }
+    } catch (error) {
+        alert('Ошибка при проверке промокода: ' + error.message);
+    }
+}
+</script>
 <script src="script.js" defer></script>
 </body>
 </html>
