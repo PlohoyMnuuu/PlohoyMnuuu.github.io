@@ -1330,49 +1330,44 @@ li {
 }
 
 /* ================================================
-   РАЗДЕЛИТЕЛЬ — стиль как у author-wrapper
+   РАЗДЕЛИТЕЛЬ — синий стиль как у бейджей видео/скриншота
+   Показывается на всех устройствах
    ================================================ */
 
 .section-divider {
-  display: none;
+  display: block;
+  position: relative;
+  height: 1px;
+  margin: 0 25px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(56,189,248,0.08) 15%,
+    rgba(56,189,248,0.35) 50%,
+    rgba(56,189,248,0.08) 85%,
+    transparent 100%
+  ) 1;
 }
 
-@media (min-width: 769px) {
-  .section-divider {
-    display: block;
-    position: relative;
-    height: 1px;
-    margin: 0 25px;
-    background: transparent;
-    border: none;
-    border-top: 1px solid transparent;
-    border-image: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(251,191,36,0.06) 15%,
-      rgba(251,191,36,0.2) 50%,
-      rgba(251,191,36,0.06) 85%,
-      transparent 100%
-    ) 1;
-  }
+/* Центральная синяя точка */
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: rgba(56,189,248,0.6);
+  border-radius: 50%;
+}
 
-  /* Центральная точка — как у author-wrapper */
-  .section-divider::after {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 5px;
-    height: 5px;
-    background: rgba(251,191,36,0.5);
-    border-radius: 50%;
-  }
-
-  /* Вариант без точки (для нижних разделителей) */
-  .section-divider.no-dot::after {
-    
-  }
+/* Вариант без точки (для нижних разделителей) */
+.section-divider.no-dot::after {
+  display: none;
 }
 
 /* ================================================
@@ -1617,41 +1612,11 @@ li {
 .video-info {
   border-top: 1px solid var(--border-main);
   margin-top: 18px;
-  padding-top: 18px;
+  padding: 18px 0 0 0;
   position: relative;
+  text-align: left;
 }
 
-/* Только мобильные */
-@media (max-width: 768px) {
-  .video-info {
-    border-top: none;
-    padding-top: 24px;
-  }
-
-  .video-info::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    height: 1px;
-    background: var(--border-main);
-  }
-
-  .video-info::after {
-    content: "";
-    position: absolute;
-    top: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #c89b3c;
-    box-shadow: 0 0 8px rgba(200, 155, 60, 0.5);
-  }
-}
 .video-info::after {
   display: none;
 }
@@ -1999,6 +1964,11 @@ li {
     height: 60px;
     border-radius: 14px;
   }
+
+  /* Разделитель на мобильном — уменьшенные отступы */
+  .section-divider {
+    margin: 0 18px;
+  }
 }
 
 /* ================================================
@@ -2216,6 +2186,10 @@ li {
   .unified-block .screenshot-showcase {
     padding: 0 14px 14px;
   }
+
+  .section-divider {
+    margin: 0 14px;
+  }
 }
 
 /* ================================================
@@ -2278,6 +2252,10 @@ li {
 
   .section {
     padding: 12px;
+  }
+
+  .section-divider {
+    margin: 0 12px;
   }
 }
 
