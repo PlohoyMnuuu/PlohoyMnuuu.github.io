@@ -252,13 +252,23 @@
       opacity: 0.85;
     }
 
+    /* NEW: контейнер для имени и кнопки в одной строке */
+    .name-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 20px;
+      margin-bottom: 20px;
+    }
+
     .hero-name {
       font-size: 27px;
       font-weight: 800;
       letter-spacing: -0.025em;
       color: #fff;
       line-height: 1.05;
-      margin-bottom: 20px;
+      margin: 0;
     }
 
     .fb-btn {
@@ -275,6 +285,7 @@
       letter-spacing: 0.04em;
       text-decoration: none;
       transition: background var(--t), border-color var(--t), transform var(--t);
+      flex-shrink: 0;
     }
 
     .fb-btn:hover {
@@ -518,17 +529,20 @@
 
         <div class="hero-info">
           <div class="hero-eyebrow">Автор сайта</div>
-          <h1 class="hero-name">Николай<br/>Дудник</h1>
-          <a class="fb-btn"
-             href="https://www.facebook.com/profile.php?id=100064073311598"
-             rel="nofollow noopener noreferrer"
-             target="_blank"
-             aria-label="Профиль в Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"/>
-            </svg>
-            Facebook
-          </a>
+          <!-- строка: имя слева, кнопка справа -->
+          <div class="name-row">
+            <h1 class="hero-name">Николай<br/>Дудник</h1>
+            <a class="fb-btn"
+               href="https://www.facebook.com/profile.php?id=100064073311598"
+               rel="nofollow noopener noreferrer"
+               target="_blank"
+               aria-label="Профиль в Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"/>
+              </svg>
+              Facebook
+            </a>
+          </div>
         </div>
       </div>
 
