@@ -1363,68 +1363,159 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   .screenshot-badge { margin-left: 0; margin-right: 0; }
 }
 
-/* ===== ТВОЙ ИСХОДНЫЙ CSS (без изменений) ===== */
-/* (здесь весь твой код, который ты присылал) */
-
 /* ==========================================
-   GISCUS — КАСТОМНАЯ ТЁМНАЯ ТЕМА
+   GISCUS — секция комментариев
    ========================================== */
-:root {
-  --giscus-custom-bg: #0b111e;
-  --giscus-custom-bg-secondary: #131c2e;
-  --giscus-custom-text: #ffffff;
-  --giscus-custom-text-secondary: #94a3b8;
-  --giscus-custom-link: #fbbf24;
-  --giscus-custom-link-hover: #f59e0b;
-  --giscus-custom-btn-bg: #1e293b;
-  --giscus-custom-btn-text: #ffffff;
-  --giscus-custom-btn-hover-bg: #263348;
-  --giscus-custom-btn-active-bg: #0f172a;
-  --giscus-custom-border: #22314d;
-  --giscus-custom-scrollbar-thumb: #334155;
-  --giscus-custom-scrollbar-track: #0f172a;
+
+.giscus-section {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent 0%, rgba(251,191,36,0.06) 15%, rgba(251,191,36,0.2) 50%, rgba(251,191,36,0.06) 85%, transparent 100%) 1;
+  position: relative;
 }
 
-/* Кнопка «Оставить отзыв» */
+.giscus-section::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: rgba(251,191,36,0.5);
+  border-radius: 50%;
+}
+
+/* ── Кнопка «Оставить отзыв» ─────────────── */
+
 .toggle-comments-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(251, 191, 36, 0.1);
-  color: #fbbf24;
-  padding: 10px 22px;
+  gap: 9px;
+  padding: 11px 26px;
   border-radius: 50px;
+  background: linear-gradient(135deg, rgba(251,191,36,0.08), rgba(251,191,36,0.04));
+  border: 1px solid rgba(251,191,36,0.3);
+  color: var(--accent);
   font-family: inherit;
   font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  border: 1px solid rgba(251, 191, 36, 0.25);
   cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: all 0.25s ease;
-  margin-bottom: 18px;
-  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.05);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  margin-bottom: 0;
+  box-shadow: 0 0 0 0 rgba(251,191,36,0);
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle-comments-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(251,191,36,0.12), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .toggle-comments-btn:hover {
-  background: rgba(251, 191, 36, 0.2);
-  border-color: rgba(251, 191, 36, 0.5);
-  box-shadow: 0 8px 24px var(--accent-glow);
+  background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(251,191,36,0.07));
+  border-color: rgba(251,191,36,0.55);
+  box-shadow: 0 4px 18px rgba(251,191,36,0.18), 0 0 0 1px rgba(251,191,36,0.12);
   transform: translateY(-2px);
+}
+
+.toggle-comments-btn:hover::before {
+  opacity: 1;
 }
 
 .toggle-comments-btn:active {
   transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(251,191,36,0.12);
 }
 
-/* Контейнер giscus — скрыт по умолчанию */
+.toggle-comments-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.toggle-comments-btn[aria-expanded="true"] svg {
+  transform: scale(0.85) rotate(-10deg);
+}
+
+/* ── Контейнер Giscus ─────────────────────── */
+
 .giscus-container {
   display: none;
-  margin-top: 8px;
-  animation: fadeIn 0.3s ease;
+  margin-top: 20px;
+  animation: giscusFadeSlide 0.35s ease both;
 }
 
 .giscus-container.visible {
   display: block;
+}
+
+@keyframes giscusFadeSlide {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Обёртка для айфрейма Giscus ──────────── */
+
+.giscus-container > .giscus,
+.giscus-container iframe.giscus-frame {
+  border-radius: 16px !important;
+  border: 1px solid var(--border-main) !important;
+  background: #0b111e !important;
+  overflow: hidden;
+}
+
+/* ── CSS-переменные для кастомной темы Giscus */
+
+:root {
+  --color-canvas-default:          #0b111e;
+  --color-canvas-subtle:           #131c2e;
+  --color-canvas-overlay:          #1a2640;
+  --color-border-default:          #22314d;
+  --color-border-muted:            #1a2640;
+  --color-neutral-muted:           rgba(34,49,77,0.5);
+  --color-accent-fg:               #fbbf24;
+  --color-accent-emphasis:         #fbbf24;
+  --color-accent-muted:            rgba(251,191,36,0.15);
+  --color-fg-default:              #e2e8f0;
+  --color-fg-muted:                #94a3b8;
+  --color-fg-subtle:               #64748b;
+  --color-btn-text:                #e2e8f0;
+  --color-btn-bg:                  #1e293b;
+  --color-btn-border:              #22314d;
+  --color-btn-hover-bg:            #263348;
+  --color-btn-hover-border:        #334155;
+  --color-btn-active-bg:           #0f172a;
+  --color-btn-primary-text:        #000000;
+  --color-btn-primary-bg:          #fbbf24;
+  --color-btn-primary-border:      #f59e0b;
+  --color-btn-primary-hover-bg:    #f59e0b;
+  --color-input-bg:                #0b111e;
+  --color-input-contrast-bg:       #060c18;
+  --color-input-border:            #22314d;
+  --color-input-disabled-bg:       #0f172a;
+  --color-header-bg:               #0b111e;
+  --color-header-text:             #e2e8f0;
+  --color-timeline-badge-bg:       #131c2e;
+  --color-reaction-btn-bg:         #131c2e;
+  --color-reaction-btn-hover-bg:   rgba(251,191,36,0.1);
+  --color-reaction-btn-selected-bg:rgba(251,191,36,0.15);
+  --color-reaction-btn-text:       #94a3b8;
+  --color-social-reaction-bg-reacted: rgba(251,191,36,0.12);
+  --color-prettylights-syntax-comment: #64748b;
+  --color-prettylights-syntax-constant: #fbbf24;
+  --color-prettylights-syntax-entity: #38bdf8;
+  --color-prettylights-syntax-keyword: #f472b6;
+  --color-prettylights-syntax-string: #86efac;
 }
