@@ -1,34 +1,27 @@
-/* Настройка цветов Giscus под ваш дизайн */
-main .giscus {
+:root {
   /* Основные цвета */
-  --giscus-canvas-default: #192734;      /* Цвет фона виджета (как у вас) */
-  --giscus-canvas-overlay: #161b22;      /* Цвет фона самих комментариев */
-  --giscus-border-color: #444c56;        /* Цвет границ */
-  
-  /* Текст */
-  --giscus-fg-default: #adbac7;          /* Основной текст */
-  --giscus-fg-muted: #768390;            /* Второстепенный текст */
+  --giscus-canvas-default: #192734;
+  --giscus-canvas-overlay: #161b22;
+  --giscus-border-color: #444c56;
+  --giscus-fg-default: #adbac7;
+  --giscus-fg-muted: #768390;
   
   /* Акцентный цвет (ваш желтый) */
-  /* Используем ваши цвета для кнопок из основного CSS */
-  --giscus-accent-color: #eac55f;        /* Желтый цвет из вашей темы */
-  --giscus-comment-accent-color: #eac55f;
+  --giscus-accent-color: #eac55f;
   
   /* Цвет кнопок */
-  --giscus-btn-bg: #373e47;              /* Фон кнопок (серый) */
-  --giscus-btn-hover-bg: #444c56;        /* Ховер кнопок */
-  --giscus-btn-text: #ffffff;            /* Текст на кнопках */
+  --giscus-btn-bg: #373e47;
+  --giscus-btn-hover-bg: #444c56;
+  --giscus-btn-text: #ffffff;
 }
 
-/* Принудительное скрытие лишних элементов (если нужно) */
-.gsc-reactions-count {
-  display: none !important;
+/* Если нужно скрыть элементы внутри iframe, 
+   используйте их реальные классы Giscus, но без привязки к вашему 'main'
+*/
+.gsc-reactions-count { 
+  display: none !important; 
 }
 
-/* Настройка отступов для идеального вписывания */
-.gsc-comments {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #192734;
-  border-radius: 8px;
-}
+/* Стилизацию отступов лучше делать на стороне ВАШЕГО сайта (в основном CSS), 
+   а не внутри CSS-файла Giscus.
+*/
