@@ -1,0 +1,34 @@
+/* Настройка цветов Giscus под ваш дизайн */
+main .giscus {
+  /* Основные цвета */
+  --giscus-canvas-default: #192734;      /* Цвет фона виджета (как у вас) */
+  --giscus-canvas-overlay: #161b22;      /* Цвет фона самих комментариев */
+  --giscus-border-color: #444c56;        /* Цвет границ */
+  
+  /* Текст */
+  --giscus-fg-default: #adbac7;          /* Основной текст */
+  --giscus-fg-muted: #768390;            /* Второстепенный текст */
+  
+  /* Акцентный цвет (ваш желтый) */
+  /* Используем ваши цвета для кнопок из основного CSS */
+  --giscus-accent-color: #eac55f;        /* Желтый цвет из вашей темы */
+  --giscus-comment-accent-color: #eac55f;
+  
+  /* Цвет кнопок */
+  --giscus-btn-bg: #373e47;              /* Фон кнопок (серый) */
+  --giscus-btn-hover-bg: #444c56;        /* Ховер кнопок */
+  --giscus-btn-text: #ffffff;            /* Текст на кнопках */
+}
+
+/* Принудительное скрытие лишних элементов (если нужно) */
+.gsc-reactions-count {
+  display: none !important;
+}
+
+/* Настройка отступов для идеального вписывания */
+.gsc-comments {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #192734;
+  border-radius: 8px;
+}
