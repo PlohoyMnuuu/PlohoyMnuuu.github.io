@@ -18,6 +18,9 @@
 /* Если нужно скрыть элементы внутри iframe, 
    используйте их реальные классы Giscus, но без привязки к вашему 'main'
 */
+.text-sm { 
+  display: none !important; 
+}
 .gsc-reactions-count { 
   display: none !important; 
 }
