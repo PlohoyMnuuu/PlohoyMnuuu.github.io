@@ -1329,45 +1329,19 @@ li {
   padding: 0 25px 25px;
 }
 
-/* ================================================
-   РАЗДЕЛИТЕЛЬ — синий стиль как у бейджей видео/скриншота
-   Показывается на всех устройствах
-   ================================================ */
-
+/* Разделитель между секциями внутри unified-block */
 .section-divider {
-  display: block;
-  position: relative;
-  height: 1px;
-  margin: 0 25px;
-  background: transparent;
-  border: none;
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(56,189,248,0.08) 15%,
-    rgba(56,189,248,0.35) 50%,
-    rgba(56,189,248,0.08) 85%,
-    transparent 100%
-  ) 1;
-}
-
-/* Центральная синяя точка */
-.section-divider::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
-  background: rgba(56,189,248,0.6);
-  border-radius: 50%;
-}
-
-/* Вариант без точки (для нижних разделителей) */
-.section-divider.no-dot::after {
   display: none;
+}
+
+@media (min-width: 769px) {
+  .section-divider {
+    display: block;
+    height: 1px;
+    margin: 0 25px;
+    background: var(--border-main);
+    opacity: 0.6;
+  }
 }
 
 /* ================================================
@@ -1964,11 +1938,6 @@ li {
     height: 60px;
     border-radius: 14px;
   }
-
-  /* Разделитель на мобильном — уменьшенные отступы */
-  .section-divider {
-    margin: 0 18px;
-  }
 }
 
 /* ================================================
@@ -2186,10 +2155,6 @@ li {
   .unified-block .screenshot-showcase {
     padding: 0 14px 14px;
   }
-
-  .section-divider {
-    margin: 0 14px;
-  }
 }
 
 /* ================================================
@@ -2253,10 +2218,6 @@ li {
   .section {
     padding: 12px;
   }
-
-  .section-divider {
-    margin: 0 12px;
-  }
 }
 
 /* ================================================
@@ -2274,7 +2235,7 @@ li {
 
   .unified-block .video-showcase,
   .unified-block .screenshot-showcase {
-    padding: 25px 25px 25px;
+    padding: 0 25px 25px;
   }
 
   .video-cover,
