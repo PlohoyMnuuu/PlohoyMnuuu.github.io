@@ -1,31 +1,18 @@
-/* ==========================================
-   GISCUS — ПОД ТВОЙ ДИЗАЙН
-   ========================================== */
-
-/* ---------- переменные для giscus ---------- */
 :root {
-  --giscus-custom-bg: #0b111e;                /* фон как у карточек */
-  --giscus-custom-bg-secondary: #131c2e;      /* дополнительный фон */
-  --giscus-custom-text: #ffffff;              /* белый текст */
-  --giscus-custom-text-secondary: #94a3b8;    /* приглушённый текст */
-  --giscus-custom-link: #fbbf24;              /* жёлтые ссылки */
-  --giscus-custom-link-hover: #f59e0b;        /* жёлтый при наведении */
-  --giscus-custom-btn-bg: #1e293b;            /* фон кнопок */
-  --giscus-custom-btn-text: #ffffff;          /* текст на кнопках */
-  --giscus-custom-btn-hover-bg: #263348;      /* фон кнопок при наведении */
-  --giscus-custom-btn-active-bg: #0f172a;     /* фон при клике */
-  --giscus-custom-border: #22314d;            /* границы как --border-main */
-  --giscus-custom-scrollbar-thumb: #334155;
-  --giscus-custom-scrollbar-track: #0f172a;
+  /* Основные цвета под ваш тёмный дизайн */
+  --giscus-canvas-default: #192734 !important; /* Фон виджета */
+  --giscus-canvas-overlay: #161b22 !important; /* Фон поля ввода */
+  --giscus-border-color: #444c56 !important;   /* Границы */
+  --giscus-fg-default: #adbac7 !important;     /* Текст */
+  
+  /* Желтый акцент */
+  --giscus-accent-color: #eac55f !important;
+  
+  /* Кнопки */
+  --giscus-btn-bg: #373e47 !important;
+  --giscus-btn-hover-bg: #444c56 !important;
+  --giscus-btn-text: #ffffff !important;
 }
 
-/* ---------- контейнер комментариев ---------- */
-.giscus-container {
-  display: none;
-  margin-top: 8px;
-  animation: fadeIn 0.3s ease;   /* использует уже существующую анимацию fadeIn */
-}
-
-.giscus-container.visible {
-  display: block;
-}
+/* Скрываем счетчик реакций, если он не нужен */
+.gsc-reactions-count { display: none !important; }
