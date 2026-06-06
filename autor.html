@@ -1,150 +1,640 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Николай Дудник — автор сайта Монеточка today</title>
-  <meta name="description" content="Об авторе сайта monetochka.today — Николай Дудник, ежедневно проверяет промокоды для игры Монеточка."/>
-  <link rel="canonical" href="https://monetochka.today/author.html"/>
-  <meta property="og:url" content="https://monetochka.today/author.html"/>
-  <meta property="og:type" content="profile"/>
-  <meta property="og:title" content="Николай Дудник — автор Монеточка today"/>
-  <meta property="og:description" content="Ежедневно проверяю промокоды для игры Монеточка и публикую только рабочие."/>
-  <meta property="og:image" content="https://monetochka.today/image/au.webp"/>
-  <meta property="og:locale" content="ru_RU"/>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Николай Дудник","description":"Автор сайта monetochka.today, ежедневно проверяет промокоды для игры Монеточка.","url":"https://monetochka.today/author.html","image":"https://monetochka.today/image/t1dgt-druqu.webp","sameAs":["https://www.facebook.com/100064073311598"]}
-  </script>
-  <style>
-    @font-face{font-family:'Golos Text';src:url('fonts/GolosTextVF-Regular.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:0.01ms!important}}
-    :root{
-      --bg:#06090f;--c1:#0d1320;--c2:#111827;
-      --gold:#f5c842;--gold2:#e8b820;--gold-a:rgba(245,200,66,0.10);--gold-b:rgba(245,200,66,0.20);
-      --blue:#4ea8de;--blue-a:rgba(78,168,222,0.10);--blue-b:rgba(78,168,222,0.22);
-      --green:#34d399;--green-a:rgba(52,211,153,0.12);--green-b:rgba(52,211,153,0.28);
-      --text:#dde4f0;--muted:#5a6a88;--muted2:#8494b0;
-      --line:rgba(255,255,255,0.055);--t:0.22s cubic-bezier(.4,0,.2,1)
-    }
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-    body{font-family:'Golos Text',system-ui,sans-serif;font-size:15px;line-height:1.6;color:var(--text);background:var(--bg);min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 55% 45% at 10% 0%,rgba(245,200,66,.07) 0%,transparent 100%),radial-gradient(ellipse 45% 40% at 90% 5%,rgba(78,168,222,.06) 0%,transparent 100%),radial-gradient(ellipse 40% 50% at 50% 100%,rgba(52,211,153,.04) 0%,transparent 100%)}
-    .page{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:52px 20px 64px}
-    .wrap{width:100%;max-width:500px}
-    .crumb{display:flex;align-items:center;gap:8px;margin-bottom:28px;font-size:12px;font-weight:500;letter-spacing:0.03em;color:var(--muted)}
-    .crumb a{color:var(--muted);text-decoration:none;transition:color var(--t)}
-    .crumb a:hover{color:var(--gold)}
-    .crumb-sep{width:3px;height:3px;border-radius:50%;background:var(--muted);opacity:0.35}
-    .card{background:var(--c1);border:1px solid var(--line);border-radius:26px;overflow:hidden;animation:rise 0.55s cubic-bezier(.16,1,.3,1) both}
-    @keyframes rise{from{opacity:0;transform:translateY(20px) scale(0.985)}to{opacity:1;transform:none}}
-    .card-strip{height:1px;background:linear-gradient(90deg,transparent 0%,var(--gold) 25%,var(--blue) 65%,transparent 100%);opacity:0.5}
-    .hero{padding:32px 32px 28px;display:flex;gap:24px;align-items:center;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:22px 22px;mask-image:radial-gradient(ellipse 90% 100% at 50% -10%,black 0%,transparent 72%);pointer-events:none}
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Николай Дудник — автор сайта Монеточка today</title>
+    <meta name="description" content="Об авторе сайта monetochka.today — Николай Дудник, ежедневно проверяет промокоды для игры Монеточка."/>
+    <link rel="canonical" href="https://monetochka.today/author.html"/>
+    <meta property="og:url" content="https://monetochka.today/author.html"/>
+    <meta property="og:type" content="profile"/>
+    <meta property="og:title" content="Николай Дудник — автор Монеточка today"/>
+    <meta property="og:description" content="Ежедневно проверяю промокоды для игры Монеточка и публикую только рабочие."/>
+    <meta property="og:image" content="https://monetochka.today/image/au.webp"/>
+    <meta property="og:locale" content="ru_RU"/>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Person","name":"Николай Дудник","description":"Автор сайта monetochka.today, ежедневно проверяет промокоды для игры Монеточка.","url":"https://monetochka.today/author.html","image":"https://monetochka.today/image/t1dgt-druqu.webp","sameAs":["https://www.facebook.com/100064073311598"]}
+    </script>
+    <style>
+        @font-face {
+            font-family: 'Golos Text';
+            src: url('fonts/GolosTextVF-Regular.woff2') format('woff2');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    /* АВАТАРКА — строгая */
-    .av-wrap{flex-shrink:0;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:7px}
-    .av-ring{width:84px;height:84px;border-radius:22px;padding:2px;background:var(--c2);border:1.5px solid rgba(255,255,255,0.12);position:relative}
-    .av-ring::before{content:'';position:absolute;left:-1.5px;top:18px;bottom:18px;width:2px;border-radius:2px;background:var(--gold);opacity:0.7}
-    .av-inner{width:100%;height:100%;border-radius:20px;overflow:hidden;background:var(--c2)}
-    .av-inner img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(0.85) brightness(0.97)}
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* БЕЙДЖИК — под аватаркой, без фона */
-    .av-badge{display:flex;align-items:center;gap:4px}
-    .av-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pulse-dot 2.4s ease-in-out infinite}
-    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.35}}
-    .av-label{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2)}
+        @media(prefers-reduced-motion:reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
 
-    .hero-info{flex:1;min-width:0;position:relative;z-index:1;display:flex;flex-direction:column;gap:6px}
-    .hero-eyebrow{font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.85}
-    .hero-name{font-size:24px;font-weight:800;letter-spacing:-0.02em;color:#fff;line-height:1.1}
-    .fb-btn{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;background:var(--blue-a);border:1px solid var(--blue-b);color:#7bbef6;padding:7px 14px;border-radius:10px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-decoration:none;margin-top:4px;transition:background var(--t),border-color var(--t),transform var(--t)}
-    .fb-btn:hover{background:rgba(78,168,222,0.16);border-color:rgba(78,168,222,0.38);transform:translateY(-1px);color:#a8d4f8}
-    .fb-btn svg{width:12px;height:12px;fill:currentColor;flex-shrink:0}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-    .stat{padding:20px 10px;text-align:center;position:relative;transition:background var(--t)}
-    .stat+.stat{border-left:1px solid var(--line)}
-    .stat:hover{background:var(--gold-a)}
-    .stat::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);opacity:0;transition:opacity var(--t)}
-    .stat:hover::after{opacity:0.35}
-    .stat-n{font-size:21px;font-weight:800;letter-spacing:-0.025em;color:var(--gold);line-height:1;margin-bottom:5px}
-    .stat-l{font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted2);line-height:1.3}
-    .bio{padding:28px 32px 32px;border-top:1px solid var(--line)}
-    .bio-heading{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:10px}
-    .bio-heading::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
-    .bio p{font-size:14.5px;line-height:1.8;color:#7c8fae;margin-bottom:13px}
-    .bio p:last-child{margin-bottom:0}
-    .bio strong{color:#b8c8e0;font-weight:600}
-    .back{margin-top:26px;text-align:center}
-    .btn-back{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:#000;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:14px 32px;border-radius:50px;text-decoration:none;position:relative;overflow:hidden;transition:transform var(--t),box-shadow var(--t);box-shadow:0 0 0 0 rgba(245,200,66,0)}
-    .btn-back::before{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent);transform:skewX(-20deg);animation:shimmer 3.5s ease-in-out infinite}
-    @keyframes shimmer{0%,70%{left:-75%}100%{left:150%}}
-    .btn-back:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,200,66,0.28)}
-    .btn-back:active{transform:translateY(0)}
-    .btn-back svg{width:14px;height:14px;flex-shrink:0;transition:transform var(--t)}
-    .btn-back:hover svg{transform:translateX(-3px)}
-    footer{position:relative;z-index:1;width:100%;text-align:center;margin-top:48px;padding:24px 20px;border-top:1px solid var(--line)}
-    .f-logo{font-size:13px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-    .f-logo span{color:var(--gold)}
-    .f-copy{font-size:11px;color:rgba(255,255,255,0.18)}
-    @media(max-width:520px){.page{padding:32px 14px 52px}.hero{padding:24px 20px 22px;gap:18px}.bio{padding:22px 20px 26px}.hero-name{font-size:21px}.av-ring{width:74px;height:74px;border-radius:19px}.av-inner{border-radius:17px}}
-    @media(max-width:360px){.hero{flex-direction:column;align-items:center;text-align:center}.fb-btn{align-self:center}}
-  </style>
+        :root {
+            --bg: #06090f;
+            --c1: #0d1320;
+            --c2: #111827;
+            --gold: #f5c842;
+            --gold2: #e8b820;
+            --gold-a: rgba(245, 200, 66, 0.10);
+            --gold-b: rgba(245, 200, 66, 0.20);
+            --blue: #4ea8de;
+            --blue-a: rgba(78, 168, 222, 0.10);
+            --blue-b: rgba(78, 168, 222, 0.22);
+            --green: #34d399;
+            --green-a: rgba(52, 211, 153, 0.12);
+            --green-b: rgba(52, 211, 153, 0.28);
+            /* новые цвета для статусов */
+            --red: #ef4444;
+            --red-a: rgba(239, 68, 68, 0.15);
+            --yellow: #f59e0b;
+            --yellow-a: rgba(245, 158, 11, 0.15);
+            --text: #dde4f0;
+            --muted: #5a6a88;
+            --muted2: #8494b0;
+            --line: rgba(255, 255, 255, 0.055);
+            --t: 0.22s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Golos Text', system-ui, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background: radial-gradient(ellipse 55% 45% at 10% 0%, rgba(245, 200, 66, .07) 0%, transparent 100%),
+                radial-gradient(ellipse 45% 40% at 90% 5%, rgba(78, 168, 222, .06) 0%, transparent 100%),
+                radial-gradient(ellipse 40% 50% at 50% 100%, rgba(52, 211, 153, .04) 0%, transparent 100%);
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 52px 20px 64px;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .crumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 28px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--muted);
+        }
+
+        .crumb a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color var(--t);
+        }
+
+        .crumb a:hover {
+            color: var(--gold);
+        }
+
+        .crumb-sep {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--muted);
+            opacity: 0.35;
+        }
+
+        .card {
+            background: var(--c1);
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            overflow: hidden;
+            animation: rise 0.55s cubic-bezier(.16, 1, .3, 1) both;
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.985);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .card-strip {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--blue) 65%, transparent 100%);
+            opacity: 0.5;
+        }
+
+        .hero {
+            padding: 32px 32px 28px;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 22px 22px;
+            mask-image: radial-gradient(ellipse 90% 100% at 50% -10%, black 0%, transparent 72%);
+            pointer-events: none;
+        }
+
+        /* АВАТАРКА — строгая */
+        .av-wrap {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .av-ring {
+            width: 84px;
+            height: 84px;
+            border-radius: 22px;
+            padding: 2px;
+            background: var(--c2);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            position: relative;
+        }
+
+        .av-ring::before {
+            content: '';
+            position: absolute;
+            left: -1.5px;
+            top: 18px;
+            bottom: 18px;
+            width: 2px;
+            border-radius: 2px;
+            background: var(--gold);
+            opacity: 0.7;
+        }
+
+        .av-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--c2);
+        }
+
+        .av-inner img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.85) brightness(0.97);
+        }
+
+        /* БЕЙДЖИК — под аватаркой, без фона */
+        .av-badge {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* базовая точка */
+        .av-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--green);
+            flex-shrink: 0;
+            animation: pulse-dot 2.4s ease-in-out infinite;
+        }
+
+        /* Онлайн — зелёный, пульсирует */
+        .av-dot.online {
+            background: var(--green);
+            animation: pulse-dot 2.4s ease-in-out infinite;
+        }
+
+        /* Был недавно — жёлтый, без пульсации */
+        .av-dot.recently {
+            background: var(--yellow);
+            animation: none;
+        }
+
+        /* Офлайн — красный, без пульсации */
+        .av-dot.offline {
+            background: var(--red);
+            animation: none;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.35;
+            }
+        }
+
+        .av-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted2);
+        }
+
+        /* цвет текста статуса в зависимости от класса точки (опционально) */
+        .av-dot.online~.av-label {
+            color: var(--muted2);
+        }
+
+        .av-dot.recently~.av-label {
+            color: var(--yellow);
+        }
+
+        .av-dot.offline~.av-label {
+            color: var(--red);
+        }
+
+        .hero-info {
+            flex: 1;
+            min-width: 0;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .hero-eyebrow {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.85;
+        }
+
+        .hero-name {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .fb-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            align-self: flex-start;
+            background: var(--blue-a);
+            border: 1px solid var(--blue-b);
+            color: #7bbef6;
+            padding: 7px 14px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            margin-top: 4px;
+            transition: background var(--t), border-color var(--t), transform var(--t);
+        }
+
+        .fb-btn:hover {
+            background: rgba(78, 168, 222, 0.16);
+            border-color: rgba(78, 168, 222, 0.38);
+            transform: translateY(-1px);
+            color: #a8d4f8;
+        }
+
+        .fb-btn svg {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--line);
+        }
+
+        .stat {
+            padding: 20px 10px;
+            text-align: center;
+            position: relative;
+            transition: background var(--t);
+        }
+
+        .stat+.stat {
+            border-left: 1px solid var(--line);
+        }
+
+        .stat:hover {
+            background: var(--gold-a);
+        }
+
+        .stat::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gold);
+            opacity: 0;
+            transition: opacity var(--t);
+        }
+
+        .stat:hover::after {
+            opacity: 0.35;
+        }
+
+        .stat-n {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stat-l {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--muted2);
+            line-height: 1.3;
+        }
+
+        .bio {
+            padding: 28px 32px 32px;
+            border-top: 1px solid var(--line);
+        }
+
+        .bio-heading {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bio-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--line), transparent);
+        }
+
+        .bio p {
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: #7c8fae;
+            margin-bottom: 13px;
+        }
+
+        .bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio strong {
+            color: #b8c8e0;
+            font-weight: 600;
+        }
+
+        .back {
+            margin-top: 26px;
+            text-align: center;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--gold);
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--t), box-shadow var(--t);
+            box-shadow: 0 0 0 0 rgba(245, 200, 66, 0);
+        }
+
+        .btn-back::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transform: skewX(-20deg);
+            animation: shimmer 3.5s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%,
+            70% {
+                left: -75%;
+            }
+            100% {
+                left: 150%;
+            }
+        }
+
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 200, 66, 0.28);
+        }
+
+        .btn-back:active {
+            transform: translateY(0);
+        }
+
+        .btn-back svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+            transition: transform var(--t);
+        }
+
+        .btn-back:hover svg {
+            transform: translateX(-3px);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            text-align: center;
+            margin-top: 48px;
+            padding: 24px 20px;
+            border-top: 1px solid var(--line);
+        }
+
+        .f-logo {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .f-logo span {
+            color: var(--gold);
+        }
+
+        .f-copy {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.18);
+        }
+
+        @media(max-width:520px) {
+            .page {
+                padding: 32px 14px 52px;
+            }
+            .hero {
+                padding: 24px 20px 22px;
+                gap: 18px;
+            }
+            .bio {
+                padding: 22px 20px 26px;
+            }
+            .hero-name {
+                font-size: 21px;
+            }
+            .av-ring {
+                width: 74px;
+                height: 74px;
+                border-radius: 19px;
+            }
+            .av-inner {
+                border-radius: 17px;
+            }
+        }
+
+        @media(max-width:360px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .fb-btn {
+                align-self: center;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="page">
-  <div class="wrap">
-    <nav class="crumb" aria-label="Навигация">
-      <a href="/">Монеточка today</a>
-      <span class="crumb-sep"></span>
-      <span>Об авторе</span>
-    </nav>
-    <div class="card">
-      <div class="card-strip" aria-hidden="true"></div>
-      <div class="hero">
-        <div class="av-wrap">
-          <div class="av-ring" aria-hidden="true">
-            <div class="av-inner">
-              <img src="image/au.webp" alt="Фото Николая Дудника" width="84" height="84" loading="eager"/>
+    <div class="page">
+        <div class="wrap">
+            <nav class="crumb" aria-label="Навигация">
+                <a href="/">Монеточка today</a>
+                <span class="crumb-sep"></span>
+                <span>Об авторе</span>
+            </nav>
+            <div class="card">
+                <div class="card-strip" aria-hidden="true"></div>
+                <div class="hero">
+                    <div class="av-wrap">
+                        <div class="av-ring" aria-hidden="true">
+                            <div class="av-inner">
+                                <img src="image/au.webp" alt="Фото Николая Дудника" width="84" height="84" loading="eager"/>
+                            </div>
+                        </div>
+                        <!-- По умолчанию статус "Онлайн", класс online. JS может менять класс и текст -->
+                        <div class="av-badge" role="status">
+                            <span class="av-dot online" id="status-dot"></span>
+                            <span class="av-label" id="status-text">Онлайн</span>
+                        </div>
+                    </div>
+                    <div class="hero-info">
+                        <div class="hero-eyebrow">Разработчик и автор сайта</div>
+                        <h1 class="hero-name">Николай Дудник</h1>
+                        <a class="fb-btn" href="https://www.facebook.com/profile.php?id=100064073311598" rel="nofollow noopener noreferrer" target="_blank" aria-label="Профиль в Facebook">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"/></svg>
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+                <div class="stats" role="list" aria-label="Статистика">
+                    <div class="stat" role="listitem"><div class="stat-n">700+</div><div class="stat-l">Дней в игре</div></div>
+                    <div class="stat" role="listitem"><div class="stat-n">Ежедн.</div><div class="stat-l">Проверка кодов</div></div>
+                    <div class="stat" role="listitem"><div class="stat-n">Всегда</div><div class="stat-l">Рабочие коды</div></div>
+                </div>
+                <div class="bio">
+                    <div class="bio-heading" aria-hidden="true">Об авторе</div>
+                    <p>Я познакомился с играми в 2000 году. С тех пор мы с ними неразлучны. Люблю стратегии, ролевухи и MMORPG. Иногда захожу пострелять в CS&nbsp;1.6. Абсолютно не умею играть в гонки, хотя нравится смотреть как «гоняют» другие. Два года назад начал играть в <strong>Монеточку.</strong></p>
+                    <p>4 июня 2026 года я запустил этот сайт, чтобы игроки всегда находили актуальные коды на <strong>Монеточку</strong> в одном месте, не тратя время на поиски различных соцсетях и мессенджерах.</p>
+                </div>
             </div>
-          </div>
-          <div class="av-badge" role="status">
-            <span class="av-dot"></span>
-            <span class="av-label" id="status-text">Онлайн</span>
-          </div>
+            <div class="back">
+                <a class="btn-back" href="/">
+                    <svg fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+                    На главную — к кодам
+                </a>
+            </div>
         </div>
-        <div class="hero-info">
-          <div class="hero-eyebrow">Разработчик и автор сайта</div>
-          <h1 class="hero-name">Николай Дудник</h1>
-          <a class="fb-btn" href="https://www.facebook.com/profile.php?id=100064073311598" rel="nofollow noopener noreferrer" target="_blank" aria-label="Профиль в Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"/></svg>
-            Facebook
-          </a>
-        </div>
-      </div>
-      <div class="stats" role="list" aria-label="Статистика">
-        <div class="stat" role="listitem"><div class="stat-n">700+</div><div class="stat-l">Дней в игре</div></div>
-        <div class="stat" role="listitem"><div class="stat-n">Ежедн.</div><div class="stat-l">Проверка кодов</div></div>
-        <div class="stat" role="listitem"><div class="stat-n">Всегда</div><div class="stat-l">Рабочие коды</div></div>
-      </div>
-      <div class="bio">
-        <div class="bio-heading" aria-hidden="true">Об авторе</div>
-        <p>Я познакомился с играми в 2000 году. С тех пор мы с ними неразлучны. Люблю стратегии, ролевухи и MMORPG. Иногда захожу пострелять в CS&nbsp;1.6. Абсолютно не умею играть в гонки, хотя нравится смотреть как «гоняют» другие. Два года назад начал играть в <strong>Монеточку.</strong></p>
-        <p>4 июня 2026 года я запустил этот сайт, чтобы игроки всегда находили актуальные коды на <strong>Монеточку</strong> в одном месте, не тратя время на поиски различных соцсетях и мессенджерах.</p>
-      </div>
+        <footer>
+            <div class="f-logo">Монеточка <span>today</span></div>
+            <div class="f-copy">© 2026 Все права защищены.</div>
+        </footer>
     </div>
-    <div class="back">
-      <a class="btn-back" href="/">
-        <svg fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
-        На главную — к кодам
-      </a>
-    </div>
-  </div>
-  <footer>
-    <div class="f-logo">Монеточка <span>today</span></div>
-    <div class="f-copy">© 2026 Все права защищены.</div>
-  </footer>
-</div>
-<script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
