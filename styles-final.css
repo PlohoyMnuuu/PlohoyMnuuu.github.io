@@ -1330,12 +1330,12 @@ li {
 }
 
 /* ================================================
-   РАЗДЕЛИТЕЛЬ — синий стиль как у бейджей видео/скриншота
-   Показывается на всех устройствах
+   РАЗДЕЛИТЕЛЬ — скрыт на мобильном,
+   виден только на десктопе (769px+)
    ================================================ */
 
 .section-divider {
-  display: block;
+  display: none;
   position: relative;
   height: 1px;
   margin: 0 25px;
@@ -1926,11 +1926,69 @@ li {
     margin-right: auto;
   }
 
-  .video-info,
-  .screenshot-info {
+  /* На мобильном: разделитель переезжает в video-info / screenshot-info */
+  .section-divider {
+    display: none;
+  }
+
+  .video-info {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(56,189,248,0.08) 15%,
+      rgba(56,189,248,0.35) 50%,
+      rgba(56,189,248,0.08) 85%,
+      transparent 100%
+    ) 1;
+    margin-top: 18px;
+    padding-top: 18px;
     text-align: left;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+  }
+
+  .video-info::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: rgba(56,189,248,0.6);
+    border-radius: 50%;
+  }
+
+  .screenshot-info {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(56,189,248,0.08) 15%,
+      rgba(56,189,248,0.35) 50%,
+      rgba(56,189,248,0.08) 85%,
+      transparent 100%
+    ) 1;
+    margin-top: 18px;
+    padding-top: 18px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .screenshot-info::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: rgba(56,189,248,0.6);
+    border-radius: 50%;
   }
 
   .video-showcase,
@@ -2264,6 +2322,11 @@ li {
    ================================================ */
 
 @media (min-width: 769px) {
+  /* Показываем section-divider только на десктопе */
+  .section-divider {
+    display: block;
+  }
+
   .video-showcase,
   .screenshot-showcase {
     display: flex;
@@ -2292,6 +2355,12 @@ li {
     border-top: none;
     margin-top: 0;
     padding: 4px 0 0 0;
+  }
+
+  /* Убираем псевдо-точки на десктопе — там есть section-divider */
+  .video-info::before,
+  .screenshot-info::before {
+    display: none;
   }
 
   .video-badge,
