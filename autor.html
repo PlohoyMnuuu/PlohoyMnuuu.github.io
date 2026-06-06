@@ -231,50 +231,7 @@
             object-fit: cover;
         }
 
-        /* ─── FB BADGE (TOP) ─── */
-        .av-fb-badge {
-            position: absolute;
-            top: -9px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--c1);
-            border: 1px solid var(--blue-b);
-            border-radius: 20px;
-            padding: 3px 10px 3px 8px;
-            white-space: nowrap;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-            z-index: 2;
-        }
-
-        .fb-btn-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: var(--blue-a);
-            border: none;
-            color: #7bbef6;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-decoration: none;
-            transition: background var(--t), color var(--t);
-        }
-
-        .fb-btn-badge:hover {
-            background: rgba(78, 168, 222, 0.16);
-            color: #a8d4f8;
-        }
-
-        .fb-btn-badge svg {
-            width: 10px;
-            height: 10px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2.2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            flex-shrink: 0;
-        }
+        /* FB BADGE REMOVED FROM HERE (TOP) */
 
         /* ─── ONLINE BADGE (BOTTOM) ─── */
         .av-badge {
@@ -408,22 +365,55 @@
             border-top: 1px solid var(--line);
         }
 
+        /* --- NEW HEADING STYLE WITH FB BUTTON --- */
         .bio-heading {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 16px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            margin-bottom: 16px;
         }
-        .bio-heading::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--line), transparent);
+
+        .bio-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            line-height: 1.4;
+        }
+
+        .fb-btn-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--blue-a);
+            border: 1px solid var(--blue-b);
+            color: #7bbef6;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 4px 10px 4px 8px;
+            border-radius: 10px;
+            transition: background var(--t), border-color var(--t), color var(--t);
+            white-space: nowrap;
+            line-height: 1.3;
+        }
+
+        .fb-btn-inline:hover {
+            background: rgba(78, 168, 222, 0.16);
+            border-color: rgba(78, 168, 222, 0.38);
+            color: #a8d4f8;
+        }
+
+        .fb-btn-inline svg {
+            width: 12px;
+            height: 12px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
         }
 
         .bio p {
@@ -599,81 +589,79 @@
                 <!-- HERO -->
                 <div class="hero">
                     <div class="av-wrap">
-                        <!-- Facebook badge at top -->
-                        <div class="av-fb-badge">
-                            <a class="fb-btn-badge"
-                            href="https://www.facebook.com/profile.php?id=100064073311598"
-                            rel="nofollow noopener noreferrer"
-                            target="_blank"
-                            aria-label="Профиль в Facebook">
+                        <!-- Facebook badge removed from top -->
+                        <div class="av-ring" aria-hidden="true">
+                            <div class="av-inner">
+                                <img src="image/au.webp" alt="Фото Николая Дудника" width="90" height="90" loading="eager" />
+                            </div>
+                        </div>
+
+                        <div class="av-badge" role="status">
+                            <span class="av-dot"></span>
+                            <span class="av-label" id="status-text">Онлайн</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-info">
+                        <div class="hero-eyebrow">Автор сайта</div>
+                        <h1 class="hero-name">Николай<br />Дудник</h1>
+                    </div>
+                </div>
+
+                <!-- STATS -->
+                <div class="stats" role="list" aria-label="Статистика">
+                    <div class="stat" role="listitem">
+                        <div class="stat-n">700+</div>
+                        <div class="stat-l">Дней в игре</div>
+                    </div>
+                    <div class="stat" role="listitem">
+                        <div class="stat-n">Ежедн.</div>
+                        <div class="stat-l">Проверка кодов</div>
+                    </div>
+                    <div class="stat" role="listitem">
+                        <div class="stat-n">100%</div>
+                        <div class="stat-l">Рабочие коды</div>
+                    </div>
+                </div>
+
+                <!-- BIO -->
+                <div class="bio">
+                    <div class="bio-heading" aria-hidden="true">
+                        <span class="bio-label">Об авторе</span>
+                        <a class="fb-btn-inline"
+                           href="https://www.facebook.com/profile.php?id=100064073311598"
+                           rel="nofollow noopener noreferrer"
+                           target="_blank"
+                           aria-label="Профиль в Facebook">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z" />
                             </svg>
                             Facebook
                         </a>
                     </div>
-
-                    <div class="av-ring" aria-hidden="true">
-                        <div class="av-inner">
-                            <img src="image/au.webp" alt="Фото Николая Дудника" width="90" height="90" loading="eager" />
-                        </div>
-                    </div>
-
-                    <div class="av-badge" role="status">
-                        <span class="av-dot"></span>
-                        <span class="av-label" id="status-text">Онлайн</span>
-                    </div>
-                </div>
-
-                <div class="hero-info">
-                    <div class="hero-eyebrow">Автор сайта</div>
-                    <h1 class="hero-name">Николай<br />Дудник</h1>
-                    <!-- Original Facebook button removed from here -->
+                    <p>Я познакомился с играми в 2000 году. С тех пор мы с ними неразлучны. Люблю стратегии, ролевухи и MMORPG. Иногда захожу пострелять в CS&nbsp;1.6. Абсолютно не умею играть в гонки, хотя нравится смотреть как «гоняют» другие. Два года назад начал играть в <strong>Монеточку.</strong></p>
+                    <p><span class="date-chip">4 июня 2026</span> — запустил этот сайт, чтобы игроки всегда находили актуальные коды на <strong>Монеточку</strong> в одном месте, без поиска по соцсетям и мессенджерам.</p>
                 </div>
             </div>
 
-            <!-- STATS -->
-            <div class="stats" role="list" aria-label="Статистика">
-                <div class="stat" role="listitem">
-                    <div class="stat-n">700+</div>
-                    <div class="stat-l">Дней в игре</div>
-                </div>
-                <div class="stat" role="listitem">
-                    <div class="stat-n">Ежедн.</div>
-                    <div class="stat-l">Проверка кодов</div>
-                </div>
-                <div class="stat" role="listitem">
-                    <div class="stat-n">100%</div>
-                    <div class="stat-l">Рабочие коды</div>
-                </div>
+            <div class="back">
+                <a class="btn-back" href="/">
+                    <svg fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 12H5M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
+                    </svg>
+                    На главную — к кодам
+                </a>
             </div>
 
-            <!-- BIO -->
-            <div class="bio">
-                <div class="bio-heading" aria-hidden="true">Об авторе</div>
-                <p>Я познакомился с играми в 2000 году. С тех пор мы с ними неразлучны. Люблю стратегии, ролевухи и MMORPG. Иногда захожу пострелять в CS&nbsp;1.6. Абсолютно не умею играть в гонки, хотя нравится смотреть как «гоняют» другие. Два года назад начал играть в <strong>Монеточку.</strong></p>
-                <p><span class="date-chip">4 июня 2026</span> — запустил этот сайт, чтобы игроки всегда находили актуальные коды на <strong>Монеточку</strong> в одном месте, без поиска по соцсетям и мессенджерам.</p>
-            </div>
         </div>
 
-        <div class="back">
-            <a class="btn-back" href="/">
-                <svg fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19 12H5M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
-                </svg>
-                На главную — к кодам
-            </a>
-        </div>
-
+        <footer>
+            <div class="f-logo">Монеточка <span>today</span></div>
+            <div class="f-copy">© 2026 Все права защищены.</div>
+        </footer>
     </div>
 
-    <footer>
-        <div class="f-logo">Монеточка <span>today</span></div>
-        <div class="f-copy">© 2026 Все права защищены.</div>
-    </footer>
-</div>
-
-<script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>
