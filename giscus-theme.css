@@ -1,30 +1,31 @@
+/* ==========================================
+   GISCUS — ПОД ТВОЙ ДИЗАЙН
+   ========================================== */
+
+/* ---------- переменные для giscus ---------- */
 :root {
-  /* Основные цвета */
-  --giscus-canvas-default: #192734;
-  --giscus-canvas-overlay: #161b22;
-  --giscus-border-color: #444c56;
-  --giscus-fg-default: #adbac7;
-  --giscus-fg-muted: #768390;
-  
-  /* Акцентный цвет (ваш желтый) */
-  --giscus-accent-color: #eac55f;
-  
-  /* Цвет кнопок */
-  --giscus-btn-bg: #373e47;
-  --giscus-btn-hover-bg: #444c56;
-  --giscus-btn-text: #ffffff;
+  --giscus-custom-bg: #0b111e;                /* фон как у карточек */
+  --giscus-custom-bg-secondary: #131c2e;      /* дополнительный фон */
+  --giscus-custom-text: #ffffff;              /* белый текст */
+  --giscus-custom-text-secondary: #94a3b8;    /* приглушённый текст */
+  --giscus-custom-link: #fbbf24;              /* жёлтые ссылки */
+  --giscus-custom-link-hover: #f59e0b;        /* жёлтый при наведении */
+  --giscus-custom-btn-bg: #1e293b;            /* фон кнопок */
+  --giscus-custom-btn-text: #ffffff;          /* текст на кнопках */
+  --giscus-custom-btn-hover-bg: #263348;      /* фон кнопок при наведении */
+  --giscus-custom-btn-active-bg: #0f172a;     /* фон при клике */
+  --giscus-custom-border: #22314d;            /* границы как --border-main */
+  --giscus-custom-scrollbar-thumb: #334155;
+  --giscus-custom-scrollbar-track: #0f172a;
 }
 
-/* Если нужно скрыть элементы внутри iframe, 
-   используйте их реальные классы Giscus, но без привязки к вашему 'main'
-*/
-.text-sm { 
-  display: none !important; 
-}
-.gsc-reactions-count { 
-  display: none !important; 
+/* ---------- контейнер комментариев ---------- */
+.giscus-container {
+  display: none;
+  margin-top: 8px;
+  animation: fadeIn 0.3s ease;   /* использует уже существующую анимацию fadeIn */
 }
 
-/* Стилизацию отступов лучше делать на стороне ВАШЕГО сайта (в основном CSS), 
-   а не внутри CSS-файла Giscus.
-*/
+.giscus-container.visible {
+  display: block;
+}
