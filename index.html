@@ -209,6 +209,34 @@
                 </div>
             </a>
         </div>
+
+        <!-- БЛОК КОММЕНТАРИЕВ GISCUS -->
+        <div class="giscus-section" style="margin-top: 24px;">
+          <button class="toggle-comments-btn" id="toggleComments" aria-expanded="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            Оставить отзыв
+          </button>
+
+          <div class="giscus-container" id="giscusContainer">
+            <script src="https://giscus.app/client.js"
+                    data-repo="PlohoyMnuuu/PlohoyMnuuu.github.io"
+                    data-repo-id="R_kgDOSvuVuQ"
+                    data-category="General"
+                    data-category-id="DIC_kwDOSvuVuc4C-pt_"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="custom"
+                    data-lang="ru"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+          </div>
+        </div>
     </section>
 
     <div class="unified-block">
@@ -364,5 +392,24 @@
 </div>
 
 <script src="script.js" defer></script>
+
+<!-- Скрипт переключения комментариев -->
+<script>
+  (function() {
+    const btn = document.getElementById('toggleComments');
+    const container = document.getElementById('giscusContainer');
+
+    if (!btn || !container) return;
+
+    btn.addEventListener('click', function() {
+      const isVisible = container.classList.toggle('visible');
+      btn.setAttribute('aria-expanded', isVisible);
+      btn.innerHTML = isVisible
+        ? '✕ Скрыть отзывы'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Оставить отзыв';
+    });
+  })();
+</script>
+
 </body>
 </html>
