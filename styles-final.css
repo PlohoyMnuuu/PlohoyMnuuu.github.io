@@ -1331,7 +1331,6 @@ li {
 
 /* ================================================
    РАЗДЕЛИТЕЛЬ — синий стиль как у бейджей видео/скриншота
-   Показывается на всех устройствах
    ================================================ */
 
 .section-divider {
@@ -1383,7 +1382,6 @@ li {
   margin-bottom: 0;
   box-shadow: none;
 }
-
 
 /* ================================================
    COVER STAGE — декоративная обёртка обложки
@@ -1609,9 +1607,8 @@ li {
   transform: translateY(-1px);
 }
 
-/* === ИЗМЕНЕНИЕ: убрали border-top, теперь разделитель будет отдельным элементом === */
+/* Убираем border-top — разделитель будет отдельным элементом */
 .video-info {
-  /* border-top удалён */
   margin-top: 18px;
   padding: 18px 0 0 0;
   position: relative;
@@ -1623,7 +1620,6 @@ li {
 }
 
 .screenshot-info {
-  /* border-top удалён */
   margin-top: 18px;
   padding: 18px 0 0 0;
   position: relative;
@@ -1971,7 +1967,7 @@ li {
     margin: 0 18px;
   }
 
-  /* Когда разделитель вставлен внутрь видео/скриншота, даём ему отступы как у контейнера */
+  /* Разделитель внутри видео/скриншота – заменяет border-top */
   .video-showcase .section-divider,
   .screenshot-showcase .section-divider {
     margin: 18px 0;
@@ -2306,7 +2302,7 @@ li {
   .video-info,
   .screenshot-info {
     flex: 1;
-    border-top: none;   /* на десктопе разделитель не нужен */
+    border-top: none;
     margin-top: 0;
     padding: 4px 0 0 0;
   }
@@ -2315,5 +2311,11 @@ li {
   .screenshot-badge {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  /* Скрываем разделители внутри видео/скриншота на десктопе */
+  .video-showcase .section-divider,
+  .screenshot-showcase .section-divider {
+    display: none;
   }
 }
