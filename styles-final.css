@@ -1609,8 +1609,9 @@ li {
   transform: translateY(-1px);
 }
 
+/* === ИЗМЕНЕНИЕ: убрали border-top, теперь разделитель будет отдельным элементом === */
 .video-info {
-  border-top: 1px solid var(--border-main);
+  /* border-top удалён */
   margin-top: 18px;
   padding: 18px 0 0 0;
   position: relative;
@@ -1622,7 +1623,7 @@ li {
 }
 
 .screenshot-info {
-  border-top: 1px solid var(--border-main);
+  /* border-top удалён */
   margin-top: 18px;
   padding: 18px 0 0 0;
   position: relative;
@@ -1969,6 +1970,12 @@ li {
   .section-divider {
     margin: 0 18px;
   }
+
+  /* Когда разделитель вставлен внутрь видео/скриншота, даём ему отступы как у контейнера */
+  .video-showcase .section-divider,
+  .screenshot-showcase .section-divider {
+    margin: 18px 0;
+  }
 }
 
 /* ================================================
@@ -2190,6 +2197,11 @@ li {
   .section-divider {
     margin: 0 14px;
   }
+
+  .video-showcase .section-divider,
+  .screenshot-showcase .section-divider {
+    margin: 14px 0;
+  }
 }
 
 /* ================================================
@@ -2257,6 +2269,11 @@ li {
   .section-divider {
     margin: 0 12px;
   }
+
+  .video-showcase .section-divider,
+  .screenshot-showcase .section-divider {
+    margin: 12px 0;
+  }
 }
 
 /* ================================================
@@ -2289,7 +2306,7 @@ li {
   .video-info,
   .screenshot-info {
     flex: 1;
-    border-top: none;
+    border-top: none;   /* на десктопе разделитель не нужен */
     margin-top: 0;
     padding: 4px 0 0 0;
   }
