@@ -1363,32 +1363,68 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   .screenshot-badge { margin-left: 0; margin-right: 0; }
 }
 
-/* ==========================================
-   GISCUS — ПОД ТВОЙ ДИЗАЙН
-   ========================================== */
+/* ===== ТВОЙ ИСХОДНЫЙ CSS (без изменений) ===== */
+/* (здесь весь твой код, который ты присылал) */
 
-/* ---------- переменные для giscus ---------- */
+
+
+/* ==========================================
+   GISCUS — КАСТОМНАЯ ТЁМНАЯ ТЕМА
+   ========================================== */
 :root {
-  --giscus-custom-bg: #0b111e;                /* фон как у карточек */
-  --giscus-custom-bg-secondary: #131c2e;      /* дополнительный фон */
-  --giscus-custom-text: #ffffff;              /* белый текст */
-  --giscus-custom-text-secondary: #94a3b8;    /* приглушённый текст */
-  --giscus-custom-link: #fbbf24;              /* жёлтые ссылки */
-  --giscus-custom-link-hover: #f59e0b;        /* жёлтый при наведении */
-  --giscus-custom-btn-bg: #1e293b;            /* фон кнопок */
-  --giscus-custom-btn-text: #ffffff;          /* текст на кнопках */
-  --giscus-custom-btn-hover-bg: #263348;      /* фон кнопок при наведении */
-  --giscus-custom-btn-active-bg: #0f172a;     /* фон при клике */
-  --giscus-custom-border: #22314d;            /* границы как --border-main */
+  --giscus-custom-bg: #0b111e;
+  --giscus-custom-bg-secondary: #131c2e;
+  --giscus-custom-text: #ffffff;
+  --giscus-custom-text-secondary: #94a3b8;
+  --giscus-custom-link: #fbbf24;
+  --giscus-custom-link-hover: #f59e0b;
+  --giscus-custom-btn-bg: #1e293b;
+  --giscus-custom-btn-text: #ffffff;
+  --giscus-custom-btn-hover-bg: #263348;
+  --giscus-custom-btn-active-bg: #0f172a;
+  --giscus-custom-border: #22314d;
   --giscus-custom-scrollbar-thumb: #334155;
   --giscus-custom-scrollbar-track: #0f172a;
 }
 
-/* ---------- контейнер комментариев ---------- */
+/* Кнопка «Оставить отзыв» */
+.toggle-comments-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.05);
+}
+
+.toggle-comments-btn:hover {
+  background: rgba(251, 191, 36, 0.2);
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 0 8px 24px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.toggle-comments-btn:active {
+  transform: translateY(0);
+}
+
+/* Контейнер giscus — скрыт по умолчанию */
 .giscus-container {
   display: none;
   margin-top: 8px;
-  animation: fadeIn 0.3s ease;   /* использует уже существующую анимацию fadeIn */
+  animation: fadeIn 0.3s ease;
 }
 
 .giscus-container.visible {
