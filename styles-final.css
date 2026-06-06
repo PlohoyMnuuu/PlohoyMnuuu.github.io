@@ -1329,10 +1329,7 @@ li {
   padding: 0 25px 25px;
 }
 
-/* ================================================
-   РАЗДЕЛИТЕЛЬ — стиль как у author-wrapper
-   ================================================ */
-
+/* Разделитель между секциями внутри unified-block */
 .section-divider {
   display: none;
 }
@@ -1340,37 +1337,10 @@ li {
 @media (min-width: 769px) {
   .section-divider {
     display: block;
-    position: relative;
     height: 1px;
     margin: 0 25px;
-    background: transparent;
-    border: none;
-    border-top: 1px solid transparent;
-    border-image: linear-gradient(
-      90deg,
-      transparent 0%,
-      background: rgba(56,189,248,0.14);
-  border-color: rgba(56,189,248,.4);
-      transparent 100%
-    ) 1;
-  }
-
-  /* Центральная точка — как у author-wrapper */
-  .section-divider::after {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 5px;
-    height: 5px;
-    background: rgba(251,191,36,0.5);
-    border-radius: 50%;
-  }
-
-  /* Вариант без точки (для нижних разделителей) */
-  .section-divider.no-dot::after {
-    display: none;
+    background: var(--border-main);
+    opacity: 0.6;
   }
 }
 
@@ -2265,7 +2235,7 @@ li {
 
   .unified-block .video-showcase,
   .unified-block .screenshot-showcase {
-    padding: 25px 25px 25px;
+    padding: 0 25px 25px;
   }
 
   .video-cover,
