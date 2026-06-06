@@ -1349,9 +1349,8 @@ li {
     border-image: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(251,191,36,0.06) 15%,
-      rgba(251,191,36,0.2) 50%,
-      rgba(251,191,36,0.06) 85%,
+      background: rgba(56,189,248,0.14);
+  border-color: rgba(56,189,248,.4);
       transparent 100%
     ) 1;
   }
