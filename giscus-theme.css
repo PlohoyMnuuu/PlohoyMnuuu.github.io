@@ -1,18 +1,40 @@
-:root {
-  /* Основные цвета под ваш тёмный дизайн */
-  --giscus-canvas-default: #192734 !important; /* Фон виджета */
-  --giscus-canvas-overlay: #161b22 !important; /* Фон поля ввода */
-  --giscus-border-color: #444c56 !important;   /* Границы */
-  --giscus-fg-default: #adbac7 !important;     /* Текст */
-  
-  /* Желтый акцент */
-  --giscus-accent-color: #eac55f !important;
-  
+/*!
+ * Custom Giscus Theme for PlohoyMnuuu.github.io
+ */
+main {
+  /* Цвета фона */
+  --color-canvas-default: #192734 !important;
+  --color-canvas-overlay: #161b22 !important;
+  --color-canvas-inset: #15202b !important;
+  --color-canvas-subtle: #192734 !important;
+
+  /* Цвет границ и текста */
+  --color-border-default: #444c56 !important;
+  --color-border-muted: #373e47 !important;
+  --color-fg-default: #adbac7 !important;
+  --color-fg-muted: #768390 !important;
+
+  /* Ваш желтый акцент (кнопки, ссылки, выделение) */
+  --color-accent-fg: #eac55f !important;
+  --color-accent-emphasis: #eac55f !important;
+  --color-accent-muted: #eac55f66 !important;
+  --color-accent-subtle: #eac55f1a !important;
+
   /* Кнопки */
-  --giscus-btn-bg: #373e47 !important;
-  --giscus-btn-hover-bg: #444c56 !important;
-  --giscus-btn-text: #ffffff !important;
+  --color-btn-bg: #373e47 !important;
+  --color-btn-hover-bg: #444c56 !important;
+  --color-btn-text: #ffffff !important;
+  --color-btn-primary-bg: #eac55f !important;
+  --color-btn-primary-text: #192734 !important;
+  --color-btn-primary-hover-bg: #d1b155 !important;
 }
 
-/* Скрываем счетчик реакций, если он не нужен */
+/* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
+
+/* Настройка расположения */
+.gsc-timeline { flex-direction: column-reverse; }
+.gsc-header { padding-bottom: 1rem; }
+.gsc-comments > .gsc-header { order: 1; }
+.gsc-comments > .gsc-comment-box { margin-bottom: 1rem; order: 2; }
+.gsc-comments > .gsc-timeline { order: 3; }
