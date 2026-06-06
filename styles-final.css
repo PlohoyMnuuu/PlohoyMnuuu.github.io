@@ -1364,77 +1364,33 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
 }
 
 /* ==========================================
-   GISCUS — кнопка
+   GISCUS — ПОД ТВОЙ ДИЗАЙН
    ========================================== */
 
-.giscus-section {
-  margin-top: 16px;
-  padding-top: 0;
-  border-top: none;
-  position: relative;
-  text-align: center;
+/* ---------- переменные для giscus ---------- */
+:root {
+  --giscus-custom-bg: #0b111e;                /* фон как у карточек */
+  --giscus-custom-bg-secondary: #131c2e;      /* дополнительный фон */
+  --giscus-custom-text: #ffffff;              /* белый текст */
+  --giscus-custom-text-secondary: #94a3b8;    /* приглушённый текст */
+  --giscus-custom-link: #fbbf24;              /* жёлтые ссылки */
+  --giscus-custom-link-hover: #f59e0b;        /* жёлтый при наведении */
+  --giscus-custom-btn-bg: #1e293b;            /* фон кнопок */
+  --giscus-custom-btn-text: #ffffff;          /* текст на кнопках */
+  --giscus-custom-btn-hover-bg: #263348;      /* фон кнопок при наведении */
+  --giscus-custom-btn-active-bg: #0f172a;     /* фон при клике */
+  --giscus-custom-border: #22314d;            /* границы как --border-main */
+  --giscus-custom-scrollbar-thumb: #334155;
+  --giscus-custom-scrollbar-track: #0f172a;
 }
 
-.giscus-section::before {
-  display: none;
-}
-
-.toggle-comments-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 7px 16px;
-  border-radius: 50px;
-  background: transparent;
-  border: 1px solid rgba(148,163,184,0.2);
-  color: #64748b;
-  font-family: inherit;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.toggle-comments-btn:hover {
-  border-color: rgba(251,191,36,0.35);
-  color: #94a3b8;
-  background: rgba(251,191,36,0.04);
-}
-
-.toggle-comments-btn:active {
-  background: rgba(251,191,36,0.07);
-}
-
-.toggle-comments-btn svg {
-  width: 13px;
-  height: 13px;
-  flex-shrink: 0;
-  stroke: currentColor;
-  transition: transform 0.2s ease;
-}
-
-.toggle-comments-btn[aria-expanded="true"] svg {
-  transform: scale(0.85) rotate(-10deg);
-}
-
+/* ---------- контейнер комментариев ---------- */
 .giscus-container {
   display: none;
-  margin-top: 20px;
-  animation: giscusFadeSlide 0.35s ease both;
+  margin-top: 8px;
+  animation: fadeIn 0.3s ease;   /* использует уже существующую анимацию fadeIn */
 }
 
 .giscus-container.visible {
   display: block;
-}
-
-@keyframes giscusFadeSlide {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.gsc-reactions-count {
-    display: none;
 }
