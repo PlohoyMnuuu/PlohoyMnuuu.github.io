@@ -252,13 +252,12 @@
       opacity: 0.85;
     }
 
-    /* NEW: контейнер для имени и кнопки в одной строке */
+    /* строка: имя + кнопка рядом */
     .name-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px 20px;
+      gap: 16px;       /* расстояние между именем и кнопкой, как на фото */
       margin-bottom: 20px;
     }
 
@@ -267,7 +266,7 @@
       font-weight: 800;
       letter-spacing: -0.025em;
       color: #fff;
-      line-height: 1.05;
+      line-height: 1.1;
       margin: 0;
     }
 
@@ -286,6 +285,7 @@
       text-decoration: none;
       transition: background var(--t), border-color var(--t), transform var(--t);
       flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .fb-btn:hover {
@@ -322,7 +322,6 @@
     .stat + .stat { border-left: 1px solid var(--line); }
     .stat:hover { background: var(--gold-a); }
 
-    /* subtle gold shine on hover */
     .stat::after {
       content: '';
       position: absolute;
@@ -429,7 +428,6 @@
       box-shadow: 0 0 0 0 rgba(245,200,66,0);
     }
 
-    /* shimmer sweep */
     .btn-back::before {
       content: '';
       position: absolute;
@@ -496,6 +494,8 @@
 
     @media (max-width: 360px) {
       .hero { flex-direction: column; }
+      .name-row { gap: 12px; }
+      .hero-name { font-size: 22px; }
     }
   </style>
 </head>
@@ -529,9 +529,9 @@
 
         <div class="hero-info">
           <div class="hero-eyebrow">Автор сайта</div>
-          <!-- строка: имя слева, кнопка справа -->
+          <!-- имя + кнопка рядом, без прижатия к краям -->
           <div class="name-row">
-            <h1 class="hero-name">Николай<br/>Дудник</h1>
+            <h1 class="hero-name">Николай Дудник</h1>
             <a class="fb-btn"
                href="https://www.facebook.com/profile.php?id=100064073311598"
                rel="nofollow noopener noreferrer"
