@@ -29,7 +29,12 @@ main {
   --color-btn-primary-hover-bg: #d1b155 !important;
 }
 
-
+main {
+  --color-canvas-default: #0b111e !important;  /* тёмный фон iframe */
+  --color-canvas-inset:   #090d16 !important;
+  --color-border-default: #22314d !important;  /* бордер как --border-main */
+  --color-border-muted:   #1a2540 !important;
+}
 
 /* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
