@@ -39,9 +39,8 @@ main {
   border-radius: 10px !important;
   transition: border-color 0.2s ease !important;
 }
-
 .gsc-comment-box:focus-within {
-  border-color: #eac55f44 !important;
+  border-color: transparent;
 }
 
 .gsc-comment-box-textarea {
@@ -64,7 +63,7 @@ main {
 }
 
 .gsc-comment:hover {
-  border-color: #2d3f5a !important;
+  border-color: #eac55f !important;
 }
 
 /* Вложенные ответы */
@@ -97,7 +96,7 @@ main {
 .gsc-reply-button,
 .gsc-social-reaction-summary-item,
 .gsc-upvote-button {
-  background: #eac55f !important;
+  background: transparent !important;
   border: 0.5px solid #1a2540 !important;
   border-radius: 5px !important;
   transition: border-color 0.2s ease, color 0.2s ease !important;
