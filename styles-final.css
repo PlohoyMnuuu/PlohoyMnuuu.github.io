@@ -1386,43 +1386,45 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
 .toggle-comments-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 7px 16px;
-  border-radius: 50px;
-  background: transparent;
-  border: 1px solid rgba(148,163,184,0.2);
-  color: #64748b;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.07);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #94a3b8;
   font-family: inherit;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  transition: background 0.2s, border-color 0.2s, color 0.2s,
+              box-shadow 0.2s, transform 0.15s;
   position: relative;
-  overflow: hidden;
 }
 
 .toggle-comments-btn:hover {
-  border-color: rgba(148,163,184,0.35);
-  color: #94a3b8;
-  background: rgba(148,163,184,0.05);
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.4);
+  color: #cbd5e1;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 .toggle-comments-btn:active {
-  background: rgba(148,163,184,0.08);
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
 }
 
 .toggle-comments-btn svg {
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
   stroke: currentColor;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .toggle-comments-btn[aria-expanded="true"] svg {
-  transform: scale(0.85) rotate(-10deg);
+  transform: rotate(180deg) scale(0.9);
 }
 
 .giscus-container {
