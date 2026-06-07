@@ -15,7 +15,7 @@ main {
   --color-fg-muted: #768390 !important;
 
 --color-accent-fg: #eac55f !important;
---color-accent-emphasis: transparent !important;
+--color-accent-emphasis: #eac55f !important;
 --color-accent-muted: transparent !important;
 --color-accent-subtle: #eac55f0d !important;
 
