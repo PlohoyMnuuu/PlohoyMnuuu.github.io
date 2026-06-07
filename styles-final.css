@@ -1428,20 +1428,37 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
 
 .giscus-container {
   display: none;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(251, 191, 36, 0.06) 15%,
-    rgba(251, 191, 36, 0.18) 50%,
-    rgba(251, 191, 36, 0.06) 85%,
-    transparent 100%
-  ) 1;
+  margin-top: 12px; /* было 20px */
+
+  /* Бордер и фон в стиле сайта */
+  border-radius: 16px;
+  border: 1px solid rgba(34, 49, 77, 0.8);
+  background: rgba(11, 17, 30, 0.7);
+  overflow: hidden;
+  position: relative;
+
   animation: giscusFadeSlide 0.35s ease both;
 }
 
 .giscus-container.visible {
   display: block;
+}
+
+/* Градиентная рамка — как у promo-card и author-block */
+.giscus-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.15),
+    rgba(56, 189, 248, 0.08),
+    transparent 60%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
