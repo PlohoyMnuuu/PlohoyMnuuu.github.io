@@ -2,65 +2,42 @@
  * Custom Giscus Theme for PlohoyMnuuu.github.io
  */
 main {
-  /* Цвета фона */
+  /* Фоны */
   --color-canvas-default: #0d1520 !important;
   --color-canvas-overlay: #161b22 !important;
   --color-canvas-inset: #090d16 !important;
   --color-canvas-subtle: #192734 !important;
-  /* Цвет границ и текста */
+
+  /* Границы и текст */
   --color-border-default: #22314d !important;
   --color-border-muted: #1a2540 !important;
   --color-fg-default: #adbac7 !important;
   --color-fg-muted: #768390 !important;
-  /* Желтый акцент (кнопки, ссылки, выделение) */
-  --color-accent-fg: transparent !important;
-  --color-accent-emphasis: transparent !important;
-  --color-accent-muted: transparent !important;
-  --color-accent-subtle: #eac55f1a !important;
+
+  /* Жёлтый акцент — тонкие рамки вместо заливки */
+  --color-accent-fg: #eac55f !important;
+  --color-accent-emphasis: #eac55f !important;
+  --color-accent-muted: #eac55f33 !important;
+  --color-accent-subtle: #eac55f0d !important;
+
   /* Кнопки */
   --color-btn-bg: #373e47 !important;
   --color-btn-hover-bg: #444c56 !important;
-  --color-btn-text: #ffffff !important;
+  --color-btn-text: #adbac7 !important;
+  --color-btn-border: #22314d !important;
   --color-btn-primary-bg: #eac55f !important;
   --color-btn-primary-text: #192734 !important;
   --color-btn-primary-hover-bg: #d1b155 !important;
-  /* Скругление */
+
   border-radius: 16px !important;
   overflow: hidden !important;
 }
 
-/* Скрытие лишних элементов */
-.gsc-reactions-count { display: none !important; }
-.gsc-reactions-button { display: none !important; }
-.gsc-comments-count,
-.gsc-comments-count-separator .gsc-reactions-button { display: none !important; }
-.gsc-comment-box-textarea-extras { display: none !important; }
-#__next .py-2 { display: none !important; }
-.gsc-upvote-button:disabled { display: none !important; }
-.gsc-comment-box-tabs { display: none !important; }
-.gsc-header, .gsc-left-header { display: none !important; }
-#__next .text-xs { display: none !important; }
-.gsc-social-reaction-summary-item-count { display: none !important; }
-.box-border-info { display: none !important; }
+/* Тонкие рамки на акцентных элементах */
+.gsc-comment-box {
+  border: 0.5px solid var(--color-border-default) !important;
+  border-radius: 10px !important;
+}
 
-/* Настройка расположения */
-.gsc-timeline { flex-direction: column-reverse; }
-.gsc-header { padding-bottom: 1rem; }
-.gsc-comments > .gsc-header { order: 1; }
-.gsc-comments > .gsc-comment-box { margin-bottom: 1rem; order: 2; }
-.gsc-comments > .gsc-timeline { order: 3; }
-
-/* Размеры и отступы */
-.gsc-comments {
-  padding-top: 0 !important;
-}
-.gsc-main {
-  width: 96% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: -16px !important;
-  min-height: 200px !important;
-}
-#__next {
-  min-height: 100% !important;
-}
+.gsc-comment-box-textarea {
+  border: 0.5px solid var(--color-borde
