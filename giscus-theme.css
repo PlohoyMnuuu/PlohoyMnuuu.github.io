@@ -3,7 +3,7 @@
  */
 
 :root {
-  --accent: 234, 197, 95;
+  --accent: transparen;
   --border: 34, 49, 77;
   --border-muted: 26, 37, 64;
 }
