@@ -716,6 +716,17 @@ li { margin-bottom: 8px; }
   border-top: 1px solid var(--divider);
 }
 
+/* Декоративный разделитель с точкой (как в первом CSS) */
+.author-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -3px; left: 50%;
+  transform: translateX(-50%);
+  width: 5px; height: 5px;
+  background: rgba(245,183,48,0.5);
+  border-radius: 50%;
+}
+
 .author-block {
   display: flex;
   align-items: center;
@@ -912,9 +923,11 @@ li { margin-bottom: 8px; }
   display: none;
   height: 1px;
   margin: 0 28px;
-  background: var(--divider);
+  background: transparent;
   border: none;
   position: relative;
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent 0%, rgba(96,165,250,0.08) 15%, rgba(96,165,250,0.35) 50%, rgba(96,165,250,0.08) 85%, transparent 100%) 1;
 }
 
 .section-divider::after {
@@ -922,8 +935,8 @@ li { margin-bottom: 8px; }
   position: absolute;
   top: -3px; left: 50%;
   transform: translateX(-50%);
-  width: 4px; height: 4px;
-  background: rgba(96,165,250,0.5);
+  width: 5px; height: 5px;
+  background: rgba(96,165,250,0.6);
   border-radius: 50%;
 }
 
@@ -1090,10 +1103,23 @@ li { margin-bottom: 8px; }
 /* Info под видео/скриншотом */
 .video-info,
 .screenshot-info {
-  border-top: 1px solid var(--divider);
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent 0%, rgba(96,165,250,0.08) 15%, rgba(96,165,250,0.35) 50%, rgba(96,165,250,0.08) 85%, transparent 100%) 1;
   margin-top: 18px;
   padding: 18px 0 0;
   text-align: left;
+  position: relative;
+}
+
+.video-info::before,
+.screenshot-info::before {
+  content: '';
+  position: absolute;
+  top: -3px; left: 50%;
+  transform: translateX(-50%);
+  width: 5px; height: 5px;
+  background: rgba(96,165,250,0.6);
+  border-radius: 50%;
 }
 
 .video-title {
@@ -1351,7 +1377,21 @@ li { margin-bottom: 8px; }
    ================================================ */
 .giscus-section {
   margin-top: 20px;
+  padding-top: 0;
+  border-top: none;
   text-align: center;
+  position: relative;
+}
+
+/* Декоративный разделитель с точкой (как в первом CSS) */
+.giscus-section::before {
+  content: '';
+  position: absolute;
+  top: -3px; left: 50%;
+  transform: translateX(-50%);
+  width: 5px; height: 5px;
+  background: rgba(245,183,48,0.5);
+  border-radius: 50%;
 }
 
 .toggle-comments-btn {
