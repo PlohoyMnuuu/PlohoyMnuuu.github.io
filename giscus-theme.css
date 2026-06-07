@@ -28,6 +28,32 @@ main {
   border-radius: 16px !important;
   overflow: hidden !important;
 }
+/* Тонкие рамки вокруг блоков комментариев */
+.gsc-comment,
+.gsc-reply,
+.gsc-comment-box {
+  border: 1px solid #22314d !important;
+  box-shadow: none !important;
+}
+
+/* Тонкая рамка у полей ввода */
+.gsc-comment-box-textarea,
+.gsc-reply-box textarea,
+input[type="text"],
+textarea {
+  outline: 1px solid #eac55f66 !important;
+  border: 1px solid #eac55f66 !important;
+  box-shadow: none !important;
+}
+
+.gsc-comment-box-textarea:focus,
+.gsc-reply-box textarea:focus,
+input[type="text"]:focus,
+textarea:focus {
+  outline: 1px solid #eac55f99 !important;
+  border: 1px solid #eac55f99 !important;
+  box-shadow: none !important;
+}
 
 /* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
