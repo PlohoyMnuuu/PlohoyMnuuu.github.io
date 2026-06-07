@@ -9,13 +9,13 @@ main {
   --color-canvas-subtle: #192734 !important;
 
   /* Границы и текст */
-  --color-border-default: transparent !important;
-  --color-border-muted: transparent !important;
-  --color-fg-default: transparent !important;
-  --color-fg-muted: transparent !important;
+  --color-border-default: #22314d !important;
+  --color-border-muted: #1a2540 !important;
+  --color-fg-default: #adbac7 !important;
+  --color-fg-muted: #768390 !important;
 
   /* Жёлтый акцент */
---color-accent-fg: #eac55fcc !important;
+  --color-accent-fg: #eac55f !important;
   --color-accent-emphasis: #eac55f !important;
   --color-accent-muted: #eac55f33 !important;
   --color-accent-subtle: #eac55f0d !important;
