@@ -15,7 +15,7 @@ main {
   --color-fg-muted: #768390 !important;
 
   /* Жёлтый акцент */
-  --color-accent-fg: #eac55f !important;
+  --color-accent-fg: #ffffff !important;
   --color-accent-emphasis: #eac55f !important;
   --color-accent-muted: #eac55f33 !important;
   --color-accent-subtle: #eac55f0d !important;
