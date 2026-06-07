@@ -15,10 +15,10 @@ main {
   --color-fg-muted: #768390 !important;
 
   /* Жёлтый акцент */
-  --color-accent-fg: #eac55f !important;
+  --color-accent-fg: transparent !important;
   --color-accent-emphasis: transparent !important;
   --color-accent-muted: transparent!important;
-  --color-accent-subtle: transparent !important;
+  --color-accent-subtle: #eac55f0d !important;
 
   /* Кнопки */
   --color-btn-bg: #373e47 !important;
@@ -35,12 +35,13 @@ main {
 
 /* Поле комментария */
 .gsc-comment-box {
-  border: 0.5px solid transparent !important;
+  border: 0.5px solid #22314d !important;
   border-radius: 10px !important;
   transition: border-color 0.2s ease !important;
 }
+
 .gsc-comment-box:focus-within {
-  border-color: transparent;
+  border-color: #eac55f44 !important;
 }
 
 .gsc-comment-box-textarea {
@@ -50,7 +51,7 @@ main {
 }
 
 .gsc-comment-box-textarea:focus {
-  border-color: #22314d !important;
+  border-color: #eac55f66 !important;
   box-shadow: 0 0 0 3px #eac55f0d !important;
   outline: none !important;
 }
@@ -63,7 +64,7 @@ main {
 }
 
 .gsc-comment:hover {
-  border-color: #eac55f !important;
+  border-color: #2d3f5a !important;
 }
 
 /* Вложенные ответы */
@@ -75,7 +76,7 @@ main {
 
 /* Бейдж «автор» и прочие теги */
 .gsc-comment-author-association-badge {
-  background: #eac55f !important;
+  background: transparent !important;
   border: 0.5px solid #22314d !important;
   color: #768390 !important;
   border-radius: 4px !important;
