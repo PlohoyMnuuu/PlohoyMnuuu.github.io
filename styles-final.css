@@ -29,7 +29,7 @@
   src: url('fonts/GolosTextVF-Regular.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 :root {
@@ -1456,34 +1456,4 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
 .giscus-container iframe {
   margin-top: -56px !important;
   display: block;
-}
-/* Фиксируем CLS у reward-item */
-.reward-item {
-  contain: layout style;
-}
-
-.reward-icon {
-  width: 36px;
-  height: 36px;
-  font-size: 28px;
-  line-height: 36px;
-  contain: strict;
-}
-
-/* Резервируем место под шрифт до загрузки */
-@font-face {
-  font-family: 'Golos Text';
-  src: url('fonts/GolosTextVF-Regular.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: optional; /* было swap — меняем на optional, это устраняет CLS от шрифта */
-}
-#promo-list {
-    min-height: 528px;
-}
-
-@media (max-width: 550px) {
-    #promo-list {
-        min-height: 480px;
-    }
 }
