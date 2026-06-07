@@ -101,3 +101,142 @@ function closeScreenshot(e) {
         document.body.style.overflow = '';
     }
 }
+
+
+// ================================================
+// АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
+// ================================================
+(function() {
+  // Добавляем классы для анимации ко всем секциям и unified-block
+  const sections = document.querySelectorAll('.section, .unified-block');
+  
+  sections.forEach(function(el) {
+    el.classList.add('animate-on-scroll');
+  });
+
+  // Используем Intersection Observer
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        // После появления можно отключить наблюдение
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,     // 10% элемента должно быть видно
+    rootMargin: '0px 0px -30px 0px'  // Небольшой отступ снизу для раннего срабатывания
+  });
+
+  // Начинаем наблюдение
+  sections.forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+
+// ================================================
+// КОПИРОВАНИЕ ПРОМОКОДА
+// ================================================
+function copy(code) {
+  navigator.clipboard.writeText(code).then(function() {
+    var toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(function() {
+      toast.classList.remove('show');
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Ошибка копирования:', err);
+  });
+}
+
+// ================================================
+// ВИДЕО МОДАЛКА
+// ================================================
+function loadVideo() {
+  var modal = document.getElementById('video-modal');
+  var iframe = document.getElementById('video-frame');
+  
+  // Замените на реальный URL видео
+  iframe.src = 'https://www.youtube.com/embed/ВАШ_ID_ВИДЕО?autoplay=1&rel=0';
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVideo(event) {
+  if (event.target === event.currentTarget || event.target.classList.contains('video-close')) {
+    var modal = document.getElementById('video-modal');
+    var iframe = document.getElementById('video-frame');
+    
+    iframe.src = '';
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+}
+
+// ================================================
+// СКРИНШОТ МОДАЛКА
+// ================================================
+function openScreenshot() {
+  var modal = document.getElementById('screenshot-modal');
+  var img = document.getElementById('screenshot-full');
+  
+  img.src = 'image/Скриншот.webp';
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeScreenshot(event) {
+  if (event.target === event.currentTarget || event.target.classList.contains('video-close')) {
+    var modal = document.getElementById('screenshot-modal');
+    var img = document.getElementById('screenshot-full');
+    
+    img.src = '';
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+}
+
+// ================================================
+// ЗАКРЫТИЕ МОДАЛОК ПО ESC
+// ================================================
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeVideo({ target: document.getElementById('video-modal') });
+    closeScreenshot({ target: document.getElementById('screenshot-modal') });
+  }
+});
+
+// ================================================
+// ОБНОВЛЕНИЕ ГОДА В ФУТЕРЕ
+// ================================================
+(function() {
+  var yearSpan = document.getElementById('footer-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+})();
+
+// ================================================
+// ОБНОВЛЕНИЕ ДАТЫ ПРОВЕРКИ
+// ================================================
+(function() {
+  var dateSpan = document.querySelector('#stats-update-date span:last-child');
+  if (dateSpan) {
+    var today = new Date();
+    var options = { day: 'numeric', month: 'long' };
+    dateSpan.textContent = 'сегодня';
+  }
+})();
+
+// ================================================
+// СЧЁТЧИК АКТИВНЫХ КОДОВ
+// ================================================
+(function() {
+  var promoCount = document.getElementById('promo-count');
+  var promoList = document.getElementById('promo-list');
+  
+  if (promoCount && promoList) {
+    var activeCodes = promoList.querySelectorAll('.promo-card:not(.skeleton)');
+    promoCount.textContent = activeCodes.length;
+  }
+})();
