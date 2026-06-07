@@ -1478,3 +1478,12 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   font-style: normal;
   font-display: optional; /* было swap — меняем на optional, это устраняет CLS от шрифта */
 }
+#promo-list {
+    min-height: 528px;
+}
+
+@media (max-width: 550px) {
+    #promo-list {
+        min-height: 480px;
+    }
+}
