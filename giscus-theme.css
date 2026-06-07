@@ -18,7 +18,7 @@ main {
   --color-accent-fg: transparent !important;
   --color-accent-emphasis: transparent !important;
   --color-accent-muted: transparent!important;
-  --color-accent-subtle: #eac55f0d !important;
+  --color-accent-subtle: transparent !important;
 
   /* Кнопки */
   --color-btn-bg: #373e47 !important;
