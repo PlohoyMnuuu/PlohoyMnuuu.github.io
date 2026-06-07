@@ -1454,6 +1454,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   padding-top: 0 !important;
 }
 .giscus-container iframe {
-  margin-top: -24px !important;
+  margin-top: -32px !important;
   display: block;
 }
