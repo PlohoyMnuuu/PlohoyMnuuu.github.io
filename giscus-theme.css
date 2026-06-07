@@ -55,6 +55,12 @@ textarea:focus {
   box-shadow: none !important;
 }
 
+.color-box-border-info {
+  border-width: 1px !important;
+  border-color: #22314d80 !important;
+  box-shadow: none !important;
+}
+
 /* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
 .gsc-reactions-button { display: none !important; }
