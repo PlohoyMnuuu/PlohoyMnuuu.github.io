@@ -1611,139 +1611,41 @@ li { margin-bottom: 8px; }
 
 /* ================================================
    MOBILE PERFORMANCE — до 768px
-   Отключаем всё что жрёт GPU без потери вида:
-   backdrop-filter, сложные box-shadow на transition,
-   will-change, background-attachment:fixed,
-   псевдоэлементы с blur/gradient на body
+   Убираем только самое тяжёлое:
+   backdrop-filter, box-shadow в transition,
+   background-attachment: fixed
    ================================================ */
 @media (max-width: 768px) {
 
-  /* Фиксированный фон — главный тормоз на мобайл */
+  /* Фиксированный фон — перерисовка на каждом кадре скролла */
   html, body {
     background-attachment: scroll !important;
   }
 
-  /* Сетка на body::after — лишний compositor layer */
-  body::after {
-    display: none !important;
-  }
-
-  /* Убираем will-change — браузер сам решит */
-  .section,
-  .promo-card,
-  .reward-item,
-  .mini-tip-card,
-  .author-block,
-  .video-cover,
-  .screenshot-cover,
-  .play-button {
-    will-change: auto !important;
-  }
-
-  /* backdrop-filter = отдельный compositor layer, очень тяжело */
+  /* backdrop-filter — самый тяжёлый эффект, отдельный GPU-слой */
   .play-button,
   .screenshot-magnifier {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    /* компенсируем: просто непрозрачный тёмный фон */
-    background: rgba(10, 16, 26, 0.85) !important;
+    background: rgba(10, 16, 26, 0.88) !important;
   }
 
-  /* Тяжёлые составные тени убираем с transition —
-     они пересчитываются каждый кадр анимации.
-     Оставляем статичную простую тень */
+  /* box-shadow в transition — пересчёт каждый кадр анимации.
+     Тени оставляем статичными, анимируем только border-color и transform */
   .section,
   .promo-card,
   .reward-item,
   .mini-tip-card,
   .author-block,
   .unified-block {
-    transition: border-color var(--t-base) !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+    transition: border-color var(--t-base), transform var(--t-base) !important;
   }
 
-  /* Hover-тени не анимируем совсем — просто меняем border */
-  .promo-card:hover,
-  .section:hover,
-  .reward-item:hover,
-  .mini-tip-card:hover,
-  .author-block:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
-  }
-
-  /* Shimmer (::after на promo-card) — лишняя перерисовка */
-  .promo-card::after {
-    display: none !important;
-  }
-
-  /* Shimmer на author-block тоже */
-  .author-block::after {
-    display: none !important;
-  }
-
-  /* Декоративный свет в хедере — radial-gradient blur */
-  .hero-header::before {
-    display: none !important;
-  }
-
-  /* transform на hover — оставляем только translateY,
-     убираем scale (вызывает layout recalc на некоторых устройствах) */
-  .screenshot-cover:hover {
-    transform: none !important;
-  }
-
-  .screenshot-cover:active {
-    transform: scale(0.98) !important;
-  }
-
-  /* Анимация dot пульсации — упрощаем (opacity вместо box-shadow) */
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; box-shadow: none; }
-    50%       { opacity: 0.45; box-shadow: none; }
-  }
-
-  /* hero-cta — убираем box-shadow из transition */
   .hero-cta {
     transition: transform var(--t-base), opacity var(--t-base) !important;
-    box-shadow: 0 3px 12px rgba(245,183,48,0.25) !important;
   }
 
-  .hero-cta:hover {
-    box-shadow: 0 3px 12px rgba(245,183,48,0.25) !important;
-  }
-
-  /* copy-btn — упрощаем тень */
   .copy-btn {
-    box-shadow: none !important;
     transition: transform var(--t-fast), opacity var(--t-fast) !important;
-  }
-
-  /* Псевдоэлементы-блики на section и promo-card — дополнительные слои */
-  .section::before,
-  .promo-card::before,
-  .reward-item::before,
-  .unified-block::before {
-    display: none !important;
-  }
-
-  /* mini-tip-card::after — анимируемая высота полоски, дёшево но уберём */
-  .mini-tip-card::after {
-    display: none !important;
-  }
-
-  /* Полоска просто меняет border при hover — дёшево */
-  .mini-tip-card:hover {
-    border-left: 3px solid var(--blue) !important;
-    border-radius: 0 var(--r-md) var(--r-md) 0 !important;
-  }
-
-  /* Убираем анимацию fadeUp из hero — страница грузится быстрее */
-  .hero-brand,
-  .hero-title,
-  .hero-stats,
-  .hero-cta {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
   }
 }
