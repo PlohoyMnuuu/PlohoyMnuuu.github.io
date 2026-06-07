@@ -73,3 +73,10 @@ main {
 .gsc-comments {
   padding-top: 0 !important;
 }
+
+.gsc-main {
+  width: 90% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: -16px !important; /* уже было, просто объединяем */
+}
