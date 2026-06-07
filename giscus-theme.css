@@ -51,7 +51,7 @@ main {
 
 .gsc-comment-box-textarea:focus {
   border-color: #22314d !important;
-  box-shadow: 0 0 0 3px #22314d33 !important;
+  box-shadow: none !important;
   outline: none !important;
 }
 /* Карточка комментария */
