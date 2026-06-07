@@ -73,13 +73,28 @@
   --text-3xl:  36px;
 
   /* === СИСТЕМА СПЕЙСИНГА === */
+  /* Внутри блока (padding) */
   --space-inner: 24px;
+
+  /* Между основными блоками */
   --space-block: 28px;
+
+  /* Между карточками внутри блока */
   --space-card: 14px;
+
+  /* Между элементами в сетке */
   --space-grid: 16px;
+
+  /* Между элементами списка */
   --space-item: 10px;
+
+  /* Отступ после хедера (перед первым блоком) */
   --space-header-gap: 28px;
+
+  /* Padding контейнера (горизонтально) */
   --space-container-h: 20px;
+
+  /* Микро-спейсинг */
   --space-tiny: 6px;
   --space-xs: 8px;
 }
@@ -95,20 +110,12 @@
   }
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  /* ПАТЧ 1: убрать синюю вспышку на тапе на всех элементах */
-  -webkit-tap-highlight-color: transparent;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  /* ПАТЧ 3: убрать резину при скролле до края */
-  overscroll-behavior-y: contain;
 }
 
 html, body {
@@ -122,8 +129,7 @@ html, body {
   background-image:
     radial-gradient(ellipse 60% 40% at 15% 0%, rgba(245,183,48,0.055) 0%, transparent 60%),
     radial-gradient(ellipse 50% 40% at 90% 5%, rgba(96,165,250,0.045) 0%, transparent 55%);
-  /* ПАТЧ 1: убрано background-attachment: fixed — на iOS перерисовывало фон каждый кадр */
-  background-attachment: scroll;
+  background-attachment: fixed;
 }
 
 /* Тонкая сетка — только на больших экранах */
@@ -225,6 +231,7 @@ li { margin-bottom: var(--space-item); }
   margin-bottom: var(--space-header-gap);
 }
 
+/* Декоративный свет за заголовком */
 .hero-header::before {
   content: '';
   position: absolute;
@@ -303,6 +310,7 @@ li { margin-bottom: var(--space-item); }
 
 #stats-update-date span { color: var(--text-dim); }
 
+/* CTA-кнопка — главный призыв к действию */
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -325,8 +333,6 @@ li { margin-bottom: var(--space-item); }
   transition: transform var(--t-base), box-shadow var(--t-base), background var(--t-base);
   box-shadow: 0 4px 20px rgba(245,183,48,0.3), 0 1px 0 rgba(255,255,255,0.25) inset;
   animation: fadeUp 0.55s ease 0.22s both;
-  /* ПАТЧ 4: убрать 300мс задержку на тапе */
-  touch-action: manipulation;
 }
 
 .hero-cta::after {
@@ -389,6 +395,7 @@ li { margin-bottom: var(--space-item); }
   transition: border-color var(--t-base), box-shadow var(--t-base);
 }
 
+/* Тонкий блик сверху — даёт ощущение объёма */
 .section::before {
   content: '';
   position: absolute;
@@ -405,11 +412,14 @@ li { margin-bottom: var(--space-item); }
 /* ================================================
    ВАРИАЦИИ СЕКЦИЙ
    ================================================ */
+
+/* FAQ — чуть тише */
 .section-faq {
   background: #0d1421;
   border-color: rgba(255,255,255,0.05);
 }
 
+/* Энергия — зелёный акцент */
 .section-energy {
   background: var(--card);
   border-left: 3px solid var(--green);
@@ -423,6 +433,7 @@ li { margin-bottom: var(--space-item); }
 
 .section-energy h2 .svg-icon { stroke: var(--green); opacity: 0.8; }
 
+/* Предупреждение — красный акцент */
 .section-warning {
   background: var(--card);
   border-left: 3px solid var(--red);
@@ -458,10 +469,9 @@ li { margin-bottom: var(--space-item); }
   gap: var(--space-xs);
   position: relative;
   overflow: hidden;
-  /* ПАТЧ 4: убрать задержку тапа */
-  touch-action: manipulation;
 }
 
+/* Подсветка сверху */
 .reward-item::before {
   content: '';
   position: absolute;
@@ -501,8 +511,10 @@ li { margin-bottom: var(--space-item); }
 }
 
 /* ================================================
-   ПРОМОКОДЫ
+   ПРОМОКОДЫ — главный блок, самый заметный
    ================================================ */
+
+/* Сам раздел с кодами поднят чуть ярче */
 #promo-codes {
   background: var(--card-raised);
   border-color: rgba(255,255,255,0.09);
@@ -515,6 +527,7 @@ li { margin-bottom: var(--space-item); }
   align-items: center;
   justify-content: space-between;
   gap: var(--space-xs);
+
   background: #0a1018;
   border: 1px solid rgba(255,255,255,0.07);
   border-left: 3px solid var(--gold);
@@ -524,16 +537,19 @@ li { margin-bottom: var(--space-item); }
   cursor: pointer;
   position: relative;
   overflow: hidden;
+
+  /* Инсет-тень — тактильность */
   box-shadow: var(--shadow-promo);
+
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
-  /* ПАТЧ 4: убрать задержку тапа */
-  touch-action: manipulation;
 }
 
+/* Последняя карточка без отступа */
 .promo-card:last-child {
   margin-bottom: 0;
 }
 
+/* Блик сверху */
 .promo-card::before {
   content: '';
   position: absolute;
@@ -543,6 +559,7 @@ li { margin-bottom: var(--space-item); }
   pointer-events: none;
 }
 
+/* Shimmer on hover */
 .promo-card::after {
   content: '';
   position: absolute;
@@ -635,8 +652,6 @@ li { margin-bottom: var(--space-item); }
   transition: transform var(--t-fast), opacity var(--t-fast), box-shadow var(--t-fast);
   box-shadow: 0 2px 6px rgba(245,183,48,0.25), 0 1px 0 rgba(255,255,255,0.2) inset;
   min-height: 38px;
-  /* ПАТЧ 4: убрать задержку тапа */
-  touch-action: manipulation;
 }
 
 .copy-btn svg { width: 12px; height: 12px; }
@@ -649,43 +664,28 @@ li { margin-bottom: var(--space-item); }
 
 .copy-btn:active { transform: scale(0.95); }
 
-/* ================================================
-   СКЕЛЕТОН ЗАГРУЗКИ
-   ПАТЧ 6: shimmer через transform вместо background-position
-   — compositor-only, не красит CPU каждый кадр
-   ================================================ */
+/* Скелетон загрузки */
 .promo-card.skeleton {
   height: 74px;
   pointer-events: none;
-  background: #0e1624;
+  background: linear-gradient(90deg, #0e1624 25%, #151f30 50%, #0e1624 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
   border: 1px solid rgba(255,255,255,0.04);
   border-left: 3px solid rgba(255,255,255,0.06);
   box-shadow: none;
   margin-bottom: var(--space-card);
-  position: relative;
-  overflow: hidden;
 }
 
-.promo-card.skeleton::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(21,31,48,0.9) 50%,
-    transparent 100%
-  );
-  animation: shimmer 1.4s infinite;
-}
-
+.promo-card.skeleton::before,
 .promo-card.skeleton::after { display: none; }
+
 .promo-card.skeleton .promo-info,
 .promo-card.skeleton .copy-btn { display: none; }
 
 @keyframes shimmer {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(100%); }
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 /* ================================================
@@ -709,9 +709,12 @@ li { margin-bottom: var(--space-item); }
   position: relative;
   overflow: hidden;
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
+
+  /* Тонкий блик */
   box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset;
 }
 
+/* Акцентная полоска слева появляется при ховере */
 .mini-tip-card::after {
   content: '';
   position: absolute;
@@ -763,8 +766,6 @@ li { margin-bottom: var(--space-item); }
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-promo);
-  /* ПАТЧ 4: убрать задержку тапа */
-  touch-action: manipulation;
 }
 
 .author-block::after {
@@ -881,6 +882,7 @@ li { margin-bottom: var(--space-item); }
 
 .author-block:hover .author-arrow svg { transform: translateX(2px); }
 
+/* Facebook */
 .fb-link {
   display: inline-flex;
   align-items: center;
@@ -894,7 +896,6 @@ li { margin-bottom: var(--space-item); }
   letter-spacing: 0.03em;
   text-decoration: none;
   transition: background var(--t-fast), transform var(--t-fast);
-  touch-action: manipulation;
 }
 
 .fb-link:hover { background: #0e5bcf; transform: translateY(-1px); color: #fff; }
@@ -902,7 +903,7 @@ li { margin-bottom: var(--space-item); }
 .mobile-fb-btn { display: none; margin-top: var(--space-tiny); }
 
 /* ================================================
-   UNIFIED BLOCK
+   UNIFIED BLOCK (объединённый блок)
    ================================================ */
 .unified-block {
   background: var(--card);
@@ -914,6 +915,7 @@ li { margin-bottom: var(--space-item); }
   position: relative;
 }
 
+/* Блик сверху */
 .unified-block::before {
   content: '';
   position: absolute;
@@ -933,6 +935,7 @@ li { margin-bottom: var(--space-item); }
   padding: var(--space-inner);
 }
 
+/* Убираем псевдоэлемент блика у вложенных секций */
 .unified-block .section::before { display: none; }
 
 .unified-block .video-showcase,
@@ -973,12 +976,14 @@ li { margin-bottom: var(--space-item); }
   padding: 0;
 }
 
+/* Обложка */
 .cover-stage {
   position: relative;
   display: flex;
   justify-content: center;
 }
 
+/* Декор. линии по бокам (только мобайл) */
 .cover-stage::before,
 .cover-stage::after {
   content: '';
@@ -1029,15 +1034,13 @@ li { margin-bottom: var(--space-item); }
   border-radius: var(--r-lg);
   border: 1px solid var(--card-border);
   background: #000;
-  /* ПАТЧ 2: will-change только при ховере, не постоянно */
   transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
+  will-change: transform;
 }
 
 .video-cover:hover {
   border-color: rgba(96,165,250,0.35);
   box-shadow: 0 8px 28px rgba(0,0,0,0.5), 0 0 0 1px rgba(96,165,250,0.1);
-  /* ПАТЧ 2: will-change активируется только здесь */
-  will-change: transform;
 }
 
 .video-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -1051,17 +1054,14 @@ li { margin-bottom: var(--space-item); }
   pointer-events: none;
 }
 
-/* ================================================
-   КНОПКА PLAY
-   ПАТЧ 7: убран backdrop-filter — дорогая операция на слабых Android
-   ================================================ */
+/* Кнопка Play */
 .play-button {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 52px; height: 52px;
-  /* ПАТЧ 7: заменён backdrop-filter: blur(6px) на более тёмный фон */
-  background: rgba(10,16,26,0.82);
+  background: rgba(10,16,26,0.65);
+  backdrop-filter: blur(6px);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1072,8 +1072,6 @@ li { margin-bottom: var(--space-item); }
   box-shadow: 0 2px 16px rgba(0,0,0,0.5);
   transition: transform 0.25s cubic-bezier(0.2,0.9,0.4,1.1), background var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
   min-width: 48px; min-height: 48px;
-  /* ПАТЧ 4: убрать задержку тапа */
-  touch-action: manipulation;
 }
 
 .play-button svg {
@@ -1116,7 +1114,6 @@ li { margin-bottom: var(--space-item); }
   cursor: pointer;
   white-space: nowrap;
   transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
-  touch-action: manipulation;
 }
 
 .video-badge:hover,
@@ -1126,6 +1123,7 @@ li { margin-bottom: var(--space-item); }
   transform: translateY(-1px);
 }
 
+/* Info под видео/скриншотом */
 .video-info,
 .screenshot-info {
   border-top: 1px solid var(--divider);
@@ -1182,8 +1180,6 @@ li { margin-bottom: var(--space-item); }
   background: #000;
   cursor: zoom-in;
   transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
-  /* ПАТЧ 4: убрать задержку тапа */
-  touch-action: manipulation;
 }
 
 .screenshot-cover:hover {
@@ -1204,13 +1200,15 @@ li { margin-bottom: var(--space-item); }
   pointer-events: none;
 }
 
+/* Иконка лупы */
 .screenshot-magnifier {
   position: absolute;
   top: 10px; right: 10px;
   z-index: 2;
   width: 30px; height: 30px;
   border-radius: var(--r-sm);
-  background: rgba(10,16,26,0.75);
+  background: rgba(10,16,26,0.65);
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(245,183,48,0.3);
   display: flex;
   align-items: center;
@@ -1238,8 +1236,6 @@ li { margin-bottom: var(--space-item); }
 
 /* ================================================
    МОДАЛКИ
-   ПАТЧ 5: safe-area для iPhone с чёлкой
-   ПАТЧ 9: блокировка скролла под модалкой
    ================================================ */
 .video-modal {
   position: fixed;
@@ -1249,14 +1245,8 @@ li { margin-bottom: var(--space-item); }
   align-items: center;
   justify-content: center;
   z-index: 999999;
-  /* ПАТЧ 5: safe-area отступы для iPhone с Dynamic Island / чёлкой */
-  padding:
-    max(var(--space-xs), env(safe-area-inset-top))
-    var(--space-xs)
-    max(var(--space-xs), env(safe-area-inset-bottom));
+  padding: var(--space-xs);
   animation: fadeIn var(--t-base);
-  /* ПАТЧ 9: не прокручивать саму модалку */
-  overscroll-behavior: contain;
 }
 
 .video-modal.show { display: flex; }
@@ -1296,11 +1286,9 @@ li { margin-bottom: var(--space-item); }
   display: block;
 }
 
-/* ПАТЧ 5: кнопка закрытия учитывает safe-area */
 .video-close {
   position: absolute;
-  top: max(10px, env(safe-area-inset-top));
-  right: max(10px, env(safe-area-inset-right));
+  top: 10px; right: 10px;
   z-index: 10;
   background: rgba(245,183,48,0.88);
   border: 1px solid rgba(255,255,255,0.2);
@@ -1314,25 +1302,17 @@ li { margin-bottom: var(--space-item); }
   align-items: center;
   justify-content: center;
   transition: background var(--t-fast), transform var(--t-base);
-  touch-action: manipulation;
 }
 
 .video-close:hover { background: var(--gold); transform: scale(1.08) rotate(90deg); }
 .video-close:active { transform: scale(0.94); }
-
-/* ПАТЧ 9: блокировка скролла страницы под открытой модалкой */
-body.modal-open {
-  overflow: hidden;
-  overscroll-behavior: none;
-}
 
 /* ================================================
    TOAST
    ================================================ */
 #toast {
   position: fixed;
-  top: max(20px, env(safe-area-inset-top));
-  left: 50%;
+  top: 20px; left: 50%;
   transform: translateX(-50%);
   background: var(--gold);
   color: #000;
@@ -1361,7 +1341,7 @@ body.modal-open {
 #toast svg { width: 14px; height: 14px; }
 
 /* ================================================
-   PROMO CHECK
+   PROMO CHECK (если используется)
    ================================================ */
 .promo-check-section {
   padding: var(--space-inner);
@@ -1398,7 +1378,6 @@ body.modal-open {
   font-weight: 700;
   font-size: var(--text-sm);
   transition: background var(--t-fast), transform var(--t-fast);
-  touch-action: manipulation;
 }
 
 .promo-check-section button:hover { background: var(--green); transform: translateY(-1px); }
@@ -1426,7 +1405,6 @@ body.modal-open {
   letter-spacing: 0.01em;
   cursor: pointer;
   transition: background var(--t-base), border-color var(--t-base), color var(--t-base), transform var(--t-fast);
-  touch-action: manipulation;
 }
 
 .toggle-comments-btn:hover {
@@ -1468,8 +1446,7 @@ body.modal-open {
   position: relative;
   background: #05080f;
   border-top: 1px solid var(--divider);
-  /* ПАТЧ 5: safe-area снизу для iPhone с Home Indicator */
-  padding: 44px var(--space-container-h) max(32px, calc(16px + env(safe-area-inset-bottom)));
+  padding: 44px var(--space-container-h) 32px;
   text-align: center;
   margin-top: var(--space-block);
 }
@@ -1508,6 +1485,7 @@ body.modal-open {
    ================================================ */
 @media (max-width: 768px) {
   :root {
+    /* На планшетах компактнее */
     --space-block: 20px;
     --space-card: 10px;
     --space-grid: 12px;
@@ -1566,6 +1544,7 @@ body.modal-open {
    ================================================ */
 @media (max-width: 550px) {
   :root {
+    /* На мобильных с увеличением на 70% для блоков и 30% для карточек */
     --space-block: 27px;
     --space-card: 10px;
     --space-grid: 13px;
@@ -1627,8 +1606,8 @@ body.modal-open {
   .video-title { font-size: 14px; }
   .video-text  { font-size: 12px; }
   .video-meta  { font-size: 11px; margin-top: var(--space-xs); }
-
-  .custom-site-footer { padding: 44px var(--space-container-h) max(32px, calc(16px + env(safe-area-inset-bottom))); }
+  
+  .custom-site-footer { padding: 44px var(--space-container-h) 32px; }
   .giscus-section { margin-top: var(--space-block); }
   .giscus-container { margin-top: var(--space-card); padding-top: var(--space-card); }
 }
@@ -1638,6 +1617,7 @@ body.modal-open {
    ================================================ */
 @media (max-width: 375px) {
   :root {
+    /* На очень маленьких экранах: блоки 27px, карточки 10px */
     --space-block: 27px;
     --space-card: 10px;
     --space-grid: 13px;
