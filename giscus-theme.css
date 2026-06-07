@@ -14,10 +14,11 @@ main {
   --color-fg-default: #adbac7 !important;
   --color-fg-muted: #768390 !important;
 
---color-accent-fg: transparent !important;
---color-accent-emphasis: #eac55f !important;
---color-accent-muted: #eac55f  !important;
---color-accent-subtle: transparent !important;
+  /* Жёлтый акцент */
+  --color-accent-fg: transparent !important;
+  --color-accent-emphasis: transparent !important;
+  --color-accent-muted: transparent!important;
+  --color-accent-subtle: transparent !important;
 
   /* Кнопки */
   --color-btn-bg: #373e47 !important;
@@ -75,7 +76,7 @@ main {
 
 /* Бейдж «автор» и прочие теги */
 .gsc-comment-author-association-badge {
-  background: #eac55f !important;
+  background: transparent !important;
   border: 0.5px solid #22314d !important;
   color: #768390 !important;
   border-radius: 4px !important;
