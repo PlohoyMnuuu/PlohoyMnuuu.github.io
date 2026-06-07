@@ -29,16 +29,18 @@ main {
   --color-btn-primary-hover-bg: #d1b155 !important;
 }
 
-  --btn-primary-bg: #007bff;
-  --btn-primary-text: #ffffff;
-  
-  /* Цвета для состояния disabled */
-  --btn-disabled-bg: #e0e0e0;
-  --btn-disabled-text: #a0a0a0;
-  
-  /* Остальные параметры */
-  --btn-padding: 10px 20px;
-  --btn-border-radius: 4px;
+
+  /* Добавьте эти переменные в ваш список внутри main */
+  --color-btn-disabled-bg: #2d333b !important;
+  --color-btn-disabled-text: #768390 !important;
+}
+
+/* Принудительное применение стилей для disabled состояния */
+main .btn-primary:disabled {
+  background-color: var(--color-btn-disabled-bg) !important;
+  color: var(--color-btn-disabled-text) !important;
+  cursor: not-allowed !important;
+  border-color: transparent !important;
 }
 
 
