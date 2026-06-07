@@ -1616,7 +1616,7 @@ li { margin-bottom: 8px; }
    background-attachment: fixed
    ================================================ */
 @media (max-width: 768px) {
-
+ 
   /* Фиксированный фон — перерисовка на каждом кадре скролла */
   html, body {
     background-attachment: scroll !important;
