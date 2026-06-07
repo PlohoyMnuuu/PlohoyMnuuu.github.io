@@ -11,7 +11,7 @@ main {
   --color-fg-default: #adbac7 !important;
   --color-fg-muted: #768390 !important;
   --color-accent-fg: #adbac7 !important;
-  --color-accent-emphasis: #22314d !important;
+  --color-accent-emphasis: #adbac7 !important;
   --color-accent-muted: #adbac720 !important;
   --color-accent-subtle: #adbac710 !important;
   --color-btn-bg: #373e47 !important;
@@ -35,8 +35,8 @@ main {
 .gsc-reply-box textarea,
 input[type="text"],
 textarea {
-  outline: none !important;
-  border: 1px solid #22314d !important;
+  outline: 1px solid #eac55f66 !important;
+  border: 1px solid #eac55f66 !important;
   box-shadow: none !important;
 }
 
@@ -44,8 +44,8 @@ textarea {
 .gsc-reply-box textarea:focus,
 input[type="text"]:focus,
 textarea:focus {
-  outline: none !important;
-  border: 1px solid #2d4060 !important;
+  outline: 1px solid #eac55f99 !important;
+  border: 1px solid #eac55f99 !important;
   box-shadow: none !important;
 }
 
