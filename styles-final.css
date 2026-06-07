@@ -1454,3 +1454,7 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   padding-top: 0 !important;
 }
 
+.giscus-container iframe {
+  margin-top: -18px !important;
+  display: block;
+}
