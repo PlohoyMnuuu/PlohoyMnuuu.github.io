@@ -3,23 +3,20 @@
  */
 main {
   /* Цвета фона */
-  --color-canvas-default: #192734 !important;
+  --color-canvas-default: #0d1520 !important;
   --color-canvas-overlay: #161b22 !important;
-  --color-canvas-inset: #15202b !important;
+  --color-canvas-inset: #090d16 !important;
   --color-canvas-subtle: #192734 !important;
-
   /* Цвет границ и текста */
-  --color-border-default: #444c56 !important;
-  --color-border-muted: #373e47 !important;
+  --color-border-default: #22314d !important;
+  --color-border-muted: #1a2540 !important;
   --color-fg-default: #adbac7 !important;
   --color-fg-muted: #768390 !important;
-
-  /* Ваш желтый акцент (кнопки, ссылки, выделение) */
+  /* Желтый акцент (кнопки, ссылки, выделение) */
   --color-accent-fg: #eac55f !important;
   --color-accent-emphasis: #eac55f !important;
   --color-accent-muted: #eac55f66 !important;
   --color-accent-subtle: #eac55f1a !important;
-
   /* Кнопки */
   --color-btn-bg: #373e47 !important;
   --color-btn-hover-bg: #444c56 !important;
@@ -27,20 +24,7 @@ main {
   --color-btn-primary-bg: #eac55f !important;
   --color-btn-primary-text: #192734 !important;
   --color-btn-primary-hover-bg: #d1b155 !important;
-}
-
-main {
-  --color-canvas-default: #0b111e !important;  /* тёмный фон iframe */
-  --color-canvas-inset:   #090d16 !important;
-  --color-border-default: #22314d !important;  /* бордер как --border-main */
-  --color-border-muted:   #1a2540 !important;
-}
-
-main {
-  --color-canvas-default: #0d1520 !important;
-  --color-canvas-inset:   #090d16 !important;
-  --color-border-default: #22314d !important;
-  --color-border-muted:   #1a2540 !important;
+  /* Скругление */
   border-radius: 16px !important;
   overflow: hidden !important;
 }
@@ -48,16 +32,16 @@ main {
 /* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
 .gsc-reactions-button { display: none !important; }
-.gsc-comments-count, .gsc-comments-count-separator .gsc-reactions-button { display: none !important; }
+.gsc-comments-count,
+.gsc-comments-count-separator .gsc-reactions-button { display: none !important; }
 .gsc-comment-box-textarea-extras { display: none !important; }
 #__next .py-2 { display: none !important; }
 .color-box-border-info { display: none !important; }
 .gsc-upvote-button:disabled { display: none !important; }
-
 .gsc-comment-box-tabs { display: none !important; }
 .gsc-header, .gsc-left-header { display: none !important; }
 #__next .text-xs { display: none !important; }
-.gsc-social-reaction-summary-item-count{ display: none !important; }
+.gsc-social-reaction-summary-item-count { display: none !important; }
 .box-border-info { display: none !important; }
 
 /* Настройка расположения */
@@ -67,16 +51,17 @@ main {
 .gsc-comments > .gsc-comment-box { margin-bottom: 1rem; order: 2; }
 .gsc-comments > .gsc-timeline { order: 3; }
 
-
-}
-
+/* Размеры и отступы */
 .gsc-comments {
   padding-top: 0 !important;
 }
-
 .gsc-main {
   width: 96% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: -16px !important; 
+  margin-top: -16px !important;
+  min-height: 200px !important;
+}
+#__next {
+  min-height: 100% !important;
 }
