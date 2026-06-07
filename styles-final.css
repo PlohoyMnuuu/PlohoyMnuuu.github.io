@@ -1445,3 +1445,11 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
 .giscus-container.visible {
   display: block;
 }
+
+.gsc-main {
+  margin-top: -16px !important;
+}
+
+.gsc-comments {
+  padding-top: 0 !important;
+}
