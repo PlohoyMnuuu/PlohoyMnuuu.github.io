@@ -350,7 +350,7 @@ li { margin-bottom: 8px; }
 .container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 24px 20px;
+  padding: 32px 20px 28px;
 }
 
 /* ================================================
@@ -360,8 +360,8 @@ li { margin-bottom: 8px; }
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--r-xl);
-  padding: 24px;
-  margin-bottom: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
   box-shadow: var(--shadow-card);
   position: relative;
   overflow: hidden;
@@ -421,7 +421,7 @@ li { margin-bottom: 8px; }
 .rewards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 14px;
 }
 
 .reward-item {
@@ -502,8 +502,8 @@ li { margin-bottom: 8px; }
   border: 1px solid rgba(255,255,255,0.07);
   border-left: 3px solid var(--gold);
   border-radius: var(--r-md);
-  padding: 14px 14px 14px 16px;
-  margin-bottom: 10px;
+  padding: 16px 16px 16px 18px;
+  margin-bottom: 14px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -658,15 +658,15 @@ li { margin-bottom: 8px; }
 .mini-tips-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 14px;
+  gap: 14px;
+  margin-top: 20px;
 }
 
 .mini-tip-card {
   background: #0a1018;
   border: 1px solid var(--card-border);
   border-radius: var(--r-md);
-  padding: 14px 15px;
+  padding: 16px 18px;
   font-size: var(--text-sm);
   line-height: 1.6;
   color: var(--text-dim);
@@ -874,7 +874,7 @@ li { margin-bottom: 8px; }
   border: 1px solid var(--card-border);
   border-radius: var(--r-xl);
   box-shadow: var(--shadow-card);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   overflow: hidden;
   position: relative;
 }
@@ -896,14 +896,14 @@ li { margin-bottom: 8px; }
   border-radius: 0;
   box-shadow: none;
   margin-bottom: 0;
-  padding: 24px;
+  padding: 28px;
 }
 
 /* Убираем псевдоэлемент блика у вложенных секций */
 .unified-block .section::before { display: none; }
 
 .unified-block .video-showcase,
-.unified-block .screenshot-showcase { padding: 0 24px 24px; }
+.unified-block .screenshot-showcase { padding: 0 28px 28px; }
 
 /* ================================================
    DIVIDER
@@ -911,7 +911,7 @@ li { margin-bottom: 8px; }
 .section-divider {
   display: none;
   height: 1px;
-  margin: 0 24px;
+  margin: 0 28px;
   background: var(--divider);
   border: none;
   position: relative;
@@ -1454,8 +1454,21 @@ li { margin-bottom: 8px; }
   .hero-stats  { flex-direction: column; gap: 5px; font-size: 12px; }
   .hero-stats .stat-divider { display: none; }
 
-  .container { padding: 16px; }
-  .section { padding: 18px; border-radius: var(--r-lg); margin-bottom: 12px; }
+  .container { padding: 24px 20px; }
+
+  .section {
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: var(--r-lg);
+  }
+
+  .rewards-grid { gap: 16px; }
+
+  .promo-card { margin-bottom: 16px; }
+
+  .mini-tips-grid { gap: 16px; }
+
+  .author-block { padding: 16px 18px; }
 
   .video-cover, .screenshot-cover {
     max-width: 100%;
@@ -1486,10 +1499,15 @@ li { margin-bottom: 8px; }
   }
 
   .video-showcase, .screenshot-showcase { padding: 0; }
-  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 18px 18px; }
-  .unified-block .section { padding: 18px; }
-  .section-divider { margin: 0 18px; }
-  .author-block { gap: 12px; padding: 12px 14px; }
+
+  .unified-block .video-showcase,
+  .unified-block .screenshot-showcase {
+    padding: 0 24px 24px;
+  }
+
+  .unified-block .section { padding: 24px; }
+  .section-divider { margin: 0 24px; }
+  .author-block { gap: 12px; padding: 16px 18px; }
   .author-photo-wrapper { width: 58px; height: 58px; }
 }
 
@@ -1506,14 +1524,15 @@ li { margin-bottom: 8px; }
   li { margin-bottom: 7px; }
 
   .code-text { font-size: 13px !important; letter-spacing: 0.04em; }
-  .rewards-grid { gap: 8px; }
-  .reward-item { padding: 12px 8px; min-height: 98px; border-radius: var(--r-md); }
+
+  .rewards-grid { gap: 14px; }
+  .reward-item { padding: 16px 10px; min-height: 98px; border-radius: var(--r-md); }
   .reward-icon { font-size: 22px; }
   .reward-title { font-size: 9px; }
   .new-badge { font-size: 9px; padding: 2px 6px; }
   .reward-text { font-size: 12px; }
 
-  .promo-card { padding: 11px 12px; margin-bottom: 8px; border-radius: var(--r-md); gap: 10px; }
+  .promo-card { padding: 16px; margin-bottom: 14px; border-radius: var(--r-md); gap: 12px; }
 
   .copy-btn { padding: 7px 9px; font-size: 9px; min-height: 33px; border-radius: 6px; }
   .copy-btn svg { width: 11px; height: 11px; }
@@ -1524,11 +1543,11 @@ li { margin-bottom: 8px; }
   .screenshot-magnifier { width: 28px; height: 28px; }
   .screenshot-magnifier svg { width: 12px; height: 12px; }
 
-  .mini-tips-grid { grid-template-columns: 1fr; gap: 8px; margin-top: 12px; }
-  .mini-tip-card { padding: 12px 13px; font-size: 12px; min-height: 0; }
-  .mini-tip-card strong { font-size: 13px; margin-bottom: 3px; }
+  .mini-tips-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 20px; }
+  .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
+  .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
 
-  .author-block { gap: 10px; padding: 11px 12px; border-radius: var(--r-md); }
+  .author-block { gap: 12px; padding: 16px; border-radius: var(--r-md); }
   .author-photo-wrapper { width: 52px; height: 52px; border-radius: var(--r-md); }
   .author-name { font-size: 13px; }
   .author-info p { font-size: 12px; margin-bottom: 8px; }
@@ -1540,11 +1559,22 @@ li { margin-bottom: 8px; }
 
   .hero-cta { padding: 12px 22px; font-size: 11px; }
   .hero-header { padding: 36px 12px 28px; }
-  .container { padding: 12px; }
-  .section { padding: 14px; margin-bottom: 10px; border-radius: var(--r-md); }
-  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 14px 14px; }
-  .unified-block .section { padding: 14px; }
-  .section-divider { margin: 0 14px; }
+
+  .container { padding: 20px 16px; }
+
+  .section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--r-md);
+  }
+
+  .unified-block .video-showcase,
+  .unified-block .screenshot-showcase {
+    padding: 0 20px 20px;
+  }
+
+  .unified-block .section { padding: 20px; }
+  .section-divider { margin: 0 20px; }
 
   .video-title { font-size: 14px; }
   .video-text  { font-size: 12px; }
@@ -1560,10 +1590,19 @@ li { margin-bottom: 8px; }
   p  { font-size: 13px; }
   .code-text { font-size: 11px; letter-spacing: 0.02em; }
   .hero-cta  { padding: 10px 18px; }
-  .rewards-grid { grid-template-columns: 1fr 1fr; }
+
+  .rewards-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .reward-item { padding: 12px 8px; }
+
+  .promo-card { padding: 14px 12px; margin-bottom: 12px; }
+  .mini-tips-grid { gap: 12px; }
+  .mini-tip-card { padding: 14px; }
+
+  .author-block { padding: 14px; gap: 10px; }
   .author-arrow { display: none; }
-  .container { padding: 10px; }
-  .section { padding: 12px; }
+
+  .container { padding: 16px 12px; }
+  .section { padding: 18px; margin-bottom: 18px; }
 }
 
 /* ================================================
@@ -1581,7 +1620,7 @@ li { margin-bottom: 8px; }
   }
 
   .unified-block .video-showcase,
-  .unified-block .screenshot-showcase { padding: 24px; }
+  .unified-block .screenshot-showcase { padding: 28px; }
 
   .video-cover,
   .screenshot-cover {
@@ -1611,139 +1650,41 @@ li { margin-bottom: 8px; }
 
 /* ================================================
    MOBILE PERFORMANCE — до 768px
-   Отключаем всё что жрёт GPU без потери вида:
-   backdrop-filter, сложные box-shadow на transition,
-   will-change, background-attachment:fixed,
-   псевдоэлементы с blur/gradient на body
+   Убираем только самое тяжёлое:
+   backdrop-filter, box-shadow в transition,
+   background-attachment: fixed
    ================================================ */
 @media (max-width: 768px) {
 
-  /* Фиксированный фон — главный тормоз на мобайл */
+  /* Фиксированный фон — перерисовка на каждом кадре скролла */
   html, body {
     background-attachment: scroll !important;
   }
 
-  /* Сетка на body::after — лишний compositor layer */
-  body::after {
-    display: none !important;
-  }
-
-  /* Убираем will-change — браузер сам решит */
-  .section,
-  .promo-card,
-  .reward-item,
-  .mini-tip-card,
-  .author-block,
-  .video-cover,
-  .screenshot-cover,
-  .play-button {
-    will-change: auto !important;
-  }
-
-  /* backdrop-filter = отдельный compositor layer, очень тяжело */
+  /* backdrop-filter — самый тяжёлый эффект, отдельный GPU-слой */
   .play-button,
   .screenshot-magnifier {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    /* компенсируем: просто непрозрачный тёмный фон */
-    background: rgba(10, 16, 26, 0.85) !important;
+    background: rgba(10, 16, 26, 0.88) !important;
   }
 
-  /* Тяжёлые составные тени убираем с transition —
-     они пересчитываются каждый кадр анимации.
-     Оставляем статичную простую тень */
+  /* box-shadow в transition — пересчёт каждый кадр анимации.
+     Тени оставляем статичными, анимируем только border-color и transform */
   .section,
   .promo-card,
   .reward-item,
   .mini-tip-card,
   .author-block,
   .unified-block {
-    transition: border-color var(--t-base) !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+    transition: border-color var(--t-base), transform var(--t-base) !important;
   }
 
-  /* Hover-тени не анимируем совсем — просто меняем border */
-  .promo-card:hover,
-  .section:hover,
-  .reward-item:hover,
-  .mini-tip-card:hover,
-  .author-block:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
-  }
-
-  /* Shimmer (::after на promo-card) — лишняя перерисовка */
-  .promo-card::after {
-    display: none !important;
-  }
-
-  /* Shimmer на author-block тоже */
-  .author-block::after {
-    display: none !important;
-  }
-
-  /* Декоративный свет в хедере — radial-gradient blur */
-  .hero-header::before {
-    display: none !important;
-  }
-
-  /* transform на hover — оставляем только translateY,
-     убираем scale (вызывает layout recalc на некоторых устройствах) */
-  .screenshot-cover:hover {
-    transform: none !important;
-  }
-
-  .screenshot-cover:active {
-    transform: scale(0.98) !important;
-  }
-
-  /* Анимация dot пульсации — упрощаем (opacity вместо box-shadow) */
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; box-shadow: none; }
-    50%       { opacity: 0.45; box-shadow: none; }
-  }
-
-  /* hero-cta — убираем box-shadow из transition */
   .hero-cta {
     transition: transform var(--t-base), opacity var(--t-base) !important;
-    box-shadow: 0 3px 12px rgba(245,183,48,0.25) !important;
   }
 
-  .hero-cta:hover {
-    box-shadow: 0 3px 12px rgba(245,183,48,0.25) !important;
-  }
-
-  /* copy-btn — упрощаем тень */
   .copy-btn {
-    box-shadow: none !important;
     transition: transform var(--t-fast), opacity var(--t-fast) !important;
-  }
-
-  /* Псевдоэлементы-блики на section и promo-card — дополнительные слои */
-  .section::before,
-  .promo-card::before,
-  .reward-item::before,
-  .unified-block::before {
-    display: none !important;
-  }
-
-  /* mini-tip-card::after — анимируемая высота полоски, дёшево но уберём */
-  .mini-tip-card::after {
-    display: none !important;
-  }
-
-  /* Полоска просто меняет border при hover — дёшево */
-  .mini-tip-card:hover {
-    border-left: 3px solid var(--blue) !important;
-    border-radius: 0 var(--r-md) var(--r-md) 0 !important;
-  }
-
-  /* Убираем анимацию fadeUp из hero — страница грузится быстрее */
-  .hero-brand,
-  .hero-title,
-  .hero-stats,
-  .hero-cta {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
   }
 }
