@@ -1,101 +1,104 @@
 /*!
  * Custom Giscus Theme for PlohoyMnuuu.github.io
  */
-
-:root {
-  --accent: transparen;
-  --border: 34, 49, 77;
-  --border-muted: 26, 37, 64;
-}
-
 main {
+  /* Цвета фона */
   --color-canvas-default: #0d1520 !important;
   --color-canvas-overlay: #161b22 !important;
   --color-canvas-inset: #090d16 !important;
   --color-canvas-subtle: #192734 !important;
 
-  --color-border-default: rgb(34, 49, 77) !important;
-  --color-border-muted: rgb(26, 37, 64) !important;
+  /* Границы и текст */
+  --color-border-default: #22314d !important;
+  --color-border-muted: #1a2540 !important;
   --color-fg-default: #adbac7 !important;
   --color-fg-muted: #768390 !important;
 
+  /* Жёлтый акцент */
   --color-accent-fg: transparent !important;
   --color-accent-emphasis: transparent !important;
-  --color-accent-muted: transparent !important;
+  --color-accent-muted: transparent!important;
   --color-accent-subtle: transparent !important;
 
+  /* Кнопки */
   --color-btn-bg: #373e47 !important;
   --color-btn-hover-bg: #444c56 !important;
   --color-btn-text: #adbac7 !important;
-  --color-btn-border: rgb(34, 49, 77) !important;
-  --color-btn-primary-bg: rgb(234, 197, 95) !important;
+  --color-btn-border: #22314d !important;
+  --color-btn-primary-bg: #eac55f !important;
   --color-btn-primary-text: #192734 !important;
-  --color-btn-primary-hover-bg: rgb(209, 177, 85) !important;
+  --color-btn-primary-hover-bg: #d1b155 !important;
 
   border-radius: 16px !important;
   overflow: hidden !important;
 }
 
+/* Поле комментария */
 .gsc-comment-box {
-  border: 0.5px solid rgb(34, 49, 77) !important;
+  border: 0.5px solid #22314d !important;
   border-radius: 10px !important;
   transition: border-color 0.2s ease !important;
 }
 
 .gsc-comment-box:focus-within {
-  border-color: rgba(234, 197, 95, 0.27) !important;
+  border-color: #eac55f44 !important;
 }
 
 .gsc-comment-box-textarea {
-  border: 0.5px solid rgb(26, 37, 64) !important;
+  border: 0.5px solid #1a2540 !important;
   border-radius: 8px !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .gsc-comment-box-textarea:focus {
-  border-color: rgba(234, 197, 95, 0.4) !important;
-  box-shadow: 0 0 0 3px rgba(234, 197, 95, 0.05) !important;
+  border-color: #eac55f66 !important;
+  box-shadow: 0 0 0 3px #eac55f0d !important;
   outline: none !important;
 }
 
+/* Карточка комментария */
 .gsc-comment {
-  border: 0.5px solid rgb(34, 49, 77) !important;
+  border: 0.5px solid #22314d !important;
   border-radius: 10px !important;
   transition: border-color 0.2s ease !important;
 }
 
 .gsc-comment:hover {
-  border-color: rgb(45, 63, 90) !important;
+  border-color: #2d3f5a !important;
 }
 
+/* Вложенные ответы */
 .gsc-replies {
-  border-top: 0.5px solid rgb(26, 37, 64) !important;
-  border-left: 0.5px solid rgb(26, 37, 64) !important;
+  border-top: 0.5px solid #1a2540 !important;
+  border-left: 0.5px solid #1a2540 !important;
   transition: border-color 0.2s ease !important;
 }
 
+/* Бейдж «автор» и прочие теги */
 .gsc-comment-author-association-badge {
   background: transparent !important;
-  border: 0.5px solid rgb(34, 49, 77) !important;
+  border: 0.5px solid #22314d !important;
   color: #768390 !important;
   border-radius: 4px !important;
 }
 
+/* Кнопка входа */
 .gsc-signin-button {
-  border: 0.5px solid rgba(234, 197, 95, 0.27) !important;
+  border: 0.5px solid #eac55f44 !important;
   border-radius: 8px !important;
   transition: border-color 0.2s ease, background 0.2s ease !important;
 }
 
 .gsc-signin-button:hover {
-  border-color: rgba(234, 197, 95, 0.53) !important;
+  border-color: #eac55f88 !important;
 }
 
+/* Мелкие кнопки действий (ответить, реакции) */
 .gsc-reply-button,
 .gsc-social-reaction-summary-item,
 .gsc-upvote-button {
   background: transparent !important;
-  border: 0.5px solid rgb(26, 37, 64) !important;
+  border: 0.5px solid #1a2540 !important;
   border-radius: 5px !important;
   transition: border-color 0.2s ease, color 0.2s ease !important;
 }
@@ -103,26 +106,28 @@ main {
 .gsc-reply-button:hover,
 .gsc-social-reaction-summary-item:hover,
 .gsc-upvote-button:hover {
-  border-color: rgba(234, 197, 95, 0.33) !important;
-  color: rgba(234, 197, 95, 0.8) !important;
+  border-color: #eac55f55 !important;
+  color: #eac55f !important;
 }
 
+/* Основные кнопки */
 .gsc-comment-box-buttons .btn {
-  border: 0.5px solid rgb(34, 49, 77) !important;
+  border: 0.5px solid #22314d !important;
   border-radius: 7px !important;
   transition: border-color 0.2s ease, background 0.2s ease !important;
 }
 
 .gsc-comment-box-buttons .btn-primary {
-  border-color: rgba(234, 197, 95, 0.4) !important;
+  border-color: #eac55f66 !important;
   transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .gsc-comment-box-buttons .btn-primary:hover {
-  border-color: rgba(234, 197, 95, 0.8) !important;
-  box-shadow: 0 0 0 3px rgba(234, 197, 95, 0.07) !important;
+  border-color: #eac55f !important;
+  box-shadow: 0 0 0 3px #eac55f12 !important;
 }
 
+/* Ссылки */
 a {
   transition: color 0.15s ease !important;
 }
@@ -141,15 +146,17 @@ a {
 .gsc-social-reaction-summary-item-count { display: none !important; }
 .box-border-info { display: none !important; }
 
-/* Расположение */
+/* Настройка расположения */
 .gsc-timeline { flex-direction: column-reverse; }
 .gsc-header { padding-bottom: 1rem; }
 .gsc-comments > .gsc-header { order: 1; }
 .gsc-comments > .gsc-comment-box { margin-bottom: 1rem; order: 2; }
 .gsc-comments > .gsc-timeline { order: 3; }
 
-/* Размеры */
-.gsc-comments { padding-top: 0 !important; }
+/* Размеры и отступы */
+.gsc-comments {
+  padding-top: 0 !important;
+}
 .gsc-main {
   width: 96% !important;
   margin-left: auto !important;
@@ -157,4 +164,6 @@ a {
   margin-top: -16px !important;
   min-height: 200px !important;
 }
-#__next { min-height: 100% !important; }
+#__next {
+  min-height: 100% !important;
+}
