@@ -29,6 +29,19 @@ main {
   --color-btn-primary-hover-bg: #d1b155 !important;
 }
 
+  --btn-primary-bg: #007bff;
+  --btn-primary-text: #ffffff;
+  
+  /* Цвета для состояния disabled */
+  --btn-disabled-bg: #e0e0e0;
+  --btn-disabled-text: #a0a0a0;
+  
+  /* Остальные параметры */
+  --btn-padding: 10px 20px;
+  --btn-border-radius: 4px;
+}
+
+
 /* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
 .gsc-reactions-button { display: none !important; }
