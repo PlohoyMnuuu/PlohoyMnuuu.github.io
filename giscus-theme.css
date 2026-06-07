@@ -10,10 +10,10 @@ main {
   --color-border-muted: #1a2540 !important;
   --color-fg-default: #adbac7 !important;
   --color-fg-muted: #768390 !important;
-  --color-accent-fg: #eac55f !important;
-  --color-accent-emphasis: #eac55f !important;
-  --color-accent-muted: #eac55f66 !important;
-  --color-accent-subtle: #eac55f1a !important;
+  --color-accent-fg: #adbac7 !important;
+  --color-accent-emphasis: #adbac7 !important;
+  --color-accent-muted: #adbac720 !important;
+  --color-accent-subtle: #adbac710 !important;
   --color-btn-bg: #373e47 !important;
   --color-btn-hover-bg: #444c56 !important;
   --color-btn-text: #ffffff !important;
@@ -35,8 +35,8 @@ main {
 .gsc-reply-box textarea,
 input[type="text"],
 textarea {
-  outline: 1px solid #eac55f66 !important;
-  border: 1px solid #eac55f66 !important;
+  outline: 1px solid #22314d !important;
+  border: 1px solid #22314d !important;
   box-shadow: none !important;
 }
 
@@ -44,8 +44,8 @@ textarea {
 .gsc-reply-box textarea:focus,
 input[type="text"]:focus,
 textarea:focus {
-  outline: 1px solid #eac55f99 !important;
-  border: 1px solid #eac55f99 !important;
+  outline: 1px solid #444c56 !important;
+  border: 1px solid #444c56 !important;
   box-shadow: none !important;
 }
 
