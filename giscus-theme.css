@@ -35,7 +35,7 @@ main {
 .gsc-reply-box textarea,
 input[type="text"],
 textarea {
-  outline: 1px solid #22314d !important;
+  outline: none !important;
   border: 1px solid #22314d !important;
   box-shadow: none !important;
 }
@@ -44,8 +44,8 @@ textarea {
 .gsc-reply-box textarea:focus,
 input[type="text"]:focus,
 textarea:focus {
-  outline: 1px solid #444c56 !important;
-  border: 1px solid #444c56 !important;
+  outline: none !important;
+  border: 1px solid #2d4060 !important;
   box-shadow: none !important;
 }
 
