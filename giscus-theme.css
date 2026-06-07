@@ -14,8 +14,8 @@ main {
   --color-fg-default: #adbac7 !important;
   --color-fg-muted: #768390 !important;
 
---color-accent-fg: #eac55f33 !important;
---color-accent-emphasis: transparent !important;
+--color-accent-fg: transparent !important;
+--color-accent-emphasis: #eac55f33 !important;
 --color-accent-muted: #eac55f33 !important;
 --color-accent-subtle: transparent !important;
 
