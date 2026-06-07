@@ -31,6 +31,8 @@ main {
 
 /* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
+.gsc-reactions-button { display: none !important; }
+.gsc-comments-count, .gsc-comments-count-separator .gsc-reactions-button { display: none !important; }
 
 /* Настройка расположения */
 .gsc-timeline { flex-direction: column-reverse; }
