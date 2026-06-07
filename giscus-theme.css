@@ -1,40 +1,36 @@
-/*!
- * Custom Giscus Theme for PlohoyMnuuu.github.io
- */
-main {
+:root, main {
   /* Цвета фона */
-  --color-canvas-default: #192734 !important;
-  --color-canvas-overlay: #161b22 !important;
-  --color-canvas-inset: #15202b !important;
-  --color-canvas-subtle: #192734 !important;
+  --color-canvas-default:        #0f1923 !important;
+  --color-canvas-subtle:         #152030 !important;
+  --color-canvas-inset:          #0d1b2a !important;
+  --color-canvas-overlay:        #1a2838 !important;
 
-  /* Цвет границ и текста */
-  --color-border-default: #444c56 !important;
-  --color-border-muted: #373e47 !important;
-  --color-fg-default: #adbac7 !important;
-  --color-fg-muted: #768390 !important;
+  /* Границы и текст */
+  --color-border-default:        #1e3248 !important;
+  --color-border-muted:          #172840 !important;
+  --color-fg-default:            #d4e0ec !important;
+  --color-fg-muted:              #7a9ab5 !important;
+  --color-fg-subtle:             #4a6a85 !important;
 
-  /* Ваш желтый акцент (кнопки, ссылки, выделение) */
-  --color-accent-fg: #eac55f !important;
-  --color-accent-emphasis: #eac55f !important;
-  --color-accent-muted: #eac55f66 !important;
-  --color-accent-subtle: #eac55f1a !important;
+  /* Золотой акцент */
+  --color-accent-fg:             #fbbf24 !important;
+  --color-accent-emphasis:       #f59e0b !important;
+  --color-accent-subtle:         rgba(251, 191, 36, 0.1) !important;
+  --color-accent-muted:          rgba(251, 191, 36, 0.2) !important;
 
   /* Кнопки */
-  --color-btn-bg: #373e47 !important;
-  --color-btn-hover-bg: #444c56 !important;
-  --color-btn-text: #ffffff !important;
-  --color-btn-primary-bg: #eac55f !important;
-  --color-btn-primary-text: #192734 !important;
-  --color-btn-primary-hover-bg: #d1b155 !important;
+  --color-btn-bg:                #1a2838 !important;
+  --color-btn-border:            #1e3248 !important;
+  --color-btn-hover-bg:          #1e3248 !important;
+  --color-btn-hover-border:      #fbbf24 !important;
+  --color-btn-text:              #d4e0ec !important;
+  --color-btn-primary-bg:        #fbbf24 !important;
+  --color-btn-primary-text:      #0d1b2a !important;
+  --color-btn-primary-border:    #f59e0b !important;
+  --color-btn-primary-hover-bg:  #f59e0b !important;
+
+  /* Инпуты */
+  --color-input-bg:              #0d1b2a !important;
 }
 
-/* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
-
-/* Настройка расположения */
-.gsc-timeline { flex-direction: column-reverse; }
-.gsc-header { padding-bottom: 1rem; }
-.gsc-comments > .gsc-header { order: 1; }
-.gsc-comments > .gsc-comment-box { margin-bottom: 1rem; order: 2; }
-.gsc-comments > .gsc-timeline { order: 3; }
