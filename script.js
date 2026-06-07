@@ -240,3 +240,9 @@ document.addEventListener('keydown', function(event) {
     promoCount.textContent = activeCodes.length;
   }
 })();
+
+
+// открытие
+document.body.classList.add('modal-open');
+// закрытие
+document.body.classList.remove('modal-close');
