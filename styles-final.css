@@ -55,7 +55,7 @@
   --shadow-card:     0 1px 3px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
   --shadow-raised:   0 2px 6px rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.35);
   --shadow-promo:    0 2px 8px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05) inset;
-  --shadow-gold:     0 4px 20px var(--gold-shadow);
+  --shadow-gold:     0 4px 20px var(--shadow-gold);
 
   /* Переходы */
   --t-fast:  0.15s ease;
@@ -71,6 +71,26 @@
   --text-xl:   22px;
   --text-2xl:  28px;
   --text-3xl:  36px;
+
+  /* === СИСТЕМА СПЕЙСИНГА === */
+  /* Внутри блока (padding) */
+  --space-inner: 24px;
+
+  /* Между основными блоками */
+  --space-block: 28px;
+
+  /* Между карточками внутри блока */
+  --space-card: 14px;
+
+  /* Между элементами в сетке */
+  --space-grid: 16px;
+
+  /* Между элементами списка */
+  --space-item: 10px;
+
+  /* Микро-спейсинг */
+  --space-tiny: 6px;
+  --space-xs: 8px;
 }
 
 /* ================================================
@@ -183,7 +203,7 @@ ol, ul {
   line-height: 1.7;
 }
 
-li { margin-bottom: 8px; }
+li { margin-bottom: var(--space-item); }
 
 .svg-icon {
   width: 18px; height: 18px;
@@ -360,8 +380,8 @@ li { margin-bottom: 8px; }
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--r-xl);
-  padding: 24px;
-  margin-bottom: 16px;
+  padding: var(--space-inner);
+  margin-bottom: var(--space-block);
   box-shadow: var(--shadow-card);
   position: relative;
   overflow: hidden;
@@ -397,6 +417,7 @@ li { margin-bottom: 8px; }
   background: var(--card);
   border-left: 3px solid var(--green);
   border-radius: var(--r-xl);
+  margin-bottom: var(--space-block);
 }
 
 .section-energy h2 {
@@ -410,6 +431,7 @@ li { margin-bottom: 8px; }
   background: var(--card);
   border-left: 3px solid var(--red);
   border-radius: var(--r-xl);
+  margin-bottom: var(--space-block);
 }
 
 .section-warning h2 { color: var(--red); font-size: var(--text-md); }
@@ -421,7 +443,7 @@ li { margin-bottom: 8px; }
 .rewards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: var(--space-grid);
 }
 
 .reward-item {
@@ -437,7 +459,7 @@ li { margin-bottom: 8px; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-xs);
   position: relative;
   overflow: hidden;
 }
@@ -490,20 +512,21 @@ li { margin-bottom: 8px; }
   background: var(--card-raised);
   border-color: rgba(255,255,255,0.09);
   box-shadow: var(--shadow-raised);
+  margin-bottom: var(--space-block);
 }
 
 .promo-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-xs);
 
   background: #0a1018;
   border: 1px solid rgba(255,255,255,0.07);
   border-left: 3px solid var(--gold);
   border-radius: var(--r-md);
   padding: 14px 14px 14px 16px;
-  margin-bottom: 10px;
+  margin-bottom: var(--space-card);
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -512,6 +535,11 @@ li { margin-bottom: 8px; }
   box-shadow: var(--shadow-promo);
 
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
+}
+
+/* Последняя карточка без отступа */
+.promo-card:last-child {
+  margin-bottom: 0;
 }
 
 /* Блик сверху */
@@ -550,7 +578,7 @@ li { margin-bottom: 8px; }
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-tiny);
   position: relative;
   z-index: 1;
 }
@@ -558,7 +586,7 @@ li { margin-bottom: 8px; }
 .code-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-xs);
   flex-wrap: wrap;
 }
 
@@ -639,6 +667,7 @@ li { margin-bottom: 8px; }
   border: 1px solid rgba(255,255,255,0.04);
   border-left: 3px solid rgba(255,255,255,0.06);
   box-shadow: none;
+  margin-bottom: var(--space-card);
 }
 
 .promo-card.skeleton::before,
@@ -658,8 +687,8 @@ li { margin-bottom: 8px; }
 .mini-tips-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 14px;
+  gap: var(--space-grid);
+  margin-top: var(--space-card);
 }
 
 .mini-tip-card {
@@ -702,7 +731,7 @@ li { margin-bottom: 8px; }
   font-size: var(--text-base);
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 4px;
+  margin-bottom: var(--space-tiny);
   letter-spacing: -0.01em;
   line-height: 1.25;
 }
@@ -711,7 +740,7 @@ li { margin-bottom: 8px; }
    АВТОР
    ================================================ */
 .author-wrapper {
-  margin-top: 28px;
+  margin-top: var(--space-block);
   padding-top: 22px;
   border-top: 1px solid var(--divider);
 }
@@ -719,7 +748,7 @@ li { margin-bottom: 8px; }
 .author-block {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--space-card);
   text-decoration: none;
   background: #0a1018;
   border: 1px solid var(--card-border);
@@ -755,7 +784,7 @@ li { margin-bottom: 8px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-tiny);
   flex-shrink: 0;
 }
 
@@ -776,7 +805,7 @@ li { margin-bottom: 8px; }
 .author-status {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-tiny);
   font-size: 10px;
   font-weight: 600;
   color: #86efac;
@@ -802,16 +831,16 @@ li { margin-bottom: 8px; }
   font-size: var(--text-base);
   font-weight: 800;
   color: var(--text);
-  margin-bottom: 4px;
+  margin-bottom: var(--space-tiny);
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-xs);
   flex-wrap: wrap;
 }
 
 .author-info p {
-  margin: 0 0 10px;
+  margin: 0 0 var(--space-card);
   font-size: var(--text-sm);
   line-height: 1.55;
 }
@@ -850,7 +879,7 @@ li { margin-bottom: 8px; }
 .fb-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-tiny);
   background: #1877f2;
   color: #fff;
   padding: 4px 10px;
@@ -864,7 +893,7 @@ li { margin-bottom: 8px; }
 
 .fb-link:hover { background: #0e5bcf; transform: translateY(-1px); color: #fff; }
 .fb-link svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.mobile-fb-btn { display: none; margin-top: 4px; }
+.mobile-fb-btn { display: none; margin-top: var(--space-tiny); }
 
 /* ================================================
    UNIFIED BLOCK (объединённый блок)
@@ -874,7 +903,7 @@ li { margin-bottom: 8px; }
   border: 1px solid var(--card-border);
   border-radius: var(--r-xl);
   box-shadow: var(--shadow-card);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-block);
   overflow: hidden;
   position: relative;
 }
@@ -896,14 +925,14 @@ li { margin-bottom: 8px; }
   border-radius: 0;
   box-shadow: none;
   margin-bottom: 0;
-  padding: 24px;
+  padding: var(--space-inner);
 }
 
 /* Убираем псевдоэлемент блика у вложенных секций */
 .unified-block .section::before { display: none; }
 
 .unified-block .video-showcase,
-.unified-block .screenshot-showcase { padding: 0 24px 24px; }
+.unified-block .screenshot-showcase { padding: 0 var(--space-inner) var(--space-inner); }
 
 /* ================================================
    DIVIDER
@@ -911,7 +940,7 @@ li { margin-bottom: 8px; }
 .section-divider {
   display: none;
   height: 1px;
-  margin: 0 24px;
+  margin: 0 var(--space-inner);
   background: var(--divider);
   border: none;
   position: relative;
@@ -1064,7 +1093,7 @@ li { margin-bottom: 8px; }
 .screenshot-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-tiny);
   padding: 4px 12px;
   border-radius: 100px;
   background: rgba(96,165,250,0.08);
@@ -1074,7 +1103,7 @@ li { margin-bottom: 8px; }
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-card);
   cursor: pointer;
   white-space: nowrap;
   transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
@@ -1091,8 +1120,8 @@ li { margin-bottom: 8px; }
 .video-info,
 .screenshot-info {
   border-top: 1px solid var(--divider);
-  margin-top: 18px;
-  padding: 18px 0 0;
+  margin-top: var(--space-card);
+  padding: var(--space-card) 0 0;
   text-align: left;
 }
 
@@ -1101,7 +1130,7 @@ li { margin-bottom: 8px; }
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-xs);
 }
 
 .video-text {
@@ -1111,7 +1140,7 @@ li { margin-bottom: 8px; }
 }
 
 .video-meta {
-  margin-top: 12px;
+  margin-top: var(--space-xs);
   color: var(--text-dim);
   font-size: var(--text-sm);
   line-height: 2.1;
@@ -1121,7 +1150,7 @@ li { margin-bottom: 8px; }
 .check-icon {
   display: inline-flex;
   align-items: center;
-  margin-right: 5px;
+  margin-right: var(--space-tiny);
   vertical-align: middle;
 }
 
@@ -1209,7 +1238,7 @@ li { margin-bottom: 8px; }
   align-items: center;
   justify-content: center;
   z-index: 999999;
-  padding: 12px;
+  padding: var(--space-xs);
   animation: fadeIn var(--t-base);
 }
 
@@ -1291,7 +1320,7 @@ li { margin-bottom: 8px; }
   pointer-events: none;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-tiny);
   box-shadow: 0 8px 24px rgba(245,183,48,0.35);
   transition: opacity var(--t-base), visibility var(--t-base);
 }
@@ -1308,18 +1337,18 @@ li { margin-bottom: 8px; }
    PROMO CHECK (если используется)
    ================================================ */
 .promo-check-section {
-  padding: 18px;
+  padding: var(--space-inner);
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--r-lg);
   display: flex;
-  gap: 10px;
-  margin: 16px 0;
+  gap: var(--space-xs);
+  margin: var(--space-block) 0;
 }
 
 .promo-check-section input {
   flex: 1;
-  padding: 10px 14px;
+  padding: var(--space-xs);
   background: #0a1018;
   border: 1px solid var(--card-border);
   border-radius: var(--r-sm);
@@ -1333,7 +1362,7 @@ li { margin-bottom: 8px; }
 .promo-check-section input::placeholder { color: var(--text-faint); }
 
 .promo-check-section button {
-  padding: 10px 18px;
+  padding: var(--space-xs) var(--space-inner);
   background: var(--green-dim);
   color: #fff;
   border: none;
@@ -1350,15 +1379,15 @@ li { margin-bottom: 8px; }
    GISCUS
    ================================================ */
 .giscus-section {
-  margin-top: 20px;
+  margin-top: var(--space-block);
   text-align: center;
 }
 
 .toggle-comments-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 8px 18px;
+  gap: var(--space-tiny);
+  padding: var(--space-xs);
   border-radius: 100px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
@@ -1391,8 +1420,8 @@ li { margin-bottom: 8px; }
 
 .giscus-container {
   display: none;
-  margin-top: 16px;
-  padding-top: 16px;
+  margin-top: var(--space-card);
+  padding-top: var(--space-card);
   border-top: 1px solid var(--divider);
   animation: fadeUp 0.32s ease both;
 }
@@ -1412,7 +1441,7 @@ li { margin-bottom: 8px; }
   border-top: 1px solid var(--divider);
   padding: 44px 20px 32px;
   text-align: center;
-  margin-top: 48px;
+  margin-top: var(--space-block);
 }
 
 .custom-site-footer::before {
@@ -1431,7 +1460,7 @@ li { margin-bottom: 8px; }
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--text-dim);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-xs);
   position: relative;
 }
 
@@ -1448,6 +1477,14 @@ li { margin-bottom: 8px; }
    МЕДИАЗАПРОСЫ — ПЛАНШЕТ (до 768px)
    ================================================ */
 @media (max-width: 768px) {
+  :root {
+    /* На планшетах компактнее: блоки 20px, карточки 10px, сетки 12px */
+    --space-block: 20px;
+    --space-card: 10px;
+    --space-grid: 12px;
+    --space-inner: 18px;
+  }
+
   .hero-header { padding: 48px 16px 36px; }
   .hero-title  { font-size: 26px; margin-bottom: 16px; }
   .hero-brand  { font-size: 10px; margin-bottom: 14px; }
@@ -1455,7 +1492,7 @@ li { margin-bottom: 8px; }
   .hero-stats .stat-divider { display: none; }
 
   .container { padding: 16px; }
-  .section { padding: 18px; border-radius: var(--r-lg); margin-bottom: 12px; }
+  .section { padding: var(--space-inner); border-radius: var(--r-lg); }
 
   .video-cover, .screenshot-cover {
     max-width: 100%;
@@ -1467,7 +1504,7 @@ li { margin-bottom: 8px; }
     display: flex;
     justify-content: center;
     width: fit-content;
-    margin: 0 auto 18px;
+    margin: 0 auto var(--space-card);
   }
 
   .copy-btn {
@@ -1486,10 +1523,10 @@ li { margin-bottom: 8px; }
   }
 
   .video-showcase, .screenshot-showcase { padding: 0; }
-  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 18px 18px; }
-  .unified-block .section { padding: 18px; }
-  .section-divider { margin: 0 18px; }
-  .author-block { gap: 12px; padding: 12px 14px; }
+  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 var(--space-inner) var(--space-inner); }
+  .unified-block .section { padding: var(--space-inner); }
+  .section-divider { margin: 0 var(--space-inner); }
+  .author-block { gap: var(--space-xs); padding: 12px 14px; }
   .author-photo-wrapper { width: 58px; height: 58px; }
 }
 
@@ -1497,23 +1534,32 @@ li { margin-bottom: 8px; }
    МЕДИАЗАПРОСЫ — МОБИЛЬНЫЙ (до 550px)
    ================================================ */
 @media (max-width: 550px) {
+  :root {
+    /* На мобильных ещё компактнее: блоки 16px, карточки 8px, сетки 10px */
+    --space-block: 16px;
+    --space-card: 8px;
+    --space-grid: 10px;
+    --space-inner: 14px;
+    --space-xs: 6px;
+  }
+
   h1 { font-size: 22px; }
   h2 { font-size: 14px; margin-bottom: 14px; }
   h2 .svg-icon { width: 15px; height: 15px; }
   h3 { font-size: 15px; }
   p  { font-size: 14px; margin-bottom: 12px; }
   ol, ul { font-size: 14px; padding-left: 16px; }
-  li { margin-bottom: 7px; }
+  li { margin-bottom: 6px; }
 
   .code-text { font-size: 13px !important; letter-spacing: 0.04em; }
-  .rewards-grid { gap: 8px; }
-  .reward-item { padding: 12px 8px; min-height: 98px; border-radius: var(--r-md); }
+  .rewards-grid { gap: var(--space-grid); }
+  .reward-item { padding: 12px 8px; min-height: 98px; border-radius: var(--r-md); gap: var(--space-xs); }
   .reward-icon { font-size: 22px; }
   .reward-title { font-size: 9px; }
   .new-badge { font-size: 9px; padding: 2px 6px; }
   .reward-text { font-size: 12px; }
 
-  .promo-card { padding: 11px 12px; margin-bottom: 8px; border-radius: var(--r-md); gap: 10px; }
+  .promo-card { padding: 11px 12px; margin-bottom: var(--space-card); border-radius: var(--r-md); gap: var(--space-xs); }
 
   .copy-btn { padding: 7px 9px; font-size: 9px; min-height: 33px; border-radius: 6px; }
   .copy-btn svg { width: 11px; height: 11px; }
@@ -1524,15 +1570,15 @@ li { margin-bottom: 8px; }
   .screenshot-magnifier { width: 28px; height: 28px; }
   .screenshot-magnifier svg { width: 12px; height: 12px; }
 
-  .mini-tips-grid { grid-template-columns: 1fr; gap: 8px; margin-top: 12px; }
+  .mini-tips-grid { grid-template-columns: 1fr; gap: var(--space-grid); margin-top: var(--space-card); }
   .mini-tip-card { padding: 12px 13px; font-size: 12px; min-height: 0; }
-  .mini-tip-card strong { font-size: 13px; margin-bottom: 3px; }
+  .mini-tip-card strong { font-size: 13px; margin-bottom: var(--space-tiny); }
 
-  .author-block { gap: 10px; padding: 11px 12px; border-radius: var(--r-md); }
+  .author-block { gap: var(--space-xs); padding: 11px 12px; border-radius: var(--r-md); }
   .author-photo-wrapper { width: 52px; height: 52px; border-radius: var(--r-md); }
-  .author-name { font-size: 13px; }
-  .author-info p { font-size: 12px; margin-bottom: 8px; }
-  .author-status { font-size: 9px; }
+  .author-name { font-size: 13px; margin-bottom: var(--space-tiny); }
+  .author-info p { font-size: 12px; margin-bottom: var(--space-card); }
+  .author-status { font-size: 9px; gap: var(--space-tiny); }
   .author-arrow { width: 26px; height: 26px; }
   .author-arrow svg { width: 12px; height: 12px; }
   .mobile-fb-btn { display: inline-flex; }
@@ -1541,29 +1587,41 @@ li { margin-bottom: 8px; }
   .hero-cta { padding: 12px 22px; font-size: 11px; }
   .hero-header { padding: 36px 12px 28px; }
   .container { padding: 12px; }
-  .section { padding: 14px; margin-bottom: 10px; border-radius: var(--r-md); }
-  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 14px 14px; }
-  .unified-block .section { padding: 14px; }
-  .section-divider { margin: 0 14px; }
+  .section { padding: var(--space-inner); border-radius: var(--r-md); }
+  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 var(--space-inner) var(--space-inner); }
+  .unified-block .section { padding: var(--space-inner); }
+  .section-divider { margin: 0 var(--space-inner); }
 
   .video-title { font-size: 14px; }
   .video-text  { font-size: 12px; }
-  .video-meta  { font-size: 11px; margin-top: 8px; }
+  .video-meta  { font-size: 11px; margin-top: var(--space-xs); }
+  
+  .giscus-section { margin-top: var(--space-block); }
+  .giscus-container { margin-top: var(--space-card); padding-top: var(--space-card); }
 }
 
 /* ================================================
    МЕДИАЗАПРОСЫ — ОЧЕНЬ МАЛЕНЬКИЙ (до 375px)
    ================================================ */
 @media (max-width: 375px) {
+  :root {
+    /* На очень маленьких экранах максимально компактно */
+    --space-block: 12px;
+    --space-card: 6px;
+    --space-grid: 8px;
+    --space-inner: 12px;
+    --space-xs: 4px;
+  }
+
   h1 { font-size: 19px; }
   h2 { font-size: 13px; }
   p  { font-size: 13px; }
   .code-text { font-size: 11px; letter-spacing: 0.02em; }
   .hero-cta  { padding: 10px 18px; }
-  .rewards-grid { grid-template-columns: 1fr 1fr; }
+  .rewards-grid { grid-template-columns: 1fr 1fr; gap: var(--space-grid); }
   .author-arrow { display: none; }
   .container { padding: 10px; }
-  .section { padding: 12px; }
+  .section { padding: var(--space-inner); }
 }
 
 /* ================================================
@@ -1576,12 +1634,12 @@ li { margin-bottom: 8px; }
   .screenshot-showcase {
     display: flex;
     align-items: flex-start;
-    gap: 24px;
+    gap: var(--space-grid);
     text-align: left;
   }
 
   .unified-block .video-showcase,
-  .unified-block .screenshot-showcase { padding: 24px; }
+  .unified-block .screenshot-showcase { padding: var(--space-inner); }
 
   .video-cover,
   .screenshot-cover {
