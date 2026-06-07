@@ -50,14 +50,14 @@ main {
 .gsc-reactions-button { display: none !important; }
 .gsc-comments-count, .gsc-comments-count-separator .gsc-reactions-button { display: none !important; }
 .gsc-comment-box-textarea-extras { display: none !important; }
-
+#__next .py-2 { display: none !important; }
 
 .gsc-comment-box-tabs { display: none !important; }
 .gsc-header, .gsc-left-header { display: none !important; }
 #__next .text-xs { display: none !important; }
 .gsc-social-reaction-summary-item-count{ display: none !important; }
 { display: none !important; } { display: none !important; }
-#__next .border { display: none !important; }
+
 /* Настройка расположения */
 .gsc-timeline { flex-direction: column-reverse; }
 .gsc-header { padding-bottom: 1rem; }
@@ -72,5 +72,3 @@ main {
 .gsc-comments {
   padding-top: 0 !important;
 }
-
-
