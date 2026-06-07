@@ -57,7 +57,7 @@ main {
 #__next .text-xs { display: none !important; }
 .gsc-social-reaction-summary-item-count{ display: none !important; }
 { display: none !important; } { display: none !important; }
-
+#__next .border { display: none !important; }
 /* Настройка расположения */
 .gsc-timeline { flex-direction: column-reverse; }
 .gsc-header { padding-bottom: 1rem; }
