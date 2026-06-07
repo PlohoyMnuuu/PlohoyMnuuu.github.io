@@ -30,19 +30,6 @@ main {
 }
 
 
-  /* Добавьте эти переменные в ваш список внутри main */
-  --color-btn-disabled-bg: #2d333b !important;
-  --color-btn-disabled-text: #768390 !important;
-}
-
-/* Принудительное применение стилей для disabled состояния */
-main .btn-primary:disabled {
-  background-color: var(--color-btn-disabled-bg) !important;
-  color: var(--color-btn-disabled-text) !important;
-  cursor: not-allowed !important;
-  border-color: transparent !important;
-}
-
 
 /* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
