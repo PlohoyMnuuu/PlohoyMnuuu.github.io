@@ -36,6 +36,15 @@ main {
   --color-border-muted:   #1a2540 !important;
 }
 
+main {
+  --color-canvas-default: #0d1520 !important;
+  --color-canvas-inset:   #090d16 !important;
+  --color-border-default: #22314d !important;
+  --color-border-muted:   #1a2540 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
 /* Скрытие лишних элементов */
 .gsc-reactions-count { display: none !important; }
 .gsc-reactions-button { display: none !important; }
