@@ -409,7 +409,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   background: var(--card-blur);
   padding: 25px;
   border-radius: 24px;
-  border: 1px solid var(--border-main);
   margin-bottom: 24px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
@@ -430,7 +429,7 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
 }
 .section:hover::before { opacity: 1; }
 
-.section-faq { background: rgba(10, 14, 23, 0.8); border-color: #1e293b; }
+.section-faq { background: rgba(10, 14, 23, 0.8); }
 .section-energy { border-left: 4px solid var(--accent-green); background: rgba(16, 185, 129, 0.05); }
 .section-energy h2 { color: var(--accent-green); letter-spacing: -0.02em; }
 .section-warning { background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; border-radius: 12px; }
@@ -440,7 +439,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
 
 .reward-item {
   background: #0b111e;
-  border: 1px solid var(--border-main);
   border-radius: 16px;
   padding: 14px 10px;
   text-align: center;
@@ -465,7 +463,7 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   transition: opacity var(--transition-base);
 }
 .reward-item:hover::before { opacity: 1; }
-.reward-item:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 8px 24px var(--accent-glow); }
+.reward-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--accent-glow); }
 .reward-item:active { transform: translateY(-1px); }
 
 .reward-icon {
@@ -503,7 +501,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   padding: 16px;
   border-radius: 16px;
   margin-bottom: 10px;
-  border: 1px solid var(--border-main);
   border-left: 3px solid var(--accent);
   gap: 12px;
   cursor: pointer;
@@ -524,7 +521,7 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   pointer-events: none;
 }
 .promo-card:hover::before { left: 100%; }
-.promo-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 8px 24px var(--accent-glow); }
+.promo-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--accent-glow); }
 .promo-card:active { transform: translateY(-1px); }
 
 .promo-info {
@@ -630,7 +627,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
   background-size: 200% 100%;
   animation: loading 1.2s infinite;
-  border: 1px solid #22314d;
   border-left: 3px solid #22314d;
 }
 .promo-card.skeleton .promo-info,
@@ -647,7 +643,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   background: #0b111e;
   padding: 14px 16px;
   border-radius: 14px;
-  border: 1px solid var(--border-main);
   font-size: 13px;
   line-height: 1.6;
   color: var(--text-dim);
@@ -672,7 +667,7 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   transition: height var(--transition-base);
 }
 .mini-tip-card:hover::after { height: 100%; }
-.mini-tip-card:hover { transform: translateY(-3px); border-color: var(--accent-blue); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2); }
+.mini-tip-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2); }
 .mini-tip-card:active { transform: translateY(-1px); }
 
 .mini-tip-card strong {
@@ -713,7 +708,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   align-items: center;
   gap: 16px;
   background: #0b111e;
-  border: 1px solid var(--border-main);
   border-left: 3px solid var(--accent);
   border-radius: 16px;
   padding: 16px;
@@ -731,7 +725,7 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   pointer-events: none;
 }
 .author-block:hover::before { left: 100%; }
-.author-block:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 8px 24px var(--accent-glow); }
+.author-block:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--accent-glow); }
 .author-block:active { transform: translateY(-1px); }
 
 .author-left { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; position: relative; z-index: 1; }
@@ -893,7 +887,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
 .unified-block {
   background: var(--card-blur);
   border-radius: 24px;
-  border: 1px solid var(--border-main);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
   margin-bottom: 24px;
@@ -988,13 +981,12 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid var(--border-main);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   background: #000;
   will-change: transform;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
-.video-cover:hover { border-color: rgba(56,189,248,0.5); box-shadow: 0 12px 36px rgba(56,189,248,0.15); }
+.video-cover:hover { box-shadow: 0 12px 36px rgba(56,189,248,0.15); }
 .video-cover img { width: 100%; height: 100%; object-fit: cover; }
 .video-cover::after {
   content: '';
@@ -1072,14 +1064,13 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid var(--border-main);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   background: #000;
   cursor: zoom-in;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
   will-change: transform;
 }
-.screenshot-cover:hover { transform: scale(1.02); border-color: rgba(251,191,36,0.4); box-shadow: 0 12px 36px rgba(251,191,36,0.12); }
+.screenshot-cover:hover { transform: scale(1.02); box-shadow: 0 12px 36px rgba(251,191,36,0.12); }
 .screenshot-cover:active { transform: scale(0.97); }
 .screenshot-cover img { width: 100%; height: 100%; object-fit: cover; }
 .screenshot-cover::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(to top, rgba(0,0,0,.7), transparent); pointer-events: none; }
@@ -1361,11 +1352,6 @@ li { margin-bottom: 10px; word-break: break-word; overflow-wrap: break-word; }
   .video-badge,
   .screenshot-badge { margin-left: 0; margin-right: 0; }
 }
-
-/* ===== ТВОЙ ИСХОДНЫЙ CSS (без изменений) ===== */
-/* (здесь весь твой код, который ты присылал) */
-
-
 
 /* ==========================================
    GISCUS — кнопка
