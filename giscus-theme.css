@@ -57,3 +57,11 @@ main {
 .gsc-comments > .gsc-header { order: 1; }
 .gsc-comments > .gsc-comment-box { margin-bottom: 1rem; order: 2; }
 .gsc-comments > .gsc-timeline { order: 3; }
+
+.gsc-main {
+  margin-top: -16px !important;
+}
+
+.gsc-comments {
+  padding-top: 0 !important;
+}
