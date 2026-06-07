@@ -41,7 +41,7 @@ main {
 }
 
 .gsc-comment-box:focus-within {
-  border-color: #eac55f44 !important;
+  border-color: #eac55f44 !transparent;
 }
 
 .gsc-comment-box-textarea {
