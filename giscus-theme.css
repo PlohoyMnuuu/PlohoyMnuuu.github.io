@@ -35,6 +35,7 @@ main {
 .gsc-reactions-count { display: none !important; }
 .gsc-reactions-button { display: none !important; }
 .gsc-comments-count, .gsc-comments-count-separator .gsc-reactions-button { display: none !important; }
+.gsc-comment-box-textarea-extras { display: none !important; }
 
 /* Настройка расположения */
 .gsc-timeline { flex-direction: column-reverse; }
