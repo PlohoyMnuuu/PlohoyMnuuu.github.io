@@ -67,8 +67,7 @@ main {
 .gsc-comments > .gsc-comment-box { margin-bottom: 1rem; order: 2; }
 .gsc-comments > .gsc-timeline { order: 3; }
 
-.gsc-main {
-  margin-top: -16px !important;
+
 }
 
 .gsc-comments {
@@ -76,8 +75,8 @@ main {
 }
 
 .gsc-main {
-  width: 98% !important;
+  width: 96% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: -16px !important; /* уже было, просто объединяем */
+  margin-top: -16px !important; 
 }
