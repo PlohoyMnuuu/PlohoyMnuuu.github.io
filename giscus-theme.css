@@ -84,12 +84,14 @@ main {
 
 /* Кнопка входа */
 .gsc-signin-button {
+  background: #1a2535 !important;
   border: 0.5px solid #eac55f44 !important;
   border-radius: 8px !important;
   transition: border-color 0.2s ease, background 0.2s ease !important;
 }
 
 .gsc-signin-button:hover {
+  background: #1f2d40 !important;
   border-color: #eac55f88 !important;
 }
 
@@ -97,24 +99,30 @@ main {
 .gsc-reply-button,
 .gsc-social-reaction-summary-item,
 .gsc-upvote-button {
-  background: transparent !important;
+  background: #1a2535 !important;
   border: 0.5px solid #1a2540 !important;
   border-radius: 5px !important;
-  transition: border-color 0.2s ease, color 0.2s ease !important;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease !important;
 }
 
 .gsc-reply-button:hover,
 .gsc-social-reaction-summary-item:hover,
 .gsc-upvote-button:hover {
+  background: #1f2d40 !important;
   border-color: #eac55f55 !important;
   color: #eac55f !important;
 }
 
 /* Основные кнопки */
 .gsc-comment-box-buttons .btn {
+  background: #1a2535 !important;
   border: 0.5px solid #22314d !important;
   border-radius: 7px !important;
   transition: border-color 0.2s ease, background 0.2s ease !important;
+}
+
+.gsc-comment-box-buttons .btn:hover {
+  background: #1f2d40 !important;
 }
 
 .gsc-comment-box-buttons .btn-primary {
