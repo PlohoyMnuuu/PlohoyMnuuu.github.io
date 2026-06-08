@@ -1627,6 +1627,7 @@ li { margin-bottom: 8px; }
 
   .unified-block .section { padding: 24px; }
   .section-divider { margin: 0 24px; }
+  .author-block { border-left-color: rgba(255,255,255,0.15); }
 }
 
 /* ================================================
@@ -1665,7 +1666,7 @@ li { margin-bottom: 8px; }
   .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
   .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
 
-  .author-left { width: 72px; border-radius: 11px 0 0 11px; }
+  .author-left { width: 96px; border-radius: 11px 0 0 11px; }
   .author-name { font-size: 13px; }
   .author-info { padding: 12px; }
   .author-info p { font-size: 12px; }
@@ -1716,7 +1717,7 @@ li { margin-bottom: 8px; }
   .mini-tips-grid { gap: 12px; }
   .mini-tip-card { padding: 14px; }
 
-  .author-left { width: 64px; border-radius: 9px 0 0 9px; }
+  .author-left { width: 84px; border-radius: 9px 0 0 9px; }
   .author-info { padding: 10px 12px; }
   .author-arrow { display: none; }
 
