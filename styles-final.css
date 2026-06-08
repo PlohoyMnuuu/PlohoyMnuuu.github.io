@@ -1759,6 +1759,21 @@ li { margin-bottom: 8px; }
     background: rgba(10, 16, 26, 0.88) !important;
   }
 
+   .author-status {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(7,9,15,.8);
+  padding: 5px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #86efac;
+  white-space: nowrap;
+}
+
   /* box-shadow в transition — пересчёт каждый кадр анимации.
      Тени оставляем статичными, анимируем только border-color и transform */
   .section,
