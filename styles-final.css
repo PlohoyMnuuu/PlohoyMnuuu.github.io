@@ -451,10 +451,11 @@ li { margin-bottom: 8px; }
   background: rgba(255,255,255,0.06);
 }
 
+/* ИЗМЕНЕНО: убрана жёлтая рамка и жёлтый inset-shadow при ховере */
 .reward-item:hover {
   transform: translateY(-3px);
-  border-color: rgba(245,183,48,0.3);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 0 1px rgba(245,183,48,0.1) inset;
+  border-color: var(--card-border);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .reward-item:active { transform: translateY(-1px); }
@@ -535,10 +536,11 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
+/* ИЗМЕНЕНО: убрана жёлтая рамка при ховере, shadow-gold убран */
 .promo-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(245,183,48,0.5);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5), var(--shadow-gold), 0 1px 0 rgba(255,255,255,0.07) inset;
+  border-color: rgba(255,255,255,0.07);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.07) inset;
 }
 
 .promo-card:hover::after { left: 140%; }
@@ -710,24 +712,16 @@ li { margin-bottom: 8px; }
 /* ================================================
    АВТОР
    ================================================ */
+/* ИЗМЕНЕНО: убрана разделительная черта и точка над блоком автора */
 .author-wrapper {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(90deg, transparent 0%, rgba(245,183,48,0.06) 15%, rgba(245,183,48,0.2) 50%, rgba(245,183,48,0.06) 85%, transparent 100%) 1;
+  border-top: none;
   position: relative;
 }
 
 .author-wrapper::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
-  background: rgba(245,183,48,0.5);
-  border-radius: 50%;
+  display: none;
 }
 
 .author-block {
@@ -756,10 +750,11 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
+/* ИЗМЕНЕНО: убрана жёлтая рамка при ховере */
 .author-block:hover {
   transform: translateY(-2px);
-  border-color: rgba(245,183,48,0.4);
-  box-shadow: var(--shadow-raised), var(--shadow-gold);
+  border-color: rgba(255,255,255,0.07);
+  box-shadow: var(--shadow-raised);
 }
 
 .author-block:hover::after { left: 140%; }
@@ -1427,10 +1422,10 @@ li { margin-bottom: 8px; }
 }
 
 .toggle-comments-btn svg {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
-  stroke: #f5b730;
+  stroke: #f5b730 !important;
   transition: transform 0.2s ease;
 }
 
@@ -1737,18 +1732,13 @@ li { margin-bottom: 8px; }
 
 /* ================================================
    MOBILE PERFORMANCE — до 768px
-   Убираем только самое тяжёлое:
-   backdrop-filter, box-shadow в transition,
-   background-attachment: fixed
    ================================================ */
 @media (max-width: 768px) {
 
-  /* Фиксированный фон — перерисовка на каждом кадре скролла */
   html, body {
     background-attachment: scroll !important;
   }
 
-  /* backdrop-filter — самый тяжёлый эффект, отдельный GPU-слой */
   .play-button,
   .screenshot-magnifier {
     backdrop-filter: none !important;
@@ -1756,8 +1746,6 @@ li { margin-bottom: 8px; }
     background: rgba(10, 16, 26, 0.88) !important;
   }
 
-  /* box-shadow в transition — пересчёт каждый кадр анимации.
-     Тени оставляем статичными, анимируем только border-color и transform */
   .section,
   .promo-card,
   .reward-item,
@@ -1774,17 +1762,4 @@ li { margin-bottom: 8px; }
   .copy-btn {
     transition: transform var(--t-fast), opacity var(--t-fast) !important;
   }
-}
-
-
-.toggle-comments-btn svg {
-  stroke: #f5b730 !important;
-}
-
-.toggle-comments-btn svg {
-  width: 13px;
-  height: 13px;
-  flex-shrink: 0;
-  stroke: #f5b730 !important;
-  transition: transform 0.2s ease;
 }
