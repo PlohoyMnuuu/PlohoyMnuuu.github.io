@@ -216,7 +216,6 @@ li { margin-bottom: 8px; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.06) inset;
 }
 
-/* Декоративный свет за заголовком */
 .hero-header::before {
   content: '';
   position: absolute;
@@ -295,7 +294,6 @@ li { margin-bottom: 8px; }
 
 #stats-update-date span { color: var(--text-dim); }
 
-/* CTA-кнопка — главный призыв к действию */
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -380,7 +378,6 @@ li { margin-bottom: 8px; }
   transition: border-color var(--t-base), box-shadow var(--t-base);
 }
 
-/* Тонкий блик сверху — даёт ощущение объёма */
 .section::before {
   content: '';
   position: absolute;
@@ -397,14 +394,11 @@ li { margin-bottom: 8px; }
 /* ================================================
    ВАРИАЦИИ СЕКЦИЙ
    ================================================ */
-
-/* FAQ — чуть тише */
 .section-faq {
   background: #0d1421;
   border-color: rgba(255,255,255,0.05);
 }
 
-/* Энергия — зелёный акцент */
 .section-energy {
   background: var(--card);
   border-left: 3px solid var(--green);
@@ -417,7 +411,6 @@ li { margin-bottom: 8px; }
 
 .section-energy h2 .svg-icon { stroke: var(--green); opacity: 0.8; }
 
-/* Предупреждение — красный акцент */
 .section-warning {
   background: var(--card);
   border-left: 3px solid var(--red);
@@ -454,7 +447,6 @@ li { margin-bottom: 8px; }
   overflow: hidden;
 }
 
-/* Подсветка сверху */
 .reward-item::before {
   content: '';
   position: absolute;
@@ -463,7 +455,6 @@ li { margin-bottom: 8px; }
   background: rgba(255,255,255,0.06);
 }
 
-/* ИЗМЕНЕНО: убрана жёлтая рамка и жёлтый inset-shadow при ховере */
 .reward-item:hover {
   transform: translateY(-3px);
   border-color: var(--card-border);
@@ -495,10 +486,8 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   ПРОМОКОДЫ — главный блок, самый заметный
+   ПРОМОКОДЫ
    ================================================ */
-
-/* Сам раздел с кодами поднят чуть ярче */
 #promo-codes {
   background: var(--card-raised);
   border-color: rgba(255,255,255,0.09);
@@ -510,7 +499,6 @@ li { margin-bottom: 8px; }
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-
   background: #0a1018;
   border: 1px solid rgba(255,255,255,0.07);
   border-left: 3px solid var(--gold);
@@ -520,14 +508,10 @@ li { margin-bottom: 8px; }
   cursor: pointer;
   position: relative;
   overflow: hidden;
-
-  /* Инсет-тень — тактильность */
   box-shadow: var(--shadow-promo);
-
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
 }
 
-/* Блик сверху */
 .promo-card::before {
   content: '';
   position: absolute;
@@ -537,7 +521,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* Shimmer on hover */
 .promo-card::after {
   content: '';
   position: absolute;
@@ -548,7 +531,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* ИЗМЕНЕНО: убрана жёлтая рамка при ховере, shadow-gold убран */
 .promo-card:hover {
   transform: translateY(-2px);
   border-color: rgba(255,255,255,0.07);
@@ -557,7 +539,6 @@ li { margin-bottom: 8px; }
 }
 
 .promo-card:hover::after { left: 140%; }
-
 .promo-card:active { transform: translateY(0); box-shadow: var(--shadow-promo); }
 
 .promo-info {
@@ -644,7 +625,6 @@ li { margin-bottom: 8px; }
 
 .copy-btn:active { transform: scale(0.95); }
 
-/* Скелетон загрузки */
 .promo-card.skeleton {
   height: 74px;
   pointer-events: none;
@@ -668,7 +648,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   МИНИ-СОВЕТЫ (grid 2 col)
+   МИНИ-СОВЕТЫ
    ================================================ */
 .mini-tips-grid {
   display: grid;
@@ -688,12 +668,9 @@ li { margin-bottom: 8px; }
   position: relative;
   overflow: hidden;
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
-
-  /* Тонкий блик */
   box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset;
 }
 
-/* Акцентная полоска слева появляется при ховере */
 .mini-tip-card::after {
   content: '';
   position: absolute;
@@ -725,7 +702,6 @@ li { margin-bottom: 8px; }
 /* ================================================
    АВТОР
    ================================================ */
-/* ИЗМЕНЕНО: убрана разделительная черта и точка над блоком автора */
 .author-wrapper {
   margin-top: 32px;
   padding-top: 24px;
@@ -763,7 +739,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* ИЗМЕНЕНО: убрана жёлтая рамка при ховере */
 .author-block:hover {
   transform: translateY(-2px);
   border-color: rgba(255,255,255,0.07);
@@ -773,6 +748,9 @@ li { margin-bottom: 8px; }
 .author-block:hover::after { left: 140%; }
 .author-block:active { transform: translateY(0); }
 
+/* ================================================
+   АВТОР — ФОТО (ИСПРАВЛЕНО)
+   ================================================ */
 .author-left {
   display: flex;
   flex-direction: column;
@@ -782,11 +760,9 @@ li { margin-bottom: 8px; }
   align-self: stretch;
   width: 88px;
   border-radius: 15px 4px 4px 15px;
+  border-right: 1px solid rgba(255,255,255,0.08);
   overflow: hidden;
   position: relative;
-}
-.author-left {
-  border-right: 1px solid rgba(255,255,255,0.08);
 }
 
 .author-photo-wrapper {
@@ -918,7 +894,7 @@ li { margin-bottom: 8px; }
 .mobile-fb-btn { display: none; margin-top: 4px; }
 
 /* ================================================
-   UNIFIED BLOCK (объединённый блок)
+   UNIFIED BLOCK
    ================================================ */
 .unified-block {
   background: var(--card);
@@ -930,7 +906,6 @@ li { margin-bottom: 8px; }
   position: relative;
 }
 
-/* Блик сверху */
 .unified-block::before {
   content: '';
   position: absolute;
@@ -950,7 +925,6 @@ li { margin-bottom: 8px; }
   padding: 28px;
 }
 
-/* Убираем псевдоэлемент блика у вложенных секций */
 .unified-block .section::before { display: none; }
 
 .unified-block .video-showcase,
@@ -995,14 +969,12 @@ li { margin-bottom: 8px; }
   padding: 0;
 }
 
-/* Обложка */
 .cover-stage {
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-/* Декор. линии по бокам (только мобайл) */
 .cover-stage::before,
 .cover-stage::after {
   content: '';
@@ -1073,7 +1045,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* Кнопка Play */
 .play-button {
   position: absolute;
   top: 50%; left: 50%;
@@ -1114,7 +1085,6 @@ li { margin-bottom: 8px; }
 .play-button:hover svg { transform: translateX(2px); }
 .play-button:active { transform: translate(-50%, -50%) scale(0.93); }
 
-/* Бейджи */
 .video-badge,
 .screenshot-badge {
   display: inline-flex;
@@ -1142,7 +1112,6 @@ li { margin-bottom: 8px; }
   transform: translateY(-1px);
 }
 
-/* Info под видео/скриншотом */
 .video-info,
 .screenshot-info {
   border-top: 1px solid transparent;
@@ -1201,7 +1170,6 @@ li { margin-bottom: 8px; }
   opacity: 0.7;
 }
 
-/* Скриншот */
 .screenshot-cover {
   position: relative;
   width: 100%;
@@ -1234,7 +1202,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* Иконка лупы */
 .screenshot-magnifier {
   position: absolute;
   top: 10px; right: 10px;
@@ -1375,7 +1342,7 @@ li { margin-bottom: 8px; }
 #toast svg { width: 14px; height: 14px; }
 
 /* ================================================
-   PROMO CHECK (если используется)
+   PROMO CHECK
    ================================================ */
 .promo-check-section {
   padding: 18px;
@@ -1569,9 +1536,7 @@ li { margin-bottom: 8px; }
   }
 
   .rewards-grid { gap: 16px; }
-
   .promo-card { margin-bottom: 16px; }
-
   .mini-tips-grid { gap: 16px; }
 
   .video-cover, .screenshot-cover {
@@ -1667,7 +1632,8 @@ li { margin-bottom: 8px; }
   .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
   .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
 
-  .author-left { width: 96px; border-radius: 11px 0 0 11px; }
+  /* ИСПРАВЛЕНО: правые углы 4px */
+  .author-left { width: 96px; border-radius: 11px 4px 4px 11px; }
   .author-name { font-size: 13px; }
   .author-info { padding: 12px; }
   .author-info p { font-size: 12px; }
@@ -1718,7 +1684,8 @@ li { margin-bottom: 8px; }
   .mini-tips-grid { gap: 12px; }
   .mini-tip-card { padding: 14px; }
 
-  .author-left { width: 84px; border-radius: 9px 0 0 9px; }
+  /* ИСПРАВЛЕНО: правые углы 4px */
+  .author-left { width: 84px; border-radius: 9px 4px 4px 9px; }
   .author-info { padding: 10px 12px; }
   .author-arrow { display: none; }
 
@@ -1769,7 +1736,8 @@ li { margin-bottom: 8px; }
     margin-right: 0;
   }
 
-  .author-left { width: 110px; border-radius: 15px 0 0 15px; }
+  /* ИСПРАВЛЕНО: правые углы 4px */
+  .author-left { width: 110px; border-radius: 15px 4px 4px 15px; }
 }
 
 /* ================================================
