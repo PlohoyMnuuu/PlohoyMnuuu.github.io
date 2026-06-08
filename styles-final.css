@@ -742,9 +742,9 @@ li { margin-bottom: 8px; }
   align-items: stretch;
   gap: 0;
   text-decoration: none;
-  background: #0a1018;
+  background: #0d1525;
   border: 1px solid var(--card-border);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid rgba(255,255,255,0.15);
   border-radius: var(--r-lg);
   padding: 0;
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
@@ -1627,7 +1627,6 @@ li { margin-bottom: 8px; }
 
   .unified-block .section { padding: 24px; }
   .section-divider { margin: 0 24px; }
-  .author-block { border-left-color: rgba(255,255,255,0.15); }
 }
 
 /* ================================================
