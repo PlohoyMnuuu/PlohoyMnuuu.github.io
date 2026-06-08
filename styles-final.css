@@ -739,14 +739,14 @@ li { margin-bottom: 8px; }
 
 .author-block {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  align-items: stretch;
+  gap: 0;
   text-decoration: none;
   background: #0a1018;
   border: 1px solid var(--card-border);
   border-left: 3px solid var(--gold);
   border-radius: var(--r-lg);
-  padding: 14px 16px;
+  padding: 0;
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
   position: relative;
   overflow: hidden;
@@ -778,27 +778,46 @@ li { margin-bottom: 8px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 0;
   flex-shrink: 0;
+  align-self: stretch;
+  width: 88px;
+  border-radius: 15px 0 0 15px;
+  overflow: hidden;
+  position: relative;
 }
 
 .author-photo-wrapper {
-  width: 68px; height: 68px;
-  border-radius: var(--r-md);
-  overflow: hidden;
-  border: 1px solid rgba(245,183,48,0.35);
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 0;
+  border: none;
   background: #1e293b;
   flex-shrink: 0;
-  transition: border-color var(--t-base);
+  overflow: hidden;
+  position: relative;
 }
 
-.author-block:hover .author-photo-wrapper { border-color: rgba(245,183,48,0.6); }
-
-.author-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
+.author-photo-wrapper img,
+.author-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+}
 
 .author-status {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(7,9,15,0.8);
+  padding: 5px 4px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   font-size: 10px;
   font-weight: 600;
@@ -819,13 +838,20 @@ li { margin-bottom: 8px; }
   50% { opacity: 0.5; }
 }
 
-.author-info { flex: 1; min-width: 0; }
+.author-info {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .author-name {
   font-size: var(--text-base);
   font-weight: 800;
   color: var(--text);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
@@ -834,12 +860,10 @@ li { margin-bottom: 8px; }
 }
 
 .author-info p {
-  margin: 0 0 10px;
+  margin: 0;
   font-size: var(--text-sm);
   line-height: 1.55;
 }
-
-.author-info p:last-child { margin: 0; }
 
 .author-arrow {
   flex-shrink: 0;
@@ -851,6 +875,8 @@ li { margin-bottom: 8px; }
   background: rgba(245,183,48,0.08);
   border: 1px solid rgba(245,183,48,0.2);
   transition: all var(--t-base);
+  align-self: center;
+  margin-right: 14px;
 }
 
 .author-arrow svg {
@@ -1546,8 +1572,6 @@ li { margin-bottom: 8px; }
 
   .mini-tips-grid { gap: 16px; }
 
-  .author-block { padding: 16px 18px; }
-
   .video-cover, .screenshot-cover {
     max-width: 100%;
     max-height: 340px;
@@ -1603,8 +1627,6 @@ li { margin-bottom: 8px; }
 
   .unified-block .section { padding: 24px; }
   .section-divider { margin: 0 24px; }
-  .author-block { gap: 12px; padding: 16px 18px; }
-  .author-photo-wrapper { width: 58px; height: 58px; }
 }
 
 /* ================================================
@@ -1643,10 +1665,10 @@ li { margin-bottom: 8px; }
   .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
   .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
 
-  .author-block { gap: 12px; padding: 16px; border-radius: var(--r-md); }
-  .author-photo-wrapper { width: 52px; height: 52px; border-radius: var(--r-md); }
+  .author-left { width: 72px; border-radius: 11px 0 0 11px; }
   .author-name { font-size: 13px; }
-  .author-info p { font-size: 12px; margin-bottom: 8px; }
+  .author-info { padding: 12px; }
+  .author-info p { font-size: 12px; }
   .author-status { font-size: 9px; }
   .author-arrow { width: 26px; height: 26px; }
   .author-arrow svg { width: 12px; height: 12px; }
@@ -1694,7 +1716,8 @@ li { margin-bottom: 8px; }
   .mini-tips-grid { gap: 12px; }
   .mini-tip-card { padding: 14px; }
 
-  .author-block { padding: 14px; gap: 10px; }
+  .author-left { width: 64px; border-radius: 9px 0 0 9px; }
+  .author-info { padding: 10px 12px; }
   .author-arrow { display: none; }
 
   .container { padding: 16px 12px; }
@@ -1743,6 +1766,8 @@ li { margin-bottom: 8px; }
     margin-left: 0;
     margin-right: 0;
   }
+
+  .author-left { width: 110px; border-radius: 15px 0 0 15px; }
 }
 
 /* ================================================
