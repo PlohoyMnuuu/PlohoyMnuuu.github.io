@@ -1773,3 +1773,16 @@ li { margin-bottom: 8px; }
     transition: transform var(--t-fast), opacity var(--t-fast) !important;
   }
 }
+
+
+.toggle-comments-btn svg {
+  stroke: #f5b730 !important;
+}
+
+.toggle-comments-btn svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  stroke: #f5b730 !important;
+  transition: transform 0.2s ease;
+}
