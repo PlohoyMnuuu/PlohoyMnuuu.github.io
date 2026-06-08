@@ -781,9 +781,12 @@ li { margin-bottom: 8px; }
   flex-shrink: 0;
   align-self: stretch;
   width: 88px;
-  border-radius: 15px 0 0 15px;
+  border-radius: 15px 4px 4px 15px;
   overflow: hidden;
   position: relative;
+}
+.author-left {
+  border-right: 1px solid rgba(255,255,255,0.08);
 }
 
 .author-photo-wrapper {
