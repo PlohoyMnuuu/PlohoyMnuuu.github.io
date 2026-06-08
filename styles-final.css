@@ -209,9 +209,11 @@ li { margin-bottom: 8px; }
   position: relative;
   overflow: hidden;
   background: linear-gradient(160deg, #0a1628 0%, #080e1a 100%);
-  padding: 64px 20px 48px;
+  padding: 54px 20px 41px;
   text-align: center;
   border-bottom: 1px solid var(--divider);
+  border-radius: 0 0 var(--r-xl) var(--r-xl);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.06) inset;
 }
 
 /* Декоративный свет за заголовком */
@@ -1521,7 +1523,7 @@ li { margin-bottom: 8px; }
    МЕДИАЗАПРОСЫ — ПЛАНШЕТ (до 768px)
    ================================================ */
 @media (max-width: 768px) {
-  .hero-header { padding: 48px 16px 36px; }
+  .hero-header { padding: 41px 16px 31px; border-radius: 0 0 var(--r-lg) var(--r-lg); }
   .hero-title  { font-size: 26px; margin-bottom: 16px; }
   .hero-brand  { font-size: 10px; margin-bottom: 14px; }
   .hero-stats  { flex-direction: column; gap: 5px; font-size: 12px; }
@@ -1649,7 +1651,7 @@ li { margin-bottom: 8px; }
   .author-name .desktop-fb-btn { display: none; }
 
   .hero-cta { padding: 12px 22px; font-size: 11px; }
-  .hero-header { padding: 36px 12px 28px; }
+  .hero-header { padding: 31px 12px 24px; }
 
   .container { padding: 20px 16px; }
 
