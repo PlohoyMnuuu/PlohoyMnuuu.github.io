@@ -767,7 +767,6 @@ li { margin-bottom: 8px; }
 .author-block:hover {
   transform: translateY(-2px);
   border-color: rgba(255,255,255,0.07);
-  border-left-color: var(--gold);
   box-shadow: var(--shadow-raised);
 }
 
@@ -1437,7 +1436,7 @@ li { margin-bottom: 8px; }
   border-radius: var(--r-md);
   background: #0a1018;
   border: 1px solid rgba(255,255,255,0.07);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid rgba(255,255,255,0.15);
   color: rgba(255,255,255,0.9);
   font-family: inherit;
   font-size: 11px;
@@ -1454,7 +1453,7 @@ li { margin-bottom: 8px; }
 .toggle-comments-btn:hover {
   transform: translateY(-2px);
   border-color: rgba(255,255,255,0.07);
-  border-left-color: var(--gold);
+  border-left-color: rgba(255,255,255,0.15);
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
