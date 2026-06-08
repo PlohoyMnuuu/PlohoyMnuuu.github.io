@@ -373,7 +373,11 @@ li { margin-bottom: 8px; }
   border: 1px solid var(--card-border);
   border-radius: var(--r-xl);
   padding: 28px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--t-base), box-shadow var(--t-base);
 }
 
 /* Тонкий блик сверху — даёт ощущение объёма */
@@ -433,7 +437,7 @@ li { margin-bottom: 8px; }
 }
 
 .reward-item {
-  background: #111e2e;
+  background: #0a1018;
   border: 1px solid var(--card-border);
   border-radius: var(--r-lg);
   padding: 16px 10px 14px;
@@ -469,7 +473,7 @@ li { margin-bottom: 8px; }
 .reward-item:active { transform: translateY(-1px); }
 
 .reward-icon {
-  font-size: 32px;
+  font-size: 26px;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -577,7 +581,7 @@ li { margin-bottom: 8px; }
   font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
   font-size: 15px;
   font-weight: 900;
-  color: var(--text);
+  color: var(--gold);
   letter-spacing: 0.06em;
   line-height: 1.2;
   word-break: break-all;
@@ -918,7 +922,10 @@ li { margin-bottom: 8px; }
   border: 1px solid var(--card-border);
   border-radius: var(--r-xl);
   box-shadow: var(--shadow-card);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  position: relative;
+}
 
 /* Блик сверху */
 .unified-block::before {
@@ -1554,7 +1561,7 @@ li { margin-bottom: 8px; }
 
   .section {
     padding: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     border-radius: var(--r-lg);
   }
 
@@ -1637,7 +1644,7 @@ li { margin-bottom: 8px; }
 
   .rewards-grid { gap: 14px; }
   .reward-item { padding: 16px 10px; min-height: 98px; border-radius: var(--r-md); }
-  .reward-icon { font-size: 28px; }
+  .reward-icon { font-size: 22px; }
   .reward-title { font-size: 9px; }
   .new-badge { font-size: 9px; padding: 2px 6px; }
   .reward-text { font-size: 12px; }
@@ -1674,7 +1681,7 @@ li { margin-bottom: 8px; }
 
   .section {
     padding: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     border-radius: var(--r-md);
   }
 
@@ -1713,7 +1720,7 @@ li { margin-bottom: 8px; }
   .author-arrow { display: none; }
 
   .container { padding: 16px 12px; }
-  .section { padding: 18px; margin-bottom: 12px; }
+  .section { padding: 18px; margin-bottom: 18px; }
 }
 
 /* ================================================
