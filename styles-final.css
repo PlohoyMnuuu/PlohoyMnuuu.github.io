@@ -700,7 +700,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АВТОР
+   АВТОР (ИСПРАВЛЕНО: рамка + закругления со всех сторон)
    ================================================ */
 .author-wrapper {
   margin-top: 32px;
@@ -720,7 +720,6 @@ li { margin-bottom: 8px; }
   text-decoration: none;
   background: #0d1525;
   border: 1px solid var(--card-border);
-  border-left: 3px solid rgba(255,255,255,0.15);
   border-radius: var(--r-lg);
   padding: 0;
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
@@ -754,9 +753,7 @@ li { margin-bottom: 8px; }
 .author-block:hover::after { left: 140%; }
 .author-block:active { transform: translateY(0); }
 
-/* ================================================
-   АВТОР — ФОТО (ИСПРАВЛЕНО)
-   ================================================ */
+/* АВТОР — ФОТО (ИСПРАВЛЕНО: рамка и одинаковые закругления) */
 .author-left {
   display: flex;
   flex-direction: column;
@@ -767,6 +764,7 @@ li { margin-bottom: 8px; }
   width: 88px;
   position: relative;
   overflow: hidden;
+  border-radius: var(--r-lg) 0 0 var(--r-lg);
 }
 
 .author-photo-wrapper {
@@ -774,7 +772,7 @@ li { margin-bottom: 8px; }
   height: 100%;
   min-height: 100%;
   border-radius: 0;
-  border: none;
+  border: 2px solid rgba(245,183,48,0.4);
   background: #0d1525;
   flex-shrink: 0;
   overflow: hidden;
@@ -1637,8 +1635,12 @@ li { margin-bottom: 8px; }
   .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
   .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
 
-  /* ИСПРАВЛЕНО: правые углы 4px */
-  .author-left { width: 96px; border-radius: 11px 4px 4px 11px; }
+  /* ИСПРАВЛЕНО: правые углы закруглены так же как и левые */
+  .author-left {
+    width: 96px;
+    border-radius: var(--r-lg) 0 0 var(--r-lg);
+  }
+  
   .author-name { font-size: 13px; }
   .author-info { padding: 12px; }
   .author-info p { font-size: 12px; }
@@ -1689,8 +1691,12 @@ li { margin-bottom: 8px; }
   .mini-tips-grid { gap: 12px; }
   .mini-tip-card { padding: 14px; }
 
-  /* ИСПРАВЛЕНО: правые углы 4px */
-  .author-left { width: 84px; border-radius: 9px 4px 4px 9px; }
+  /* ИСПРАВЛЕНО: правые углы закруглены так же как и левые */
+  .author-left {
+    width: 84px;
+    border-radius: var(--r-lg) 0 0 var(--r-lg);
+  }
+  
   .author-info { padding: 10px 12px; }
   .author-arrow { display: none; }
 
@@ -1741,8 +1747,11 @@ li { margin-bottom: 8px; }
     margin-right: 0;
   }
 
-  /* ИСПРАВЛЕНО: правые углы 4px */
-  .author-left { width: 110px; border-radius: 15px 4px 4px 15px; }
+  /* ИСПРАВЛЕНО: правые углы закруглены так же как и левые */
+  .author-left {
+    width: 110px;
+    border-radius: var(--r-lg) 0 0 var(--r-lg);
+  }
 }
 
 /* ================================================
