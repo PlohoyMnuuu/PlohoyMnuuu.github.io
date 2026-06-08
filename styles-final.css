@@ -729,6 +729,12 @@ li { margin-bottom: 8px; }
   box-shadow: var(--shadow-promo);
 }
 
+/* Обёртка для корректного отображения border-radius поверх overflow:hidden */
+.author-block-outer {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
 .author-block::after {
   content: '';
   position: absolute;
@@ -761,6 +767,8 @@ li { margin-bottom: 8px; }
   width: 88px;
   position: relative;
   border-right: 1px solid rgba(255,255,255,0.08);
+  border-radius: 17px 17px 17px 17px;
+  overflow: hidden;
 }
 
 .author-photo-wrapper {
@@ -784,7 +792,6 @@ li { margin-bottom: 8px; }
   display: block;
   position: absolute;
   top: 0; left: 0;
-  border-radius: 18px;
 }
 
 .author-status {
