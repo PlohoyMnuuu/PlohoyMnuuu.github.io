@@ -1397,11 +1397,12 @@ li { margin-bottom: 8px; }
 .toggle-comments-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 7px 16px;
-  border-radius: 50px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.65);
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--r-md);
+  background: #0a1018;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-left: 3px solid var(--gold);
   color: rgba(255,255,255,0.9);
   font-family: inherit;
   font-size: 11px;
@@ -1409,26 +1410,27 @@ li { margin-bottom: 8px; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05) inset;
+  transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
   position: relative;
   overflow: hidden;
 }
 
 .toggle-comments-btn:hover {
-  border-color: rgba(255,255,255,0.9);
-  color: #fff;
-  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+  border-color: rgba(245,183,48,0.5);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 4px 20px rgba(245,183,48,0.18);
 }
 
 .toggle-comments-btn:active {
-  background: rgba(148,163,184,0.08);
+  transform: translateY(0);
 }
 
 .toggle-comments-btn svg {
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
-  stroke: currentColor;
+  stroke: #f5b730;
   transition: transform 0.2s ease;
 }
 
