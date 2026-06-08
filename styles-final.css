@@ -1008,8 +1008,8 @@ li { margin-bottom: 8px; }
 
 .video-cover {
   position: relative;
-.video-cover
-  max-width: 185px;
+  width: 100%;
+  max-width: 215px;
   aspect-ratio: 9 / 16;
   margin: 0 auto;
   overflow: hidden;
