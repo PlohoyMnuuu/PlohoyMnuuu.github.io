@@ -792,15 +792,7 @@ li { margin-bottom: 8px; }
 
 .author-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-.author-status {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 10px;
-  font-weight: 600;
-  color: #86efac;
-  white-space: nowrap;
-}
+
 
 .author-status .dot {
   width: 5px; height: 5px;
