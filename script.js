@@ -3,20 +3,20 @@ function copy(text) {
         navigator.clipboard.writeText(text).then(showToast).catch(function() { fallbackCopy(text); });
     } else { fallbackCopy(text); }
 }
- 
+
 function fallbackCopy(text) {
     var t = document.createElement('textarea');
     t.value = text; document.body.appendChild(t); t.select();
     try { document.execCommand('copy'); showToast(); } catch(e) { alert('Код: ' + text); }
     document.body.removeChild(t);
 }
- 
+
 function showToast() {
     var t = document.getElementById('toast');
     t.style.opacity = '1'; t.style.visibility = 'visible';
     setTimeout(function() { t.style.opacity = '0'; t.style.visibility = 'hidden'; }, 2000);
 }
- 
+
 function updatePromoCount() {
     var count = document.querySelectorAll('.promo-card').length;
     var el = document.getElementById('promo-count');
@@ -24,7 +24,7 @@ function updatePromoCount() {
     var el2 = document.getElementById('author-promo-count');
     if (el2) el2.textContent = count;
 }
- 
+
 function renderPromocodes(codes) {
     var c = document.getElementById('promo-list');
     if (!c) return;
@@ -38,7 +38,7 @@ function renderPromocodes(codes) {
     }).join('');
     updatePromoCount();
 }
- 
+
 function loadFreshCodes() {
     fetch('https://script.google.com/macros/s/AKfycbxu_zefZP7nxFfGR1aLN5QtiFTGk4qFhMR6EGh3Of330wlkszzRkjAd_dig7Ww22bdb/exec')
         .then(function(r) { return r.json(); })
@@ -48,24 +48,16 @@ function loadFreshCodes() {
             console.log('Не удалось загрузить свежие коды, используются из HTML');
         });
 }
- 
+
 document.addEventListener('DOMContentLoaded', function() {
     updatePromoCount();
     loadFreshCodes();
- 
-    // Автообновление даты в карточке автора
-    var dateEl = document.getElementById('author-check-date');
-    if (dateEl) {
-        var now = new Date();
-        var months = ['янв','фев','мар','апр','мая','июня','июля','авг','сен','окт','ноя','дек'];
-        dateEl.textContent = now.getDate() + ' ' + months[now.getMonth()];
-    }
 });
- 
+
 window.addEventListener('load', function() {
     var yr = document.getElementById('footer-year');
     if (yr) yr.textContent = new Date().getFullYear();
- 
+
     var states = [
         { text: "Онлайн", color: "#10b981", shadow: "rgba(16,185,129,0.6)" },
         { text: "Недавно", color: "#fbbf24", shadow: "rgba(251,191,36,0.6)" },
@@ -76,14 +68,14 @@ window.addEventListener('load', function() {
     if (dot) { dot.style.background = state.color; dot.style.boxShadow = '0 0 10px ' + state.shadow; }
     if (txt) txt.textContent = state.text;
 });
- 
+
 function loadVideo() {
     var modal = document.getElementById('video-modal');
     document.getElementById('video-frame').src = "https://www.youtube.com/embed/_2Lyzaz9eOw?autoplay=1&mute=1&rel=0&playsinline=1";
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
 }
- 
+
 function closeVideo(e) {
     if (e.target.id === 'video-modal' || e.target.classList.contains('video-close')) {
         document.getElementById('video-modal').classList.remove('show');
@@ -91,7 +83,7 @@ function closeVideo(e) {
         document.body.style.overflow = '';
     }
 }
- 
+
 function openScreenshot() {
     var modal = document.getElementById('screenshot-modal');
     var img = document.getElementById('screenshot-full');
@@ -100,20 +92,20 @@ function openScreenshot() {
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
 }
- 
+
 function closeScreenshot(e) {
     if (e.target.id === 'screenshot-modal' || e.target.classList.contains('video-close')) {
         document.getElementById('screenshot-modal').classList.remove('show');
         document.body.style.overflow = '';
     }
 }
- 
+
 (function() {
     const btn = document.getElementById('toggleComments');
     const container = document.getElementById('giscusContainer');
- 
+
     if (!btn || !container) return;
- 
+
     btn.addEventListener('click', function() {
         const isVisible = container.classList.toggle('visible');
         btn.setAttribute('aria-expanded', isVisible);
@@ -121,3 +113,4 @@ function closeScreenshot(e) {
             ? '✕ Закрыть обсуждение'
             : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Начать обсуждение';
     });
+})();
