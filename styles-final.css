@@ -51,7 +51,7 @@
   --r-lg:  18px;
   --r-xl:  22px;
 
-  /* Тени — ключевой элемент тактильности */
+  /* Тени */
   --shadow-card:     0 1px 3px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
   --shadow-raised:   0 2px 6px rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.35);
   --shadow-promo:    0 2px 8px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05) inset;
@@ -116,7 +116,7 @@ html, body {
   background-attachment: fixed;
 }
 
-/* Тонкая сетка — только на больших экранах */
+/* Тонкая сетка */
 @media (min-width: 769px) {
   body::after {
     content: '';
@@ -700,17 +700,13 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АВТОР (ИСПРАВЛЕНО: рамка + закругления со всех сторон)
+   АВТОР — ИСПРАВЛЕНО: РАМКА И СКРУГЛЕНИЯ
    ================================================ */
 .author-wrapper {
   margin-top: 32px;
   padding-top: 24px;
   border-top: none;
   position: relative;
-}
-
-.author-wrapper::after {
-  display: none;
 }
 
 .author-block {
@@ -728,17 +724,13 @@ li { margin-bottom: 8px; }
   box-shadow: var(--shadow-promo);
 }
 
-/* Обёртка для корректного отображения border-radius поверх overflow:hidden */
-.author-block-outer {
-  border-radius: var(--r-lg);
-  overflow: hidden;
-}
-
 .author-block::after {
   content: '';
   position: absolute;
-  top: 0; left: -100%;
-  width: 60%; height: 100%;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
   background: linear-gradient(90deg, transparent, rgba(245,183,48,0.05), transparent);
   transition: left 0.45s ease;
   pointer-events: none;
@@ -750,36 +742,33 @@ li { margin-bottom: 8px; }
   box-shadow: var(--shadow-raised);
 }
 
-.author-block:hover::after { left: 140%; }
-.author-block:active { transform: translateY(0); }
+.author-block:hover::after {
+  left: 140%;
+}
 
-/* АВТОР — ФОТО (ИСПРАВЛЕНО: рамка и одинаковые закругления) */
+.author-block:active {
+  transform: translateY(0);
+}
+
+/* Левая часть с фото — правильное скругление */
 .author-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
   flex-shrink: 0;
-  align-self: stretch;
   width: 88px;
   position: relative;
   overflow: hidden;
   border-radius: var(--r-lg) 0 0 var(--r-lg);
 }
 
+/* Обертка для фото */
 .author-photo-wrapper {
   width: 100%;
   height: 100%;
-  min-height: 100%;
-  border-radius: 0;
-  border: 2px solid rgba(245,183,48,0.4);
   background: #0d1525;
-  flex-shrink: 0;
   overflow: hidden;
   position: relative;
-  box-shadow: inset -4px 0 8px rgba(0,0,0,0.6), inset -1px 0 0 rgba(255,255,255,0.08);
 }
 
+/* Само фото */
 .author-photo-wrapper img,
 .author-photo {
   width: 100%;
@@ -787,42 +776,70 @@ li { margin-bottom: 8px; }
   object-fit: cover;
   object-position: center top;
   display: block;
-  position: absolute;
-  top: 0; left: 0;
 }
 
+/* ЗОЛОТАЯ РАМКА ФОТО через псевдоэлемент */
+.author-left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid rgba(245,183,48,0.6);
+  border-radius: var(--r-lg) 0 0 var(--r-lg);
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 0 6px rgba(245,183,48,0.3);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.author-block:hover .author-left::after {
+  border-color: rgba(245,183,48,0.9);
+  box-shadow: 0 0 10px rgba(245,183,48,0.5);
+}
+
+/* Статус Онлайн/Оффлайн */
 .author-status {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(7,9,15,0.8);
-  padding: 5px 4px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
+  gap: 6px;
   font-size: 10px;
   font-weight: 600;
   color: #86efac;
   white-space: nowrap;
+  z-index: 3;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  letter-spacing: 0.02em;
 }
 
 .author-status .dot {
-  width: 5px; height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 6px rgba(34,197,94,0.6);
-  animation: pulse-dot 2.5s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
 }
 
+/* Правая часть */
 .author-info {
   flex: 1;
   min-width: 0;
-  padding: 14px 16px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -844,24 +861,28 @@ li { margin-bottom: 8px; }
   margin: 0;
   font-size: var(--text-sm);
   line-height: 1.55;
+  color: var(--text-dim);
 }
 
+/* Стрелка справа */
 .author-arrow {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px; height: 30px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: rgba(245,183,48,0.08);
-  border: 1px solid rgba(245,183,48,0.2);
+  background: rgba(245, 183, 48, 0.08);
+  border: 1px solid rgba(245, 183, 48, 0.2);
   transition: all var(--t-base);
   align-self: center;
   margin-right: 14px;
 }
 
 .author-arrow svg {
-  width: 13px; height: 13px;
+  width: 13px;
+  height: 13px;
   stroke: var(--gold);
   stroke-width: 2.5;
   stroke-linecap: round;
@@ -870,13 +891,15 @@ li { margin-bottom: 8px; }
 }
 
 .author-block:hover .author-arrow {
-  background: rgba(245,183,48,0.16);
-  border-color: rgba(245,183,48,0.45);
+  background: rgba(245, 183, 48, 0.16);
+  border-color: rgba(245, 183, 48, 0.45);
 }
 
-.author-block:hover .author-arrow svg { transform: translateX(2px); }
+.author-block:hover .author-arrow svg {
+  transform: translateX(2px);
+}
 
-/* Facebook */
+/* Facebook кнопки */
 .fb-link {
   display: inline-flex;
   align-items: center;
@@ -892,9 +915,24 @@ li { margin-bottom: 8px; }
   transition: background var(--t-fast), transform var(--t-fast);
 }
 
-.fb-link:hover { background: #0e5bcf; transform: translateY(-1px); color: #fff; }
-.fb-link svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.mobile-fb-btn { display: none; margin-top: 4px; }
+.fb-link:hover {
+  background: #0e5bcf;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.fb-link svg {
+  width: 11px;
+  height: 11px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.mobile-fb-btn {
+  display: none;
+  margin-top: 4px;
+}
 
 /* ================================================
    UNIFIED BLOCK
@@ -1521,8 +1559,10 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   МЕДИАЗАПРОСЫ — ПЛАНШЕТ (до 768px)
+   МЕДИАЗАПРОСЫ
    ================================================ */
+
+/* Планшет (до 768px) */
 @media (max-width: 768px) {
   .hero-header { padding: 41px 16px 31px; border-radius: 0 0 var(--r-lg) var(--r-lg); }
   .hero-title  { font-size: 26px; margin-bottom: 16px; }
@@ -1597,11 +1637,23 @@ li { margin-bottom: 8px; }
 
   .unified-block .section { padding: 24px; }
   .section-divider { margin: 0 24px; }
+
+  /* АВТОР — планшет */
+  .author-left {
+    width: 90px;
+  }
+  .author-status {
+    font-size: 9px;
+    padding: 3px 8px;
+    bottom: 8px;
+  }
+  .author-status .dot {
+    width: 5px;
+    height: 5px;
+  }
 }
 
-/* ================================================
-   МЕДИАЗАПРОСЫ — МОБИЛЬНЫЙ (до 550px)
-   ================================================ */
+/* Мобильный (до 550px) */
 @media (max-width: 550px) {
   h1 { font-size: 22px; }
   h2 { font-size: 14px; margin-bottom: 14px; }
@@ -1635,20 +1687,42 @@ li { margin-bottom: 8px; }
   .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
   .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
 
-  /* ИСПРАВЛЕНО: правые углы закруглены так же как и левые */
+  /* АВТОР — мобильный */
   .author-left {
     width: 96px;
-    border-radius: var(--r-lg) 0 0 var(--r-lg);
   }
-  
-  .author-name { font-size: 13px; }
-  .author-info { padding: 12px; }
-  .author-info p { font-size: 12px; }
-  .author-status { font-size: 9px; }
-  .author-arrow { width: 26px; height: 26px; }
-  .author-arrow svg { width: 12px; height: 12px; }
-  .mobile-fb-btn { display: inline-flex; }
-  .author-name .desktop-fb-btn { display: none; }
+  .author-left::after {
+    border-width: 1.5px;
+  }
+  .author-name {
+    font-size: 13px;
+  }
+  .author-info {
+    padding: 10px 12px;
+  }
+  .author-info p {
+    font-size: 12px;
+  }
+  .author-status {
+    font-size: 8px;
+    padding: 3px 6px;
+    bottom: 6px;
+  }
+  .author-arrow {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+  }
+  .author-arrow svg {
+    width: 12px;
+    height: 12px;
+  }
+  .mobile-fb-btn {
+    display: inline-flex;
+  }
+  .author-name .desktop-fb-btn {
+    display: none;
+  }
 
   .hero-cta { padding: 12px 22px; font-size: 11px; }
   .hero-header { padding: 31px 12px 24px; }
@@ -1674,9 +1748,7 @@ li { margin-bottom: 8px; }
   .video-meta  { font-size: 11px; margin-top: 8px; }
 }
 
-/* ================================================
-   МЕДИАЗАПРОСЫ — ОЧЕНЬ МАЛЕНЬКИЙ (до 375px)
-   ================================================ */
+/* Очень маленький (до 375px) */
 @media (max-width: 375px) {
   h1 { font-size: 19px; }
   h2 { font-size: 13px; }
@@ -1691,22 +1763,22 @@ li { margin-bottom: 8px; }
   .mini-tips-grid { gap: 12px; }
   .mini-tip-card { padding: 14px; }
 
-  /* ИСПРАВЛЕНО: правые углы закруглены так же как и левые */
+  /* АВТОР — очень маленький */
   .author-left {
     width: 84px;
-    border-radius: var(--r-lg) 0 0 var(--r-lg);
   }
-  
-  .author-info { padding: 10px 12px; }
-  .author-arrow { display: none; }
+  .author-info {
+    padding: 8px 10px;
+  }
+  .author-arrow {
+    display: none;
+  }
 
   .container { padding: 16px 12px; }
   .section { padding: 18px; margin-bottom: 18px; }
 }
 
-/* ================================================
-   ДЕСКТОП (769px+)
-   ================================================ */
+/* Десктоп (769px+) */
 @media (min-width: 769px) {
   .section-divider { display: block; }
 
@@ -1747,18 +1819,14 @@ li { margin-bottom: 8px; }
     margin-right: 0;
   }
 
-  /* ИСПРАВЛЕНО: правые углы закруглены так же как и левые */
+  /* АВТОР — десктоп */
   .author-left {
     width: 110px;
-    border-radius: var(--r-lg) 0 0 var(--r-lg);
   }
 }
 
-/* ================================================
-   MOBILE PERFORMANCE — до 768px
-   ================================================ */
+/* MOBILE PERFORMANCE */
 @media (max-width: 768px) {
-
   html, body {
     background-attachment: scroll !important;
   }
