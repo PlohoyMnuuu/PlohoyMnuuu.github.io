@@ -1992,3 +1992,15 @@ li { margin-bottom: 8px; }
     transition: transform var(--t-fast), opacity var(--t-fast) !important;
   }
 }
+
+.accordion-section--energy .accordion-btn {
+  border-left: 3px solid var(--green);
+}
+
+.accordion-section--energy .accordion-btn:hover {
+  border-left-color: var(--green-dim);
+}
+
+.accordion-section--energy[open] > .accordion-btn {
+  border-left-color: var(--green);
+}
