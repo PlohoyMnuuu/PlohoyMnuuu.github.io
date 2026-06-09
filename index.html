@@ -240,19 +240,19 @@
         </div>
     </section>
 
-    <!-- АККОРДЕОН -->
+    <!-- АККОРДЕОН (details/summary) -->
     <div id="accordion-sections">
 
       <!-- Как вводить промокоды -->
-      <div class="accordion-section">
-        <button class="accordion-btn" aria-expanded="false" data-target="acc-howto">
+      <details class="accordion-section" name="faq">
+        <summary class="accordion-btn">
           <span class="accordion-btn-left">
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><rect height="14" rx="2" stroke="currentColor" stroke-width="1.75" width="18" x="3" y="5"/><path d="M8 10H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><path d="M8 14H12" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg>
             Как вводить промокоды
           </span>
           <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-        </button>
-        <div class="accordion-body" id="acc-howto">
+        </summary>
+        <div class="accordion-body">
           <div class="accordion-body-inner">
             <div class="unified-block">
               <section class="section">
@@ -276,18 +276,18 @@
             </div>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- Как получить новый код -->
-      <div class="accordion-section">
-        <button class="accordion-btn" aria-expanded="false" data-target="acc-getnew">
+      <details class="accordion-section" name="faq">
+        <summary class="accordion-btn">
           <span class="accordion-btn-left">
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><path d="M18 9C18 6.79 16.21 5 14 5H10C7.79 5 6 6.79 6 9V15L4 19H20L18 15V9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.75"/><path d="M10 5V4C10 3.45 10.45 3 11 3H13C13.55 3 14 3.45 14 4V5" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><path d="M10 21C10.35 21.6 11 22 12 22C13 22 13.65 21.6 14 21" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg>
             Как получить новый код
           </span>
           <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-        </button>
-        <div class="accordion-body" id="acc-getnew">
+        </summary>
+        <div class="accordion-body">
           <div class="accordion-body-inner">
             <section class="section">
               <p style="font-size:14px;">Бонусы можно получить несколькими способами. Далее подробнее.</p>
@@ -300,18 +300,18 @@
             </section>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- Почему код не работает -->
-      <div class="accordion-section">
-        <button class="accordion-btn" aria-expanded="false" data-target="acc-why">
+      <details class="accordion-section" name="faq">
+        <summary class="accordion-btn">
           <span class="accordion-btn-left">
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/><path d="M12 8.5C11.2 8.5 10.5 9.1 10.5 10C10.5 10.8 11 11.3 11.7 11.6C12.3 11.9 12 12.5 12 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><circle cx="12" cy="15.5" fill="currentColor" r="0.75"/></svg>
             Почему код не работает
           </span>
           <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-        </button>
-        <div class="accordion-body" id="acc-why">
+        </summary>
+        <div class="accordion-body">
           <div class="accordion-body-inner">
             <div class="unified-block">
               <section class="section section-faq">
@@ -336,18 +336,18 @@
             </div>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- Как получить энергию бесплатно -->
-      <div class="accordion-section">
-        <button class="accordion-btn" aria-expanded="false" data-target="acc-energy">
+      <details class="accordion-section" name="faq">
+        <summary class="accordion-btn">
           <span class="accordion-btn-left">
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24" style="stroke:#10b981;opacity:1;"><path d="M13 3L4 14H12L11 21L20 10H12L13 3Z" stroke="#10b981" stroke-linejoin="round" stroke-width="1.75"/></svg>
             Как получить энергию бесплатно
           </span>
           <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-        </button>
-        <div class="accordion-body" id="acc-energy">
+        </summary>
+        <div class="accordion-body">
           <div class="accordion-body-inner">
             <section class="section section-energy">
               <p style="font-size:14px;">Бесплатную энергию вы получите при выполнении условий, которые перечислены ниже.</p>
@@ -360,18 +360,18 @@
             </section>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- Осторожно: взломы и читы -->
-      <div class="accordion-section">
-        <button class="accordion-btn" aria-expanded="false" data-target="acc-cheats" style="border-left-color: var(--red);">
+      <details class="accordion-section" name="faq">
+        <summary class="accordion-btn" style="border-left-color: var(--red);">
           <span class="accordion-btn-left">
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24" style="stroke:#f87171;opacity:1;"><path d="M12 3L3 21H21L12 3Z" stroke="#f87171" stroke-linejoin="round" stroke-width="1.75"/><path d="M12 10V14" stroke="#f87171" stroke-linecap="round" stroke-width="1.75"/><circle cx="12" cy="17" fill="#f87171" r="0.75"/></svg>
             Осторожно: взломы и читы
           </span>
           <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-        </button>
-        <div class="accordion-body" id="acc-cheats">
+        </summary>
+        <div class="accordion-body">
           <div class="accordion-body-inner">
             <section class="section section-warning">
               <p>В интернете на некоторых сайтах предлагают скачать взломанную Монеточку с бесконечной энергией или деньгами. Такие читы не работают, потому что данные хранятся на защищенных серверах разработчиков.</p>
@@ -379,25 +379,25 @@
             </section>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- Обновления промокодов -->
-      <div class="accordion-section">
-        <button class="accordion-btn" aria-expanded="false" data-target="acc-updates">
+      <details class="accordion-section" name="faq">
+        <summary class="accordion-btn">
           <span class="accordion-btn-left">
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><path d="M4 4V10H10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/><path d="M20 20V14H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/><path d="M4 10C5.5 6.5 8.5 4 12 4C15 4 17.7 5.5 19.4 8" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><path d="M20 14C18.5 17.5 15.5 20 12 20C9 20 6.3 18.5 4.6 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg>
             Обновления промокодов
           </span>
           <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-        </button>
-        <div class="accordion-body" id="acc-updates">
+        </summary>
+        <div class="accordion-body">
           <div class="accordion-body-inner">
             <section class="section" style="margin-top:0;">
               <p style="margin-bottom:0;">Автор проверяет все коды вручную каждый день и добавляет на сайт новые. На всякий случай добавьте страницу в закладки браузера, чтобы вернуться сюда снова.</p>
             </section>
           </div>
         </div>
-      </div>
+      </details>
 
     </div>
     <!-- /АККОРДЕОН -->
