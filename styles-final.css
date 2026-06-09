@@ -1606,6 +1606,27 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
+   АККОРДЕОН: зелёный левый бордер для энергии
+   ================================================ */
+.accordion-section--energy .accordion-btn {
+  border-left: 3px solid var(--green);
+}
+
+.accordion-section--energy[open] > .accordion-btn {
+  border-left-color: var(--green);
+}
+
+/* ================================================
+   БЛОКИ ВНУТРИ ОТКРЫТОГО АККОРДЕОНА – убираем
+   верхнее закругление, чтобы прилегали плотно
+   ================================================ */
+.accordion-section[open] .accordion-body .section,
+.accordion-section[open] .accordion-body .unified-block {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* ================================================
    МЕДИАЗАПРОСЫ — ПЛАНШЕТ (до 768px)
    ================================================ */
 @media (max-width: 768px) {
@@ -1874,53 +1895,54 @@ li { margin-bottom: 8px; }
 @media (min-width: 769px) {
   .section-divider { display: block; }
 
-  .video-showcase {
+  /* Оба шоукейса – вертикальный поток (изображение сверху, текст снизу) */
+  .video-showcase,
+  .screenshot-showcase {
     display: block;
     text-align: left;
   }
 
-  .screenshot-showcase {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    text-align: left;
-  }
-
-  .unified-block .video-showcase,
-  .unified-block .screenshot-showcase { padding: 28px; }
-
-  .video-cover {
+  /* Изображения занимают всю ширину и становятся квадратными */
+  .video-cover,
+  .screenshot-cover {
     width: 100%;
     max-width: none;
     aspect-ratio: 1 / 1;
-    flex-shrink: unset;
     margin: 0;
     border-radius: var(--r-lg);
   }
 
+  /* Убираем флекс-обёртку для скриншота */
   .screenshot-cover {
-    width: 180px;
-    flex-shrink: 0;
-    margin: 0;
-    max-width: none;
-    border-radius: var(--r-lg);
+    flex-shrink: unset;
   }
 
+  /* Информационный блок – без верхней границы и без украшательств */
   .video-info,
   .screenshot-info {
-    flex: 1;
+    flex: none;
     border-top: none;
     border-image: none;
     margin-top: 0;
-    padding: 2px 0 0;
+    padding: 18px 0 0;
   }
 
   .video-info::after,
-  .screenshot-info::after { display: none; }
+  .screenshot-info::after {
+    display: none;
+  }
 
-  .video-badge, .screenshot-badge {
+  /* Бейджи выравниваем по левому краю */
+  .video-badge,
+  .screenshot-badge {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  /* Уменьшаем отступы сверху внутри юнифицированного блока */
+  .unified-block .video-showcase,
+  .unified-block .screenshot-showcase {
+    padding: 0 28px 28px;
   }
 }
 
