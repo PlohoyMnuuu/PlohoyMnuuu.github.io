@@ -1291,7 +1291,7 @@ li { margin-bottom: 8px; }
   border-radius: var(--r-md);
   position: relative;
   overflow: hidden;
-  margin-top: 24px;
+  margin-top: 36px;
 }
 
 .author-card::before {
