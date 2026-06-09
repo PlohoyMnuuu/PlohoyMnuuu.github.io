@@ -934,9 +934,12 @@ li { margin-bottom: 8px; }
 
 .unified-block .section::before { display: none; }
 
-.unified-block .video-showcase,
-.unified-block .screenshot-showcase {
-  padding: 0 28px 28px;
+/* Десктоп: видео/скриншот с отступами как у текста */
+@media (min-width: 769px) {
+  .unified-block .video-showcase,
+  .unified-block .screenshot-showcase {
+    padding: 0 28px 28px;
+  }
 }
 
 /* ================================================
@@ -1007,7 +1010,6 @@ li { margin-bottom: 8px; }
     object-position: center center;
   }
 
-  /* убираем scale на hover у скриншота на десктопе — при широком формате выглядит грубо */
   .screenshot-cover:hover {
     transform: none;
   }
@@ -1443,8 +1445,6 @@ details[open] .accordion-body {
   .hero-stats .stat-divider { display: none; }
   .container { padding: 24px 20px; }
   .section { padding: 24px; margin-bottom: 24px; border-radius: var(--r-lg); }
-  .unified-block .video-showcase,
-  .unified-block .screenshot-showcase { padding: 0 24px 24px; }
   .rewards-grid { gap: 16px; }
   .promo-card { margin-bottom: 16px; }
   .mini-tips-grid { gap: 16px; }
@@ -1518,8 +1518,6 @@ details[open] .accordion-body {
   .author-arrow { display: none; }
   .container { padding: 16px 12px; }
   .section { padding: 18px; margin-bottom: 18px; }
-  .unified-block .video-showcase,
-  .unified-block .screenshot-showcase { padding: 0 18px 18px; }
   .author-status { border-bottom-right-radius: 14px; }
 }
 
