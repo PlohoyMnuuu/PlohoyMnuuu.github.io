@@ -1531,7 +1531,7 @@ li { margin-bottom: 8px; }
   width: 100%;
   background: var(--card);
   border: 1px solid var(--card-border);
-  border-left: 3px solid rgba(255,255,255,0.08);
+  border-left: 1px solid var(--card-border); /* убран красный/цветной бордер, теперь обычный */
   border-radius: var(--r-md);
   padding: 18px 20px;
   cursor: pointer;
@@ -1544,7 +1544,7 @@ li { margin-bottom: 8px; }
   text-align: left;
   list-style: none;
   box-shadow: var(--shadow-card);
-  transition: border-color var(--t-base), border-left-color var(--t-base), box-shadow var(--t-base), background var(--t-base);
+  transition: border-color var(--t-base), box-shadow var(--t-base), background var(--t-base);
 }
 
 .accordion-btn::-webkit-details-marker { display: none; }
@@ -1552,14 +1552,12 @@ li { margin-bottom: 8px; }
 /* HOVER — без цветных бордеров */
 .accordion-btn:hover {
   border-color: rgba(255,255,255,0.12);
-  border-left-color: rgba(255,255,255,0.18);
   box-shadow: var(--shadow-raised);
 }
 
 /* ACTIVE (нажатие) — без цветных бордеров */
 .accordion-btn:active {
   border-color: rgba(255,255,255,0.08);
-  border-left-color: rgba(255,255,255,0.12);
   transform: scale(0.99);
 }
 
@@ -1568,7 +1566,6 @@ li { margin-bottom: 8px; }
   border-bottom: 1px solid var(--divider);
   border-radius: var(--r-md) var(--r-md) 0 0;
   background: var(--card-raised);
-  border-left-color: rgba(255,255,255,0.12);
   box-shadow: var(--shadow-raised);
 }
 
@@ -1576,7 +1573,6 @@ li { margin-bottom: 8px; }
 .accordion-btn:focus-visible {
   outline: 2px solid rgba(255,255,255,0.3);
   outline-offset: 2px;
-  border-left-color: rgba(255,255,255,0.2);
 }
 
 .accordion-btn-left {
@@ -1621,8 +1617,6 @@ li { margin-bottom: 8px; }
 .accordion-body-inner {
   padding: 0;
 }
-
-/* Удалён весь блок .accordion-section--energy */
 
 .accordion-section[open] .accordion-body .section,
 .accordion-section[open] .accordion-body .unified-block {
