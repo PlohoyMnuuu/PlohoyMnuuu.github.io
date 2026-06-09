@@ -1250,7 +1250,7 @@ li { margin-bottom: 8px; }
   border-top: 1px solid var(--divider);
   padding: 44px 20px 32px;
   text-align: center;
-  margin-top: 48px;
+  margin-top: 24px;
 }
 
 .custom-site-footer::before {
