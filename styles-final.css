@@ -1512,7 +1512,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АККОРДЕОН
+   АККОРДЕОН — ПОЛНОСТЬЮ БЕЗ ЦВЕТНЫХ БОРДЕРОВ
    ================================================ */
 .accordion-section {
   margin-bottom: 12px;
@@ -1549,18 +1549,34 @@ li { margin-bottom: 8px; }
 
 .accordion-btn::-webkit-details-marker { display: none; }
 
+/* HOVER — без цветных бордеров */
 .accordion-btn:hover {
   border-color: rgba(255,255,255,0.12);
   border-left-color: rgba(255,255,255,0.18);
   box-shadow: var(--shadow-raised);
 }
 
+/* ACTIVE (нажатие) — без цветных бордеров */
+.accordion-btn:active {
+  border-color: rgba(255,255,255,0.08);
+  border-left-color: rgba(255,255,255,0.12);
+  transform: scale(0.99);
+}
+
+/* OPEN (открытое состояние) — без цветных бордеров */
 .accordion-section[open] > .accordion-btn {
   border-bottom: 1px solid var(--divider);
   border-radius: var(--r-md) var(--r-md) 0 0;
   background: var(--card-raised);
-  border-left-color: var(--gold);
+  border-left-color: rgba(255,255,255,0.12);
   box-shadow: var(--shadow-raised);
+}
+
+/* FOCUS (клавиатурное выделение) — без цветных бордеров */
+.accordion-btn:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.3);
+  outline-offset: 2px;
+  border-left-color: rgba(255,255,255,0.2);
 }
 
 .accordion-btn-left {
@@ -1592,7 +1608,7 @@ li { margin-bottom: 8px; }
 
 .accordion-section[open] > .accordion-btn .accordion-chevron {
   transform: rotate(180deg);
-  stroke: var(--gold);
+  stroke: var(--text-dim);
 }
 
 .accordion-body {
@@ -1606,21 +1622,8 @@ li { margin-bottom: 8px; }
   padding: 0;
 }
 
-/* ================================================
-   АККОРДЕОН: зелёный левый бордер для энергии
-   ================================================ */
-.accordion-section--energy .accordion-btn {
-  border-left: 3px solid var(--green);
-}
+/* Удалён весь блок .accordion-section--energy */
 
-.accordion-section--energy[open] > .accordion-btn {
-  border-left-color: var(--green);
-}
-
-/* ================================================
-   БЛОКИ ВНУТРИ ОТКРЫТОГО АККОРДЕОНА – убираем
-   верхнее закругление, чтобы прилегали плотно
-   ================================================ */
 .accordion-section[open] .accordion-body .section,
 .accordion-section[open] .accordion-body .unified-block {
   border-top-left-radius: 0;
