@@ -943,7 +943,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   ВИДЕО И СКРИНШОТ — БАЗОВЫЕ СТИЛИ (МОБИЛЬ 9:16)
+   ВИДЕО И СКРИНШОТ — БАЗОВЫЕ СТИЛИ
    ================================================ */
 .video-showcase,
 .screenshot-showcase {
@@ -956,7 +956,7 @@ li { margin-bottom: 8px; }
   position: relative;
   width: 100%;
   max-width: 360px;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 4 / 3; /* ← квадратный формат на мобиле, как на ПК */
   margin: 0 auto;
   border-radius: var(--r-lg);
   border: 1px solid var(--card-border);
@@ -996,13 +996,32 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   ВИДЕО И СКРИНШОТ — ДЕСКТОП (широкий формат 4:3)
+   ВИДЕО И СКРИНШОТ — МОБИЛЬ: отступы и max-width
+   ================================================ */
+@media (max-width: 768px) {
+  .video-showcase,
+  .screenshot-showcase {
+    padding: 0 20px 24px; /* нормальные боковые отступы */
+  }
+
+  .video-cover,
+  .screenshot-cover {
+    max-width: 100%; /* на мобиле занимает всю ширину с отступами */
+  }
+
+  .screenshot-cover:hover {
+    transform: none; /* убираем scale на тач-устройствах */
+  }
+}
+
+/* ================================================
+   ВИДЕО И СКРИНШОТ — ДЕСКТОП
    ================================================ */
 @media (min-width: 769px) {
   .video-cover,
   .screenshot-cover {
     max-width: 100%;
-    aspect-ratio: 4 / 3;
+    /* aspect-ratio 4/3 уже задан выше — работает на всех размерах */
   }
 
   .video-cover img,
@@ -1365,7 +1384,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АККОРДЕОН (Оптимизированный, без JS)
+   АККОРДЕОН
    ================================================ */
 .accordion-section {
   margin-bottom: 12px;
