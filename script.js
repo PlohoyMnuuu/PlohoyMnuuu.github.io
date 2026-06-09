@@ -1,3 +1,4 @@
+// ========== КОПИРОВАНИЕ И TOAST ==========
 function copy(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(showToast).catch(function() { fallbackCopy(text); });
@@ -17,6 +18,7 @@ function showToast() {
     setTimeout(function() { t.style.opacity = '0'; t.style.visibility = 'hidden'; }, 2000);
 }
 
+// ========== ПРОМОКОДЫ (ЗАГРУЗКА И ОТРИСОВКА) ==========
 function updatePromoCount() {
     var count = document.querySelectorAll('.promo-card').length;
     var el = document.getElementById('promo-count');
@@ -49,34 +51,7 @@ function loadFreshCodes() {
         });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    updatePromoCount();
-    loadFreshCodes();
-
-    // Автообновление даты в карточке автора
-    var dateEl = document.getElementById('author-check-date');
-    if (dateEl) {
-        var now = new Date();
-        var months = ['янв','фев','мар','апр','мая','июня','июля','авг','сен','окт','ноя','дек'];
-        dateEl.textContent = now.getDate() + ' ' + months[now.getMonth()];
-    }
-});
-
-window.addEventListener('load', function() {
-    var yr = document.getElementById('footer-year');
-    if (yr) yr.textContent = new Date().getFullYear();
-
-    var states = [
-        { text: "Онлайн", color: "#10b981", shadow: "rgba(16,185,129,0.6)" },
-        { text: "Недавно", color: "#fbbf24", shadow: "rgba(251,191,36,0.6)" },
-        { text: "Оффлайн", color: "#ef4444", shadow: "rgba(239,68,68,0.6)" }
-    ];
-    var state = states[Math.floor(Date.now() / (1000*60*60)) % states.length];
-    var dot = document.getElementById('status-dot'), txt = document.getElementById('status-text');
-    if (dot) { dot.style.background = state.color; dot.style.boxShadow = '0 0 10px ' + state.shadow; }
-    if (txt) txt.textContent = state.text;
-});
-
+// ========== ВИДЕО И СКРИНШОТ ==========
 function loadVideo() {
     var modal = document.getElementById('video-modal');
     document.getElementById('video-frame').src = "https://www.youtube.com/embed/_2Lyzaz9eOw?autoplay=1&mute=1&rel=0&playsinline=1";
@@ -108,17 +83,43 @@ function closeScreenshot(e) {
     }
 }
 
-(function() {
+// ========== СТАТУС (ОНЛАЙН/НЕДАВНО/ОФФЛАЙН) И ГОД В ФУТЕРЕ ==========
+function updateFooterYear() {
+    var yr = document.getElementById('footer-year');
+    if (yr) yr.textContent = new Date().getFullYear();
+}
+
+function updateStatus() {
+    var states = [
+        { text: "Онлайн", color: "#10b981", shadow: "rgba(16,185,129,0.6)" },
+        { text: "Недавно", color: "#fbbf24", shadow: "rgba(251,191,36,0.6)" },
+        { text: "Оффлайн", color: "#ef4444", shadow: "rgba(239,68,68,0.6)" }
+    ];
+    var state = states[Math.floor(Date.now() / (1000*60*60)) % states.length];
+    var dot = document.getElementById('status-dot'), txt = document.getElementById('status-text');
+    if (dot) { dot.style.background = state.color; dot.style.boxShadow = '0 0 10px ' + state.shadow; }
+    if (txt) txt.textContent = state.text;
+}
+
+// ========== КОММЕНТАРИИ (GISCUS TOGGLE) ==========
+function initCommentsToggle() {
     const btn = document.getElementById('toggleComments');
     const container = document.getElementById('giscusContainer');
-
     if (!btn || !container) return;
-
     btn.addEventListener('click', function() {
         const isVisible = container.classList.toggle('visible');
         btn.setAttribute('aria-expanded', isVisible);
         btn.innerHTML = isVisible
             ? '✕ Закрыть обсуждение'
-            : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Начать обсуждение';
+            : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5b730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Начать обсуждение';
     });
-})();
+}
+
+// ========== ИНИЦИАЛИЗАЦИЯ ==========
+document.addEventListener('DOMContentLoaded', function() {
+    updatePromoCount();
+    loadFreshCodes();
+    updateFooterYear();
+    updateStatus();
+    initCommentsToggle();
+});
