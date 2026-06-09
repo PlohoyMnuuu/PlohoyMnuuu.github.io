@@ -678,7 +678,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АВТОР — СТАТУС С ЗАКРУГЛЕНИЕМ ПРАВОГО НИЖНЕГО УГЛА
+   АВТОР
    ================================================ */
 .author-wrapper {
   margin-top: 32px;
@@ -762,7 +762,6 @@ li { margin-bottom: 8px; }
   border-color: rgba(245, 183, 48, 0.9);
 }
 
-/* СТАТУС — скруглён правый нижний угол */
 .author-status {
   position: absolute;
   bottom: 0;
@@ -779,7 +778,7 @@ li { margin-bottom: 8px; }
   color: #86efac;
   white-space: nowrap;
   border-radius: 0;
-  border-bottom-right-radius: 16px; /* скругление как у .author-photo-wrapper */
+  border-bottom-right-radius: 16px;
 }
 
 .author-status.offline {
@@ -936,7 +935,7 @@ li { margin-bottom: 8px; }
 .unified-block .section::before { display: none; }
 
 /* ================================================
-   ОБНОВЛЁННЫЕ СТИЛИ ДЛЯ ВИДЕО И СКРИНШОТА
+   ВИДЕО И СКРИНШОТ — БАЗОВЫЕ СТИЛИ (МОБИЛЬ 9:16)
    ================================================ */
 .video-showcase,
 .screenshot-showcase {
@@ -986,6 +985,27 @@ li { margin-bottom: 8px; }
   height: 45%;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   pointer-events: none;
+}
+
+/* ================================================
+   ВИДЕО И СКРИНШОТ — ДЕСКТОП (широкий формат 4:3)
+   ================================================ */
+@media (min-width: 769px) {
+  .video-cover,
+  .screenshot-cover {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .video-cover img,
+  .screenshot-cover img {
+    object-position: center center;
+  }
+
+  /* убираем scale на hover у скриншота на десктопе — при широком формате выглядит грубо */
+  .screenshot-cover:hover {
+    transform: none;
+  }
 }
 
 .play-button {
