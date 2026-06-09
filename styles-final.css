@@ -1285,27 +1285,13 @@ li { margin-bottom: 8px; }
 /* ================================================
    НОВАЯ КАРТОЧКА АВТОРА (author-card)
    ================================================ */
-.author-section-label {
-  font-size: 10px;
-  color: var(--text-faint);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 28px 0 12px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.author-section-label::before {
-  display: none;
-}
-
 .author-card {
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--r-md);
   position: relative;
   overflow: hidden;
+  margin-top: 24px;
 }
 
 .author-card::before {
@@ -1406,10 +1392,11 @@ li { margin-bottom: 8px; }
 }
 
 .author-card__name {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--text);
-  margin: 0 0 2px;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
 }
 
 .author-card__role {
@@ -1534,7 +1521,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АККОРДЕОН
+   АККОРДЕОН — УБРАНЫ БОРДЕРЫ ВНУТРЕННИХ БЛОКОВ
    ================================================ */
 .accordion-section {
   margin-bottom: 12px;
@@ -1617,12 +1604,12 @@ li { margin-bottom: 8px; }
   stroke: var(--gold);
 }
 
+/* Убираем бордеры у внутренних блоков аккордеона */
 .accordion-body {
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-top: none;
-  border-radius: 0 0 var(--r-md) var(--r-md);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .accordion-body-inner {
@@ -1729,7 +1716,7 @@ li { margin-bottom: 8px; }
   }
 
   .author-card__name {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .author-card__role {
@@ -1843,6 +1830,10 @@ li { margin-bottom: 8px; }
     min-width: 40px;
   }
 
+  .author-card__name {
+    font-size: 15px;
+  }
+
   .author-card__link-btn {
     width: 30px;
     height: 30px;
@@ -1876,6 +1867,10 @@ li { margin-bottom: 8px; }
 
   .author-card__header {
     gap: 8px;
+  }
+
+  .author-card__name {
+    font-size: 14px;
   }
 
   .author-card__link-btn {
