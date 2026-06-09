@@ -52,6 +52,14 @@ function loadFreshCodes() {
 document.addEventListener('DOMContentLoaded', function() {
     updatePromoCount();
     loadFreshCodes();
+
+    // Автообновление даты в карточке автора
+    var dateEl = document.getElementById('author-check-date');
+    if (dateEl) {
+        var now = new Date();
+        var months = ['янв','фев','мар','апр','мая','июня','июля','авг','сен','окт','ноя','дек'];
+        dateEl.textContent = now.getDate() + ' ' + months[now.getMonth()];
+    }
 });
 
 window.addEventListener('load', function() {
