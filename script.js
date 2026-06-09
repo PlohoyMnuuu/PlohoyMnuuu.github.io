@@ -62,7 +62,7 @@ window.addEventListener('load', function() {
 
     var states = [
         { text: "Онлайн", color: "#10b981", shadow: "rgba(16,185,129,0.6)" },
-        { text: "Был недавно", color: "#fbbf24", shadow: "rgba(251,191,36,0.6)" },
+        { text: "Недавно", color: "#fbbf24", shadow: "rgba(251,191,36,0.6)" },
         { text: "Оффлайн", color: "#ef4444", shadow: "rgba(239,68,68,0.6)" }
     ];
     var state = states[Math.floor(Date.now() / (1000*60*60)) % states.length];
