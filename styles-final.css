@@ -51,7 +51,7 @@
   --r-lg:  18px;
   --r-xl:  22px;
 
-  /* Тени — ключевой элемент тактильности */
+  /* Тени */
   --shadow-card:     0 1px 3px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
   --shadow-raised:   0 2px 6px rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.35);
   --shadow-promo:    0 2px 8px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05) inset;
@@ -116,7 +116,6 @@ html, body {
   background-attachment: fixed;
 }
 
-/* Тонкая сетка — только на больших экранах */
 @media (min-width: 769px) {
   body::after {
     content: '';
@@ -216,7 +215,6 @@ li { margin-bottom: 8px; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.06) inset;
 }
 
-/* Декоративный свет за заголовком */
 .hero-header::before {
   content: '';
   position: absolute;
@@ -295,7 +293,6 @@ li { margin-bottom: 8px; }
 
 #stats-update-date span { color: var(--text-dim); }
 
-/* CTA-кнопка — главный призыв к действию */
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -376,7 +373,6 @@ li { margin-bottom: 8px; }
   margin-bottom: 16px;
 }
 
-/* Тонкий блик сверху — даёт ощущение объёма */
 .section::before {
   content: '';
   position: absolute;
@@ -390,17 +386,12 @@ li { margin-bottom: 8px; }
   border-color: var(--card-border-hover);
 }
 
-/* ================================================
-   ВАРИАЦИИ СЕКЦИЙ
-   ================================================ */
-
-/* FAQ — чуть тише */
+/* ВАРИАЦИИ СЕКЦИЙ */
 .section-faq {
   background: #0d1421;
   border-color: rgba(255,255,255,0.05);
 }
 
-/* Энергия — зелёный акцент */
 .section-energy {
   background: var(--card);
   border-left: 3px solid var(--green);
@@ -413,7 +404,6 @@ li { margin-bottom: 8px; }
 
 .section-energy h2 .svg-icon { stroke: var(--green); opacity: 0.8; }
 
-/* Предупреждение — красный акцент */
 .section-warning {
   background: var(--card);
   border-left: 3px solid var(--red);
@@ -450,7 +440,6 @@ li { margin-bottom: 8px; }
   overflow: hidden;
 }
 
-/* Подсветка сверху */
 .reward-item::before {
   content: '';
   position: absolute;
@@ -459,7 +448,6 @@ li { margin-bottom: 8px; }
   background: rgba(255,255,255,0.06);
 }
 
-/* ИЗМЕНЕНО: убрана жёлтая рамка и жёлтый inset-shadow при ховере */
 .reward-item:hover {
   transform: translateY(-3px);
   border-color: var(--card-border);
@@ -491,10 +479,8 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   ПРОМОКОДЫ — главный блок, самый заметный
+   ПРОМОКОДЫ
    ================================================ */
-
-/* Сам раздел с кодами поднят чуть ярче */
 #promo-codes {
   background: var(--card-raised);
   border-color: rgba(255,255,255,0.09);
@@ -506,7 +492,6 @@ li { margin-bottom: 8px; }
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-
   background: #0a1018;
   border: 1px solid rgba(255,255,255,0.07);
   border-left: 3px solid var(--gold);
@@ -516,14 +501,10 @@ li { margin-bottom: 8px; }
   cursor: pointer;
   position: relative;
   overflow: hidden;
-
-  /* Инсет-тень — тактильность */
   box-shadow: var(--shadow-promo);
-
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
 }
 
-/* Блик сверху */
 .promo-card::before {
   content: '';
   position: absolute;
@@ -533,7 +514,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* Shimmer on hover */
 .promo-card::after {
   content: '';
   position: absolute;
@@ -544,7 +524,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* ИЗМЕНЕНО: убрана жёлтая рамка при ховере, shadow-gold убран */
 .promo-card:hover {
   transform: translateY(-2px);
   border-color: rgba(255,255,255,0.07);
@@ -604,9 +583,7 @@ li { margin-bottom: 8px; }
   word-break: break-word;
 }
 
-/* ================================================
-   КНОПКА КОПИРОВАТЬ
-   ================================================ */
+/* КНОПКА КОПИРОВАТЬ */
 .copy-btn {
   display: flex;
   align-items: center;
@@ -640,7 +617,7 @@ li { margin-bottom: 8px; }
 
 .copy-btn:active { transform: scale(0.95); }
 
-/* Скелетон загрузки */
+/* Скелетон */
 .promo-card.skeleton {
   height: 74px;
   pointer-events: none;
@@ -664,7 +641,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   МИНИ-СОВЕТЫ (grid 2 col)
+   МИНИ-СОВЕТЫ
    ================================================ */
 .mini-tips-grid {
   display: grid;
@@ -684,12 +661,9 @@ li { margin-bottom: 8px; }
   position: relative;
   overflow: hidden;
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
-
-  /* Тонкий блик */
   box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset;
 }
 
-/* Акцентная полоска слева появляется при ховере */
 .mini-tip-card::after {
   content: '';
   position: absolute;
@@ -719,7 +693,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   UNIFIED BLOCK (объединённый блок)
+   UNIFIED BLOCK
    ================================================ */
 .unified-block {
   background: var(--card);
@@ -731,7 +705,6 @@ li { margin-bottom: 8px; }
   overflow: hidden;
 }
 
-/* Блик сверху */
 .unified-block::before {
   content: '';
   position: absolute;
@@ -751,7 +724,6 @@ li { margin-bottom: 8px; }
   padding: 28px;
 }
 
-/* Убираем псевдоэлемент блика у вложенных секций */
 .unified-block .section::before { display: none; }
 
 .unified-block .video-showcase,
@@ -796,14 +768,12 @@ li { margin-bottom: 8px; }
   padding: 0;
 }
 
-/* Обложка */
 .cover-stage {
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-/* Декор. линии по бокам (только мобайл) */
 .cover-stage::before,
 .cover-stage::after {
   content: '';
@@ -874,7 +844,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* Кнопка Play */
 .play-button {
   position: absolute;
   top: 50%; left: 50%;
@@ -915,7 +884,6 @@ li { margin-bottom: 8px; }
 .play-button:hover svg { transform: translateX(2px); }
 .play-button:active { transform: translate(-50%, -50%) scale(0.93); }
 
-/* Бейджи */
 .video-badge,
 .screenshot-badge {
   display: inline-flex;
@@ -943,7 +911,6 @@ li { margin-bottom: 8px; }
   transform: translateY(-1px);
 }
 
-/* Info под видео/скриншотом */
 .video-info,
 .screenshot-info {
   border-top: 1px solid transparent;
@@ -1002,7 +969,6 @@ li { margin-bottom: 8px; }
   opacity: 0.7;
 }
 
-/* Скриншот */
 .screenshot-cover {
   position: relative;
   width: 100%;
@@ -1035,7 +1001,6 @@ li { margin-bottom: 8px; }
   pointer-events: none;
 }
 
-/* Иконка лупы */
 .screenshot-magnifier {
   position: absolute;
   top: 10px; right: 10px;
@@ -1176,7 +1141,7 @@ li { margin-bottom: 8px; }
 #toast svg { width: 14px; height: 14px; }
 
 /* ================================================
-   PROMO CHECK (если используется)
+   PROMO CHECK
    ================================================ */
 .promo-check-section {
   padding: 18px;
@@ -1231,8 +1196,6 @@ li { margin-bottom: 8px; }
 .giscus-section::before {
   display: none;
 }
-
-/* Старая кнопка toggle-comments-btn удалена за ненадобностью */
 
 .giscus-container {
   display: none;
@@ -1404,7 +1367,6 @@ li { margin-bottom: 8px; }
   letter-spacing: 0.5px;
 }
 
-/* Бейдж статуса */
 .author-card__status {
   display: flex;
   align-items: center;
@@ -1425,7 +1387,6 @@ li { margin-bottom: 8px; }
   background: var(--green);
 }
 
-/* Статусы: «Был недавно» и «Оффлайн» */
 .author-card__status--away {
   background: rgba(245,183,48,0.09);
   border-color: rgba(245,183,48,0.25);
@@ -1446,14 +1407,12 @@ li { margin-bottom: 8px; }
   background: var(--red);
 }
 
-/* Разделитель */
 .author-card__divider {
   height: 1px;
   background: var(--divider);
   margin: 0 0 14px;
 }
 
-/* Описание */
 .author-card__desc {
   font-size: var(--text-sm);
   color: var(--text-dim);
@@ -1466,7 +1425,6 @@ li { margin-bottom: 8px; }
   font-weight: 500;
 }
 
-/* Статистика */
 .author-card__stats {
   display: flex;
   border: 1px solid var(--divider);
@@ -1502,7 +1460,6 @@ li { margin-bottom: 8px; }
   margin-top: 2px;
 }
 
-/* Кнопка "Начать обсуждение" */
 .author-card__btn {
   display: flex;
   align-items: center;
@@ -1530,6 +1487,102 @@ li { margin-bottom: 8px; }
 .author-card__btn svg {
   flex-shrink: 0;
   stroke: currentColor;
+}
+
+/* ================================================
+   АККОРДЕОН
+   ================================================ */
+.accordion-section {
+  margin-bottom: 12px;
+  border: none;
+  background: transparent;
+}
+
+.accordion-section[open] {
+  margin-bottom: 12px;
+}
+
+.accordion-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-left: 3px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-md);
+  padding: 18px 20px;
+  cursor: pointer;
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  text-align: left;
+  list-style: none;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--t-base), border-left-color var(--t-base), box-shadow var(--t-base), background var(--t-base);
+}
+
+.accordion-btn::-webkit-details-marker { display: none; }
+
+.accordion-btn:hover {
+  border-color: rgba(255,255,255,0.12);
+  border-left-color: rgba(255,255,255,0.18);
+  box-shadow: var(--shadow-raised);
+}
+
+.accordion-section[open] > .accordion-btn {
+  border-bottom: 1px solid var(--divider);
+  border-radius: var(--r-md) var(--r-md) 0 0;
+  background: var(--card-raised);
+  border-left-color: var(--gold);
+  box-shadow: var(--shadow-raised);
+}
+
+.accordion-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  pointer-events: none;
+}
+
+.accordion-btn-left .svg-icon {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  stroke: var(--text-dim);
+  opacity: 0.7;
+}
+
+.accordion-chevron {
+  width: 20px; height: 20px;
+  flex-shrink: 0;
+  stroke: var(--text-dim);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--t-base);
+  margin-left: 12px;
+}
+
+.accordion-section[open] > .accordion-btn .accordion-chevron {
+  transform: rotate(180deg);
+  stroke: var(--gold);
+}
+
+.accordion-body {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-top: none;
+  border-radius: 0 0 var(--r-md) var(--r-md);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.accordion-body-inner {
+  padding: 0;
 }
 
 /* ================================================
@@ -1612,7 +1665,10 @@ li { margin-bottom: 8px; }
   .unified-block .section { padding: 24px; }
   .section-divider { margin: 0 24px; }
 
-  /* Адаптация карточки автора */
+  .accordion-btn {
+    padding: 16px 18px;
+  }
+
   .author-card__body {
     padding: 14px 14px 12px;
   }
@@ -1735,7 +1791,15 @@ li { margin-bottom: 8px; }
   .video-text  { font-size: 12px; }
   .video-meta  { font-size: 11px; margin-top: 8px; }
 
-  /* Дополнительная адаптация карточки автора для очень маленьких экранов */
+  .accordion-btn {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .accordion-btn-left .svg-icon {
+    width: 15px; height: 15px;
+  }
+
   .author-card__avatar {
     width: 40px;
     height: 40px;
@@ -1764,7 +1828,11 @@ li { margin-bottom: 8px; }
   .container { padding: 16px 12px; }
   .section { padding: 18px; margin-bottom: 12px; }
 
-  /* Карточка автора на маленьких экранах */
+  .accordion-btn {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
   .author-card__header {
     gap: 8px;
   }
