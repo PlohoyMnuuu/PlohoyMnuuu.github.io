@@ -1365,7 +1365,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АККОРДЕОН
+   АККОРДЕОН (Оптимизированный, без JS)
    ================================================ */
 .accordion-section {
   margin-bottom: 12px;
@@ -1394,18 +1394,10 @@ li { margin-bottom: 8px; }
   position: relative;
   overflow: hidden;
   min-height: 52px;
-  -webkit-tap-highlight-color: transparent;
+  list-style: none;
 }
 
-.accordion-btn::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(245,183,48,0.06), transparent);
-  transition: left 0.45s ease;
-  pointer-events: none;
-}
+.accordion-btn::-webkit-details-marker { display: none; }
 
 .accordion-btn:hover {
   transform: translateY(-2px);
@@ -1413,39 +1405,15 @@ li { margin-bottom: 8px; }
   background: #0d1422;
 }
 
-.accordion-btn:hover::after { left: 140%; }
-.accordion-btn:active { transform: translateY(0); }
-
-.accordion-btn-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+details[open] .accordion-btn {
+  border-left-color: var(--gold);
+  background: #0d1422;
 }
 
-.accordion-btn-left .svg-icon {
-  width: 18px; height: 18px;
-  flex-shrink: 0;
-  stroke: var(--gold);
-  opacity: 0.75;
-}
-
-.accordion-chevron {
-  width: 18px; height: 18px;
-  flex-shrink: 0;
-  stroke: var(--text-dim);
-  opacity: 0.5;
-  transition: transform var(--t-base), opacity var(--t-base);
-}
-
-.accordion-btn[aria-expanded="true"] .accordion-chevron {
+details[open] .accordion-chevron {
   transform: rotate(180deg);
   opacity: 0.9;
   stroke: var(--gold);
-}
-
-.accordion-btn[aria-expanded="true"] {
-  border-left-color: var(--gold);
-  background: #0d1422;
 }
 
 .accordion-body {
@@ -1454,14 +1422,15 @@ li { margin-bottom: 8px; }
   transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.accordion-body.open {
+details[open] .accordion-body {
   max-height: 2000px;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.accordion-body-inner {
-  padding-top: 10px;
-}
+.accordion-btn-left { display: flex; align-items: center; gap: 10px; }
+.accordion-btn-left .svg-icon { width: 18px; height: 18px; flex-shrink: 0; stroke: var(--gold); opacity: 0.75; }
+.accordion-chevron { width: 18px; height: 18px; flex-shrink: 0; stroke: var(--text-dim); opacity: 0.5; transition: transform var(--t-base); }
+.accordion-body-inner { padding-top: 10px; }
 
 /* ================================================
    АДАПТИВНОСТЬ
