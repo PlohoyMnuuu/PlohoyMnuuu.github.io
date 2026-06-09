@@ -235,7 +235,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   HERO BRAND
+   HERO BRAND (перенесено из первого CSS)
    ================================================ */
 .hero-brand {
   display: block;
@@ -263,7 +263,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   HERO TITLE
+   HERO TITLE (перенесено из первого CSS)
    ================================================ */
 .hero-title {
   font-size: 38px;
@@ -296,7 +296,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   HERO STATS
+   HERO STATS (перенесено из первого CSS)
    ================================================ */
 .hero-stats {
   display: flex;
@@ -341,7 +341,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   HERO CTA
+   HERO CTA (оставлено без изменений)
    ================================================ */
 .hero-cta {
   display: inline-flex;
@@ -394,7 +394,7 @@ li { margin-bottom: 8px; }
 .hero-cta:hover svg { transform: translateY(2px); }
 
 /* ================================================
-   АНИМАЦИИ
+   АНИМАЦИИ (добавлены из первого CSS)
    ================================================ */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(8px); }
@@ -495,7 +495,7 @@ li { margin-bottom: 8px; }
 .section-warning h2 .svg-icon { stroke: var(--red); opacity: 0.8; }
 
 /* ================================================
-   СЕТКА НАГРАД (улучшенное свечение и заполнение)
+   СЕТКА НАГРАД
    ================================================ */
 .rewards-grid {
   display: grid;
@@ -507,16 +507,16 @@ li { margin-bottom: 8px; }
   background: #111e2e;
   border: 1px solid var(--card-border);
   border-radius: var(--r-lg);
-  padding: 18px 12px;
+  padding: 16px 10px 14px;
   text-align: center;
   cursor: default;
   transition: transform var(--t-base), border-color var(--t-base), box-shadow var(--t-base);
-  min-height: 130px;
+  min-height: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   position: relative;
   overflow: hidden;
 }
@@ -537,78 +537,16 @@ li { margin-bottom: 8px; }
 
 .reward-item:active { transform: translateY(-1px); }
 
-/* ===== НОВОЕ СВЕЧЕНИЕ ДЛЯ SVG И ЭМОДЗИ ===== */
 .reward-icon {
-  font-size: 44px;
+  font-size: 32px;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--t-base), filter var(--t-base);
-  position: relative;
+  transition: transform var(--t-base);
 }
 
-/* Стили для SVG-иконок */
-.reward-icon svg {
-  width: 44px;
-  height: 44px;
-  display: block;
-  filter: drop-shadow(0 0 8px rgba(245,183,48,0.5)) drop-shadow(0 0 3px rgba(245,183,48,0.3));
-  transition: all var(--t-base);
-}
-
-/* Разные цвета свечения через data-атрибуты (опционально) */
-.reward-item[data-type="gold"] .reward-icon svg {
-  filter: drop-shadow(0 0 8px rgba(245,183,48,0.7)) drop-shadow(0 0 4px rgba(245,183,48,0.4));
-}
-.reward-item[data-type="crystal"] .reward-icon svg {
-  filter: drop-shadow(0 0 8px rgba(96,165,250,0.7)) drop-shadow(0 0 4px rgba(96,165,250,0.4));
-}
-.reward-item[data-type="energy"] .reward-icon svg {
-  filter: drop-shadow(0 0 8px rgba(34,197,94,0.7)) drop-shadow(0 0 4px rgba(34,197,94,0.4));
-}
-
-/* Анимация при наведении */
-.reward-item:hover .reward-icon svg {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 14px rgba(245,183,48,0.9)) drop-shadow(0 0 6px rgba(245,183,48,0.5));
-}
-.reward-item[data-type="crystal"]:hover .reward-icon svg {
-  filter: drop-shadow(0 0 14px rgba(96,165,250,0.9)) drop-shadow(0 0 6px rgba(96,165,250,0.5));
-}
-.reward-item[data-type="energy"]:hover .reward-icon svg {
-  filter: drop-shadow(0 0 14px rgba(34,197,94,0.9)) drop-shadow(0 0 6px rgba(34,197,94,0.5));
-}
-
-/* Поддержка эмодзи (текстовые иконки) */
-.reward-icon:not(:has(svg)) {
-  font-size: 44px;
-  text-shadow: 0 0 8px rgba(245,183,48,0.5);
-  transition: text-shadow var(--t-base), transform var(--t-base);
-}
-.reward-item:hover .reward-icon:not(:has(svg)) {
-  text-shadow: 0 0 14px rgba(245,183,48,0.8);
-  transform: scale(1.05);
-}
-
-/* Глянцевый блик поверх иконки */
-.reward-icon::after {
-  content: '';
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 30%;
-  height: 20%;
-  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 80%);
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-.reward-item:hover .reward-icon::after {
-  opacity: 0.6;
-}
-/* ===== КОНЕЦ БЛОКА СВЕЧЕНИЯ ===== */
+.reward-item:hover .reward-icon { transform: scale(1.12); }
 
 .reward-title {
   font-size: var(--text-xs);
@@ -1329,6 +1267,7 @@ li { margin-bottom: 8px; }
    GISCUS
    ================================================ */
 .giscus-section {
+
   padding-top: 0;
   border-top: none;
   position: relative;
@@ -1359,7 +1298,7 @@ li { margin-bottom: 8px; }
   animation: giscusFadeSlide 0.35s ease both;
 }
 .giscus-container.visible {
-  margin-top: 24px;
+  margin-top: 24px; /* добавить сюда */
 }
 
 @keyframes giscusFadeSlide {
@@ -1428,7 +1367,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   НОВАЯ КАРТОЧКА АВТОРА (author-card)
+   НОВАЯ КАРТОЧКА АВТОРА (author-card) – УВЕЛИЧЕННАЯ АВАТАРКА
    ================================================ */
 .author-card {
   background: var(--card);
@@ -1469,6 +1408,7 @@ li { margin-bottom: 8px; }
   position: relative;
 }
 
+/* Увеличенная аватарка на всех устройствах */
 .author-card__avatar {
   width: 60px;
   height: 60px;
@@ -1686,7 +1626,7 @@ li { margin-bottom: 8px; }
   width: 100%;
   background: var(--card);
   border: 1px solid var(--card-border);
-  border-left: 1px solid var(--card-border);
+  border-left: 1px solid var(--card-border); /* убран красный/цветной бордер, теперь обычный */
   border-radius: var(--r-md);
   padding: 18px 20px;
   cursor: pointer;
@@ -1704,16 +1644,19 @@ li { margin-bottom: 8px; }
 
 .accordion-btn::-webkit-details-marker { display: none; }
 
+/* HOVER — без цветных бордеров */
 .accordion-btn:hover {
   border-color: rgba(255,255,255,0.12);
   box-shadow: var(--shadow-raised);
 }
 
+/* ACTIVE (нажатие) — без цветных бордеров */
 .accordion-btn:active {
   border-color: rgba(255,255,255,0.08);
   transform: scale(0.99);
 }
 
+/* OPEN (открытое состояние) — без цветных бордеров */
 .accordion-section[open] > .accordion-btn {
   border-bottom: 1px solid var(--divider);
   border-radius: var(--r-md) var(--r-md) 0 0;
@@ -1721,6 +1664,7 @@ li { margin-bottom: 8px; }
   box-shadow: var(--shadow-raised);
 }
 
+/* FOCUS (клавиатурное выделение) — без цветных бордеров */
 .accordion-btn:focus-visible {
   outline: 2px solid rgba(255,255,255,0.3);
   outline-offset: 2px;
@@ -1794,10 +1738,6 @@ li { margin-bottom: 8px; }
   }
 
   .rewards-grid { gap: 16px; }
-  .reward-item { padding: 16px 12px; min-height: 110px; gap: 10px; }
-  .reward-icon { font-size: 38px; }
-  .reward-icon svg { width: 38px; height: 38px; }
-  .reward-icon:not(:has(svg)) { font-size: 38px; }
 
   .promo-card { margin-bottom: 16px; }
 
@@ -1863,6 +1803,7 @@ li { margin-bottom: 8px; }
     padding: 16px 18px;
   }
 
+  /* Увеличенная аватарка на планшете */
   .author-card__avatar {
     width: 52px;
     height: 52px;
@@ -1945,12 +1886,9 @@ li { margin-bottom: 8px; }
   .code-text { font-size: 13px !important; letter-spacing: 0.04em; }
 
   .rewards-grid { gap: 14px; }
-  .reward-item { padding: 14px 10px; min-height: 100px; gap: 8px; border-radius: var(--r-md); }
-  .reward-icon { font-size: 32px; }
-  .reward-icon svg { width: 32px; height: 32px; }
-  .reward-icon:not(:has(svg)) { font-size: 32px; }
+  .reward-item { padding: 16px 10px; min-height: 98px; border-radius: var(--r-md); }
+  .reward-icon { font-size: 28px; }
   .reward-title { font-size: 9px; }
-
   .new-badge { font-size: 9px; padding: 2px 6px; }
   .reward-text { font-size: 12px; }
 
@@ -2001,6 +1939,7 @@ li { margin-bottom: 8px; }
     width: 15px; height: 15px;
   }
 
+  /* Увеличенная аватарка на мобильных (до 550px) */
   .author-card__avatar {
     width: 46px;
     height: 46px;
@@ -2053,6 +1992,7 @@ li { margin-bottom: 8px; }
     font-size: 13px;
   }
 
+  /* Увеличенная аватарка на очень маленьких экранах */
   .author-card__avatar {
     width: 44px;
     height: 44px;
@@ -2085,12 +2025,14 @@ li { margin-bottom: 8px; }
 @media (min-width: 769px) {
   .section-divider { display: block; }
 
+  /* Оба шоукейса – вертикальный поток (изображение сверху, текст снизу) */
   .video-showcase,
   .screenshot-showcase {
     display: block;
     text-align: left;
   }
 
+  /* На ПК: пропорция 4/3 — немного выше 16/9, ширина равна ширине текста */
   .video-cover,
   .screenshot-cover {
     width: 100%;
@@ -2100,10 +2042,12 @@ li { margin-bottom: 8px; }
     border-radius: var(--r-lg);
   }
 
+  /* Убираем флекс-обёртку для скриншота */
   .screenshot-cover {
     flex-shrink: unset;
   }
 
+  /* Информационный блок – без верхней границы и без украшательств */
   .video-info,
   .screenshot-info {
     flex: none;
@@ -2118,12 +2062,14 @@ li { margin-bottom: 8px; }
     display: none;
   }
 
+  /* Бейджи выравниваем по левому краю */
   .video-badge,
   .screenshot-badge {
     margin-left: 0;
     margin-right: 0;
   }
 
+  /* Уменьшаем отступы сверху внутри юнифицированного блока */
   .unified-block .video-showcase,
   .unified-block .screenshot-showcase {
     padding: 0 28px 28px;
@@ -2134,6 +2080,7 @@ li { margin-bottom: 8px; }
    MOBILE PERFORMANCE — до 768px
    ================================================ */
 @media (max-width: 768px) {
+
   html, body {
     background-attachment: scroll !important;
   }
