@@ -678,7 +678,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АВТОР — СТАТУС КАК В ПЕРВОМ ВАРИАНТЕ
+   АВТОР — СТАТУС С ЗАКРУГЛЕНИЕМ ПРАВОГО НИЖНЕГО УГЛА
    ================================================ */
 .author-wrapper {
   margin-top: 32px;
@@ -762,7 +762,7 @@ li { margin-bottom: 8px; }
   border-color: rgba(245, 183, 48, 0.9);
 }
 
-/* СТАТУС — ПОЛНОСТЬЮ КАК В ПЕРВОМ CSS */
+/* СТАТУС — скруглён правый нижний угол */
 .author-status {
   position: absolute;
   bottom: 0;
@@ -778,13 +778,8 @@ li { margin-bottom: 8px; }
   font-weight: 600;
   color: #86efac;
   white-space: nowrap;
-  /* убираем всё, чего не было в первом варианте */
   border-radius: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-  letter-spacing: normal;
-  z-index: auto;
-  border: none;
+  border-bottom-right-radius: 16px; /* скругление как у .author-photo-wrapper */
 }
 
 .author-status.offline {
@@ -1575,6 +1570,10 @@ li { margin-bottom: 8px; }
   .author-left { width: 90px; }
   .author-photo-wrapper { border-radius: 14px; }
   .author-photo-wrapper img { border-radius: 12px; }
+  /* планшетный статус — скругление 14px */
+  .author-status {
+    border-bottom-right-radius: 14px;
+  }
 }
 
 @media (max-width: 550px) {
@@ -1623,6 +1622,10 @@ li { margin-bottom: 8px; }
   .video-title { font-size: 14px; }
   .video-text { font-size: 12px; }
   .video-meta { font-size: 11px; margin-top: 8px; }
+  /* мобильный статус — скругление 14px */
+  .author-status {
+    border-bottom-right-radius: 14px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -1641,6 +1644,10 @@ li { margin-bottom: 8px; }
   .author-arrow { display: none; }
   .container { padding: 16px 12px; }
   .section { padding: 18px; margin-bottom: 18px; }
+  /* очень маленькие экраны — скругление 14px */
+  .author-status {
+    border-bottom-right-radius: 14px;
+  }
 }
 
 @media (min-width: 769px) {
@@ -1671,6 +1678,10 @@ li { margin-bottom: 8px; }
   .author-left { width: 110px; }
   .author-photo-wrapper { border-radius: 18px; }
   .author-photo-wrapper img { border-radius: 16px; }
+  /* десктопный статус — скругление 18px (под обёртку фото) */
+  .author-status {
+    border-bottom-right-radius: 18px;
+  }
 }
 
 /* MOBILE PERFORMANCE */
