@@ -389,14 +389,28 @@ li { margin-bottom: 8px; }
 
 .section-energy h2 .svg-icon { stroke: var(--green); opacity: 0.8; }
 
+/* Убираем зелёную обводку только внутри аккордеона */
+details .section-energy,
+.accordion-body .section-energy,
+.accordion-body-inner .section-energy {
+  border-left: none;
+}
+
+/* Красный бордер убран снаружи аккордеона */
 .section-warning {
   background: var(--card);
-  border-left: 3px solid var(--red);
   border-radius: var(--r-xl);
 }
 
-.section-warning h2 { color: var(--red); font-size: var(--text-md); }
+.section-warning h2 { font-size: var(--text-md); }
 .section-warning h2 .svg-icon { stroke: var(--red); opacity: 0.8; }
+
+/* Красный бордер только внутри аккордеона */
+details .section-warning,
+.accordion-body .section-warning,
+.accordion-body-inner .section-warning {
+  border-left: 3px solid var(--red);
+}
 
 /* ================================================
    СЕТКА НАГРАД
