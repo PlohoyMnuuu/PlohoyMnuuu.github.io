@@ -1186,7 +1186,7 @@ li { margin-bottom: 8px; }
    GISCUS
    ================================================ */
 .giscus-section {
-  margin-top: 16px;
+
   padding-top: 0;
   border-top: none;
   position: relative;
@@ -1215,6 +1215,9 @@ li { margin-bottom: 8px; }
 .giscus-container.visible {
   display: block;
   animation: giscusFadeSlide 0.35s ease both;
+}
+.giscus-container.visible {
+  margin-top: 24px; /* добавить сюда */
 }
 
 @keyframes giscusFadeSlide {
