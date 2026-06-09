@@ -13,56 +13,38 @@
    ТОКЕНЫ
    ================================================ */
 :root {
-  /* Базовые цвета */
   --bg:            #07090f;
   --bg-mid:        #0c1120;
   --card:          #111827;
   --card-raised:   #141e30;
   --card-border:   rgba(255,255,255,0.07);
   --card-border-hover: rgba(255,255,255,0.14);
-
-  /* Акценты */
   --gold:          #f5b730;
   --gold-dim:      #c48e1a;
   --gold-bg:       rgba(245,183,48,0.1);
   --gold-shadow:   rgba(245,183,48,0.18);
-
   --green:         #22c55e;
   --green-dim:     #16a34a;
   --green-bg:      rgba(34,197,94,0.09);
-
   --blue:          #60a5fa;
   --blue-bg:       rgba(96,165,250,0.09);
-
   --red:           #f87171;
   --red-bg:        rgba(248,113,113,0.08);
-
-  /* Текст */
   --text:          #f1f5f9;
   --text-dim:      #8496b0;
   --text-faint:    #4a5568;
-
-  /* Разделители */
   --divider:       rgba(255,255,255,0.06);
-
-  /* Радиусы */
   --r-sm:  8px;
   --r-md:  12px;
   --r-lg:  18px;
   --r-xl:  22px;
-
-  /* Тени */
   --shadow-card:     0 1px 3px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
   --shadow-raised:   0 2px 6px rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.35);
   --shadow-promo:    0 2px 8px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05) inset;
   --shadow-gold:     0 4px 20px var(--gold-shadow);
-
-  /* Переходы */
   --t-fast:  0.15s ease;
   --t-base:  0.22s ease;
   --t-slow:  0.35s ease;
-
-  /* Типографика */
   --text-xs:   11px;
   --text-sm:   13px;
   --text-base: 15px;
@@ -116,7 +98,6 @@ html, body {
   background-attachment: fixed;
 }
 
-/* Тонкая сетка */
 @media (min-width: 769px) {
   body::after {
     content: '';
@@ -364,7 +345,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   БАЗОВАЯ КАРТОЧКА (.section)
+   БАЗОВАЯ КАРТОЧКА
    ================================================ */
 .section {
   background: var(--card);
@@ -391,9 +372,6 @@ li { margin-bottom: 8px; }
   border-color: var(--card-border-hover);
 }
 
-/* ================================================
-   ВАРИАЦИИ СЕКЦИЙ
-   ================================================ */
 .section-faq {
   background: #0d1421;
   border-color: rgba(255,255,255,0.05);
@@ -700,7 +678,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АВТОР — ИСПРАВЛЕНО: РАМКА И СКРУГЛЕНИЯ
+   АВТОР — ИСПРАВЛЕНО (рамка + скругления + статус)
    ================================================ */
 .author-wrapper {
   margin-top: 32px;
@@ -750,13 +728,13 @@ li { margin-bottom: 8px; }
   transform: translateY(0);
 }
 
-/* Левая часть с фото — правильное скругление */
+/* Левая часть с фото — скругление только слева */
 .author-left {
   flex-shrink: 0;
   width: 88px;
   position: relative;
-  overflow: hidden;
   border-radius: var(--r-lg) 0 0 var(--r-lg);
+  overflow: hidden;
 }
 
 /* Обертка для фото */
@@ -766,6 +744,7 @@ li { margin-bottom: 8px; }
   background: #0d1525;
   overflow: hidden;
   position: relative;
+  min-height: 100%;
 }
 
 /* Само фото */
@@ -778,7 +757,7 @@ li { margin-bottom: 8px; }
   display: block;
 }
 
-/* ЗОЛОТАЯ РАМКА ФОТО через псевдоэлемент */
+/* ЗОЛОТАЯ РАМКА ФОТО */
 .author-left::after {
   content: '';
   position: absolute;
@@ -786,46 +765,53 @@ li { margin-bottom: 8px; }
   left: 0;
   right: 0;
   bottom: 0;
-  border: 2px solid rgba(245,183,48,0.6);
+  border: 2px solid rgba(245, 183, 48, 0.5);
   border-radius: var(--r-lg) 0 0 var(--r-lg);
   pointer-events: none;
   z-index: 2;
-  box-shadow: 0 0 6px rgba(245,183,48,0.3);
-  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+  transition: border-color var(--t-fast);
 }
 
 .author-block:hover .author-left::after {
-  border-color: rgba(245,183,48,0.9);
-  box-shadow: 0 0 10px rgba(245,183,48,0.5);
+  border-color: rgba(245, 183, 48, 0.9);
 }
 
-/* Статус Онлайн/Оффлайн */
+/* СТАТУС (Онлайн/Оффлайн) */
 .author-status {
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(4px);
-  padding: 4px 10px;
+  padding: 5px 10px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 10px;
   font-weight: 600;
-  color: #86efac;
   white-space: nowrap;
   z-index: 3;
   border: 1px solid rgba(34, 197, 94, 0.3);
-  letter-spacing: 0.02em;
+  color: #86efac;
+}
+
+.author-status.offline {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.author-status.offline .dot {
+  background: #f87171;
+  box-shadow: 0 0 6px rgba(248, 113, 113, 0.8);
 }
 
 .author-status .dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--green);
+  background: #22c55e;
   box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
   animation: pulse-dot 2s ease-in-out infinite;
 }
@@ -835,7 +821,7 @@ li { margin-bottom: 8px; }
   50% { opacity: 0.5; transform: scale(0.8); }
 }
 
-/* Правая часть */
+/* Правая часть с информацией */
 .author-info {
   flex: 1;
   min-width: 0;
@@ -1561,49 +1547,21 @@ li { margin-bottom: 8px; }
 /* ================================================
    МЕДИАЗАПРОСЫ
    ================================================ */
-
-/* Планшет (до 768px) */
 @media (max-width: 768px) {
   .hero-header { padding: 41px 16px 31px; border-radius: 0 0 var(--r-lg) var(--r-lg); }
   .hero-title  { font-size: 26px; margin-bottom: 16px; }
   .hero-brand  { font-size: 10px; margin-bottom: 14px; }
   .hero-stats  { flex-direction: column; gap: 5px; font-size: 12px; }
   .hero-stats .stat-divider { display: none; }
-
   .container { padding: 24px 20px; }
-
-  .section {
-    padding: 24px;
-    margin-bottom: 24px;
-    border-radius: var(--r-lg);
-  }
-
+  .section { padding: 24px; margin-bottom: 24px; border-radius: var(--r-lg); }
   .rewards-grid { gap: 16px; }
   .promo-card { margin-bottom: 16px; }
   .mini-tips-grid { gap: 16px; }
-
-  .video-cover, .screenshot-cover {
-    max-width: 100%;
-    max-height: 340px;
-    border-radius: var(--r-md);
-  }
-
-  .video-badge, .screenshot-badge {
-    display: flex;
-    justify-content: center;
-    width: fit-content;
-    margin: 0 auto 18px;
-  }
-
-  .copy-btn {
-    padding: 8px 12px;
-    font-size: 10px;
-    min-height: 36px;
-    border-radius: 7px;
-  }
-
+  .video-cover, .screenshot-cover { max-width: 100%; max-height: 340px; border-radius: var(--r-md); }
+  .video-badge, .screenshot-badge { display: flex; justify-content: center; width: fit-content; margin: 0 auto 18px; }
+  .copy-btn { padding: 8px 12px; font-size: 10px; min-height: 36px; border-radius: 7px; }
   .section-divider { display: none; }
-
   .video-info, .screenshot-info {
     border-top: 1px solid transparent;
     border-image: linear-gradient(90deg, transparent 0%, rgba(96,165,250,0.08) 15%, rgba(96,165,250,0.35) 50%, rgba(96,165,250,0.08) 85%, transparent 100%) 1;
@@ -1611,12 +1569,9 @@ li { margin-bottom: 8px; }
     padding-top: 18px;
     text-align: left;
     width: 100%;
-    box-sizing: border-box;
     position: relative;
   }
-
-  .video-info::before,
-  .screenshot-info::before {
+  .video-info::before, .screenshot-info::before {
     content: '';
     position: absolute;
     top: -3px;
@@ -1627,231 +1582,120 @@ li { margin-bottom: 8px; }
     background: rgba(96,165,250,0.6);
     border-radius: 50%;
   }
-
   .video-showcase, .screenshot-showcase { padding: 0; }
-
-  .unified-block .video-showcase,
-  .unified-block .screenshot-showcase {
-    padding: 0 24px 24px;
-  }
-
+  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 24px 24px; }
   .unified-block .section { padding: 24px; }
   .section-divider { margin: 0 24px; }
-
-  /* АВТОР — планшет */
-  .author-left {
-    width: 90px;
-  }
-  .author-status {
-    font-size: 9px;
-    padding: 3px 8px;
-    bottom: 8px;
-  }
-  .author-status .dot {
-    width: 5px;
-    height: 5px;
-  }
+  .author-left { width: 90px; }
+  .author-status { font-size: 9px; padding: 3px 8px; bottom: 8px; }
+  .author-status .dot { width: 5px; height: 5px; }
 }
 
-/* Мобильный (до 550px) */
 @media (max-width: 550px) {
   h1 { font-size: 22px; }
   h2 { font-size: 14px; margin-bottom: 14px; }
   h2 .svg-icon { width: 15px; height: 15px; }
   h3 { font-size: 15px; }
-  p  { font-size: 14px; margin-bottom: 12px; }
+  p { font-size: 14px; margin-bottom: 12px; }
   ol, ul { font-size: 14px; padding-left: 16px; }
   li { margin-bottom: 7px; }
-
   .code-text { font-size: 13px !important; letter-spacing: 0.04em; }
-
   .rewards-grid { gap: 14px; }
   .reward-item { padding: 16px 10px; min-height: 98px; border-radius: var(--r-md); }
   .reward-icon { font-size: 22px; }
   .reward-title { font-size: 9px; }
   .new-badge { font-size: 9px; padding: 2px 6px; }
   .reward-text { font-size: 12px; }
-
   .promo-card { padding: 16px; margin-bottom: 14px; border-radius: var(--r-md); gap: 12px; }
-
   .copy-btn { padding: 7px 9px; font-size: 9px; min-height: 33px; border-radius: 6px; }
   .copy-btn svg { width: 11px; height: 11px; }
-
   .video-cover, .screenshot-cover { max-height: 320px; border-radius: var(--r-md); }
   .play-button { width: 46px; height: 46px; }
   .play-button svg { width: 18px; height: 18px; }
   .screenshot-magnifier { width: 28px; height: 28px; }
   .screenshot-magnifier svg { width: 12px; height: 12px; }
-
   .mini-tips-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 20px; }
   .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
   .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
-
-  /* АВТОР — мобильный */
-  .author-left {
-    width: 96px;
-  }
-  .author-left::after {
-    border-width: 1.5px;
-  }
-  .author-name {
-    font-size: 13px;
-  }
-  .author-info {
-    padding: 10px 12px;
-  }
-  .author-info p {
-    font-size: 12px;
-  }
-  .author-status {
-    font-size: 8px;
-    padding: 3px 6px;
-    bottom: 6px;
-  }
-  .author-arrow {
-    width: 26px;
-    height: 26px;
-    margin-right: 10px;
-  }
-  .author-arrow svg {
-    width: 12px;
-    height: 12px;
-  }
-  .mobile-fb-btn {
-    display: inline-flex;
-  }
-  .author-name .desktop-fb-btn {
-    display: none;
-  }
-
+  .author-left { width: 96px; }
+  .author-left::after { border-width: 1.5px; }
+  .author-name { font-size: 13px; }
+  .author-info { padding: 10px 12px; }
+  .author-info p { font-size: 12px; }
+  .author-status { font-size: 8px; padding: 3px 6px; bottom: 6px; }
+  .author-arrow { width: 26px; height: 26px; margin-right: 10px; }
+  .author-arrow svg { width: 12px; height: 12px; }
+  .mobile-fb-btn { display: inline-flex; }
+  .author-name .desktop-fb-btn { display: none; }
   .hero-cta { padding: 12px 22px; font-size: 11px; }
   .hero-header { padding: 31px 12px 24px; }
-
   .container { padding: 20px 16px; }
-
-  .section {
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: var(--r-md);
-  }
-
-  .unified-block .video-showcase,
-  .unified-block .screenshot-showcase {
-    padding: 0 20px 20px;
-  }
-
+  .section { padding: 20px; margin-bottom: 20px; border-radius: var(--r-md); }
+  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 20px 20px; }
   .unified-block .section { padding: 20px; }
   .section-divider { margin: 0 20px; }
-
   .video-title { font-size: 14px; }
-  .video-text  { font-size: 12px; }
-  .video-meta  { font-size: 11px; margin-top: 8px; }
+  .video-text { font-size: 12px; }
+  .video-meta { font-size: 11px; margin-top: 8px; }
 }
 
-/* Очень маленький (до 375px) */
 @media (max-width: 375px) {
   h1 { font-size: 19px; }
   h2 { font-size: 13px; }
-  p  { font-size: 13px; }
+  p { font-size: 13px; }
   .code-text { font-size: 11px; letter-spacing: 0.02em; }
-  .hero-cta  { padding: 10px 18px; }
-
+  .hero-cta { padding: 10px 18px; }
   .rewards-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .reward-item { padding: 12px 8px; }
-
   .promo-card { padding: 14px 12px; margin-bottom: 12px; }
   .mini-tips-grid { gap: 12px; }
   .mini-tip-card { padding: 14px; }
-
-  /* АВТОР — очень маленький */
-  .author-left {
-    width: 84px;
-  }
-  .author-info {
-    padding: 8px 10px;
-  }
-  .author-arrow {
-    display: none;
-  }
-
+  .author-left { width: 84px; }
+  .author-info { padding: 8px 10px; }
+  .author-arrow { display: none; }
   .container { padding: 16px 12px; }
   .section { padding: 18px; margin-bottom: 18px; }
 }
 
-/* Десктоп (769px+) */
 @media (min-width: 769px) {
   .section-divider { display: block; }
-
-  .video-showcase,
-  .screenshot-showcase {
+  .video-showcase, .screenshot-showcase {
     display: flex;
     align-items: flex-start;
     gap: 24px;
     text-align: left;
   }
-
-  .unified-block .video-showcase,
-  .unified-block .screenshot-showcase { padding: 28px; }
-
-  .video-cover,
-  .screenshot-cover {
+  .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 28px; }
+  .video-cover, .screenshot-cover {
     width: 180px;
     flex-shrink: 0;
     margin: 0;
     max-width: none;
     border-radius: var(--r-lg);
   }
-
-  .video-info,
-  .screenshot-info {
+  .video-info, .screenshot-info {
     flex: 1;
     border-top: none;
     border-image: none;
     margin-top: 0;
     padding: 2px 0 0;
   }
-
-  .video-info::after,
-  .screenshot-info::after { display: none; }
-
-  .video-badge, .screenshot-badge {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* АВТОР — десктоп */
-  .author-left {
-    width: 110px;
-  }
+  .video-info::after, .screenshot-info::after { display: none; }
+  .video-badge, .screenshot-badge { margin-left: 0; margin-right: 0; }
+  .author-left { width: 110px; }
 }
 
 /* MOBILE PERFORMANCE */
 @media (max-width: 768px) {
-  html, body {
-    background-attachment: scroll !important;
-  }
-
-  .play-button,
-  .screenshot-magnifier {
+  html, body { background-attachment: scroll !important; }
+  .play-button, .screenshot-magnifier {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     background: rgba(10, 16, 26, 0.88) !important;
   }
-
-  .section,
-  .promo-card,
-  .reward-item,
-  .mini-tip-card,
-  .author-block,
-  .unified-block {
+  .section, .promo-card, .reward-item, .mini-tip-card, .author-block, .unified-block {
     transition: border-color var(--t-base), transform var(--t-base) !important;
   }
-
-  .hero-cta {
-    transition: transform var(--t-base), opacity var(--t-base) !important;
-  }
-
-  .copy-btn {
-    transition: transform var(--t-fast), opacity var(--t-fast) !important;
-  }
+  .hero-cta { transition: transform var(--t-base), opacity var(--t-base) !important; }
+  .copy-btn { transition: transform var(--t-fast), opacity var(--t-fast) !important; }
 }
