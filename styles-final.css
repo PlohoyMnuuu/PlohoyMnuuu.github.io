@@ -1912,12 +1912,12 @@ li { margin-bottom: 8px; }
     text-align: left;
   }
 
-  /* Изменяем пропорции видео и скриншота на ПК: делаем шире (16/9 вместо 1/1) */
+  /* На ПК: пропорция 4/3 — немного выше 16/9, ширина равна ширине текста */
   .video-cover,
   .screenshot-cover {
     width: 100%;
     max-width: none;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     margin: 0;
     border-radius: var(--r-lg);
   }
