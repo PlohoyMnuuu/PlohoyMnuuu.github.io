@@ -678,7 +678,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АВТОР — ИСПРАВЛЕНО (рамка + скругления + статус)
+   АВТОР — ИСПРАВЛЕНО (рамка + скругление с двух сторон + статус)
    ================================================ */
 .author-wrapper {
   margin-top: 32px;
@@ -728,16 +728,15 @@ li { margin-bottom: 8px; }
   transform: translateY(0);
 }
 
-/* Левая часть с фото — скругление только слева */
+/* Левая часть — контейнер фото */
 .author-left {
   flex-shrink: 0;
   width: 88px;
   position: relative;
-  border-radius: var(--r-lg) 0 0 var(--r-lg);
   overflow: hidden;
 }
 
-/* Обертка для фото */
+/* Обёртка фото — СКРУГЛЕНИЕ СО ВСЕХ СТОРОН + ЗОЛОТАЯ РАМКА */
 .author-photo-wrapper {
   width: 100%;
   height: 100%;
@@ -745,6 +744,10 @@ li { margin-bottom: 8px; }
   overflow: hidden;
   position: relative;
   min-height: 100%;
+  border-radius: 16px;
+  margin: 0;
+  border: 2px solid rgba(245, 183, 48, 0.5);
+  transition: border-color var(--t-fast);
 }
 
 /* Само фото */
@@ -755,64 +758,51 @@ li { margin-bottom: 8px; }
   object-fit: cover;
   object-position: center top;
   display: block;
+  border-radius: 14px;
 }
 
-/* ЗОЛОТАЯ РАМКА ФОТО */
-.author-left::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 2px solid rgba(245, 183, 48, 0.5);
-  border-radius: var(--r-lg) 0 0 var(--r-lg);
-  pointer-events: none;
-  z-index: 2;
-  transition: border-color var(--t-fast);
-}
-
-.author-block:hover .author-left::after {
+.author-block:hover .author-photo-wrapper {
   border-color: rgba(245, 183, 48, 0.9);
 }
 
-/* СТАТУС (Онлайн/Оффлайн) */
+/* СТАТУС (Онлайн/Оффлайн) — возвращён как в начале */
 .author-status {
   position: absolute;
-  bottom: 10px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(4px);
-  padding: 5px 10px;
+  padding: 3px 8px;
   border-radius: 20px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 10px;
+  gap: 5px;
+  font-size: 9px;
   font-weight: 600;
   white-space: nowrap;
   z-index: 3;
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  border: 1px solid rgba(34, 197, 94, 0.4);
   color: #86efac;
+  letter-spacing: 0.3px;
 }
 
 .author-status.offline {
   color: #f87171;
-  border-color: rgba(248, 113, 113, 0.3);
+  border-color: rgba(248, 113, 113, 0.4);
 }
 
 .author-status.offline .dot {
   background: #f87171;
-  box-shadow: 0 0 6px rgba(248, 113, 113, 0.8);
+  box-shadow: 0 0 4px rgba(248, 113, 113, 0.6);
 }
 
 .author-status .dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #22c55e;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+  box-shadow: 0 0 4px rgba(34, 197, 94, 0.6);
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
@@ -821,7 +811,7 @@ li { margin-bottom: 8px; }
   50% { opacity: 0.5; transform: scale(0.8); }
 }
 
-/* Правая часть с информацией */
+/* Правая часть */
 .author-info {
   flex: 1;
   min-width: 0;
@@ -850,7 +840,7 @@ li { margin-bottom: 8px; }
   color: var(--text-dim);
 }
 
-/* Стрелка справа */
+/* Стрелка */
 .author-arrow {
   flex-shrink: 0;
   display: flex;
@@ -885,7 +875,7 @@ li { margin-bottom: 8px; }
   transform: translateX(2px);
 }
 
-/* Facebook кнопки */
+/* Facebook */
 .fb-link {
   display: inline-flex;
   align-items: center;
@@ -1545,7 +1535,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   МЕДИАЗАПРОСЫ
+   АДАПТИВНОСТЬ
    ================================================ */
 @media (max-width: 768px) {
   .hero-header { padding: 41px 16px 31px; border-radius: 0 0 var(--r-lg) var(--r-lg); }
@@ -1586,9 +1576,13 @@ li { margin-bottom: 8px; }
   .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 24px 24px; }
   .unified-block .section { padding: 24px; }
   .section-divider { margin: 0 24px; }
+  
+  /* АВТОР — планшет */
   .author-left { width: 90px; }
-  .author-status { font-size: 9px; padding: 3px 8px; bottom: 8px; }
-  .author-status .dot { width: 5px; height: 5px; }
+  .author-photo-wrapper { border-radius: 14px; }
+  .author-photo-wrapper img { border-radius: 12px; }
+  .author-status { font-size: 8px; padding: 2px 7px; bottom: 5px; }
+  .author-status .dot { width: 4px; height: 4px; }
 }
 
 @media (max-width: 550px) {
@@ -1617,16 +1611,20 @@ li { margin-bottom: 8px; }
   .mini-tips-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 20px; }
   .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
   .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
+  
+  /* АВТОР — мобильный */
   .author-left { width: 96px; }
-  .author-left::after { border-width: 1.5px; }
+  .author-photo-wrapper { border-radius: 14px; border-width: 1.5px; }
+  .author-photo-wrapper img { border-radius: 12px; }
   .author-name { font-size: 13px; }
   .author-info { padding: 10px 12px; }
   .author-info p { font-size: 12px; }
-  .author-status { font-size: 8px; padding: 3px 6px; bottom: 6px; }
+  .author-status { font-size: 8px; padding: 2px 6px; bottom: 5px; }
   .author-arrow { width: 26px; height: 26px; margin-right: 10px; }
   .author-arrow svg { width: 12px; height: 12px; }
   .mobile-fb-btn { display: inline-flex; }
   .author-name .desktop-fb-btn { display: none; }
+  
   .hero-cta { padding: 12px 22px; font-size: 11px; }
   .hero-header { padding: 31px 12px 24px; }
   .container { padding: 20px 16px; }
@@ -1650,9 +1648,12 @@ li { margin-bottom: 8px; }
   .promo-card { padding: 14px 12px; margin-bottom: 12px; }
   .mini-tips-grid { gap: 12px; }
   .mini-tip-card { padding: 14px; }
+  
+  /* АВТОР — очень маленький */
   .author-left { width: 84px; }
   .author-info { padding: 8px 10px; }
   .author-arrow { display: none; }
+  
   .container { padding: 16px 12px; }
   .section { padding: 18px; margin-bottom: 18px; }
 }
@@ -1682,7 +1683,12 @@ li { margin-bottom: 8px; }
   }
   .video-info::after, .screenshot-info::after { display: none; }
   .video-badge, .screenshot-badge { margin-left: 0; margin-right: 0; }
+  
+  /* АВТОР — десктоп */
   .author-left { width: 110px; }
+  .author-photo-wrapper { border-radius: 18px; }
+  .author-photo-wrapper img { border-radius: 16px; }
+  .author-status { bottom: 8px; padding: 3px 10px; font-size: 9px; }
 }
 
 /* MOBILE PERFORMANCE */
