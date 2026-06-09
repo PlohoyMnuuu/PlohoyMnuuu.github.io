@@ -2109,3 +2109,25 @@ li { margin-bottom: 8px; }
     transition: transform var(--t-fast), opacity var(--t-fast) !important;
   }
 }
+
+.reward-icon-wrap .reward-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  line-height: 1;
+  background: none;
+  border: none;
+}
+.reward-item--amber  { border-bottom: 2px solid rgba(245,183,48,0.35); }
+.reward-item--green  { border-bottom: 2px solid rgba(34,197,94,0.35); }
+.reward-item--red    { border-bottom: 2px solid rgba(248,113,113,0.35); }
+.reward-item--purple { border-bottom: 2px solid rgba(192,132,252,0.35); }
+.reward-item--blue   { border-bottom: 2px solid rgba(96,165,250,0.35); }
+
+.reward-icon {
+  font-size: 38px;
+}
