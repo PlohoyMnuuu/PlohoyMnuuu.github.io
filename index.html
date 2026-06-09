@@ -240,132 +240,194 @@
         </div>
     </section>
 
-    <div class="unified-block">
-        <section class="section">
-            <h2>
-                <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><rect height="14" rx="2" stroke="currentColor" stroke-width="1.75" width="18" x="3" y="5"/><path d="M8 10H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><path d="M8 14H12" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg>
-                Как вводить промокоды
-            </h2>
-            <p>Чтобы активировать промо, выполните следующие шаги:</p>
-            <ol>
-                <li>Откройте игру <strong>Монеточка</strong>.</li>
-                <li>Перейдите в меню <strong>&#9776;</strong> и выберите раздел <strong>Подарки</strong>.</li>
-                <li>В правом углу выберите вкладку <strong>Промокоды</strong>.</li>
-                <li>Вставьте код и нажмите <strong>Применить</strong>.</li>
-            </ol>
-            <p style="margin-bottom:0;">Подробнее смотрите на видео, которое находится ниже.</p>
-        </section>
-        <div aria-hidden="true" class="section-divider"></div>
-        <div class="video-showcase" id="shortVideo">
-           <div class="video-cover">
-                <img alt="Видео про Монеточку" loading="lazy" src="image/монеточка.webp"/>
-                <div class="play-button" onclick="loadVideo()">
+    <!-- АККОРДЕОН -->
+    <div id="accordion-sections">
+
+      <!-- Как вводить промокоды -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false" data-target="acc-howto">
+          <span class="accordion-btn-left">
+            <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><rect height="14" rx="2" stroke="currentColor" stroke-width="1.75" width="18" x="3" y="5"/><path d="M8 10H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><path d="M8 14H12" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg>
+            Как вводить промокоды
+          </span>
+          <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+        <div class="accordion-body" id="acc-howto">
+          <div class="accordion-body-inner">
+            <div class="unified-block">
+              <section class="section">
+                <p>Чтобы активировать промо, выполните следующие шаги:</p>
+                <ol>
+                  <li>Откройте игру <strong>Монеточка</strong>.</li>
+                  <li>Перейдите в меню <strong>&#9776;</strong> и выберите раздел <strong>Подарки</strong>.</li>
+                  <li>В правом углу выберите вкладку <strong>Промокоды</strong>.</li>
+                  <li>Вставьте код и нажмите <strong>Применить</strong>.</li>
+                </ol>
+                <p style="margin-bottom:0;">Подробнее смотрите на видео, которое находится ниже.</p>
+              </section>
+              <div aria-hidden="true" class="section-divider"></div>
+              <div class="video-showcase" id="shortVideo">
+                <div class="video-cover">
+                  <img alt="Видео про Монеточку" loading="lazy" src="image/монеточка.webp"/>
+                  <div class="play-button" onclick="loadVideo()">
                     <svg viewBox="0 0 24 24"><polygon fill="none" points="5,3 19,12 5,21" stroke="currentColor" stroke-linejoin="round" stroke-width="2.5"/></svg>
- </div>
-            </div>
-            <div class="video-info">
-                <div class="video-badge" onclick="loadVideo()" style="cursor:pointer;">
+                  </div>
+                </div>
+                <div class="video-info">
+                  <div class="video-badge" onclick="loadVideo()" style="cursor:pointer;">
                     <svg fill="none" height="14" viewBox="0 0 24 24" width="14"><polygon fill="none" points="5,3 19,12 5,21" stroke="currentColor" stroke-linejoin="round" stroke-width="2.5"/></svg>
                     Видео-гайд
-                </div>
-                <div class="video-text">На видео показан наглядный способ активации бонус-кодов в игре.</div>
-                <div class="video-meta">
+                  </div>
+                  <div class="video-text">На видео показан наглядный способ активации бонус-кодов в игре.</div>
+                  <div class="video-meta">
                     <span class="check-icon"><svg fill="none" height="16" viewBox="0 0 24 24" width="16"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg></span> На реальном примере<br/>
                     <span class="check-icon"><svg fill="none" height="16" viewBox="0 0 24 24" width="16"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg></span> Действующий код<br/>
                     <span class="check-icon"><svg fill="none" height="16" viewBox="0 0 24 24" width="16"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg></span> Настоящая награда<br/>
                     <span class="check-icon"><svg fill="none" viewBox="0 0 24 24" width="16" height="16"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg></span> Актуальный интерфейс игры<br/>
                     <span class="check-icon"><svg fill="none" height="16" viewBox="0 0 24 24" width="16"><path d="M5 13L9 17L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg></span> Подходит для новичков
+                  </div>
+                  <div class="video-text" style="margin-top:12px;">Просто копируйте код из списка выше, введите его в игре как показано в инструкции и получайте награду. Все эти действия занимают примерно 30 секунд.</div>
                 </div>
-                <div class="video-text" style="margin-top:12px;">Просто копируйте код из списка выше, введите его в игре как показано в инструкции и получайте награду. Все эти действия занимают примерно 30 секунд.</div>
+              </div>
+              <div aria-hidden="true" class="section-divider no-dot"></div>
             </div>
+          </div>
         </div>
-        <div aria-hidden="true" class="section-divider no-dot"></div>
-    </div>
+      </div>
 
-    <section class="section">
-        <h2>
+      <!-- Как получить новый код -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false" data-target="acc-getnew">
+          <span class="accordion-btn-left">
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><path d="M18 9C18 6.79 16.21 5 14 5H10C7.79 5 6 6.79 6 9V15L4 19H20L18 15V9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.75"/><path d="M10 5V4C10 3.45 10.45 3 11 3H13C13.55 3 14 3.45 14 4V5" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><path d="M10 21C10.35 21.6 11 22 12 22C13 22 13.65 21.6 14 21" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg>
             Как получить новый код
-        </h2>
-        <p style="font-size:14px;">Бонусы можно получить несколькими способами. Далее подробнее.</p>
-        <div class="mini-tips-grid">
-            <div class="mini-tip-card"><strong>Официальные соцсети</strong> Разработчики публикуют новые коды в социальных сетях и мессенджерах почти каждый день.</div>
-            <div class="mini-tip-card"><strong>Ивенты </strong> Промокоды выходят во время ивентов, которые происходят регулярно.</div>
-            <div class="mini-tip-card"><strong>Ежемесячные акции </strong>В первых числах каждого месяца разработчики выпускают промо, которые действуют 30 дней или больше.</div>
-            <div class="mini-tip-card"><strong>Обновления </strong>Почти всегда коды выходят вместе с новыми версиями игры. Но такие события происходят довольно редко.</div>
+          </span>
+          <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+        <div class="accordion-body" id="acc-getnew">
+          <div class="accordion-body-inner">
+            <section class="section">
+              <p style="font-size:14px;">Бонусы можно получить несколькими способами. Далее подробнее.</p>
+              <div class="mini-tips-grid">
+                <div class="mini-tip-card"><strong>Официальные соцсети</strong> Разработчики публикуют новые коды в социальных сетях и мессенджерах почти каждый день.</div>
+                <div class="mini-tip-card"><strong>Ивенты</strong> Промокоды выходят во время ивентов, которые происходят регулярно.</div>
+                <div class="mini-tip-card"><strong>Ежемесячные акции</strong> В первых числах каждого месяца разработчики выпускают промо, которые действуют 30 дней или больше.</div>
+                <div class="mini-tip-card"><strong>Обновления</strong> Почти всегда коды выходят вместе с новыми версиями игры. Но такие события происходят довольно редко.</div>
+              </div>
+            </section>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <div class="unified-block">
-        <section class="section section-faq">
-            <h2>
-                <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/><path d="M12 8.5C11.2 8.5 10.5 9.1 10.5 10C10.5 10.8 11 11.3 11.7 11.6C12.3 11.9 12 12.5 12 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><circle cx="12" cy="15.5" fill="currentColor" r="0.75"/></svg>
-                Почему код не работает
-            </h2>
-            <p style="font-size:14px;">Ниже перечислены основные причины ошибок при активации промо.</p>
-            <div class="mini-tips-grid">
-               <div class="mini-tip-card"><strong>Не подходит уровень </strong>Некоторые промокоды предназначены только для игроков, которые прокачали свою деревню до определённого уровня.</div>
-                <div class="mini-tip-card"><strong>Несоответствие лиги</strong>Иногда разработчики выпускают коды для игроков той или иной лиги, например золотой или серебряной.</div>
-                <div class="mini-tip-card"><strong>Опечатки</strong> Даже одна неверная буква делает код недействительным. Используйте кнопку копирования.</div>
-                <div class="mini-tip-card"><strong>Лишние пробелы</strong> Пробел в начале или конце приводит к ошибке.</div>
-                <div class="mini-tip-card"><strong>Срок действия</strong> У промо есть срок. Обычно они работают несколько дней или до первой тысячи активаций.</div>
-                <div class="mini-tip-card"><strong>Коды одноразовые</strong> Каждый бонус активируется только один раз для одного аккаунта.</div>
-            </div>
-        </section>
-        <div aria-hidden="true" class="section-divider"></div>
-        <div class="screenshot-showcase">
-            <div class="screenshot-cover" onclick="openScreenshot()">
-                <img alt="Скриншот ошибки промокода в Монеточке" loading="lazy" src="image/Скриншот.webp"/>
-                <div class="screenshot-magnifier">
-                    <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
+      <!-- Почему код не работает -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false" data-target="acc-why">
+          <span class="accordion-btn-left">
+            <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.75"/><path d="M12 8.5C11.2 8.5 10.5 9.1 10.5 10C10.5 10.8 11 11.3 11.7 11.6C12.3 11.9 12 12.5 12 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><circle cx="12" cy="15.5" fill="currentColor" r="0.75"/></svg>
+            Почему код не работает
+          </span>
+          <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+        <div class="accordion-body" id="acc-why">
+          <div class="accordion-body-inner">
+            <div class="unified-block">
+              <section class="section section-faq">
+                <p style="font-size:14px;">Ниже перечислены основные причины ошибок при активации промо.</p>
+                <div class="mini-tips-grid">
+                  <div class="mini-tip-card"><strong>Не подходит уровень</strong> Некоторые промокоды предназначены только для игроков, которые прокачали свою деревню до определённого уровня.</div>
+                  <div class="mini-tip-card"><strong>Несоответствие лиги</strong> Иногда разработчики выпускают коды для игроков той или иной лиги, например золотой или серебряной.</div>
+                  <div class="mini-tip-card"><strong>Опечатки</strong> Даже одна неверная буква делает код недействительным. Используйте кнопку копирования.</div>
+                  <div class="mini-tip-card"><strong>Лишние пробелы</strong> Пробел в начале или конце приводит к ошибке.</div>
+                  <div class="mini-tip-card"><strong>Срок действия</strong> У промо есть срок. Обычно они работают несколько дней или до первой тысячи активаций.</div>
+                  <div class="mini-tip-card"><strong>Коды одноразовые</strong> Каждый бонус активируется только один раз для одного аккаунта.</div>
                 </div>
-            </div>
-            <div class="screenshot-info">
-                <div class="screenshot-badge" onclick="openScreenshot()" style="cursor:pointer;">
+              </section>
+              <div aria-hidden="true" class="section-divider"></div>
+              <div class="screenshot-showcase">
+                <div class="screenshot-cover" onclick="openScreenshot()">
+                  <img alt="Скриншот ошибки промокода в Монеточке" loading="lazy" src="image/Скриншот.webp"/>
+                  <div class="screenshot-magnifier">
+                    <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>
+                  </div>
+                </div>
+                <div class="screenshot-info">
+                  <div class="screenshot-badge" onclick="openScreenshot()" style="cursor:pointer;">
                     <svg fill="none" height="14" viewBox="0 0 24 24" width="14"><rect height="16" rx="2" stroke="currentColor" stroke-width="2" width="20" x="2" y="4"/><circle cx="8" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 16L8 10L14 16L18 12L22 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
                     Скриншот
+                  </div>
+                  <div class="video-text" style="margin-top:12px; color:var(--text-dim); font-size:13px;">Некоторые коды не работают у игроков, которые не достигли определенного уровня или не состоят в той или иной лиге. На скриншоте показан один из таких примеров.</div>
+                  <div class="video-text" style="margin-top:12px; color:var(--text-dim); font-size:13px;">Часто коды не срабатывают из-за ошибок при вводе. Например, пользователи не выделяют все символы во время копирования в социальных сетях. Чтобы избежать таких проблем, на сайте установлены удобные кнопки — используйте их.</div>
                 </div>
-                <div class="video-text" style="margin-top:12px; color:var(--text-dim); font-size:13px;">
-                    Некоторые коды не работают у игроков, которые не достигли определенного уровня или не состоят в той или иной лиге. На скриншоте показан один из таких примеров.
-                </div>
-                <div class="video-text" style="margin-top:12px; color:var(--text-dim); font-size:13px;">
-                   Часто коды не срабатывают из-за ошибок при вводе. Например, пользователи не выделяют все символы во время копирования в социальных сетях. Чтобы избежать таких проблем, на сайте установлены удобные кнопки — используйте их.
-                </div>
+              </div>
+              <div aria-hidden="true" class="section-divider no-dot"></div>
             </div>
+          </div>
         </div>
-        <div aria-hidden="true" class="section-divider no-dot"></div>
-    </div>
+      </div>
 
-    <section class="section section-energy">
-        <h2>
-            <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><path d="M13 3L4 14H12L11 21L20 10H12L13 3Z" stroke="#10b981" stroke-linejoin="round" stroke-width="1.75"/></svg>
+      <!-- Как получить энергию бесплатно -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false" data-target="acc-energy">
+          <span class="accordion-btn-left">
+            <svg class="svg-icon" fill="none" viewBox="0 0 24 24" style="stroke:#10b981;opacity:1;"><path d="M13 3L4 14H12L11 21L20 10H12L13 3Z" stroke="#10b981" stroke-linejoin="round" stroke-width="1.75"/></svg>
             Как получить энергию бесплатно
-        </h2>
-        <p style="font-size:14px;">Бесплатную энергию вы получите при выполнении условий, которые перечислены ниже.</p>
-        <div class="mini-tips-grid">
-            <div class="mini-tip-card"><strong>Приводите друзей</strong> Добавляйте друзей и получайте за это энергию.</div>
-            <div class="mini-tip-card"><strong>Участвуйте в событиях</strong> Энергия выдается за выполнение заданий.</div>
-            <div class="mini-tip-card"><strong>Коллекционируйте карты</strong> Собирайте наборы карт и получайте бонусную энергию.</div>
-            <div class="mini-tip-card"><strong>Чаще заходите в игру</strong> Энергия восстанавливается со временем, чаще заходите в игру.</div>
+          </span>
+          <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+        <div class="accordion-body" id="acc-energy">
+          <div class="accordion-body-inner">
+            <section class="section section-energy">
+              <p style="font-size:14px;">Бесплатную энергию вы получите при выполнении условий, которые перечислены ниже.</p>
+              <div class="mini-tips-grid">
+                <div class="mini-tip-card"><strong>Приводите друзей</strong> Добавляйте друзей и получайте за это энергию.</div>
+                <div class="mini-tip-card"><strong>Участвуйте в событиях</strong> Энергия выдается за выполнение заданий.</div>
+                <div class="mini-tip-card"><strong>Коллекционируйте карты</strong> Собирайте наборы карт и получайте бонусную энергию.</div>
+                <div class="mini-tip-card"><strong>Чаще заходите в игру</strong> Энергия восстанавливается со временем, чаще заходите в игру.</div>
+              </div>
+            </section>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section class="section section-warning">
-        <h2 style="font-size:18px;">
-            <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><path d="M12 3L3 21H21L12 3Z" stroke="#ef4444" stroke-linejoin="round" stroke-width="1.75"/><path d="M12 10V14" stroke="#ef4444" stroke-linecap="round" stroke-width="1.75"/><circle cx="12" cy="17" fill="#ef4444" r="0.75"/></svg>
+      <!-- Осторожно: взломы и читы -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false" data-target="acc-cheats" style="border-left-color: var(--red);">
+          <span class="accordion-btn-left">
+            <svg class="svg-icon" fill="none" viewBox="0 0 24 24" style="stroke:#f87171;opacity:1;"><path d="M12 3L3 21H21L12 3Z" stroke="#f87171" stroke-linejoin="round" stroke-width="1.75"/><path d="M12 10V14" stroke="#f87171" stroke-linecap="round" stroke-width="1.75"/><circle cx="12" cy="17" fill="#f87171" r="0.75"/></svg>
             Осторожно: взломы и читы
-        </h2>
-        <p>В интернете на некоторых сайтах предлагают скачать взломанную Монеточку с бесконечной энергией или деньгами. Такие читы не работают, потому что данные хранятся на защищенных серверах разработчиков.</p>
-        <p style="margin-bottom:0;">Сторонние файлы опасны и зачастую содержат вирусы. Единственный безопасный способ получить бонусы — использовать официальные коды от разработчиков.</p>
-    </section>
+          </span>
+          <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+        <div class="accordion-body" id="acc-cheats">
+          <div class="accordion-body-inner">
+            <section class="section section-warning">
+              <p>В интернете на некоторых сайтах предлагают скачать взломанную Монеточку с бесконечной энергией или деньгами. Такие читы не работают, потому что данные хранятся на защищенных серверах разработчиков.</p>
+              <p style="margin-bottom:0;">Сторонние файлы опасны и зачастую содержат вирусы. Единственный безопасный способ получить бонусы — использовать официальные коды от разработчиков.</p>
+            </section>
+          </div>
+        </div>
+      </div>
 
-    <section class="section" style="margin-top:24px;">
-        <h2>
+      <!-- Обновления промокодов -->
+      <div class="accordion-section">
+        <button class="accordion-btn" aria-expanded="false" data-target="acc-updates">
+          <span class="accordion-btn-left">
             <svg class="svg-icon" fill="none" viewBox="0 0 24 24"><path d="M4 4V10H10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/><path d="M20 20V14H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/><path d="M4 10C5.5 6.5 8.5 4 12 4C15 4 17.7 5.5 19.4 8" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/><path d="M20 14C18.5 17.5 15.5 20 12 20C9 20 6.3 18.5 4.6 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.75"/></svg>
             Обновления промокодов
-        </h2>
-        <p style="margin-bottom:0;">Автор проверяет все коды вручную каждый день и добавляет на сайт новые. На всякий случай добавьте страницу в закладки браузера, чтобы вернуться сюда снова.</p>
-    </section>
+          </span>
+          <svg class="accordion-chevron" fill="none" viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+        <div class="accordion-body" id="acc-updates">
+          <div class="accordion-body-inner">
+            <section class="section" style="margin-top:0;">
+              <p style="margin-bottom:0;">Автор проверяет все коды вручную каждый день и добавляет на сайт новые. На всякий случай добавьте страницу в закладки браузера, чтобы вернуться сюда снова.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /АККОРДЕОН -->
 
 </div>
 
@@ -394,7 +456,6 @@
 </div>
 
 <script src="script.js" defer></script>
-
 
 </body>
 </html>
