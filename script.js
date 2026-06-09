@@ -119,25 +119,3 @@ function closeScreenshot(e) {
     });
   })();
 
-// Аккордеон
-document.querySelectorAll('.accordion-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var targetId = this.getAttribute('data-target');
-    var body = document.getElementById(targetId);
-    var isOpen = this.getAttribute('aria-expanded') === 'true';
-
-    // Закрываем все остальные
-    document.querySelectorAll('.accordion-btn').forEach(function(b) {
-      b.setAttribute('aria-expanded', 'false');
-    });
-    document.querySelectorAll('.accordion-body').forEach(function(b) {
-      b.classList.remove('open');
-    });
-
-    // Открываем текущий если был закрыт
-    if (!isOpen) {
-      this.setAttribute('aria-expanded', 'true');
-      body.classList.add('open');
-    }
-  });
-});
