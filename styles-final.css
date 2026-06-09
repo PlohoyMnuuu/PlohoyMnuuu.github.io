@@ -1287,7 +1287,6 @@ li { margin-bottom: 8px; }
 
 /* ================================================
    НОВАЯ КАРТОЧКА АВТОРА (author-card) – УВЕЛИЧЕННАЯ АВАТАРКА
-   И СТАТУС НА АВАТАРКЕ
    ================================================ */
 .author-card {
   background: var(--card);
@@ -1314,7 +1313,7 @@ li { margin-bottom: 8px; }
 
 .author-card__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
   margin-bottom: 14px;
 }
@@ -1325,6 +1324,7 @@ li { margin-bottom: 8px; }
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
+  position: relative;
 }
 
 /* Увеличенная аватарка на всех устройствах */
@@ -1339,7 +1339,7 @@ li { margin-bottom: 8px; }
   justify-content: center;
   overflow: hidden;
   border: 2px solid var(--gold);
-  position: relative; /* важно для позиционирования статуса */
+  position: relative;
 }
 
 .author-card__avatar-img {
@@ -1349,45 +1349,52 @@ li { margin-bottom: 8px; }
   display: block;
 }
 
-/* Статус теперь размещается на аватарке */
 .author-card__status {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 4px;
   font-size: 10px;
+  color: var(--green);
   font-weight: 600;
   letter-spacing: 0.3px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.7); /* фон 70% прозрачности */
-  padding: 2px 0;
-  line-height: 1.2;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  background: rgba(10, 16, 26, 0.7);
+  border: none;
+  padding: 3px 6px;
+  line-height: 1;
   white-space: nowrap;
-  box-sizing: border-box;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .author-card__status-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--green); /* онлайн – зелёный */
+  background: var(--green);
   flex-shrink: 0;
+  box-shadow: 0 0 6px var(--green);
 }
 
-/* Недавно (away) – жёлтый */
+.author-card__status--away {
+  color: var(--gold);
+}
+
 .author-card__status--away .author-card__status-dot {
   background: var(--gold);
+  box-shadow: 0 0 6px var(--gold);
 }
 
-/* Офлайн – красный */
+.author-card__status--offline {
+  color: var(--red);
+}
+
 .author-card__status--offline .author-card__status-dot {
   background: var(--red);
+  box-shadow: 0 0 6px var(--red);
 }
 
 .author-card__meta {
@@ -1722,6 +1729,17 @@ li { margin-bottom: 8px; }
     min-width: 52px;
   }
 
+  .author-card__status {
+    bottom: -7px;
+    padding: 2px 5px;
+    font-size: 9px;
+  }
+
+  .author-card__status-dot {
+    width: 4px;
+    height: 4px;
+  }
+
   .author-card__body {
     padding: 14px 14px 12px;
   }
@@ -1847,6 +1865,17 @@ li { margin-bottom: 8px; }
     min-width: 46px;
   }
 
+  .author-card__status {
+    bottom: -6px;
+    padding: 2px 4px;
+    font-size: 8px;
+  }
+
+  .author-card__status-dot {
+    width: 3px;
+    height: 3px;
+  }
+
   .author-card__name {
     font-size: 15px;
   }
@@ -1887,6 +1916,12 @@ li { margin-bottom: 8px; }
     width: 44px;
     height: 44px;
     min-width: 44px;
+  }
+
+  .author-card__status {
+    bottom: -6px;
+    padding: 2px 4px;
+    font-size: 8px;
   }
 
   .author-card__header {
