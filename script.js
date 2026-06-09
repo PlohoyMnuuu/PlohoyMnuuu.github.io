@@ -18,8 +18,11 @@ function showToast() {
 }
 
 function updatePromoCount() {
+    var count = document.querySelectorAll('.promo-card').length;
     var el = document.getElementById('promo-count');
-    if (el) el.textContent = document.querySelectorAll('.promo-card').length;
+    if (el) el.textContent = count;
+    var el2 = document.getElementById('author-promo-count');
+    if (el2) el2.textContent = count;
 }
 
 function renderPromocodes(codes) {
@@ -102,19 +105,17 @@ function closeScreenshot(e) {
     }
 }
 
-<!-- Скрипт переключения комментариев -->
-
-  (function() {
+(function() {
     const btn = document.getElementById('toggleComments');
     const container = document.getElementById('giscusContainer');
 
     if (!btn || !container) return;
 
     btn.addEventListener('click', function() {
-      const isVisible = container.classList.toggle('visible');
-      btn.setAttribute('aria-expanded', isVisible);
-      btn.innerHTML = isVisible
-        ? '✕ Закрыть обсуждение'
-        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Начать обсуждение';
+        const isVisible = container.classList.toggle('visible');
+        btn.setAttribute('aria-expanded', isVisible);
+        btn.innerHTML = isVisible
+            ? '✕ Закрыть обсуждение'
+            : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Начать обсуждение';
     });
-  })();
+})();
