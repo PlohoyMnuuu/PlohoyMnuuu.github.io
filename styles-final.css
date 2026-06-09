@@ -1283,7 +1283,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   НОВАЯ КАРТОЧКА АВТОРА (author-card)
+   НОВАЯ КАРТОЧКА АВТОРА (author-card) – УВЕЛИЧЕННАЯ АВАТАРКА
    ================================================ */
 .author-card {
   background: var(--card);
@@ -1323,10 +1323,11 @@ li { margin-bottom: 8px; }
   flex-shrink: 0;
 }
 
+/* Увеличенная аватарка на всех устройствах */
 .author-card__avatar {
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
   border-radius: 8px;
   background: #1e293b;
   display: flex;
@@ -1710,6 +1711,13 @@ li { margin-bottom: 8px; }
     padding: 16px 18px;
   }
 
+  /* Увеличенная аватарка на планшете */
+  .author-card__avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+  }
+
   .author-card__body {
     padding: 14px 14px 12px;
   }
@@ -1717,12 +1725,6 @@ li { margin-bottom: 8px; }
   .author-card__header {
     gap: 10px;
     margin-bottom: 12px;
-  }
-
-  .author-card__avatar {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
   }
 
   .author-card__name {
@@ -1834,10 +1836,11 @@ li { margin-bottom: 8px; }
     width: 15px; height: 15px;
   }
 
+  /* Увеличенная аватарка на мобильных (до 550px) */
   .author-card__avatar {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
   }
 
   .author-card__name {
@@ -1875,6 +1878,13 @@ li { margin-bottom: 8px; }
     font-size: 13px;
   }
 
+  /* Увеличенная аватарка на очень маленьких экранах */
+  .author-card__avatar {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+
   .author-card__header {
     gap: 8px;
   }
@@ -1902,12 +1912,12 @@ li { margin-bottom: 8px; }
     text-align: left;
   }
 
-  /* Изображения занимают всю ширину и становятся квадратными */
+  /* Изменяем пропорции видео и скриншота на ПК: делаем шире (16/9 вместо 1/1) */
   .video-cover,
   .screenshot-cover {
     width: 100%;
     max-width: none;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
     margin: 0;
     border-radius: var(--r-lg);
   }
