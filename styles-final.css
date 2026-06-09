@@ -678,7 +678,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АВТОР — ИСПРАВЛЕНО (рамка + скругление с двух сторон + статус)
+   АВТОР — СЕРЫЙ ФОН ПЛАШКИ СТАТУСА
    ================================================ */
 .author-wrapper {
   margin-top: 32px;
@@ -728,7 +728,6 @@ li { margin-bottom: 8px; }
   transform: translateY(0);
 }
 
-/* Левая часть — контейнер фото */
 .author-left {
   flex-shrink: 0;
   width: 88px;
@@ -736,7 +735,6 @@ li { margin-bottom: 8px; }
   overflow: hidden;
 }
 
-/* Обёртка фото — СКРУГЛЕНИЕ СО ВСЕХ СТОРОН + ЗОЛОТАЯ РАМКА */
 .author-photo-wrapper {
   width: 100%;
   height: 100%;
@@ -750,7 +748,6 @@ li { margin-bottom: 8px; }
   transition: border-color var(--t-fast);
 }
 
-/* Само фото */
 .author-photo-wrapper img,
 .author-photo {
   width: 100%;
@@ -765,14 +762,13 @@ li { margin-bottom: 8px; }
   border-color: rgba(245, 183, 48, 0.9);
 }
 
-/* СТАТУС (Онлайн/Оффлайн) — возвращён как в начале */
+/* СТАТУС — СЕРЫЙ ФОН, БЕЗ РАЗМЫТИЯ */
 .author-status {
   position: absolute;
   bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(4px);
+  background: rgba(80, 80, 90, 0.85);
   padding: 3px 8px;
   border-radius: 20px;
   display: flex;
@@ -782,14 +778,15 @@ li { margin-bottom: 8px; }
   font-weight: 600;
   white-space: nowrap;
   z-index: 3;
-  border: 1px solid rgba(34, 197, 94, 0.4);
+  border: none;
   color: #86efac;
   letter-spacing: 0.3px;
+  backdrop-filter: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .author-status.offline {
   color: #f87171;
-  border-color: rgba(248, 113, 113, 0.4);
 }
 
 .author-status.offline .dot {
@@ -811,7 +808,6 @@ li { margin-bottom: 8px; }
   50% { opacity: 0.5; transform: scale(0.8); }
 }
 
-/* Правая часть */
 .author-info {
   flex: 1;
   min-width: 0;
@@ -840,7 +836,6 @@ li { margin-bottom: 8px; }
   color: var(--text-dim);
 }
 
-/* Стрелка */
 .author-arrow {
   flex-shrink: 0;
   display: flex;
@@ -875,7 +870,6 @@ li { margin-bottom: 8px; }
   transform: translateX(2px);
 }
 
-/* Facebook */
 .fb-link {
   display: inline-flex;
   align-items: center;
@@ -1576,8 +1570,6 @@ li { margin-bottom: 8px; }
   .unified-block .video-showcase, .unified-block .screenshot-showcase { padding: 0 24px 24px; }
   .unified-block .section { padding: 24px; }
   .section-divider { margin: 0 24px; }
-  
-  /* АВТОР — планшет */
   .author-left { width: 90px; }
   .author-photo-wrapper { border-radius: 14px; }
   .author-photo-wrapper img { border-radius: 12px; }
@@ -1611,8 +1603,6 @@ li { margin-bottom: 8px; }
   .mini-tips-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 20px; }
   .mini-tip-card { padding: 16px; font-size: 12px; min-height: 0; }
   .mini-tip-card strong { font-size: 13px; margin-bottom: 4px; }
-  
-  /* АВТОР — мобильный */
   .author-left { width: 96px; }
   .author-photo-wrapper { border-radius: 14px; border-width: 1.5px; }
   .author-photo-wrapper img { border-radius: 12px; }
@@ -1624,7 +1614,6 @@ li { margin-bottom: 8px; }
   .author-arrow svg { width: 12px; height: 12px; }
   .mobile-fb-btn { display: inline-flex; }
   .author-name .desktop-fb-btn { display: none; }
-  
   .hero-cta { padding: 12px 22px; font-size: 11px; }
   .hero-header { padding: 31px 12px 24px; }
   .container { padding: 20px 16px; }
@@ -1648,12 +1637,9 @@ li { margin-bottom: 8px; }
   .promo-card { padding: 14px 12px; margin-bottom: 12px; }
   .mini-tips-grid { gap: 12px; }
   .mini-tip-card { padding: 14px; }
-  
-  /* АВТОР — очень маленький */
   .author-left { width: 84px; }
   .author-info { padding: 8px 10px; }
   .author-arrow { display: none; }
-  
   .container { padding: 16px 12px; }
   .section { padding: 18px; margin-bottom: 18px; }
 }
@@ -1683,8 +1669,6 @@ li { margin-bottom: 8px; }
   }
   .video-info::after, .screenshot-info::after { display: none; }
   .video-badge, .screenshot-badge { margin-left: 0; margin-right: 0; }
-  
-  /* АВТОР — десктоп */
   .author-left { width: 110px; }
   .author-photo-wrapper { border-radius: 18px; }
   .author-photo-wrapper img { border-radius: 16px; }
