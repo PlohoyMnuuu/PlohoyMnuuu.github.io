@@ -1308,7 +1308,6 @@ li { margin-bottom: 8px; }
   padding: 20px 20px 16px;
 }
 
-/* ХЕДЕР КАРТОЧКИ АВТОРА */
 .author-card__header {
   display: flex;
   align-items: center;
@@ -1316,7 +1315,6 @@ li { margin-bottom: 8px; }
   margin-bottom: 14px;
 }
 
-/* КОЛОНКА С АВАТАРОМ И СТАТУСОМ */
 .author-card__avatar-col {
   display: flex;
   flex-direction: column;
@@ -1345,7 +1343,6 @@ li { margin-bottom: 8px; }
   display: block;
 }
 
-/* СТАТУС ПОД АВАТАРОМ */
 .author-card__status {
   display: flex;
   align-items: center;
@@ -1369,7 +1366,6 @@ li { margin-bottom: 8px; }
   flex-shrink: 0;
 }
 
-/* Вариации статуса (оставлены для JS-переключения) */
 .author-card__status--away {
   color: var(--gold);
 }
@@ -1386,7 +1382,6 @@ li { margin-bottom: 8px; }
   background: var(--red);
 }
 
-/* МЕТА (ИМЯ И РОЛЬ) */
 .author-card__meta {
   flex: 1;
 }
@@ -1407,7 +1402,6 @@ li { margin-bottom: 8px; }
   letter-spacing: 0.5px;
 }
 
-/* КНОПКА-ССЫЛКА НА СТРАНИЦУ АВТОРА */
 .author-card__link-btn {
   display: flex;
   align-items: center;
@@ -1434,14 +1428,12 @@ li { margin-bottom: 8px; }
   transform: scale(0.95);
 }
 
-/* Разделитель */
 .author-card__divider {
   height: 1px;
   background: var(--divider);
   margin: 0 0 14px;
 }
 
-/* Описание */
 .author-card__desc {
   font-size: var(--text-sm);
   color: var(--text-dim);
@@ -1454,7 +1446,6 @@ li { margin-bottom: 8px; }
   font-weight: 500;
 }
 
-/* Статистика */
 .author-card__stats {
   display: flex;
   border: 1px solid var(--divider);
@@ -1490,7 +1481,6 @@ li { margin-bottom: 8px; }
   margin-top: 2px;
 }
 
-/* Кнопка обсуждения */
 .author-card__btn {
   display: flex;
   align-items: center;
@@ -1521,7 +1511,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   АККОРДЕОН — УБРАНЫ БОРДЕРЫ ВНУТРЕННИХ БЛОКОВ
+   АККОРДЕОН
    ================================================ */
 .accordion-section {
   margin-bottom: 12px;
@@ -1604,7 +1594,6 @@ li { margin-bottom: 8px; }
   stroke: var(--gold);
 }
 
-/* Убираем бордеры у внутренних блоков аккордеона */
 .accordion-body {
   background: transparent;
   border: none;
@@ -1885,7 +1874,11 @@ li { margin-bottom: 8px; }
 @media (min-width: 769px) {
   .section-divider { display: block; }
 
-  .video-showcase,
+  .video-showcase {
+    display: block;
+    text-align: left;
+  }
+
   .screenshot-showcase {
     display: flex;
     align-items: flex-start;
@@ -1896,7 +1889,15 @@ li { margin-bottom: 8px; }
   .unified-block .video-showcase,
   .unified-block .screenshot-showcase { padding: 28px; }
 
-  .video-cover,
+  .video-cover {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 1 / 1;
+    flex-shrink: unset;
+    margin: 0;
+    border-radius: var(--r-lg);
+  }
+
   .screenshot-cover {
     width: 180px;
     flex-shrink: 0;
