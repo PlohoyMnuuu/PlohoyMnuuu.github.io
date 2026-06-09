@@ -18,11 +18,8 @@ function showToast() {
 }
 
 function updatePromoCount() {
-    var count = document.querySelectorAll('.promo-card').length;
     var el = document.getElementById('promo-count');
-    if (el) el.textContent = count;
-    var el2 = document.getElementById('author-promo-count');
-    if (el2) el2.textContent = count;
+    if (el) el.textContent = document.querySelectorAll('.promo-card').length;
 }
 
 function renderPromocodes(codes) {
@@ -55,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('load', function() {
+    var el = document.getElementById('stats-update-date');
+    if (el) {
+        var today = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' });
+        el.innerHTML = '<svg fill="none" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:#ffffff;opacity:0.5;"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M12 6V12L16 14" stroke-linecap="round" stroke-width="2"/></svg> <span>Обновлено:</span> ' + today;
+    }
     var yr = document.getElementById('footer-year');
     if (yr) yr.textContent = new Date().getFullYear();
 
@@ -100,17 +102,19 @@ function closeScreenshot(e) {
     }
 }
 
-(function() {
+<!-- Скрипт переключения комментариев -->
+
+  (function() {
     const btn = document.getElementById('toggleComments');
     const container = document.getElementById('giscusContainer');
 
     if (!btn || !container) return;
 
     btn.addEventListener('click', function() {
-        const isVisible = container.classList.toggle('visible');
-        btn.setAttribute('aria-expanded', isVisible);
-        btn.innerHTML = isVisible
-            ? '✕ Закрыть обсуждение'
-            : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Начать обсуждение';
+      const isVisible = container.classList.toggle('visible');
+      btn.setAttribute('aria-expanded', isVisible);
+      btn.innerHTML = isVisible
+        ? '✕ Закрыть обсуждение'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Начать обсуждение';
     });
-})();
+  })();
