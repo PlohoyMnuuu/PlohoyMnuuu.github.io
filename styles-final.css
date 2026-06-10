@@ -1360,7 +1360,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   НОВАЯ КАРТОЧКА АВТОРА (author-card) – ИСПРАВЛЕННАЯ
+   AUTHOR CARD — обновлённые стили
    ================================================ */
 .author-card {
   background: var(--card);
@@ -1373,7 +1373,6 @@ li { margin-bottom: 8px; }
   transition: border-color var(--t-base), box-shadow var(--t-base);
 }
 
-/* Заменяем золотую полосу на нейтральную градиентную линию, как у .section */
 .author-card::before {
   content: '';
   position: absolute;
@@ -1410,7 +1409,6 @@ li { margin-bottom: 8px; }
   position: relative;
 }
 
-/* Убираем золотую рамку, ставим едва заметную серую */
 .author-card__avatar {
   width: 60px;
   height: 60px;
@@ -1432,7 +1430,6 @@ li { margin-bottom: 8px; }
   display: block;
 }
 
-/* Статус делаем приглушённее, без ярких теней */
 .author-card__status {
   display: flex;
   align-items: center;
@@ -1460,7 +1457,6 @@ li { margin-bottom: 8px; }
   flex-shrink: 0;
 }
 
-/* Онлайн – приглушённый зелёный */
 .author-card__status--online {
   color: var(--green-dim);
 }
@@ -1468,7 +1464,6 @@ li { margin-bottom: 8px; }
   background: var(--green-dim);
 }
 
-/* Отошёл – золотой, но без свечения */
 .author-card__status--away {
   color: var(--gold-dim);
 }
@@ -1476,7 +1471,6 @@ li { margin-bottom: 8px; }
   background: var(--gold-dim);
 }
 
-/* Офлайн – красный, тоже без свечения */
 .author-card__status--offline {
   color: var(--red);
 }
@@ -1484,8 +1478,20 @@ li { margin-bottom: 8px; }
   background: var(--red);
 }
 
+/* Мета: имя + роль слева, ссылка справа */
 .author-card__meta {
   flex: 1;
+  min-width: 0;
+  padding-top: 2px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.author-card__meta-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .author-card__name {
@@ -1498,32 +1504,42 @@ li { margin-bottom: 8px; }
 
 .author-card__role {
   font-size: 11px;
-  color: var(--text-dim);            /* был золотой, делаем нейтральным */
+  color: var(--text-dim);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
+/* Кнопка-ссылка на страницу автора */
 .author-card__link-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.12);
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid rgba(255,255,255,0.1);
   background: rgba(255,255,255,0.04);
   color: var(--text-dim);
   flex-shrink: 0;
-  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast), transform var(--t-fast);
   text-decoration: none;
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
+}
+
+.author-card__link-btn svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 .author-card__link-btn:hover {
   background: rgba(245,183,48,0.1);
-  border-color: var(--gold-dim);
+  border-color: rgba(245,183,48,0.35);
   color: var(--gold-dim);
-  transform: translateX(2px);
 }
 
 .author-card__link-btn:active {
@@ -1571,7 +1587,7 @@ li { margin-bottom: 8px; }
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: var(--gold-dim);   /* золотой, но менее яркий */
+  color: var(--gold-dim);
 }
 
 .author-card__stat-label {
@@ -1583,35 +1599,46 @@ li { margin-bottom: 8px; }
   margin-top: 2px;
 }
 
-.author-card__btn {
+/* Блок с кнопкой внизу карточки */
+.author-card__actions {
+  padding: 0 20px 20px;
+}
+
+/* Золотая кнопка на всю ширину */
+.author-card__btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 11px 0;
-  background: transparent;
-  border: 1px solid var(--gold-dim);
-  border-radius: 8px;
-  color: var(--gold-dim);
-  font-size: 13px;
-  font-weight: 600;
+  padding: 14px;
+  background: var(--gold);
+  border: none;
+  border-radius: var(--r-sm);
+  color: #000;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  letter-spacing: 0.3px;
-  box-sizing: border-box;
-  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
-  text-align: center;
+  transition: transform var(--t-base), box-shadow var(--t-base), background var(--t-base);
+  box-shadow: 0 4px 20px rgba(245,183,48,0.25);
 }
 
-.author-card__btn:hover {
-  background: rgba(245, 183, 48, 0.08);
-  border-color: var(--gold);
-  color: var(--gold);
+.author-card__btn-primary:hover {
+  background: #fac430;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(245,183,48,0.35);
 }
 
-.author-card__btn svg {
+.author-card__btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(245,183,48,0.2);
+}
+
+.author-card__btn-primary svg {
   flex-shrink: 0;
-  stroke: currentColor;
 }
 
 /* ================================================
@@ -1807,6 +1834,10 @@ li { margin-bottom: 8px; }
     padding: 16px 18px;
   }
 
+  /* author-card */
+  .author-card__actions { padding: 0 14px 14px; }
+  .author-card__link-btn { width: 32px; height: 32px; }
+
   .author-card__avatar {
     width: 52px;
     height: 52px;
@@ -1841,11 +1872,6 @@ li { margin-bottom: 8px; }
     font-size: 10px;
   }
 
-  .author-card__link-btn {
-    width: 34px;
-    height: 34px;
-  }
-
   .author-card__desc {
     font-size: 12px;
     margin-bottom: 12px;
@@ -1867,10 +1893,9 @@ li { margin-bottom: 8px; }
     font-size: 9px;
   }
 
-  .author-card__btn {
+  .author-card__btn-primary {
     font-size: 12px;
-    padding: 10px 0;
-    gap: 6px;
+    padding: 12px;
   }
 }
 
@@ -1942,6 +1967,10 @@ li { margin-bottom: 8px; }
     width: 15px; height: 15px;
   }
 
+  /* author-card */
+  .author-card__actions { padding: 0 12px 12px; }
+  .author-card__btn-primary { font-size: 11px; padding: 12px; }
+
   .author-card__avatar {
     width: 46px;
     height: 46px;
@@ -1994,6 +2023,7 @@ li { margin-bottom: 8px; }
     font-size: 13px;
   }
 
+  /* author-card */
   .author-card__avatar {
     width: 44px;
     height: 44px;
