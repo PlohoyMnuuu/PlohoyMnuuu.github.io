@@ -2150,8 +2150,13 @@ li { margin-bottom: 8px; }
   border: none;
 }
 
-@media (min-width: 769px) {
-  .unified-block .section {
-    padding-bottom: 6;
-  }
+.accordion-body .video-showcase {
+  padding-top: 0;
+  margin-top: -8px;
+}
+
+.accordion-body .video-showcase,
+.accordion-body .screenshot-showcase {
+  padding-top: 0;
+  margin-top: -8px;
 }
