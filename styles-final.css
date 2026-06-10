@@ -1360,7 +1360,7 @@ li { margin-bottom: 8px; }
 }
 
 /* ================================================
-   НОВАЯ КАРТОЧКА АВТОРА (author-card) – УВЕЛИЧЕННАЯ АВАТАРКА
+   НОВАЯ КАРТОЧКА АВТОРА (author-card) – ИСПРАВЛЕННАЯ
    ================================================ */
 .author-card {
   background: var(--card);
@@ -1369,16 +1369,25 @@ li { margin-bottom: 8px; }
   position: relative;
   overflow: hidden;
   margin-top: 36px;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--t-base), box-shadow var(--t-base);
 }
 
+/* Заменяем золотую полосу на нейтральную градиентную линию, как у .section */
 .author-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: var(--gold);
+  height: 1px;
+  background: linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.09) 50%, transparent 90%);
+  pointer-events: none;
+}
+
+.author-card:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: var(--shadow-raised);
 }
 
 .author-card__body {
@@ -1401,6 +1410,7 @@ li { margin-bottom: 8px; }
   position: relative;
 }
 
+/* Убираем золотую рамку, ставим едва заметную серую */
 .author-card__avatar {
   width: 60px;
   height: 60px;
@@ -1411,7 +1421,7 @@ li { margin-bottom: 8px; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 2px solid var(--gold);
+  border: 1px solid var(--card-border);
   position: relative;
 }
 
@@ -1422,12 +1432,12 @@ li { margin-bottom: 8px; }
   display: block;
 }
 
+/* Статус делаем приглушённее, без ярких теней */
 .author-card__status {
   display: flex;
   align-items: center;
   gap: 4px;
   font-size: 10px;
-  color: var(--green);
   font-weight: 600;
   letter-spacing: 0.3px;
   background: rgba(10, 16, 26, 0.7);
@@ -1447,27 +1457,31 @@ li { margin-bottom: 8px; }
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--green);
   flex-shrink: 0;
-  box-shadow: 0 0 6px var(--green);
 }
 
+/* Онлайн – приглушённый зелёный */
+.author-card__status--online {
+  color: var(--green-dim);
+}
+.author-card__status--online .author-card__status-dot {
+  background: var(--green-dim);
+}
+
+/* Отошёл – золотой, но без свечения */
 .author-card__status--away {
-  color: var(--gold);
+  color: var(--gold-dim);
 }
-
 .author-card__status--away .author-card__status-dot {
-  background: var(--gold);
-  box-shadow: 0 0 6px var(--gold);
+  background: var(--gold-dim);
 }
 
+/* Офлайн – красный, тоже без свечения */
 .author-card__status--offline {
   color: var(--red);
 }
-
 .author-card__status--offline .author-card__status-dot {
   background: var(--red);
-  box-shadow: 0 0 6px var(--red);
 }
 
 .author-card__meta {
@@ -1484,7 +1498,7 @@ li { margin-bottom: 8px; }
 
 .author-card__role {
   font-size: 11px;
-  color: var(--gold);
+  color: var(--text-dim);            /* был золотой, делаем нейтральным */
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -1507,8 +1521,8 @@ li { margin-bottom: 8px; }
 
 .author-card__link-btn:hover {
   background: rgba(245,183,48,0.1);
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--gold-dim);
+  color: var(--gold-dim);
   transform: translateX(2px);
 }
 
@@ -1557,7 +1571,7 @@ li { margin-bottom: 8px; }
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold-dim);   /* золотой, но менее яркий */
 }
 
 .author-card__stat-label {
@@ -1577,20 +1591,22 @@ li { margin-bottom: 8px; }
   width: 100%;
   padding: 11px 0;
   background: transparent;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--gold-dim);
   border-radius: 8px;
-  color: var(--gold);
+  color: var(--gold-dim);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   letter-spacing: 0.3px;
   box-sizing: border-box;
-  transition: background var(--t-fast);
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
   text-align: center;
 }
 
 .author-card__btn:hover {
   background: rgba(245, 183, 48, 0.08);
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .author-card__btn svg {
