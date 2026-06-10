@@ -286,20 +286,24 @@
                         <div class="author-card__avatar">
                             <img src="https://monetochka.today/image/avtor.jpg" alt="Николай Дудник" class="author-card__avatar-img">
                         </div>
-                        <div class="author-card__status" id="author-status">
+                        <div class="author-card__status author-card__status--online" id="author-status">
                             <div class="author-card__status-dot" id="status-dot"></div>
                             <span id="status-text">Онлайн</span>
                         </div>
                     </div>
                     <div class="author-card__meta">
-                        <p class="author-card__name">Николай Дудник</p>
-                        <p class="author-card__role">Автор сайта</p>
+                        <div class="author-card__meta-text">
+                            <p class="author-card__name">Николай Дудник</p>
+                            <p class="author-card__role">Автор сайта</p>
+                        </div>
+                        <a href="https://monetochka.today/autor" class="author-card__link-btn" aria-label="Страница автора">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                        </a>
                     </div>
-                    <a href="https://monetochka.today/autor" class="author-card__link-btn" aria-label="Страница автора">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="9 18 15 12 9 6"/>
-                        </svg>
-                    </a>
                 </div>
                 <div class="author-card__divider"></div>
                 <p class="author-card__desc">
@@ -321,8 +325,10 @@
                         <span class="author-card__stat-label">Проверено</span>
                     </div>
                 </div>
-                <button class="author-card__btn" id="toggleComments" aria-expanded="false" type="button">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            </div>
+            <div class="author-card__actions">
+                <button class="author-card__btn-primary" id="toggleComments" aria-expanded="false" type="button">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                     </svg>
                     Начать обсуждение
