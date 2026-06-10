@@ -96,6 +96,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.toggle-comments-btn svg {
+  stroke: #000;
+}
 html {
   font-size: 16px;
   scroll-behavior: smooth;
