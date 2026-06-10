@@ -2149,3 +2149,6 @@ li { margin-bottom: 8px; }
   background: none;
   border: none;
 }
+.unified-block .video-showcase {
+  padding-top: 0;
+}
