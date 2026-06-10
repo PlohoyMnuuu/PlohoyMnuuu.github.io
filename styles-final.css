@@ -2149,6 +2149,8 @@ li { margin-bottom: 8px; }
   background: none;
   border: none;
 }
-.unified-block .video-showcase {
+
+.accordion-body .video-showcase {
   padding-top: 0;
+  margin-top: -8px; /* или -12px, подберите на глаз */
 }
