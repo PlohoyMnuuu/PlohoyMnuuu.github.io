@@ -234,9 +234,6 @@ li { margin-bottom: 8px; }
   margin: 0 auto;
 }
 
-/* ================================================
-   HERO BRAND (перенесено из первого CSS)
-   ================================================ */
 .hero-brand {
   display: block;
   font-size: 11px;
@@ -262,9 +259,6 @@ li { margin-bottom: 8px; }
   opacity: 0.4;
 }
 
-/* ================================================
-   HERO TITLE (перенесено из первого CSS)
-   ================================================ */
 .hero-title {
   font-size: 38px;
   font-weight: 900;
@@ -295,9 +289,6 @@ li { margin-bottom: 8px; }
   animation: slideInUnderline 0.6s ease-out 0.3s forwards;
 }
 
-/* ================================================
-   HERO STATS (перенесено из первого CSS)
-   ================================================ */
 .hero-stats {
   display: flex;
   justify-content: center;
@@ -340,9 +331,6 @@ li { margin-bottom: 8px; }
   color: #94a3b8;
 }
 
-/* ================================================
-   HERO CTA (оставлено без изменений)
-   ================================================ */
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -394,7 +382,7 @@ li { margin-bottom: 8px; }
 .hero-cta:hover svg { transform: translateY(2px); }
 
 /* ================================================
-   АНИМАЦИИ (добавлены из первого CSS)
+   АНИМАЦИИ
    ================================================ */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(8px); }
@@ -452,6 +440,8 @@ li { margin-bottom: 8px; }
   border-radius: var(--r-xl);
   padding: 28px;
   margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
 }
 
 .section::before {
@@ -538,7 +528,7 @@ li { margin-bottom: 8px; }
 .reward-item:active { transform: translateY(-1px); }
 
 .reward-icon {
-  font-size: 32px;
+  font-size: 38px;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -558,6 +548,12 @@ li { margin-bottom: 8px; }
   hyphens: auto;
   line-height: 1.3;
 }
+
+.reward-item--amber  { border-bottom: 2px solid rgba(245,183,48,0.35); }
+.reward-item--green  { border-bottom: 2px solid rgba(34,197,94,0.35); }
+.reward-item--red    { border-bottom: 2px solid rgba(248,113,113,0.35); }
+.reward-item--purple { border-bottom: 2px solid rgba(192,132,252,0.35); }
+.reward-item--blue   { border-bottom: 2px solid rgba(96,165,250,0.35); }
 
 /* ================================================
    ПРОМОКОДЫ
@@ -1267,7 +1263,6 @@ li { margin-bottom: 8px; }
    GISCUS
    ================================================ */
 .giscus-section {
-
   padding-top: 0;
   border-top: none;
   position: relative;
@@ -1296,9 +1291,7 @@ li { margin-bottom: 8px; }
 .giscus-container.visible {
   display: block;
   animation: giscusFadeSlide 0.35s ease both;
-}
-.giscus-container.visible {
-  margin-top: 24px; /* добавить сюда */
+  margin-top: 24px;
 }
 
 @keyframes giscusFadeSlide {
@@ -1408,7 +1401,6 @@ li { margin-bottom: 8px; }
   position: relative;
 }
 
-/* Увеличенная аватарка на всех устройствах */
 .author-card__avatar {
   width: 60px;
   height: 60px;
@@ -1626,7 +1618,7 @@ li { margin-bottom: 8px; }
   width: 100%;
   background: var(--card);
   border: 1px solid var(--card-border);
-  border-left: 1px solid var(--card-border); /* убран красный/цветной бордер, теперь обычный */
+  border-left: 1px solid var(--card-border);
   border-radius: var(--r-md);
   padding: 18px 20px;
   cursor: pointer;
@@ -1644,19 +1636,16 @@ li { margin-bottom: 8px; }
 
 .accordion-btn::-webkit-details-marker { display: none; }
 
-/* HOVER — без цветных бордеров */
 .accordion-btn:hover {
   border-color: rgba(255,255,255,0.12);
   box-shadow: var(--shadow-raised);
 }
 
-/* ACTIVE (нажатие) — без цветных бордеров */
 .accordion-btn:active {
   border-color: rgba(255,255,255,0.08);
   transform: scale(0.99);
 }
 
-/* OPEN (открытое состояние) — без цветных бордеров */
 .accordion-section[open] > .accordion-btn {
   border-bottom: 1px solid var(--divider);
   border-radius: var(--r-md) var(--r-md) 0 0;
@@ -1664,7 +1653,6 @@ li { margin-bottom: 8px; }
   box-shadow: var(--shadow-raised);
 }
 
-/* FOCUS (клавиатурное выделение) — без цветных бордеров */
 .accordion-btn:focus-visible {
   outline: 2px solid rgba(255,255,255,0.3);
   outline-offset: 2px;
@@ -1803,7 +1791,6 @@ li { margin-bottom: 8px; }
     padding: 16px 18px;
   }
 
-  /* Увеличенная аватарка на планшете */
   .author-card__avatar {
     width: 52px;
     height: 52px;
@@ -1939,7 +1926,6 @@ li { margin-bottom: 8px; }
     width: 15px; height: 15px;
   }
 
-  /* Увеличенная аватарка на мобильных (до 550px) */
   .author-card__avatar {
     width: 46px;
     height: 46px;
@@ -1992,7 +1978,6 @@ li { margin-bottom: 8px; }
     font-size: 13px;
   }
 
-  /* Увеличенная аватарка на очень маленьких экранах */
   .author-card__avatar {
     width: 44px;
     height: 44px;
@@ -2025,14 +2010,12 @@ li { margin-bottom: 8px; }
 @media (min-width: 769px) {
   .section-divider { display: block; }
 
-  /* Оба шоукейса – вертикальный поток (изображение сверху, текст снизу) */
   .video-showcase,
   .screenshot-showcase {
     display: block;
     text-align: left;
   }
 
-  /* На ПК: пропорция 4/3 — немного выше 16/9, ширина равна ширине текста */
   .video-cover,
   .screenshot-cover {
     width: 100%;
@@ -2042,12 +2025,10 @@ li { margin-bottom: 8px; }
     border-radius: var(--r-lg);
   }
 
-  /* Убираем флекс-обёртку для скриншота */
   .screenshot-cover {
     flex-shrink: unset;
   }
 
-  /* Информационный блок – без верхней границы и без украшательств */
   .video-info,
   .screenshot-info {
     flex: none;
@@ -2062,14 +2043,12 @@ li { margin-bottom: 8px; }
     display: none;
   }
 
-  /* Бейджи выравниваем по левому краю */
   .video-badge,
   .screenshot-badge {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* Уменьшаем отступы сверху внутри юнифицированного блока */
   .unified-block .video-showcase,
   .unified-block .screenshot-showcase {
     padding: 0 28px 28px;
@@ -2080,7 +2059,6 @@ li { margin-bottom: 8px; }
    MOBILE PERFORMANCE — до 768px
    ================================================ */
 @media (max-width: 768px) {
-
   html, body {
     background-attachment: scroll !important;
   }
@@ -2121,13 +2099,4 @@ li { margin-bottom: 8px; }
   line-height: 1;
   background: none;
   border: none;
-}
-.reward-item--amber  { border-bottom: 2px solid rgba(245,183,48,0.35); }
-.reward-item--green  { border-bottom: 2px solid rgba(34,197,94,0.35); }
-.reward-item--red    { border-bottom: 2px solid rgba(248,113,113,0.35); }
-.reward-item--purple { border-bottom: 2px solid rgba(192,132,252,0.35); }
-.reward-item--blue   { border-bottom: 2px solid rgba(96,165,250,0.35); }
-
-.reward-icon {
-  font-size: 38px;
 }
