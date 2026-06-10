@@ -2150,7 +2150,8 @@ li { margin-bottom: 8px; }
   border: none;
 }
 
-.accordion-body .video-showcase {
-  padding-top: 0;
-  margin-top: -8px; /* или -12px, подберите на глаз */
+@media (min-width: 769px) {
+  .unified-block .section {
+    padding-bottom: 0;
+  }
 }
