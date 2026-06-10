@@ -2152,6 +2152,6 @@ li { margin-bottom: 8px; }
 
 @media (min-width: 769px) {
   .unified-block .section {
-    padding-bottom: 12;
+    padding-bottom: 6;
   }
 }
