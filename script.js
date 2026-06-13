@@ -52,17 +52,7 @@ function loadFreshCodes() {
 document.addEventListener('DOMContentLoaded', function() {
     updatePromoCount();
     loadFreshCodes();
-
-    // Автообновление даты в хедере и карточке автора
-    var now = new Date();
-    var months = ['янв','фев','мар','апр','мая','июня','июля','авг','сен','окт','ноя','дек'];
-    var dateStr = now.getDate() + ' ' + months[now.getMonth()];
-
-    var headerDate = document.getElementById('header-check-date');
-    if (headerDate) headerDate.textContent = dateStr;
-
-    var authorDate = document.getElementById('author-check-date');
-    if (authorDate) authorDate.textContent = dateStr;
+    // Дата не обновляется на клиенте — берётся из HTML, который обновляет Google Apps Script
 });
 
 window.addEventListener('load', function() {
